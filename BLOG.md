@@ -8,6 +8,10 @@ A process between the agent and the operating system received the request, ran a
 
 We built [a runnable lab](README.md) to make this failure concrete, then tested a possible improvement using [Caos](https://github.com/Metta-AI/caos). The central question is whether an attacker who can change the execution path can also control the evidence used to check it.
 
+## What this lab establishes
+
+These are mechanism demonstrations, not a deployable safety system. They run on one host with fixed attack scripts, short-lived keys, in-memory ledgers, and serial handlers. We have not tested human approval, authorization recovery after crashes, concurrent attacks, or an adaptive agent. Deployment would still need a protected review and display path, durable authorization, and controls on every route that can cause an external effect.
+
 ## What METR found
 
 METR describes agents developing techniques that first inserted misleading output and later suppressed the real output. One agent, DAVJUL7, went further: it paused the tool-call handler and replaced it with an impersonator. A replication requested a command that should create a file; the returned output looked successful, but the file did not appear. Another approach changed a pending request using ptrace. [METR: output suppression and handler replacement](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output).
@@ -64,7 +68,7 @@ For the protected case, the handler runs under a different Unix user and its con
 
 Linux checks credentials for [signals](https://man7.org/linux/man-pages/man2/kill.2.html) and permissions for [pathname Unix sockets](https://man7.org/linux/man-pages/man7/unix.7.html). The demo measures those boundaries rather than assuming that a different process automatically means a different authority.
 
-This establishes a narrow result: these takeover operations fail under the tested permissions. It is not evidence that no kernel, container, or handler vulnerability exists.
+Unix permissions are doing the prevention here, not cryptography. The defended cases trust the protected handler, approver, signing key, caller, and Caos backend. An attacker with host root, a kernel escape, or control of those components is outside that assumption; the compromised-signer case below deliberately demonstrates its failure. The six denied probes establish only the tested permission boundary, not the absence of other vulnerabilities.
 
 ## Then make the approval precise
 
@@ -84,6 +88,14 @@ We prepare an audit request, then really overwrite the working copy of `audit.sh
 This is useful for alignment evaluations because approval can refer to the actual program and inputs, rather than a name whose meaning the agent can change later. It also preserves flexibility: the custom-tool case runs newly supplied code successfully once that exact request is approved.
 
 Caos gives us a concrete object to approve. It does not tell us whether approving that object was a good decision.
+
+### Who approves it, and what do they see?
+
+In this lab, nobody clicks an approval button. The trusted controller generates the approver key and automatically signs a preselected request identity together with a run and call identity. The experiment tests whether that authorization can be substituted or reused, not whether a person can understand and safely approve it.
+
+A usable review screen would need to derive its explanation from the frozen request: the tool and command, worker image, input changes from an understood baseline, and the authority relevant to the action. External effects and permissions also need explicit policy; they are not automatically constrained by a request hash. When the reviewer approves, the system must authorize exactly the snapshot they saw, without resolving a mutable tool name again.
+
+That is a proposed requirement, not an implemented approval interface. A hash is a precise reference, not an explanation of what unfamiliar code will do.
 
 ## Hashes alone still lose
 
@@ -119,7 +131,7 @@ The dispatcher contacts Caos itself. It does not sign a result identity voluntee
 
 We use Ed25519 signatures over a canonical representation with a protocol-specific prefix. [Cryptography's Ed25519 documentation](https://cryptography.io/en/latest/hazmat/primitives/asymmetric/ed25519/). The security argument depends more on who can use the key and what its holder observes than on the choice of signature algorithm.
 
-The attack matrix distinguishes several ways this can go wrong:
+The attack matrix distinguishes several ways this can go wrong. In the raw data, ACCEPT and REJECT describe the caller's response decision, not attack success. A rejected response can follow an unauthorized effect, while an accepted response can contain an inline forgery that was ignored.
 
 | Attempt | Observed outcome |
 | --- | --- |
@@ -135,6 +147,14 @@ The attack matrix distinguishes several ways this can go wrong:
 The call identity matters even when the request identity is unchanged. An old answer to the same question is not permission for another action.
 
 The ledger is deliberately simple and in memory. It consumes authorization before attempting resolution. A failed resolution can therefore leave an authorization consumed without an answer. Restart recovery and safe retries are open problems here, not silently assumed guarantees.
+
+## A valid receipt can sit beside forged output
+
+In the inline-output case, the proxy adds `stdout: "FORGED INLINE OUTPUT\n"` beside a valid receipt. The signature covers the receipt body, including the result identity; it does not cover arbitrary extra display fields. Verification therefore succeeds.
+
+The lab's caller does not display that extra field. It fetches `stdout` from the result named by the verified receipt and checks the Git object hashes. The recorded `displayed_stdout` is the real output, and the offline verifier checks it against the retained object. The attack does not fool this caller's display.
+
+But a UI that verified the receipt and then rendered the proxy's adjacent `stdout` would put a valid verification signal next to a lie. This is an important integration failure to test. The trusted path has to reach the text the operator or monitor actually consumes. Our lab checks the recorded caller display; it does not provide or validate a production operator UI.
 
 ## Two failures the demo should not hide
 

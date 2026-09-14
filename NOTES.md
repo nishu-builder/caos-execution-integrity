@@ -2,6 +2,10 @@
 
 These experiments use real Caos jobs and limited local fixtures to examine execution, evaluation, delegation, replay, monitoring, history, retries, and read access. The published site includes measured results and expandable evidence.
 
+## What this lab establishes
+
+These are mechanism demonstrations, not a deployable safety system. They run on one host with fixed attack scripts, short-lived keys, in-memory ledgers, and serial handlers. We have not tested human approval, authorization recovery after crashes, concurrent attacks, or an adaptive agent. Deployment would still need a protected review and display path, durable authorization, and controls on every route that can cause an external effect.
+
 ## Rerun the examples
 
 The complete worker images and inputs are published as [Git objects on the caos-rerun branch](https://github.com/nishu-builder/caos-execution-integrity/tree/caos-rerun) and a [downloadable bundle](https://nishu-builder.github.io/caos-execution-integrity/rerun/requests.bundle). From a clone of the repository, with a compatible Caos server running:
@@ -18,11 +22,19 @@ An agent asks to run an audit. The transcript names the audit command, shows pla
 
 In the lab, the attacker pauses a handler running under the same Unix user, replaces its socket, and executes a different command. The requested audit would create an audit marker. The replacement creates a publication canary instead. Both print OK. The transcript fields are identical, and signing them produces a valid signature in either case.
 
-Separating the handler's Unix user blocks the tested takeover. We then add a dispatcher that checks approval of an exact Caos request, contacts Caos itself, and signs the returned result identity. Substituting a request or result is rejected in the tested cases.
+Unix permissions block the tested handler takeover; the signatures do not. The attacker controls a proxy running as the unprivileged agent user. The protected handler, approver, signing key, caller, and Caos backend are trusted in the defended cases. Host root, a kernel escape, or control of the signer defeats that boundary. The compromised-signer case deliberately shows one such failure.
+
+Within that boundary, we add a dispatcher that checks approval of an exact Caos request, contacts Caos itself, and signs the returned result identity. The signature binds the request and response to a trusted recorder and call; it does not prove that the recorder told the truth. Caos supplies the exact tool, image, input, and result objects that can be named and inspected.
+
+The inline-output case tests the last step to the reader. The proxy adds FORGED INLINE OUTPUT beside a valid signed receipt. Receipt verification succeeds, because that extra field is outside the signature. But the caller ignores it, retrieves stdout from the identified result object, and checks the object hashes. Its recorded display contains the real output. A UI that instead showed the proxy's extra field could display a lie beside a valid receipt. The display path must enforce this rule; this lab tests the recorded caller display, not a production operator UI.
+
+Approval is another unfinished part. The lab controller creates an approver key and automatically signs a preselected request identity, run, and call. No human reviews the request. A usable approval screen would need to explain the tool, image, input changes, and relevant authority, then authorize exactly the snapshot reviewed. A hash makes substitution detectable; it does not make unfamiliar code understandable or a dangerous request acceptable. That review design remains untested here.
 
 The remaining failures matter just as much. An attacker with another route to the backend can cause an effect without producing a valid receipt. A compromised trusted signer can issue a valid lie. Caos supplies stable request and result identities; the protected dispatcher is an experimental addition, and its receipt describes a backend resolution rather than proving a fresh process launch.
 
-[METR: handler replacement](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output) · [Full explanation](https://github.com/nishu-builder/caos-execution-integrity/blob/main/BLOG.md)
+The caller’s acceptance or rejection concerns the response, not whether the attack succeeded. Read it alongside the observed effect and displayed output.
+
+[METR: handler replacement](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output) · [Full explanation](BLOG.md)
 
 ## 2. Passing the tests can mean weakening the tests
 

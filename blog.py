@@ -29,10 +29,21 @@ def render(report, path, asset_prefix=None):
             items.append('<p class="meta">' + " · ".join('<a href="' + href(link["url"]) + '">' +
                           html.escape(link["label"]) + "</a>" for link in article["links"]) + "</p>")
         rows = demo["raw"]["cases"] if demo["id"] == "execution" else demo["cases"]
+        if demo["id"] == "execution":
+            items.append('<p class="meta">The caller’s acceptance or rejection concerns the response, not whether the attack succeeded. Read it alongside the observed effect and displayed output. A rejected response can follow an unauthorized effect; an accepted response can contain an inline forgery that the caller ignored.</p>')
         items.append("<details class=\"cases\"><summary>Inspect the " + str(len(rows)) + " measured cases</summary>")
         for row in rows:
             label = row.get("label", row.get("name", "")).replace("-", " ")
-            verdict = row.get("verdict", "ACCEPT" if row.get("accepted") else "REJECT")
+            verdict = row.get("verdict", "Caller accepted response" if row.get("accepted") else "Caller rejected response")
+            if demo["id"] == "execution":
+                if row.get("actual_canary") is True:
+                    verdict += "; canary present in observed result"
+                elif row.get("actual_canary") is False:
+                    verdict += "; no canary in observed result"
+                else:
+                    verdict += "; no worker result observed"
+                if row.get("name") == "inline-output":
+                    verdict += "; forged inline output ignored"
             items.append('<details class="case"><summary>' + html.escape(label + ": " + verdict) +
                          "</summary><pre>" + html.escape(json.dumps(row, indent=2)) + "</pre></details>")
         if demo["id"] == "execution":

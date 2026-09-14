@@ -23,6 +23,10 @@ footer{border-top:1px solid #ddd;padding-top:18px;margin:50px 0 30px;overflow-wr
 <p>The examples below show both improvements and their limits. All effects are local fixtures; the private-data example uses an explicitly fake canary.</p>
 
 </header>
+<section id="scope">
+<h2>What this lab establishes</h2>
+<p>These are mechanism demonstrations, not a deployable safety system. They run on one host with fixed attack scripts, short-lived keys, in-memory ledgers, and serial handlers. We have not tested human approval, authorization recovery after crashes, concurrent attacks, or an adaptive agent. Deployment would still need a protected review and display path, durable authorization, and controls on every route that can cause an external effect.</p>
+</section>
 <section id="rerun">
 <h2>Rerun the examples</h2>
 <p>The complete worker images and inputs are available as Git objects on the <a href="https://github.com/nishu-builder/caos-execution-integrity/tree/caos-rerun">caos-rerun branch</a> and in a <a href="https://nishu-builder.github.io/caos-execution-integrity/rerun/requests.bundle">downloadable bundle</a>. From a clone of the repository, with a compatible Caos server running:</p>
