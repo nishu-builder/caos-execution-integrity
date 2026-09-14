@@ -19,6 +19,16 @@ All eight cases share a runner, a plain blog presentation, and an evidence workf
 
 These are fixed attack scripts and real Caos jobs, not LLM evaluations. Every harmful effect is confined to a disposable fixture. Nothing is published to an external service by an attack.
 
+## Rerun the published Caos jobs
+
+The quickest route is to send the published Git objects to your own Caos server. The package includes the full worker image, so you do not need the original registry, a local Docker build, or the Caos CLI.
+
+```sh
+python3 reproduce.py run --server http://127.0.0.1:9090 --only evaluation
+```
+
+**[Reproduction guide](REPRODUCE.md)** — 32 worker jobs, fresh cache keys by default, and comparison against the complete published result trees. Live services and host-side policies still use the full runner below. The same objects are available as the `caos-rerun` Git branch and a standalone bundle.
+
 ## Run the demos
 
 Requirements: Linux x86_64, Python 3.10+, Git, Docker, and a Caos stack/CLI compatible with pinned revision [5ce01d3](https://github.com/Metta-AI/caos/tree/5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3). Stack provisioning is separate; this repo does not change host services.
@@ -78,12 +88,14 @@ Caos provides content-addressed requests, computation, caching, Git result objec
 
 This repo adds the protected dispatcher, approval/receipt protocol, fixed subtree integrator, monitoring rules, HTTP fixture, and verification/presentation code. These are experimental policies around Caos, not guarantees claimed for stock Caos.
 
-Workers have network access. Passing a subtree is not a server-side access-control rule. The bundle includes worker image layers and base-image digests; external base image bytes must remain available to execute old requests again. Cached results and captured historical inputs are not fresh authorization for external actions.
+Workers have network access. Passing a subtree is not a server-side access-control rule. The original evidence bundle includes worker layers and base-image digests. The separate rerun package also includes all base-image files as Git objects, with explicitly derived request identities; it needs no external image base. Cached results and captured historical inputs are not fresh authorization for external actions.
 
 ## Code map
 
 | File | Purpose |
 | --- | --- |
+| `reproduce.py`, `REPRODUCE.md` | Import published worker objects and rerun without the demo harness |
+| `pack_reproduction.py`, `capture_base.py` | Maintainer tools for packaging the complete image |
 | `demo.py` | One CLI; original execution demo retained |
 | `suite.py` | Select experiments, form requests, export combined evidence |
 | `blog.py`, `blog.html`, `articles.json` | Static blog presentation and prose for each problem |

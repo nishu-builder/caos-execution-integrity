@@ -41,6 +41,7 @@ def render(report, path, asset_prefix=None):
         items.append("</details></article>")
     content = "<nav aria-label=\"Contents\"><ol>" + "".join(toc) + "</ol></nav>" + "".join(items)
     meta = '<p><a href="' + href(prefix + "evidence.bundle") + '">Download the evidence bundle</a> · <a href="' + href(prefix + "report.json") + '">Read the raw results</a></p>'
+    meta += '<p><a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/REPRODUCE.md">Rerun from Git objects</a> · <a href="https://nishu-builder.github.io/caos-execution-integrity/rerun/requests.bundle">Download complete worker objects</a></p>'
     meta += "<p>Run " + html.escape(report["run_id"]) + ". Source " + html.escape(report["source_commit"]) + ". Caos " + html.escape(report["caos_revision"]) + ".</p>"
     meta += "<p>Offline verification checks retained objects and published observations. It does not independently attest that the operator, runner, or external service was honest. See the repository for the precise limits of each experiment.</p>"
     template = (ROOT / "blog.html").read_text()

@@ -21,6 +21,7 @@ footer{border-top:1px solid #ddd;padding-top:18px;margin:50px 0 30px;overflow-wr
 <p>Caos makes an agent's work easier to name, retain, and inspect. A tool, its inputs, and its result can be represented as Git objects, so another person can examine the same bytes. That is useful for safety work, but it leaves important questions about who controls execution, which effects are observed, and what a recorded result actually establishes.</p>
 <p>These small experiments make some of those questions concrete. Each uses real Caos jobs and deliberately limited fixtures. The attacks are fixed scripts, so the results tell us about particular boundaries rather than an adaptive model's chance of breaking them.</p>
 <p>The examples below show both improvements and their limits. All effects are local fixtures; the private-data example uses an explicitly fake canary.</p>
+<p>You can also <a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/REPRODUCE.md">rerun 32 of the worker jobs from the published Git objects</a>. The package includes the complete worker image and inputs. A small script submits fresh requests to your Caos server and compares the returned trees with the results below. The live services and surrounding policies still need the full demo runner.</p>
 </header>
 <!--CONTENT-->
 <footer><!--META--></footer>

@@ -97,3 +97,7 @@ We add a small gateway that serves only an allowed public object. It accepts a r
 Passing a narrow tree is useful for reducing accidental exposure and making a task's intended inputs clear. Actual confidentiality also needs enforced backend permissions or isolation that closes other routes. Git object identities name content; they do not automatically grant or deny permission to read it.
 
 [Implementation and longer explanation](https://github.com/nishu-builder/caos-execution-integrity/blob/main/demos/access/README.md)
+
+## Rerun the worker jobs
+
+[The reproduction guide](REPRODUCE.md) provides the complete worker image and inputs as Git objects. With Git, Python, and a compatible Caos server, you can rerun 32 jobs using fresh cache keys and compare their full result trees with the published results. Live service interactions and the surrounding operator policies still need the full demo runner.

@@ -19,3 +19,5 @@ jobs:
         run: .runtime/venv/bin/python -m unittest -v
       - name: Verify retained evidence without a Caos server
         run: .runtime/venv/bin/python check_sample.py
+      - name: Verify portable worker objects in an empty repository
+        run: python3 reproduce.py verify
