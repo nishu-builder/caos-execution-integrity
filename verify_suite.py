@@ -25,7 +25,7 @@ def check_suite(report, repo, trust=None):
     require(report["schema"] == 2, "unknown suite schema")
     ids = [d["id"] for d in report["demos"]]
     require(ids and len(set(ids)) == len(ids), "empty/duplicate demos")
-    require(set(ids) <= {"execution", "evaluation", "delegation", "replay", "monitoring"}, "unknown demo")
+    require(set(ids) <= {"execution", "evaluation", "delegation", "replay", "monitoring", "history", "retries", "access"}, "unknown demo")
     requests = report["requests"]
     for value in requests.values():
         require(git(repo, "cat-file", "-t", value) == "tree", "missing request")
@@ -151,5 +151,9 @@ def check_suite(report, repo, trust=None):
             for a,b in (("tail-misses","full-output-detects"),("quiet-effect-missed","state-detects")):
                 require(rows[a]["request"] == rows[b]["request"] and rows[a]["result"] == rows[b]["result"],
                         "monitors did not examine the same execution")
+
+        elif demo["id"] in ("history", "retries", "access"):
+            from verify_more import check_more
+            check_more(demo, report, repo)
         total += len(rows)
     return total

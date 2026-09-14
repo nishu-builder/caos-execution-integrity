@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notes on Caos and agent safety</title>
+<style>
+body{max-width:740px;margin:48px auto;padding:0 22px;color:#222;background:#fff;font:18px/1.65 Georgia,"Times New Roman",serif}
+h1{font-size:32px;line-height:1.2;font-weight:normal;margin-bottom:12px}h2{font-size:25px;line-height:1.3;margin-top:54px;font-weight:normal}h3{font-size:20px}
+a{color:#245879;text-underline-offset:3px}p{margin:16px 0}nav{margin:26px 0}nav ol{padding-left:25px}
+.meta,footer{font:14px/1.6 system-ui,sans-serif;color:#555}article{scroll-margin-top:25px}
+details{margin:16px 0}summary{cursor:pointer}details details{margin:12px 0 12px 16px}
+pre{font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;max-height:28em;overflow:auto;padding:12px;background:#f6f6f6}
+footer{border-top:1px solid #ddd;padding-top:18px;margin:50px 0 30px;overflow-wrap:anywhere}
+@media(max-width:600px){body{margin:25px auto;font-size:17px}h1{font-size:28px}h2{font-size:23px}}
+</style>
+</head>
+<body>
+<header><p class="meta"><a href="https://github.com/nishu-builder/caos-execution-integrity">Code and running instructions</a></p>
+<h1>Notes on Caos and agent safety</h1>
+<p>Caos makes an agent's work easier to name, retain, and inspect. A tool, its inputs, and its result can be represented as Git objects, so another person can examine the same bytes. That is useful for safety work, but it leaves important questions about who controls execution, which effects are observed, and what a recorded result actually establishes.</p>
+<p>These small experiments make some of those questions concrete. Each uses real Caos jobs and deliberately limited fixtures. The attacks are fixed scripts, so the results tell us about particular boundaries rather than an adaptive model's chance of breaking them.</p>
+<p>The examples below show both improvements and their limits. All effects are local fixtures; the private-data example uses an explicitly fake canary.</p>
+</header>
+<!--CONTENT-->
+<footer><!--META--></footer>
+</body>
+</html>

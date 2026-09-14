@@ -12,13 +12,16 @@ import demo as core
 from scope import graft
 
 ROOT = core.ROOT
-IDS = ("execution", "evaluation", "delegation", "replay", "monitoring")
+IDS = ("execution", "evaluation", "delegation", "replay", "monitoring", "history", "retries", "access")
 TITLES = {
     "execution": "The command was logged. Was it run?",
     "evaluation": "The tests passed. Who chose the tests?",
     "delegation": "The child finished. What could it change?",
     "replay": "The replay matched. Did it check today's world?",
     "monitoring": "The result was saved. Did the monitor see it?",
+    "history": "A clean final state can hide an earlier action",
+    "retries": "A lost reply does not mean the action failed",
+    "access": "A narrow input tree is not a read permission",
 }
 
 
@@ -51,6 +54,7 @@ class Run:
         self.source = core.git("rev-parse", "HEAD")
         self.server = core.git("remote", "get-url", "caos").rstrip("/")
         self.requests, self.results, self.derived = {}, set(), {}
+        self.history_tips = {}
         self.base = None
         self.demos = []
 
@@ -296,7 +300,7 @@ def export(run, output):
     report = dict(schema=2, run_id=run.run_id, source_commit=run.source,
                   caos_revision=core.CAOS_REV, source_tree=core.git("rev-parse", run.source + "^{tree}"),
                   asset_prefix="", demos=run.demos, requests=run.requests,
-                  results=sorted(run.results), derived=run.derived)
+                  results=sorted(run.results), derived=run.derived, history_tips=run.history_tips)
     report_text = json.dumps(report, indent=2) + "\n"
     req = core.tree([(name, "040000", "tree", value) for name, value in run.requests.items()])
     res = core.tree([(value, "040000", "tree", value) for value in sorted(run.results)])
@@ -306,7 +310,7 @@ def export(run, output):
                      ("requests", "040000", "tree", req), ("results", "040000", "tree", res),
                      ("derived", "040000", "tree", derived), ("source", "040000", "tree", source_tree)])
     commit = core.git("-c", "user.name=Caos safety demos", "-c", "user.email=lab@example.invalid",
-                       "commit-tree", tree, input="Safety demo evidence " + run.run_id + "\n")
+                       "commit-tree", tree, *(arg for value in run.history_tips.values() for arg in ("-p", value)), input="Safety demo evidence " + run.run_id + "\n")
     ref = "refs/heads/evidence/gallery-" + run.run_id
     core.git("update-ref", ref, commit)
     core.git("bundle", "create", str(output / "evidence.bundle"), ref)
@@ -322,11 +326,8 @@ def export(run, output):
 
 
 def render(report, path, asset_prefix=None):
-    if asset_prefix is not None:
-        report = dict(report, asset_prefix=asset_prefix)
-    template = (ROOT / "gallery.html").read_text()
-    path.write_text(template.replace("/*DATA*/null", json.dumps(report).replace("<", "\\u003c")))
-
+    from blog import render as render_blog
+    render_blog(report, path, asset_prefix)
 
 def inspect(report):
     for demo in report["demos"]:
@@ -344,7 +345,11 @@ def run(args):
     state = Run(args)
     selected = IDS if args.only == "all" else (args.only,)
     for name in selected:
-        state.demos.append(globals()[name](state))
+        if name in ("history", "retries", "access"):
+            import more_cases
+            state.demos.append(getattr(more_cases, name)(state))
+        else:
+            state.demos.append(globals()[name](state))
     output = ROOT / "runs" / ("gallery-" + state.run_id)
     output.mkdir(parents=True)
     report = export(state, output)

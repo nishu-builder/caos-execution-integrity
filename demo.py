@@ -164,7 +164,7 @@ def main():
     sub.add_parser("list", help="List the available safety demos")
     p = sub.add_parser("run")
     p.add_argument("--image", default="caos-execution-integrity:local")
-    p.add_argument("--only", choices=("all", "execution", "evaluation", "delegation", "replay", "monitoring"), default="all")
+    p.add_argument("--only", choices=("all", "execution", "evaluation", "delegation", "replay", "monitoring", "history", "retries", "access"), default="all")
     p.add_argument("--feed-port", type=int, default=18081, help="Loopback port for the temporary replay policy service")
     p.add_argument("--network", required=True, help="Docker network that can reach the caos server")
     p.add_argument("--server", required=True, help="caos URL reachable from that network")
