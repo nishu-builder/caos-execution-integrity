@@ -1,8 +1,8 @@
 # Caos safety notes and experiments
 
-Eight experiments about what an agent's operators can actually trust.
+Three ideas for checking agent work: rerun it independently, inspect the code behind its names, and detect changes or gaps in its history. The repository also includes eight runnable experiments and their recorded Git objects.
 
-**[Read the articles](https://nishu-builder.github.io/caos-execution-integrity/)** · [Markdown version](NOTES.md) · [Recorded validation](VALIDATION.md) · [Original execution-integrity article](BLOG.md)
+**[Read the post](https://nishu-builder.github.io/caos-execution-integrity/)** · [Markdown version](NOTES.md) · [Recorded validation](VALIDATION.md) · [Original execution-integrity article](BLOG.md)
 
 | Demo | Failure | Improvement tested | Important limit |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@ Eight experiments about what an agent's operators can actually trust.
 | [Read access](demos/access/README.md) | A narrow input tree leaves a known object readable | Explicit gateway permissions | A direct backend route bypasses the gateway |
 | [Monitoring](demos/monitoring/README.md) | The monitor sees less than the system retained | Scan the full result and relevant state | A monitor can still miss effects or raise false alarms |
 
-All eight cases share a runner, a plain blog presentation, and an evidence workflow. The earlier [evaluation demo](https://github.com/nishu-builder/caos-eval-demo) is included, and the original execution report remains available.
+All eight experiments share a runner and an evidence workflow. Generated reports include the three-part post followed by the cases from that run. The earlier [evaluation demo](https://github.com/nishu-builder/caos-eval-demo) is included, and the original execution report remains available.
 
 These are fixed attack scripts and real Caos jobs, not LLM evaluations. Every harmful effect is confined to a disposable fixture. Nothing is published to an external service by an attack.
 
@@ -55,7 +55,7 @@ Run from a clean, committed clone of your own. The execution demo briefly change
 
 Each run produces `runs/gallery-<run-id>/`:
 
-- `index.html`: the same plain, script-free articles used by the published site.
+- `index.html`: the plain, script-free post followed by the recorded cases from this run.
 - `report.json`: case outcomes, exact inputs, retained results, and observations.
 - `evidence.bundle`: standalone Git objects for offline checking.
 - `trust.json`: public keys for the execution demo, when included.

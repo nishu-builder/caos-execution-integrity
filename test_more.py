@@ -64,10 +64,24 @@ class BlogTests(unittest.TestCase):
             target=Path(d)/"index.html"
             render(report,target)
             text=target.read_text()
-            self.assertEqual(text.count("<h3>Problem</h3>"),8)
-            self.assertEqual(text.count("<h3>CAOS</h3>"),8)
+            self.assertEqual(text.count("<h3>Problem</h3>"),3)
+            self.assertEqual(text.count("<h3>CAOS</h3>"),3)
             self.assertNotIn('<details class="cases">',text)
             self.assertIn("<code>rm secret.txt</code>",text)
+            self.assertLess(text.index('id="execution"'),text.index('id="monitoring"'))
+            self.assertLess(text.index('id="monitoring"'),text.index('id="history"'))
+            self.assertNotIn('id="delegation"',text)
+
+    def test_all_recorded_cases_survive_article_consolidation(self):
+        report=json.loads((Path(__file__).parent/"docs/gallery/report.json").read_text())
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)/"index.html"
+            render(report,target,include_evidence=True)
+            text=target.read_text()
+            self.assertEqual(text.count('<details class="case">'),52)
+            for name in ("execution","evaluation","delegation","replay","monitoring","history","retries","access"):
+                self.assertIn('id="evidence-'+name+'"',text)
+            self.assertEqual(text.count("<h3>CAOS</h3>"),3)
 
     def test_evidence_link_cannot_execute_script(self):
         report=self.report()

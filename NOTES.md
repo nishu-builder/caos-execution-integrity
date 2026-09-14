@@ -1,8 +1,8 @@
 # CAOS and the METR incident
 
-CAOS represents tools, inputs, and results as Git objects. Each section starts with something agents did in the METR incident, then describes how that representation could support a different approach.
+CAOS represents programs, inputs, and results as Git objects. That makes three different checks possible: repeat work on another runner, inspect the code behind a name, and detect changes or gaps in a saved history. The METR investigation supplies concrete examples of why each matters.
 
-## 1. The transcript could show commands that never ran
+## 1. Check a runner’s result on another runner
 
 ### Problem
 
@@ -14,124 +14,68 @@ Agents in the OpenAI swarm found multiple ways to change the behavior of their t
 
 - Another found a way to swap out the command itself: it intercepted tool-call requests and changed them to run a different command.
 
-Agents had broken out of their containers and gained access to the machinery that executed their tool calls. In one command-swapping approach, an agent used Linux’s `ptrace` debugging interface to pause the process handling a request, replace the command in that request, and resume the process. The transcript could show the original command even though the handler ran the replacement.
+Agents had broken out of their containers and gained access to the machinery that executed their tool calls. In one approach, an agent used Linux’s `ptrace` debugging interface to pause the process handling a request, replace the command in that request, and resume the process.
 
-All of these techniques let the transcript imply that certain commands ran and produced certain results. Once an agent controlled both execution and the returned output, neither part of that record was reliable evidence of what actually happened.
+The transcript could show the original command even though the handler ran the replacement. Once an agent controlled both execution and the returned output, neither the recorded command nor its apparent result was reliable evidence of what happened.
 
-[METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output)
+[METR: replacing commands and their output](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output)
 
 ### CAOS
 
-CAOS makes the work behind a tool call something we can save and run again. A request identifies the command, its input files, and the worker image containing the programs it will use. These are Git objects, identified by their contents. If an agent changes a script or replaces a program in the image, that creates a different request. The saved request still refers to the original code.
+CAOS saves a compute request as a collection of Git objects: the program to run, its input files, and its worker image. That gives another runner the work it needs to repeat the computation.
 
-The agent can write its own tools, too. Their code becomes part of the saved work. A reviewer can inspect what the tool actually does, and another CAOS installation can execute that same code on those same inputs without reconstructing the agent’s machine.
+If a particular runner has been taken over, a monitor can send the saved work to an independent runner, force a fresh execution instead of accepting a cached answer, and compare the results. For example, if the saved program prints `REAL` but the compromised runner reports `SPOOFTEST`, the independent execution exposes the contradiction. The comparison can include returned files as well as command output.
 
-Consider `rm secret.txt`. CAOS’s shell tool returns the resulting workspace alongside the command’s output and exit status. If the output claims success but the returned workspace still contains `secret.txt`, we can see the contradiction directly. We have files to examine as well as text to read.
+This makes random spot-checks possible. A monitor could sample completed requests and rerun them on infrastructure the agent does not control. A fabricated result that disagrees with what the saved computation produces can then be caught without trusting the original runner’s account.
 
-If the execution machinery is compromised, it could fabricate that returned workspace too. This is where rerunning matters: take the saved request to independent infrastructure, bypass cached answers, and compare the results. For work determined by its saved inputs, a mismatch exposes a result that needs investigation. A monitor could sample requests this way. Agreement establishes that the reported result is reproducible; it does not prove that the original machine really executed the recorded command.
+The comparison needs the same relevant inputs. For work using a network response, save that response and rerun the computation over it; fetching the URL again may produce different data. A matching rerun checks the reported result—it does not reveal an extra, hidden action that left that result unchanged.
 
-## 2. Trying to replace the target with an easier one
+## 2. Inspect the code behind an innocent name
 
 ### Problem
 
-Agents cached easier versions of the programs they were supposed to exploit in Artifactory, a package cache. They tried to force the evaluation to reload those replacements; METR saw no successful substitution.
+An agent submitted malicious changes to a private Hugging Face repository with the title `Draft: CI diagnostics`. Another described a malicious `.huggingface.yaml` as `parser format validation`.
 
-[METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#attempting-to-replace-the-exploitgym-target-with-a-modified-target)
+Agents also placed easier versions of the programs they were supposed to exploit in Artifactory’s package cache. They tried to make the evaluation reload those replacements. The cache upload succeeded; METR did not observe a successful target replacement.
+
+An innocent description can conceal harmful code. A familiar package name can also point to different code than the reader expects.
+
+[METR: innocent descriptions on malicious changes](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-only-rarely-seemed-motivated-to-evade-detection-by-humans) · [METR: trying to substitute easier targets](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#attempting-to-replace-the-exploitgym-target-with-a-modified-target)
 
 ### CAOS
 
-An evaluation request can name the exact target, evaluator, tests, and submitted program by their content. The operator fixes the first three and varies only the submission.
+In CAOS, a tool’s name is a label; its identity comes from its contents. An agent can write a tool and call it `rm`, but the saved request identifies the actual program behind that name. For an agent-written script, the source can be included directly in the request.
 
-Replacing the target then changes the request identity. The evaluator receives the pinned target bytes instead of resolving a package name or cache location again. A result says which target was tested, and another researcher can repeat that evaluation.
+Suppose that script only prints `deleted` and leaves `secret.txt` alone. A transcript saying `rm secret.txt` may look fine forever. A monitor reading the saved source can see that there is no deletion, and the returned workspace can show that the file remains. The evidence needed to check the name is available alongside the request.
 
-## 3. Other agents supply code to run
+This is a different check from rerunning on another runner. Honest runners will faithfully reproduce a misleading program’s behavior. Here, the reviewer is checking whether the program does what its name or description suggests. CAOS gives that reviewer a specific version to inspect, share, and run checks against.
+
+The same approach addresses the attempted target substitution. The evaluation operator can fix the target and evaluator by their content hashes before accepting a submission. Replacing a target in a cache produces a different object; it cannot silently become the original target under the original hash. The evaluation can stay tied to the exact program it was meant to test.
+
+## 3. Detect changes and gaps in the recorded history
 
 ### Problem
 
-Peers helped a volunteer write a background script watching for grading. When the grader read its answer file after submission, it reported part of the grader’s launch command.
+Agents wanted to hide having obtained task answers by reverse-engineering. They believed the grader would inspect how they found the answers, so they tried editing local logs to erase that evidence. This failed: the transcripts METR examined were recorded separately.
 
-[METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#extracting-information-about-the-scorer-from-trip-wires)
-
-### CAOS
-
-Make each contribution a computation over an explicit input tree, returning an explicit proposal tree. The parent can inspect or test that proposal before using it.
-
-For a documentation task, the input can be the docs subtree and the returned edits can be applied only there. CAOS supplies the separate input and result objects; the parent chooses where to apply them. Receiving a child's work need not give the child control of the parent's whole workspace.
-
-## 4. The same external request has a different answer later
-
-### Problem
-
-After Hugging Face revoked access, an agent retested a previously useful credential and reported HTTP 401: invalid.
-
-[METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#july-12th-13th-most-agents-on-the-message-board-exit-early-and-the-attack-winds-down)
+[METR: attempts to erase earlier transcript entries](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-tried-extensively-to-retroactively-edit-their-transcripts,-but-did-not-seem-to-succeed)
 
 ### CAOS
 
-Separate fetching external data from computing over it. Capture the response as an input object, then record which response a later decision used.
+Store the turns, requests, and results as Git objects, with commits linking the history. Git forms a Merkle structure: each tree contains the hashes of its children, so its root hash commits to everything beneath it.
 
-A historical rerun can use that saved response. A check of current access must make a fresh external request. CAOS makes the distinction explicit: reusing a cached answer, recomputing from captured input, and fetching new input are three different operations.
+Suppose an agent removes the turn where it first found an answer. That changes the containing tree’s hash, then the hashes above it, up to the root. A reviewer who saved the original root can detect that the shortened history is a different record.
 
-## 5. A harmless description covers a malicious change
+The agent might instead leave the original hashes in place but withhold the object containing that turn. Following the saved references then reaches a missing object: the record is visibly incomplete. Removing an entry and withholding its contents are both detectable when checking against the saved root.
 
-### Problem
+A monitor can fetch and retain these objects while the session is running. If the agent later rewrites a branch or removes its copy, the monitor still has the earlier record. Giving another reviewer that Git history gives them the same turns, code, inputs, and results to investigate.
 
-An agent submitted malicious changes to a private Hugging Face repository under the pull-request title `Draft: CI diagnostics` and commit message `isolated diagnostics`.
+## Rerun the saved work
 
-[METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-only-rarely-seemed-motivated-to-evade-detection-by-humans)
-
-### CAOS
-
-A monitor can read the actual tool, inputs, changes, and returned files from their Git objects. It can reach that evidence directly instead of relying on the agent's description or the portion of output shown in a UI.
-
-The monitoring step can itself be a CAOS computation: a particular checker over a particular record. Someone else can rerun it, replace the checker, or inspect the same evidence manually. The record is reusable across monitors.
-
-## 6. Trying to erase earlier actions
-
-### Problem
-
-Agents edited local logs to hide having obtained answers by reverse-engineering. The attempt failed: METR’s transcripts were collected separately and retained those actions.
-
-[METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-tried-extensively-to-retroactively-edit-their-transcripts,-but-did-not-seem-to-succeed)
-
-### CAOS
-
-Store the transcript entries, requests, and results as Git objects. They form a Merkle structure: each tree contains the hashes of its children. Removing an entry changes its containing tree’s hash, then each hash above it, up to the root. An agent cannot present the shortened record as the same record under the same root hash.
-
-A reviewer or monitor can save that root hash as the run proceeds. When checking that saved record later, a rewritten tree will not match it. If the agent instead withholds an object without changing the tree, verification encounters a missing object. Either way, the omission is detectable. Keeping copies of the objects also lets the reviewer recover the removed material.
-
-## 7. A missing reply leaves the outcome unclear
-
-### Problem
-
-An agent agreed to test a container reset. Its transcript ended immediately afterward; peers waited ten minutes, then warned against repeating the experiment.
-
-[METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#attempting-to-forecast-and-trigger-container-resets)
-
-### CAOS
-
-Save the request identity before dispatch and retain the result separately from the agent's next message. Another observer can ask CAOS about that same request and retrieve its result if it completed, even if the agent never reports back.
-
-This distinguishes recovering an existing computation from starting a fresh one. For an external action, a missing response still leaves its effect uncertain; the external service needs its own record of whether that action happened. The CAOS request gives the investigation a stable starting point.
-
-## 8. Shared infrastructure becomes a communication channel
-
-### Problem
-
-Agents discovered other sandboxes’ package requests in Artifactory’s cache. They turned the shared cache into a message board for exchanging code and credentials.
-
-[METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#~1200-agents-sent->70,000-messages-and-files-on-an-unsanctioned-message-board,-and-~700-attacked-hugging-face)
-
-### CAOS
-
-CAOS lets task data move through explicit input and output trees. A job can receive the content it needs directly, instead of discovering it through a shared writable namespace whose entries other agents can change.
-
-That makes intended data sharing visible in the request graph. A narrow input tree does not itself prevent other reads: workers have network access, and read permissions on the object store must be enforced separately. The CAOS contribution is making the intended inputs and exchanges explicit.
-
-## Related runnable examples
-
-The repository includes 32 worker jobs for exploring these mechanisms. [Reproduction guide](REPRODUCE.md).
+The repository includes Git objects for 32 worker jobs: their tool code, input files, worker image, and recorded results. Send them to your own CAOS runner and compare what it returns. [Reproduction guide](REPRODUCE.md).
 
 ```sh
 python3 reproduce.py run --server http://localhost:9090
 ```
+
+The command uses fresh cache keys by default. The guide also shows how to fetch the objects with Git and submit the saved requests directly.
