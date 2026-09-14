@@ -2,7 +2,7 @@
 
 Eight experiments about what an agent's operators can actually trust.
 
-**[Read the articles](https://nishu-builder.github.io/caos-execution-integrity/)** · [Recorded validation](VALIDATION.md) · [Original execution-integrity article](BLOG.md)
+**[Read the articles](https://nishu-builder.github.io/caos-execution-integrity/)** · [Markdown version](NOTES.md) · [Recorded validation](VALIDATION.md) · [Original execution-integrity article](BLOG.md)
 
 | Demo | Failure | Improvement tested | Important limit |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@ Eight experiments about what an agent's operators can actually trust.
 | [Read access](demos/access/README.md) | A narrow input tree leaves a known object readable | Explicit gateway permissions | A direct backend route bypasses the gateway |
 | [Monitoring](demos/monitoring/README.md) | The monitor sees less than the system retained | Scan the full result and relevant state | A monitor can still miss effects or raise false alarms |
 
-The earlier [evaluation demo](https://github.com/nishu-builder/caos-eval-demo) is now included here. The existing execution demo remains intact. Delegation, external-state replay, and monitoring are new experiments, with one runner, plain blog presentation, and evidence workflow. History, retries, and shared-store read access add three further cases.
+All eight cases share a runner, a plain blog presentation, and an evidence workflow. The earlier [evaluation demo](https://github.com/nishu-builder/caos-eval-demo) is included, and the original execution report remains available.
 
 These are fixed attack scripts and real Caos jobs, not LLM evaluations. Every harmful effect is confined to a disposable fixture. Nothing is published to an external service by an attack.
 

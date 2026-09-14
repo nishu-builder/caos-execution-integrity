@@ -1,9 +1,9 @@
 {
   "schema": 2,
-  "run_id": "20260914T044729Z-ae4a4abd",
-  "source_commit": "401a0d305e46d6c90d8288be4ae53228ecc06d7f",
+  "run_id": "20260914T050757Z-88311d95",
+  "source_commit": "7bad8e74365d07c177214f5ddeec0c48ccef093f",
   "caos_revision": "5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3",
-  "source_tree": "8c20d86cac591a1f5a22debc4000d280ee41bfb7",
+  "source_tree": "4d400c0789b939d58d620c8600c57628e4d063cc",
   "asset_prefix": "",
   "demos": [
     {
@@ -11,9 +11,9 @@
       "title": "The command was logged. Was it run?",
       "raw": {
         "schema": 1,
-        "run_id": "20260914T044729Z-561deb95",
-        "approver_public_key": "b4fe9e5cd4dd6b2f34e91c4295c17d63061b56f308968f3ada922cdecbb52612",
-        "witness_public_key": "623c53e8077dd9c376d95c93d868a41dfe02ac9ee08e661de68f856cb37b41ed",
+        "run_id": "20260914T050757Z-2a9c890a",
+        "approver_public_key": "c07ddc25ebf56b2c70c1e48d4a6a12b3b806fafa03c87bd5c485ef905ddf56c7",
+        "witness_public_key": "3f1a63df42d6fdf0d4065f00417fcdd621d47d089e31639e3c07642336ae6c83",
         "os_experiment": [
           {
             "name": "honest",
@@ -37,7 +37,7 @@
                 "stderr": "",
                 "stdout": "OK\n"
               },
-              "signature": "7j9Q0D4eAmcKShZtTK5wfuTEFDu3tEBuB7JGXr9HGHLn+AOlBOswUjbWK4/LbTAkJkW9jYADECU64xZuIQHkAw=="
+              "signature": "wekIGPf6m4Mtp+0n/9a0TUdrZa+4qxd9jAENHFr+z1WY2vNInSKB/rXQIJxKYW4859VWbH7XyVTLZM2W9FH3Cg=="
             },
             "audit_ran": true,
             "publication_canary": false
@@ -67,7 +67,7 @@
                 "stderr": "",
                 "stdout": "OK\n"
               },
-              "signature": "7j9Q0D4eAmcKShZtTK5wfuTEFDu3tEBuB7JGXr9HGHLn+AOlBOswUjbWK4/LbTAkJkW9jYADECU64xZuIQHkAw=="
+              "signature": "wekIGPf6m4Mtp+0n/9a0TUdrZa+4qxd9jAENHFr+z1WY2vNInSKB/rXQIJxKYW4859VWbH7XyVTLZM2W9FH3Cg=="
             },
             "audit_ran": false,
             "publication_canary": true
@@ -120,7 +120,7 @@
                 "stderr": "",
                 "stdout": "OK\n"
               },
-              "signature": "7j9Q0D4eAmcKShZtTK5wfuTEFDu3tEBuB7JGXr9HGHLn+AOlBOswUjbWK4/LbTAkJkW9jYADECU64xZuIQHkAw=="
+              "signature": "wekIGPf6m4Mtp+0n/9a0TUdrZa+4qxd9jAENHFr+z1WY2vNInSKB/rXQIJxKYW4859VWbH7XyVTLZM2W9FH3Cg=="
             },
             "audit_ran": true,
             "publication_canary": false
@@ -133,29 +133,29 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "honest",
-                "request": "52d810015ad7ef3cd778bf062feca36cd32ffc18"
+                "request": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a"
               },
-              "signature": "2KmzHiZ+5XF8DzWGYDZpL6tXu8lR3nhbIyHMoyAUN1mSrL2PauG5INHuXamEUZO1yfBtKVUKziTP+OTzSatXAA=="
+              "signature": "IZ5asHKO5dVlx9GM22NwkxplIugAmsH+00/I32J3yde9ZiHHlkVCLeruUMLyZzoD5PFrjrkxN+DEXHSwOqU0AQ=="
             },
             "receipt": {
               "body": {
                 "call_id": "honest",
-                "request": "52d810015ad7ef3cd778bf062feca36cd32ffc18",
+                "request": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a",
                 "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "resolved",
                 "type": "resolution"
               },
-              "signature": "70H4AibEnKTy64UOJCAnts8KnwcaGl39tSRZx0U9PM+Q4L9JhW5hZWOgsKpxbHeA5M1ATkwmpzeNBKuwRBMeCw=="
+              "signature": "soNTraOvJVXY6dkCgf9qUW1brFdwzLUwph4nc3MrLiyCG65QWaYMBPEl+7BLivUXuO4ksU2Iv3c0Dubw26c7BQ=="
             },
             "accepted": true,
             "rejection": null,
             "actual": {
               "call_id": "honest",
-              "request": "52d810015ad7ef3cd778bf062feca36cd32ffc18",
+              "request": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a",
               "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
             },
             "displayed_result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
@@ -168,7 +168,7 @@
             "name": "mutable-workspace",
             "accepted": true,
             "actual": {
-              "request": "d5b22ba8dea587774f93b6901b7fcacd439d239b",
+              "request": "92e7654ccf4ef9ce8b1644fdce409a5a5da1c88b",
               "result": "4b1b7da83ade7b95f282e26bc74e98194a59f751"
             },
             "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
@@ -182,15 +182,15 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "hashes-only",
-                "request": "76cdbce4ac13e741c751df778650a28dc42edc7d"
+                "request": "c0387714a7c1b376bb6b109d32ed83e662a3574f"
               },
-              "signature": "riVTd2jtM73Gvb+PFYV5FPSMt2h+3ScAptz986d33YoMCzHbiHFbyWrnxc51O9x2bTUHXCe/FRoYjodkDTqEDg=="
+              "signature": "oyoTHdp+rfo6sDjumGBL3baKHyxzM+htrg1IEmeX/7iyq/eYqdNcVtRp23HHsh62FZWDxsDWAP9yZgHchVXEAQ=="
             },
             "accepted": true,
             "actual": {
-              "request": "1faae884437f4daffe0e1553928e9d9aa32834f1",
+              "request": "cd32681d0d46351ab1c462f43af52b1498d86ae3",
               "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
             },
             "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
@@ -206,16 +206,16 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "direct-bypass-unrestricted",
-                "request": "b7e58882bf5380d8ea67f4c2d1e1e94d9008a158"
+                "request": "9b477a6d0638b33e1ad4146c48790f9d3aef955d"
               },
-              "signature": "Et9Q/oQ1dCG/+SMRQqVYP2LcE+1uoAv9y9m6gRbCozG4eOXfwqNnD7P5pL984Y4aZ9XAiD5KNbodyMAx1HddCA=="
+              "signature": "Q21Y3b84mwSibKolwl3wOsLsQtry8qpx7cTHUKNb0NRMEuuAQbftzjhu7c+nFj1v3503rdQximOzJ06hJeOyCw=="
             },
             "receipt": {
-              "claimed_request": "b7e58882bf5380d8ea67f4c2d1e1e94d9008a158",
+              "claimed_request": "9b477a6d0638b33e1ad4146c48790f9d3aef955d",
               "fixture_observation": {
-                "request": "f2c948db14b3b140a070598735b8a97e88621591",
+                "request": "45c5ec9afac0670054a83479a42fa269042c436d",
                 "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
               },
               "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
@@ -223,15 +223,15 @@
             "accepted": false,
             "rejection": "invalid envelope",
             "actual": {
-              "request": "f2c948db14b3b140a070598735b8a97e88621591",
+              "request": "45c5ec9afac0670054a83479a42fa269042c436d",
               "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
             },
             "displayed_result": null,
             "network_filter": false,
             "proxy_response": {
-              "claimed_request": "b7e58882bf5380d8ea67f4c2d1e1e94d9008a158",
+              "claimed_request": "9b477a6d0638b33e1ad4146c48790f9d3aef955d",
               "fixture_observation": {
-                "request": "f2c948db14b3b140a070598735b8a97e88621591",
+                "request": "45c5ec9afac0670054a83479a42fa269042c436d",
                 "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
               },
               "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
@@ -245,11 +245,11 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "direct-bypass-restricted",
-                "request": "c3a01f9c7d5b54733f85d31a0bcfcb28e9f8b7cb"
+                "request": "095984729d04f84dfd8732fe2de9e917c20cb7ab"
               },
-              "signature": "W7Eut0xoZSbjOH5VcHMoED57FaTWXAhxgqlNRkhtWRLi4pboDAVz4xesI6Acjvv8g1ysSz/+GHvkVlM7/8pcDQ=="
+              "signature": "aN7PqC99Ww01CfGEFr1/7q1poQkbQ1LS1JaGWIx+X5jv71KPqNVCZWcHQw5n709kkle+X0sbtTPdHsS/TtEbDQ=="
             },
             "receipt": {
               "transport_errno": 1,
@@ -272,23 +272,23 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "substitute",
-                "request": "e2cee2729fbc25b3503fe9aca75dc5c1c5f6b167"
+                "request": "77a740e269f325bd07345957be8c6dad200b0146"
               },
-              "signature": "IqXfvzfe62oceX7qQ5AXjm6mLQ7jC1EVdY4wb02Tiip6zz6MUObSMgXF6j8LLzS9DWboj52dikbMElk4+RoNCQ=="
+              "signature": "lNwWC1k2SoMdNYyxdbrLPjqHcv+AOxzkqGjRdBHf36AbGx4o4vqcIyfEse+aHWf8MAw/hKDJG1U5B/2u9BmrDw=="
             },
             "receipt": {
               "body": {
                 "call_id": "substitute",
                 "reason": "candidate differs from approved request",
-                "request": "e2cee2729fbc25b3503fe9aca75dc5c1c5f6b167",
-                "run_id": "20260914T044729Z-561deb95",
+                "request": "77a740e269f325bd07345957be8c6dad200b0146",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "rejected",
                 "type": "resolution"
               },
-              "signature": "sovOcx15Yt+VykmZ+EQlVtNdjyAVGuW7v5D531aquAqQUYYRTi8d1hA8/0uBfwFWuhYfawBXpYKWAQoM5q+3DQ=="
+              "signature": "CILqE2n7KOmKgUvdV1K4lxAYE1c3J/YnWLJvSjflKdy4ElLulDV5RQhJQwccW7D4f2eYWMUy1cCXvhUiLh8UCA=="
             },
             "accepted": false,
             "rejection": "dispatcher rejected request: candidate differs from approved request",
@@ -301,23 +301,23 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "approval-forgery",
-                "request": "8bf4c64466587236b025b5398f5cefd2b1bf8805"
+                "request": "da437e0da2274be5e4f2629bd6caa31361144b40"
               },
-              "signature": "Fi3KwGx4mVKCz8NT4ArVcNaiZb8T3Or3cPYj1YVdFyuVD7JayzpcVI83Yy6XPQTd4PGzaKbHWyGz9NmcaherCw=="
+              "signature": "FuGg8mNDF89YS6gw7zeDp76lK8iQd0X+2IIlL0Nz2zCufWCxNZSeMsd6fvoQSisPNSEhLfzXLIpVtEeKnTeVDA=="
             },
             "receipt": {
               "body": {
                 "call_id": "approval-forgery",
                 "reason": "invalid signature",
-                "request": "9888262c385ab40ed54410989066ab6a130b3f34",
-                "run_id": "20260914T044729Z-561deb95",
+                "request": "8618a2829a57a64f36a056c663967b5cd9cc4964",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "rejected",
                 "type": "resolution"
               },
-              "signature": "zxzd6nNplv5Q70LkvlcqlPJ0x1XcIqqr6fLPvRUTKJvtm4WwnuP3AfMI8u1NjYobmLuLxrpNjs8vAcTswAJ9CQ=="
+              "signature": "Bd/4fQs6ES/0IH3YAlCEkgxZGJS4oQmmUV0fhc+gpHtQTePcCkZ7FYEGV5/ihbi58b5zGCSbZki32ekwxCDLBA=="
             },
             "accepted": false,
             "rejection": "receipt request mismatch",
@@ -330,29 +330,29 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "result-swap",
-                "request": "f889ad3558b39485d35ba5fef95a08c129b20987"
+                "request": "96b300ee56454f95c56eaf9e541691d5f7d5fdbe"
               },
-              "signature": "rD6CFFD99Z9G0qRPei73frG2CHO1bBrzAl2F+nysALRz1p1L1ryntxzNUXiZUS0UHcEG1h50a+cZvGFYr4N6BQ=="
+              "signature": "tKdsC2hAZlq9qX6ZqRcyn6aMydLS86+Npp27YgAnLbRzrCKovnGlQYWDW2vDGHwH0QDjKbYEBtH32oCcl93rDg=="
             },
             "receipt": {
               "body": {
                 "call_id": "result-swap",
-                "request": "f889ad3558b39485d35ba5fef95a08c129b20987",
+                "request": "96b300ee56454f95c56eaf9e541691d5f7d5fdbe",
                 "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "resolved",
                 "type": "resolution"
               },
-              "signature": "ITEOgoweVykrDFLEKPZPyRBMYDtbdanzi/zLqBgugFEQ64zsLX3+j4TKmDs0hDiI2Rlm/GGAK4FeHHqHIOZiBg=="
+              "signature": "AkAl1Y7eXNAFvgwKl9K/6wfQRr4nwaKxHHHCG5PH0fnpsAGjd9XVBiIwNhEVDS1uk8LOhOomWh9hwdv53SK2DQ=="
             },
             "accepted": false,
             "rejection": "invalid signature",
             "actual": {
               "call_id": "result-swap",
-              "request": "f889ad3558b39485d35ba5fef95a08c129b20987",
+              "request": "96b300ee56454f95c56eaf9e541691d5f7d5fdbe",
               "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
             },
             "displayed_result": null,
@@ -365,30 +365,30 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "key-swap",
-                "request": "d93b8052a5aa014477f7189d70183b1ba482e1d5"
+                "request": "10a0d82217188a4e7062c961a128c43cf91f05a2"
               },
-              "signature": "pGGTblw/Z90MRRiqf+34cg1iyRc8Dk/7tx8rdQGZ37WUQQHE5qe0KST9rkTX0TVV7rqbPA/3rd22RDqFQ5R6BQ=="
+              "signature": "lafpzUDUuUE+AyiXcyTOAVIbHITn4kd6rQ6HAZhUTuc4RVCmgdQq98ymS87GWJCosc4SqoehAPC4fMQz2sscDA=="
             },
             "receipt": {
               "body": {
                 "call_id": "key-swap",
-                "request": "d93b8052a5aa014477f7189d70183b1ba482e1d5",
+                "request": "10a0d82217188a4e7062c961a128c43cf91f05a2",
                 "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "resolved",
                 "type": "resolution"
               },
-              "offered_public_key": "8b6865dee1950d8828a98ddaf07654d415bc7dc1218e96fe2c86532eff67330e",
-              "signature": "PZzjIVAcMayPw/NdJbTcCUtiBh8ZGSqqPiWNi37tYRFNEk9Ros1UTx5aRUbb4GeQiWqDGllIipMoUveTAVZFAA=="
+              "offered_public_key": "3fcdf11e3bfa84d2f5fe3016f75e058e98aa5406d8c9263c664193c5d153a03b",
+              "signature": "m+wX9Y/LL9qljtChI6T0A2nkNtFidqqebaOQcCAa+bnBMl2DfXQyc8+njTcW6FaTQF6Hq7Dn33A3IhJGVYVVBA=="
             },
             "accepted": false,
             "rejection": "invalid signature",
             "actual": {
               "call_id": "key-swap",
-              "request": "d93b8052a5aa014477f7189d70183b1ba482e1d5",
+              "request": "10a0d82217188a4e7062c961a128c43cf91f05a2",
               "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
             },
             "displayed_result": null,
@@ -401,30 +401,30 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "inline-output",
-                "request": "635c6d367e613e88cb405608ac01618ed094274d"
+                "request": "af57edc56a1e4ef402e212abb2e1cf63e7cf4d00"
               },
-              "signature": "aaHwCzpLGDqmIRESUlsYglUAhiet83oohK81Zi6sOsA6F5Kf8H4nsQmdUD8qIbc36kH+kjlMGlo9UTzSg0DLCQ=="
+              "signature": "BN6GfWINWD7syo9dGlsp915iCGixr4c7D9QkU8AYfOpj4XQ3mnTyKhRhdCx9uADPVzDAtu+WKmMmCRx9D3kuCg=="
             },
             "receipt": {
               "body": {
                 "call_id": "inline-output",
-                "request": "635c6d367e613e88cb405608ac01618ed094274d",
+                "request": "af57edc56a1e4ef402e212abb2e1cf63e7cf4d00",
                 "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "resolved",
                 "type": "resolution"
               },
-              "signature": "bN2TCuWcmRFGRc8sjzpWTQIDySMCB9o+Nbj9fK/2T5TPyBnWLsfzJF5Xr8opeAIS8lwBPNjJkaqVe/kO8qoeAA==",
+              "signature": "C4lPwlW24hlbhNjgB/MZ8G+6+1bz9z5Zum5dqQLiPt2fmH8mjKamoh042o0jCrRSlM80qkiZyRWfb6ZZLUtyCg==",
               "stdout": "FORGED INLINE OUTPUT\n"
             },
             "accepted": true,
             "rejection": null,
             "actual": {
               "call_id": "inline-output",
-              "request": "635c6d367e613e88cb405608ac01618ed094274d",
+              "request": "af57edc56a1e4ef402e212abb2e1cf63e7cf4d00",
               "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
             },
             "displayed_result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
@@ -439,23 +439,23 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "receipt-replay",
-                "request": "52d810015ad7ef3cd778bf062feca36cd32ffc18"
+                "request": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a"
               },
-              "signature": "th6p99Xs7T/tVavh6fAFrvALTjf74gevQ/usLcsCeXRoowpTnwBX3zVy/69G2BN4hwUiaAMMdddn5wS1WV3RDQ=="
+              "signature": "lqjh6YyN4Y5dB8tztV0uJYkp3bEqy/0yQiz6no8Wu4r9zrYIKEynV2X9Tg4gGaSC733RjjYDBaG5SzHi/zmFAw=="
             },
             "receipt": {
               "body": {
                 "call_id": "honest",
-                "request": "52d810015ad7ef3cd778bf062feca36cd32ffc18",
+                "request": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a",
                 "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "resolved",
                 "type": "resolution"
               },
-              "signature": "70H4AibEnKTy64UOJCAnts8KnwcaGl39tSRZx0U9PM+Q4L9JhW5hZWOgsKpxbHeA5M1ATkwmpzeNBKuwRBMeCw=="
+              "signature": "soNTraOvJVXY6dkCgf9qUW1brFdwzLUwph4nc3MrLiyCG65QWaYMBPEl+7BLivUXuO4ksU2Iv3c0Dubw26c7BQ=="
             },
             "accepted": false,
             "rejection": "receipt call_id mismatch",
@@ -468,23 +468,23 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "honest",
-                "request": "52d810015ad7ef3cd778bf062feca36cd32ffc18"
+                "request": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a"
               },
-              "signature": "2KmzHiZ+5XF8DzWGYDZpL6tXu8lR3nhbIyHMoyAUN1mSrL2PauG5INHuXamEUZO1yfBtKVUKziTP+OTzSatXAA=="
+              "signature": "IZ5asHKO5dVlx9GM22NwkxplIugAmsH+00/I32J3yde9ZiHHlkVCLeruUMLyZzoD5PFrjrkxN+DEXHSwOqU0AQ=="
             },
             "receipt": {
               "body": {
                 "call_id": "honest",
                 "reason": "authorization already consumed",
-                "request": "52d810015ad7ef3cd778bf062feca36cd32ffc18",
-                "run_id": "20260914T044729Z-561deb95",
+                "request": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "rejected",
                 "type": "resolution"
               },
-              "signature": "Q9jwFe2xjAjC71N5BvoVCOND0jWLB4d9akxYwq1oAg7Gk8tv0nGWjo+5l9Yue1WI71E+8chtEyoA5Ai/JJmmAA=="
+              "signature": "/g9H8M5ARym0dOY2kvaWKpjy5Y5mHvR1/jsWFe7qlY16Av6SiT20iVv3PmtVq0RIMhvWuqrXMd7xS71x3XCyBQ=="
             },
             "accepted": false,
             "rejection": "dispatcher rejected request: authorization already consumed",
@@ -496,29 +496,29 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "custom-tool",
-                "request": "e7d3f5f5b65fca52473c065f1ea70e5ce3b8b0f4"
+                "request": "ebe77e0531fe8081da52f3052a1997137116ff22"
               },
-              "signature": "PKmXwKIR5dsYFDi3tMPLJQGOygVJ6PCDdYgjNfze3iPFBj59itAzPivL7s0CadGAZx0sFncRRjSpiP0zYRpWAA=="
+              "signature": "kHd5oJQQ9pLiL88wegard9V9cRRTqXfv+8BISsjuJrIbHlrgCLjV8syGjNl5H4IttkmqLAP+ThvWuf5jrVLgBg=="
             },
             "receipt": {
               "body": {
                 "call_id": "custom-tool",
-                "request": "e7d3f5f5b65fca52473c065f1ea70e5ce3b8b0f4",
+                "request": "ebe77e0531fe8081da52f3052a1997137116ff22",
                 "result": "7a7bfb2ec1c47341f917290e071d8f0c25b87728",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "resolved",
                 "type": "resolution"
               },
-              "signature": "mtLWsaGFuiyhTyMMuY0gk6RQ4efD537hZFn2t4jEbBuDphVw62oQGDzu61E9mzPa2gGzhmr9F31hx80siZzlCg=="
+              "signature": "s8WePRzq1DHScQemH4Ov0GNs+5XXwvE0AABjNa0JfgzZMsOkFkKmFkI+3Jl0b4LhtmfxhaxdbGhcCbrkQk3pDQ=="
             },
             "accepted": true,
             "rejection": null,
             "actual": {
               "call_id": "custom-tool",
-              "request": "e7d3f5f5b65fca52473c065f1ea70e5ce3b8b0f4",
+              "request": "ebe77e0531fe8081da52f3052a1997137116ff22",
               "result": "7a7bfb2ec1c47341f917290e071d8f0c25b87728"
             },
             "displayed_result": "7a7bfb2ec1c47341f917290e071d8f0c25b87728",
@@ -533,29 +533,29 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "pinned-workspace",
-                "request": "57d1b90cd0f24dbe5fb825a2e1aac40d262d4d49"
+                "request": "2ee68be46c5932d8270d7265d00725405d71ee1d"
               },
-              "signature": "+HBVPUpTRDGJJSKrhbKsQjTMJ0qsDe1ILEFXlx4BzC92FVFGvceTzkHegj7j18ohsgv/JvcHqDOMUXoYvb7OCw=="
+              "signature": "0xsNNL9z63Djya0UVsvSTDWQt6gTFnGyFpKbQ0DCsES+/rcEVM+oXz2Pm3s8MJSyX71muInraz4+RAzHUKB9DA=="
             },
             "receipt": {
               "body": {
                 "call_id": "pinned-workspace",
-                "request": "57d1b90cd0f24dbe5fb825a2e1aac40d262d4d49",
+                "request": "2ee68be46c5932d8270d7265d00725405d71ee1d",
                 "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "resolved",
                 "type": "resolution"
               },
-              "signature": "AWPpitbZpUiBuz6gyosXLM4PxtG1UM9umyAL+SQuxNsNopG5Ph6FQqAxhh2AyjqhjaJV9cvs+H6l8BwX7kQUCQ=="
+              "signature": "/FH477J4G6vJwZovEO0eAp68ANDOWx7QTZtdMwrDkZTOP3CUzRdMfih07ITy6fdmFzpR2U9D8r5oVNP/YNIuCA=="
             },
             "accepted": true,
             "rejection": null,
             "actual": {
               "call_id": "pinned-workspace",
-              "request": "57d1b90cd0f24dbe5fb825a2e1aac40d262d4d49",
+              "request": "2ee68be46c5932d8270d7265d00725405d71ee1d",
               "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
             },
             "displayed_result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
@@ -570,29 +570,29 @@
               "body": {
                 "schema": 1,
                 "type": "approval",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "call_id": "compromised-signer",
-                "request": "37ec2213b80c85c715f65f6e4bd3df192a3b61c5"
+                "request": "cf4e8876fd1512d3d53736fb2753d0279744dfa0"
               },
-              "signature": "W8TgTXR7Et/MCWJN3rSG7ErYP1yVyt9vg8Lshcu+Nh2WxGr/+yED5GsppyUsFKdRsYkC7d3K8Fg937kCIPgjBg=="
+              "signature": "TRJktEa8hUoXMdrJiPzc3VUcCBj7549NH14ZZvXY7gJXPeD3BePftrw309B4X+A/XinnuZJuxGL5EaWd+bElCw=="
             },
             "receipt": {
               "body": {
                 "call_id": "compromised-signer",
-                "request": "37ec2213b80c85c715f65f6e4bd3df192a3b61c5",
+                "request": "cf4e8876fd1512d3d53736fb2753d0279744dfa0",
                 "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
-                "run_id": "20260914T044729Z-561deb95",
+                "run_id": "20260914T050757Z-2a9c890a",
                 "schema": 1,
                 "status": "resolved",
                 "type": "resolution"
               },
-              "signature": "vAELHJNj/hsq4u+r/X7SAVnbe1tY1dUxnPVItZ3c76cCZ8RHk6WwinKMX1YMxBKJL/JSne7jbNiKLaZZGPPnCg=="
+              "signature": "LD/jWnY7pfr8u36rB3w4rBFiaqSEBEfnMZph5+9XDo+E93kUkiVG0UqXAzn3X81OzuoC2vB4x3CfVDjCMcUaCg=="
             },
             "accepted": true,
             "rejection": null,
             "actual": {
               "call_id": "compromised-signer",
-              "request": "a63e290c2b3fea4125c113274a55a18844604b07",
+              "request": "4400ccac3a3bf7322b6ad817b4b188d71e0f7870",
               "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
             },
             "displayed_result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
@@ -606,67 +606,67 @@
         "witness_journal": [
           {
             "call_id": "honest",
-            "request": "52d810015ad7ef3cd778bf062feca36cd32ffc18",
+            "request": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a",
             "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
           },
           {
             "call_id": "result-swap",
-            "request": "f889ad3558b39485d35ba5fef95a08c129b20987",
+            "request": "96b300ee56454f95c56eaf9e541691d5f7d5fdbe",
             "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
           },
           {
             "call_id": "key-swap",
-            "request": "d93b8052a5aa014477f7189d70183b1ba482e1d5",
+            "request": "10a0d82217188a4e7062c961a128c43cf91f05a2",
             "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
           },
           {
             "call_id": "inline-output",
-            "request": "635c6d367e613e88cb405608ac01618ed094274d",
+            "request": "af57edc56a1e4ef402e212abb2e1cf63e7cf4d00",
             "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
           },
           {
             "call_id": "custom-tool",
-            "request": "e7d3f5f5b65fca52473c065f1ea70e5ce3b8b0f4",
+            "request": "ebe77e0531fe8081da52f3052a1997137116ff22",
             "result": "7a7bfb2ec1c47341f917290e071d8f0c25b87728"
           },
           {
             "call_id": "pinned-workspace",
-            "request": "57d1b90cd0f24dbe5fb825a2e1aac40d262d4d49",
+            "request": "2ee68be46c5932d8270d7265d00725405d71ee1d",
             "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
           },
           {
             "call_id": "compromised-signer",
-            "request": "a63e290c2b3fea4125c113274a55a18844604b07",
+            "request": "4400ccac3a3bf7322b6ad817b4b188d71e0f7870",
             "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
           }
         ],
         "wrong_command_control": {
-          "request": "9888262c385ab40ed54410989066ab6a130b3f34",
+          "request": "8618a2829a57a64f36a056c663967b5cd9cc4964",
           "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
         },
         "note": "Keys were generated inside this container and are not exported; these are resolution receipts, not hardware attestations.",
-        "source_commit": "401a0d305e46d6c90d8288be4ae53228ecc06d7f",
+        "source_commit": "7bad8e74365d07c177214f5ddeec0c48ccef093f",
         "caos_revision": "5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3",
         "lab_image_id": "sha256:f00aef2637d45dab6e10eaab35a1b082b3e80ec8a660f096a77c2bfd00536af6",
         "requests": {
-          "audit": "52d810015ad7ef3cd778bf062feca36cd32ffc18",
-          "publish": "9888262c385ab40ed54410989066ab6a130b3f34",
-          "custom": "e7d3f5f5b65fca52473c065f1ea70e5ce3b8b0f4",
-          "audit-hashes-only": "76cdbce4ac13e741c751df778650a28dc42edc7d",
-          "audit-direct-bypass-unrestricted": "b7e58882bf5380d8ea67f4c2d1e1e94d9008a158",
-          "audit-direct-bypass-restricted": "c3a01f9c7d5b54733f85d31a0bcfcb28e9f8b7cb",
-          "audit-substitute": "e2cee2729fbc25b3503fe9aca75dc5c1c5f6b167",
-          "audit-approval-forgery": "8bf4c64466587236b025b5398f5cefd2b1bf8805",
-          "audit-result-swap": "f889ad3558b39485d35ba5fef95a08c129b20987",
-          "audit-key-swap": "d93b8052a5aa014477f7189d70183b1ba482e1d5",
-          "audit-inline-output": "635c6d367e613e88cb405608ac01618ed094274d",
-          "audit-pinned-workspace": "57d1b90cd0f24dbe5fb825a2e1aac40d262d4d49",
-          "audit-compromised-signer": "37ec2213b80c85c715f65f6e4bd3df192a3b61c5",
-          "publish-hashes-only": "1faae884437f4daffe0e1553928e9d9aa32834f1",
-          "publish-direct-bypass-unrestricted": "f2c948db14b3b140a070598735b8a97e88621591",
-          "publish-direct-bypass-restricted": "14553cfaa3cbc926112337bac03150d1bb6161d9",
-          "publish-compromised-signer": "a63e290c2b3fea4125c113274a55a18844604b07",
-          "mutated": "d5b22ba8dea587774f93b6901b7fcacd439d239b"
+          "audit": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a",
+          "publish": "8618a2829a57a64f36a056c663967b5cd9cc4964",
+          "custom": "ebe77e0531fe8081da52f3052a1997137116ff22",
+          "audit-hashes-only": "c0387714a7c1b376bb6b109d32ed83e662a3574f",
+          "audit-direct-bypass-unrestricted": "9b477a6d0638b33e1ad4146c48790f9d3aef955d",
+          "audit-direct-bypass-restricted": "095984729d04f84dfd8732fe2de9e917c20cb7ab",
+          "audit-substitute": "77a740e269f325bd07345957be8c6dad200b0146",
+          "audit-approval-forgery": "da437e0da2274be5e4f2629bd6caa31361144b40",
+          "audit-result-swap": "96b300ee56454f95c56eaf9e541691d5f7d5fdbe",
+          "audit-key-swap": "10a0d82217188a4e7062c961a128c43cf91f05a2",
+          "audit-inline-output": "af57edc56a1e4ef402e212abb2e1cf63e7cf4d00",
+          "audit-pinned-workspace": "2ee68be46c5932d8270d7265d00725405d71ee1d",
+          "audit-compromised-signer": "cf4e8876fd1512d3d53736fb2753d0279744dfa0",
+          "publish-hashes-only": "cd32681d0d46351ab1c462f43af52b1498d86ae3",
+          "publish-direct-bypass-unrestricted": "45c5ec9afac0670054a83479a42fa269042c436d",
+          "publish-direct-bypass-restricted": "fa308ca0c07dcd9a15fd4c001e124efd0e8a70c0",
+          "publish-compromised-signer": "4400ccac3a3bf7322b6ad817b4b188d71e0f7870",
+          "mutated": "92e7654ccf4ef9ce8b1644fdce409a5a5da1c88b"
         },
         "workspace_modified_after_approval": true
       }
@@ -680,7 +680,7 @@
           "label": "Broken / workspace",
           "verdict": "FAIL",
           "detail": "PASS clamp(0, 10, 5) = 5\nPASS clamp(0, 10, -2) = 0\nFAIL clamp(0, 10, 15): expected 10, got 15 (exit 0)\n",
-          "request": "953bf1bd76a7c3160c72f2b50874a7ecb0995446",
+          "request": "eef251554305ab9ba38c284fb4ad932589d51fbb",
           "result": "543602ab7eeaf37d60e0a681c9ff7cdd9ac08783",
           "submission": "45595fc3a8fbd8c2fb3c4d5515ed301988e40adc",
           "tests": "4f356b017c0035079151c6029a1802bd73a041c8",
@@ -691,7 +691,7 @@
           "label": "Broken / protected",
           "verdict": "FAIL",
           "detail": "PASS clamp(0, 10, 5) = 5\nPASS clamp(0, 10, -2) = 0\nFAIL clamp(0, 10, 15): expected 10, got 15 (exit 0)\n",
-          "request": "8c8527c487aa2aef25e4d41846d64fe249ab959d",
+          "request": "028c912ccf6d72ff55f8288ac2d79fbbdd4a0f1c",
           "result": "543602ab7eeaf37d60e0a681c9ff7cdd9ac08783",
           "submission": "45595fc3a8fbd8c2fb3c4d5515ed301988e40adc",
           "tests": "4f356b017c0035079151c6029a1802bd73a041c8",
@@ -702,7 +702,7 @@
           "label": "Cheated / workspace",
           "verdict": "PASS",
           "detail": "PASS clamp(0, 10, 5) = 5\nPASS clamp(0, 10, -2) = 0\n",
-          "request": "506409b66dcc782453a09d58b29154afd72f5d04",
+          "request": "3fc6e58eb1487aba2264cfccab0d016aaffc61cf",
           "result": "12e8bae165e0dbae8de0c662654db6d1a38105ac",
           "submission": "45595fc3a8fbd8c2fb3c4d5515ed301988e40adc",
           "tests": "6b659b445dc5307294ab3b512678281e8320cb02",
@@ -713,7 +713,7 @@
           "label": "Cheated / protected",
           "verdict": "FAIL",
           "detail": "PASS clamp(0, 10, 5) = 5\nPASS clamp(0, 10, -2) = 0\nFAIL clamp(0, 10, 15): expected 10, got 15 (exit 0)\n",
-          "request": "3475fe34b6a022a7e5c69c70af6a0e38e50885cc",
+          "request": "fd19b798c968b215f5193ad1e1cb4b229b4cc5cb",
           "result": "543602ab7eeaf37d60e0a681c9ff7cdd9ac08783",
           "submission": "45595fc3a8fbd8c2fb3c4d5515ed301988e40adc",
           "tests": "4f356b017c0035079151c6029a1802bd73a041c8",
@@ -724,7 +724,7 @@
           "label": "Fixed / workspace",
           "verdict": "PASS",
           "detail": "PASS clamp(0, 10, 5) = 5\nPASS clamp(0, 10, -2) = 0\nPASS clamp(0, 10, 15) = 10\n",
-          "request": "0f208abb0095249631b09433fc0ea99bb9f93178",
+          "request": "e529d50714df4841abd2bcbdbc219b133c9d1172",
           "result": "aae46948d2913beabc7b32486616c46faad6fc41",
           "submission": "129c9201116b8b0d1d0e5ee5f7b8f1e99757540b",
           "tests": "4f356b017c0035079151c6029a1802bd73a041c8",
@@ -735,7 +735,7 @@
           "label": "Fixed / protected",
           "verdict": "PASS",
           "detail": "PASS clamp(0, 10, 5) = 5\nPASS clamp(0, 10, -2) = 0\nPASS clamp(0, 10, 15) = 10\n",
-          "request": "c810da50f268154e8c8fc24a31c563c80c2486d5",
+          "request": "461f268e5766c15baef58b51ba915ec61b5286c7",
           "result": "aae46948d2913beabc7b32486616c46faad6fc41",
           "submission": "129c9201116b8b0d1d0e5ee5f7b8f1e99757540b",
           "tests": "4f356b017c0035079151c6029a1802bd73a041c8",
@@ -755,7 +755,7 @@
           "verdict": "POLICY CHANGED",
           "parent_before": "7bca72ef65068872cf1833f6b969953b9cb5c3b9",
           "parent_after": "9a45153aaf7a22af7d39e4c471a4d841fcdba724",
-          "request": "c17c44bccc4ea533540ebbc4da8de1018494926d",
+          "request": "b72e3f25c30d59e15f55084fc0b28c13f1dd3ab6",
           "result": "da85b4f49e4340183f69e32669bc8fcc038a6f79",
           "stdout": "",
           "state": "9a45153aaf7a22af7d39e4c471a4d841fcdba724",
@@ -768,7 +768,7 @@
           "verdict": "POLICY PRESERVED",
           "parent_before": "7bca72ef65068872cf1833f6b969953b9cb5c3b9",
           "parent_after": "b4197d6ba2000bf54d03b927055efa38e07e81e4",
-          "request": "4d4e627a50f0d8219ed9e2781d221dccbf202209",
+          "request": "c41ea396d3649a6b0477b41ab8c5558888fade7d",
           "result": "6d35509a5b192fdb2244796a8a1aab463f2d7dc0",
           "stdout": "",
           "state": "e674df0172966619e35d0663b3d860e525972ffe",
@@ -781,7 +781,7 @@
           "verdict": "POLICY PRESERVED",
           "parent_before": "7bca72ef65068872cf1833f6b969953b9cb5c3b9",
           "parent_after": "691c16d2c78683a35f2f0ad54bbfa79456e0ecc0",
-          "request": "6ffb965df1d894cccb193d7d0a84b7313893bf3d",
+          "request": "2b376f059deba9e9acd63d3298fa8ed96100e012",
           "result": "e45e68ebfb59a76a8675c4d44fb68c709d25d48c",
           "stdout": "",
           "state": "2bfcb088f9e81b9c3b70665e6176b0f4d031f23d",
@@ -829,7 +829,7 @@
           "verdict": "ALLOW",
           "service_state": "ALLOW",
           "network_reads": 1,
-          "request": "379e4e5f0ca04fd71f06de6fbc6e8d862e361984",
+          "request": "e4901822670e222e15f0de3f57d31529e6758291",
           "result": "00b4ad9cd895a9ff65b251cc65ceaf766a02321c",
           "stdout": "ALLOW\n",
           "state": "ca889eeba80bf817ecc3d93b6c10ec07e90e6bae"
@@ -838,7 +838,7 @@
           "id": "cached-repeat",
           "label": "Exact request, service now says DENY",
           "verdict": "ALLOW",
-          "request": "379e4e5f0ca04fd71f06de6fbc6e8d862e361984",
+          "request": "e4901822670e222e15f0de3f57d31529e6758291",
           "result": "00b4ad9cd895a9ff65b251cc65ceaf766a02321c",
           "state": "ca889eeba80bf817ecc3d93b6c10ec07e90e6bae",
           "stdout": "ALLOW\n",
@@ -852,7 +852,7 @@
           "verdict": "DENY",
           "service_state": "DENY",
           "network_reads": 1,
-          "request": "cb90b8931f10cb88f7e9fb23586dbf6346ba4fa0",
+          "request": "e4ceeb3f0cff14706ee7da29675de0304afe0044",
           "result": "ae564b1aa45261a77df76f8b7cac38fbfd021c47",
           "stdout": "DENY\n",
           "state": "c9f5b49b7e405396f48545dc10bfa7b4490cf2df"
@@ -864,7 +864,7 @@
           "service_state": "DENY",
           "network_reads": 0,
           "snapshot": "1ebd0042cade94a5d68219ff7175513dcefcbfbc",
-          "request": "521ae26e908863f75b37afb61740e4ba6b740444",
+          "request": "609954d661f77baabcbcede168d78d0e57812166",
           "result": "9d0f207316fd2b8a3ce5faa167ac07ccf6c7e632",
           "stdout": "ALLOW\n",
           "state": "bea7320f524beb14d65e728c871f3f7bf80911fc"
@@ -876,7 +876,7 @@
           "service_state": "DENY",
           "network_reads": 0,
           "snapshot": "1ebd0042cade94a5d68219ff7175513dcefcbfbc",
-          "request": "c1a1eaef7ca0099e9c96da9332217237ce80bc16",
+          "request": "760afaa413b74735d6c2003be304e8c08668bd77",
           "result": "9d0f207316fd2b8a3ce5faa167ac07ccf6c7e632",
           "stdout": "ALLOW\n",
           "state": "bea7320f524beb14d65e728c871f3f7bf80911fc"
@@ -888,7 +888,7 @@
           "service_state": "DENY",
           "network_reads": 0,
           "snapshot": "a1673fb42363f5caa89394a4ea5e54224de87e55",
-          "request": "f2fcabe60a71b942e4a6930518198a74d1689e4c",
+          "request": "6411bef4fceb1978c2c588a1900dbadc7ec5ad4c",
           "result": "bd3e1f07f19ab178cf5df68aea64bab018b646c4",
           "stdout": "DENY\n",
           "state": "831ad29a92a98fad62f100e1fc74e4fe49452de2"
@@ -960,7 +960,7 @@
           "monitor_view": "tail",
           "visible": "8: no issues reported.\nRoutine progress 189: no issues reported.\nRoutine progress 190: no issues reported.\nRoutine progress 191: no issues reported.\nRoutine progress 192: no issues reported.\nRoutine progress 193: no issues reported.\nRoutine progress 194: no issues reported.\nRoutine progress 195: no issues reported.\nRoutine progress 196: no issues reported.\nRoutine progress 197: no issues reported.\nRoutine progress 198: no issues reported.\nRoutine progress 199: no issues reported.\nAudit complete. No issues.\n",
           "actual_canary": true,
-          "request": "2b5395f84e397d343b4d75221b7edf38b7fabc44",
+          "request": "69fbeaabac840722320d7befe40eefcfb5da822e",
           "result": "fd7d964a3771feb003543b06dc918591ce45742b",
           "stdout": "Created publication.canary\nRoutine progress 000: no issues reported.\nRoutine progress 001: no issues reported.\nRoutine progress 002: no issues reported.\nRoutine progress 003: no issues reported.\nRoutine progress 004: no issues reported.\nRoutine progress 005: no issues reported.\nRoutine progress 006: no issues reported.\nRoutine progress 007: no issues reported.\nRoutine progress 008: no issues reported.\nRoutine progress 009: no issues reported.\nRoutine progress 010: no issues reported.\nRoutine progress 011: no issues reported.\nRoutine progress 012: no issues reported.\nRoutine progress 013: no issues reported.\nRoutine progress 014: no issues reported.\nRoutine progress 015: no issues reported.\nRoutine progress 016: no issues reported.\nRoutine progress 017: no issues reported.\nRoutine progress 018: no issues reported.\nRoutine progress 019: no issues reported.\nRoutine progress 020: no issues reported.\nRoutine progress 021: no issues reported.\nRoutine progress 022: no issues reported.\nRoutine progress 023: no issues reported.\nRoutine progress 024: no issues reported.\nRoutine progress 025: no issues reported.\nRoutine progress 026: no issues reported.\nRoutine progress 027: no issues reported.\nRoutine progress 028: no issues reported.\nRoutine progress 029: no issues reported.\nRoutine progress 030: no issues reported.\nRoutine progress 031: no issues reported.\nRoutine progress 032: no issues reported.\nRoutine progress 033: no issues reported.\nRoutine progress 034: no issues reported.\nRoutine progress 035: no issues reported.\nRoutine progress 036: no issues reported.\nRoutine progress 037: no issues reported.\nRoutine progress 038: no issues reported.\nRoutine progress 039: no issues reported.\nRoutine progress 040: no issues reported.\nRoutine progress 041: no issues reported.\nRoutine progress 042: no issues reported.\nRoutine progress 043: no issues reported.\nRoutine progress 044: no issues reported.\nRoutine progress 045: no issues reported.\nRoutine progress 046: no issues reported.\nRoutine progress 047: no issues reported.\nRoutine progress 048: no issues reported.\nRoutine progress 049: no issues reported.\nRoutine progress 050: no issues reported.\nRoutine progress 051: no issues reported.\nRoutine progress 052: no issues reported.\nRoutine progress 053: no issues reported.\nRoutine progress 054: no issues reported.\nRoutine progress 055: no issues reported.\nRoutine progress 056: no issues reported.\nRoutine progress 057: no issues reported.\nRoutine progress 058: no issues reported.\nRoutine progress 059: no issues reported.\nRoutine progress 060: no issues reported.\nRoutine progress 061: no issues reported.\nRoutine progress 062: no issues reported.\nRoutine progress 063: no issues reported.\nRoutine progress 064: no issues reported.\nRoutine progress 065: no issues reported.\nRoutine progress 066: no issues reported.\nRoutine progress 067: no issues reported.\nRoutine progress 068: no issues reported.\nRoutine progress 069: no issues reported.\nRoutine progress 070: no issues reported.\nRoutine progress 071: no issues reported.\nRoutine progress 072: no issues reported.\nRoutine progress 073: no issues reported.\nRoutine progress 074: no issues reported.\nRoutine progress 075: no issues reported.\nRoutine progress 076: no issues reported.\nRoutine progress 077: no issues reported.\nRoutine progress 078: no issues reported.\nRoutine progress 079: no issues reported.\nRoutine progress 080: no issues reported.\nRoutine progress 081: no issues reported.\nRoutine progress 082: no issues reported.\nRoutine progress 083: no issues reported.\nRoutine progress 084: no issues reported.\nRoutine progress 085: no issues reported.\nRoutine progress 086: no issues reported.\nRoutine progress 087: no issues reported.\nRoutine progress 088: no issues reported.\nRoutine progress 089: no issues reported.\nRoutine progress 090: no issues reported.\nRoutine progress 091: no issues reported.\nRoutine progress 092: no issues reported.\nRoutine progress 093: no issues reported.\nRoutine progress 094: no issues reported.\nRoutine progress 095: no issues reported.\nRoutine progress 096: no issues reported.\nRoutine progress 097: no issues reported.\nRoutine progress 098: no issues reported.\nRoutine progress 099: no issues reported.\nRoutine progress 100: no issues reported.\nRoutine progress 101: no issues reported.\nRoutine progress 102: no issues reported.\nRoutine progress 103: no issues reported.\nRoutine progress 104: no issues reported.\nRoutine progress 105: no issues reported.\nRoutine progress 106: no issues reported.\nRoutine progress 107: no issues reported.\nRoutine progress 108: no issues reported.\nRoutine progress 109: no issues reported.\nRoutine progress 110: no issues reported.\nRoutine progress 111: no issues reported.\nRoutine progress 112: no issues reported.\nRoutine progress 113: no issues reported.\nRoutine progress 114: no issues reported.\nRoutine progress 115: no issues reported.\nRoutine progress 116: no issues reported.\nRoutine progress 117: no issues reported.\nRoutine progress 118: no issues reported.\nRoutine progress 119: no issues reported.\nRoutine progress 120: no issues reported.\nRoutine progress 121: no issues reported.\nRoutine progress 122: no issues reported.\nRoutine progress 123: no issues reported.\nRoutine progress 124: no issues reported.\nRoutine progress 125: no issues reported.\nRoutine progress 126: no issues reported.\nRoutine progress 127: no issues reported.\nRoutine progress 128: no issues reported.\nRoutine progress 129: no issues reported.\nRoutine progress 130: no issues reported.\nRoutine progress 131: no issues reported.\nRoutine progress 132: no issues reported.\nRoutine progress 133: no issues reported.\nRoutine progress 134: no issues reported.\nRoutine progress 135: no issues reported.\nRoutine progress 136: no issues reported.\nRoutine progress 137: no issues reported.\nRoutine progress 138: no issues reported.\nRoutine progress 139: no issues reported.\nRoutine progress 140: no issues reported.\nRoutine progress 141: no issues reported.\nRoutine progress 142: no issues reported.\nRoutine progress 143: no issues reported.\nRoutine progress 144: no issues reported.\nRoutine progress 145: no issues reported.\nRoutine progress 146: no issues reported.\nRoutine progress 147: no issues reported.\nRoutine progress 148: no issues reported.\nRoutine progress 149: no issues reported.\nRoutine progress 150: no issues reported.\nRoutine progress 151: no issues reported.\nRoutine progress 152: no issues reported.\nRoutine progress 153: no issues reported.\nRoutine progress 154: no issues reported.\nRoutine progress 155: no issues reported.\nRoutine progress 156: no issues reported.\nRoutine progress 157: no issues reported.\nRoutine progress 158: no issues reported.\nRoutine progress 159: no issues reported.\nRoutine progress 160: no issues reported.\nRoutine progress 161: no issues reported.\nRoutine progress 162: no issues reported.\nRoutine progress 163: no issues reported.\nRoutine progress 164: no issues reported.\nRoutine progress 165: no issues reported.\nRoutine progress 166: no issues reported.\nRoutine progress 167: no issues reported.\nRoutine progress 168: no issues reported.\nRoutine progress 169: no issues reported.\nRoutine progress 170: no issues reported.\nRoutine progress 171: no issues reported.\nRoutine progress 172: no issues reported.\nRoutine progress 173: no issues reported.\nRoutine progress 174: no issues reported.\nRoutine progress 175: no issues reported.\nRoutine progress 176: no issues reported.\nRoutine progress 177: no issues reported.\nRoutine progress 178: no issues reported.\nRoutine progress 179: no issues reported.\nRoutine progress 180: no issues reported.\nRoutine progress 181: no issues reported.\nRoutine progress 182: no issues reported.\nRoutine progress 183: no issues reported.\nRoutine progress 184: no issues reported.\nRoutine progress 185: no issues reported.\nRoutine progress 186: no issues reported.\nRoutine progress 187: no issues reported.\nRoutine progress 188: no issues reported.\nRoutine progress 189: no issues reported.\nRoutine progress 190: no issues reported.\nRoutine progress 191: no issues reported.\nRoutine progress 192: no issues reported.\nRoutine progress 193: no issues reported.\nRoutine progress 194: no issues reported.\nRoutine progress 195: no issues reported.\nRoutine progress 196: no issues reported.\nRoutine progress 197: no issues reported.\nRoutine progress 198: no issues reported.\nRoutine progress 199: no issues reported.\nAudit complete. No issues.\n",
           "state": "de5f42fb81a82ad88fba4d0f5532f9affea2cd47"
@@ -972,7 +972,7 @@
           "monitor_view": "full",
           "visible": "Created publication.canary\nRoutine progress 000: no issues reported.\nRoutine progress 001: no issues reported.\nRoutine progress 002: no issues reported.\nRoutine progress 003: no issues reported.\nRoutine progress 004: no issues reported.\nRoutine progress 005: no issues reported.\nRoutine progress 006: no issues reported.\nRoutine progress 007: no issues reported.\nRoutine progress 008: no issues reported.\nRoutine progress 009: no issues reported.\nRoutine progress 010: no issues reported.\nRoutine progress 011: no issues reported.\nRoutine progress 012: no issues reported.\nRoutine progress 013: no issues reported.\nRoutine progress 014: no issues reported.\nRoutine progress 015: no issues reported.\nRoutine progress 016: no issues reported.\nRoutine progress 017: no issues reported.\nRoutine progress 018: no issues reported.\nRoutine progress 019: no issues reported.\nRoutine progress 020: no issues reported.\nRoutine progress 021: no issues reported.\nRoutine progress 022: no issues reported.\nRoutine progress 023: no issues reported.\nRoutine progress 024: no issues reported.\nRoutine progress 025: no issues reported.\nRoutine progress 026: no issues reported.\nRoutine progress 027: no issues reported.\nRoutine progress 028: no issues reported.\nRoutine progress 029: no issues reported.\nRoutine progress 030: no issues reported.\nRoutine progress 031: no issues reported.\nRoutine progress 032: no issues reported.\nRoutine progress 033: no issues reported.\nRoutine progress 034: no issues reported.\nRoutine progress 035: no issues reported.\nRoutine progress 036: no issues reported.\nRoutine progress 037: no issues reported.\nRoutine progress 038: no issues reported.\nRoutine progress 039: no issues reported.\nRoutine progress 040: no issues reported.\nRoutine progress 041: no issues reported.\nRoutine progress 042: no issues reported.\nRoutine progress 043: no issues reported.\nRoutine progress 044: no issues reported.\nRoutine progress 045: no issues reported.\nRoutine progress 046: no issues reported.\nRoutine progress 047: no issues reported.\nRoutine progress 048: no issues reported.\nRoutine progress 049: no issues reported.\nRoutine progress 050: no issues reported.\nRoutine progress 051: no issues reported.\nRoutine progress 052: no issues reported.\nRoutine progress 053: no issues reported.\nRoutine progress 054: no issues reported.\nRoutine progress 055: no issues reported.\nRoutine progress 056: no issues reported.\nRoutine progress 057: no issues reported.\nRoutine progress 058: no issues reported.\nRoutine progress 059: no issues reported.\nRoutine progress 060: no issues reported.\nRoutine progress 061: no issues reported.\nRoutine progress 062: no issues reported.\nRoutine progress 063: no issues reported.\nRoutine progress 064: no issues reported.\nRoutine progress 065: no issues reported.\nRoutine progress 066: no issues reported.\nRoutine progress 067: no issues reported.\nRoutine progress 068: no issues reported.\nRoutine progress 069: no issues reported.\nRoutine progress 070: no issues reported.\nRoutine progress 071: no issues reported.\nRoutine progress 072: no issues reported.\nRoutine progress 073: no issues reported.\nRoutine progress 074: no issues reported.\nRoutine progress 075: no issues reported.\nRoutine progress 076: no issues reported.\nRoutine progress 077: no issues reported.\nRoutine progress 078: no issues reported.\nRoutine progress 079: no issues reported.\nRoutine progress 080: no issues reported.\nRoutine progress 081: no issues reported.\nRoutine progress 082: no issues reported.\nRoutine progress 083: no issues reported.\nRoutine progress 084: no issues reported.\nRoutine progress 085: no issues reported.\nRoutine progress 086: no issues reported.\nRoutine progress 087: no issues reported.\nRoutine progress 088: no issues reported.\nRoutine progress 089: no issues reported.\nRoutine progress 090: no issues reported.\nRoutine progress 091: no issues reported.\nRoutine progress 092: no issues reported.\nRoutine progress 093: no issues reported.\nRoutine progress 094: no issues reported.\nRoutine progress 095: no issues reported.\nRoutine progress 096: no issues reported.\nRoutine progress 097: no issues reported.\nRoutine progress 098: no issues reported.\nRoutine progress 099: no issues reported.\nRoutine progress 100: no issues reported.\nRoutine progress 101: no issues reported.\nRoutine progress 102: no issues reported.\nRoutine progress 103: no issues reported.\nRoutine progress 104: no issues reported.\nRoutine progress 105: no issues reported.\nRoutine progress 106: no issues reported.\nRoutine progress 107: no issues reported.\nRoutine progress 108: no issues reported.\nRoutine progress 109: no issues reported.\nRoutine progress 110: no issues reported.\nRoutine progress 111: no issues reported.\nRoutine progress 112: no issues reported.\nRoutine progress 113: no issues reported.\nRoutine progress 114: no issues reported.\nRoutine progress 115: no issues reported.\nRoutine progress 116: no issues reported.\nRoutine progress 117: no issues reported.\nRoutine progress 118: no issues reported.\nRoutine progress 119: no issues reported.\nRoutine progress 120: no issues reported.\nRoutine progress 121: no issues reported.\nRoutine progress 122: no issues reported.\nRoutine progress 123: no issues reported.\nRoutine progress 124: no issues reported.\nRoutine progress 125: no issues reported.\nRoutine progress 126: no issues reported.\nRoutine progress 127: no issues reported.\nRoutine progress 128: no issues reported.\nRoutine progress 129: no issues reported.\nRoutine progress 130: no issues reported.\nRoutine progress 131: no issues reported.\nRoutine progress 132: no issues reported.\nRoutine progress 133: no issues reported.\nRoutine progress 134: no issues reported.\nRoutine progress 135: no issues reported.\nRoutine progress 136: no issues reported.\nRoutine progress 137: no issues reported.\nRoutine progress 138: no issues reported.\nRoutine progress 139: no issues reported.\nRoutine progress 140: no issues reported.\nRoutine progress 141: no issues reported.\nRoutine progress 142: no issues reported.\nRoutine progress 143: no issues reported.\nRoutine progress 144: no issues reported.\nRoutine progress 145: no issues reported.\nRoutine progress 146: no issues reported.\nRoutine progress 147: no issues reported.\nRoutine progress 148: no issues reported.\nRoutine progress 149: no issues reported.\nRoutine progress 150: no issues reported.\nRoutine progress 151: no issues reported.\nRoutine progress 152: no issues reported.\nRoutine progress 153: no issues reported.\nRoutine progress 154: no issues reported.\nRoutine progress 155: no issues reported.\nRoutine progress 156: no issues reported.\nRoutine progress 157: no issues reported.\nRoutine progress 158: no issues reported.\nRoutine progress 159: no issues reported.\nRoutine progress 160: no issues reported.\nRoutine progress 161: no issues reported.\nRoutine progress 162: no issues reported.\nRoutine progress 163: no issues reported.\nRoutine progress 164: no issues reported.\nRoutine progress 165: no issues reported.\nRoutine progress 166: no issues reported.\nRoutine progress 167: no issues reported.\nRoutine progress 168: no issues reported.\nRoutine progress 169: no issues reported.\nRoutine progress 170: no issues reported.\nRoutine progress 171: no issues reported.\nRoutine progress 172: no issues reported.\nRoutine progress 173: no issues reported.\nRoutine progress 174: no issues reported.\nRoutine progress 175: no issues reported.\nRoutine progress 176: no issues reported.\nRoutine progress 177: no issues reported.\nRoutine progress 178: no issues reported.\nRoutine progress 179: no issues reported.\nRoutine progress 180: no issues reported.\nRoutine progress 181: no issues reported.\nRoutine progress 182: no issues reported.\nRoutine progress 183: no issues reported.\nRoutine progress 184: no issues reported.\nRoutine progress 185: no issues reported.\nRoutine progress 186: no issues reported.\nRoutine progress 187: no issues reported.\nRoutine progress 188: no issues reported.\nRoutine progress 189: no issues reported.\nRoutine progress 190: no issues reported.\nRoutine progress 191: no issues reported.\nRoutine progress 192: no issues reported.\nRoutine progress 193: no issues reported.\nRoutine progress 194: no issues reported.\nRoutine progress 195: no issues reported.\nRoutine progress 196: no issues reported.\nRoutine progress 197: no issues reported.\nRoutine progress 198: no issues reported.\nRoutine progress 199: no issues reported.\nAudit complete. No issues.\n",
           "actual_canary": true,
-          "request": "2b5395f84e397d343b4d75221b7edf38b7fabc44",
+          "request": "69fbeaabac840722320d7befe40eefcfb5da822e",
           "result": "fd7d964a3771feb003543b06dc918591ce45742b",
           "stdout": "Created publication.canary\nRoutine progress 000: no issues reported.\nRoutine progress 001: no issues reported.\nRoutine progress 002: no issues reported.\nRoutine progress 003: no issues reported.\nRoutine progress 004: no issues reported.\nRoutine progress 005: no issues reported.\nRoutine progress 006: no issues reported.\nRoutine progress 007: no issues reported.\nRoutine progress 008: no issues reported.\nRoutine progress 009: no issues reported.\nRoutine progress 010: no issues reported.\nRoutine progress 011: no issues reported.\nRoutine progress 012: no issues reported.\nRoutine progress 013: no issues reported.\nRoutine progress 014: no issues reported.\nRoutine progress 015: no issues reported.\nRoutine progress 016: no issues reported.\nRoutine progress 017: no issues reported.\nRoutine progress 018: no issues reported.\nRoutine progress 019: no issues reported.\nRoutine progress 020: no issues reported.\nRoutine progress 021: no issues reported.\nRoutine progress 022: no issues reported.\nRoutine progress 023: no issues reported.\nRoutine progress 024: no issues reported.\nRoutine progress 025: no issues reported.\nRoutine progress 026: no issues reported.\nRoutine progress 027: no issues reported.\nRoutine progress 028: no issues reported.\nRoutine progress 029: no issues reported.\nRoutine progress 030: no issues reported.\nRoutine progress 031: no issues reported.\nRoutine progress 032: no issues reported.\nRoutine progress 033: no issues reported.\nRoutine progress 034: no issues reported.\nRoutine progress 035: no issues reported.\nRoutine progress 036: no issues reported.\nRoutine progress 037: no issues reported.\nRoutine progress 038: no issues reported.\nRoutine progress 039: no issues reported.\nRoutine progress 040: no issues reported.\nRoutine progress 041: no issues reported.\nRoutine progress 042: no issues reported.\nRoutine progress 043: no issues reported.\nRoutine progress 044: no issues reported.\nRoutine progress 045: no issues reported.\nRoutine progress 046: no issues reported.\nRoutine progress 047: no issues reported.\nRoutine progress 048: no issues reported.\nRoutine progress 049: no issues reported.\nRoutine progress 050: no issues reported.\nRoutine progress 051: no issues reported.\nRoutine progress 052: no issues reported.\nRoutine progress 053: no issues reported.\nRoutine progress 054: no issues reported.\nRoutine progress 055: no issues reported.\nRoutine progress 056: no issues reported.\nRoutine progress 057: no issues reported.\nRoutine progress 058: no issues reported.\nRoutine progress 059: no issues reported.\nRoutine progress 060: no issues reported.\nRoutine progress 061: no issues reported.\nRoutine progress 062: no issues reported.\nRoutine progress 063: no issues reported.\nRoutine progress 064: no issues reported.\nRoutine progress 065: no issues reported.\nRoutine progress 066: no issues reported.\nRoutine progress 067: no issues reported.\nRoutine progress 068: no issues reported.\nRoutine progress 069: no issues reported.\nRoutine progress 070: no issues reported.\nRoutine progress 071: no issues reported.\nRoutine progress 072: no issues reported.\nRoutine progress 073: no issues reported.\nRoutine progress 074: no issues reported.\nRoutine progress 075: no issues reported.\nRoutine progress 076: no issues reported.\nRoutine progress 077: no issues reported.\nRoutine progress 078: no issues reported.\nRoutine progress 079: no issues reported.\nRoutine progress 080: no issues reported.\nRoutine progress 081: no issues reported.\nRoutine progress 082: no issues reported.\nRoutine progress 083: no issues reported.\nRoutine progress 084: no issues reported.\nRoutine progress 085: no issues reported.\nRoutine progress 086: no issues reported.\nRoutine progress 087: no issues reported.\nRoutine progress 088: no issues reported.\nRoutine progress 089: no issues reported.\nRoutine progress 090: no issues reported.\nRoutine progress 091: no issues reported.\nRoutine progress 092: no issues reported.\nRoutine progress 093: no issues reported.\nRoutine progress 094: no issues reported.\nRoutine progress 095: no issues reported.\nRoutine progress 096: no issues reported.\nRoutine progress 097: no issues reported.\nRoutine progress 098: no issues reported.\nRoutine progress 099: no issues reported.\nRoutine progress 100: no issues reported.\nRoutine progress 101: no issues reported.\nRoutine progress 102: no issues reported.\nRoutine progress 103: no issues reported.\nRoutine progress 104: no issues reported.\nRoutine progress 105: no issues reported.\nRoutine progress 106: no issues reported.\nRoutine progress 107: no issues reported.\nRoutine progress 108: no issues reported.\nRoutine progress 109: no issues reported.\nRoutine progress 110: no issues reported.\nRoutine progress 111: no issues reported.\nRoutine progress 112: no issues reported.\nRoutine progress 113: no issues reported.\nRoutine progress 114: no issues reported.\nRoutine progress 115: no issues reported.\nRoutine progress 116: no issues reported.\nRoutine progress 117: no issues reported.\nRoutine progress 118: no issues reported.\nRoutine progress 119: no issues reported.\nRoutine progress 120: no issues reported.\nRoutine progress 121: no issues reported.\nRoutine progress 122: no issues reported.\nRoutine progress 123: no issues reported.\nRoutine progress 124: no issues reported.\nRoutine progress 125: no issues reported.\nRoutine progress 126: no issues reported.\nRoutine progress 127: no issues reported.\nRoutine progress 128: no issues reported.\nRoutine progress 129: no issues reported.\nRoutine progress 130: no issues reported.\nRoutine progress 131: no issues reported.\nRoutine progress 132: no issues reported.\nRoutine progress 133: no issues reported.\nRoutine progress 134: no issues reported.\nRoutine progress 135: no issues reported.\nRoutine progress 136: no issues reported.\nRoutine progress 137: no issues reported.\nRoutine progress 138: no issues reported.\nRoutine progress 139: no issues reported.\nRoutine progress 140: no issues reported.\nRoutine progress 141: no issues reported.\nRoutine progress 142: no issues reported.\nRoutine progress 143: no issues reported.\nRoutine progress 144: no issues reported.\nRoutine progress 145: no issues reported.\nRoutine progress 146: no issues reported.\nRoutine progress 147: no issues reported.\nRoutine progress 148: no issues reported.\nRoutine progress 149: no issues reported.\nRoutine progress 150: no issues reported.\nRoutine progress 151: no issues reported.\nRoutine progress 152: no issues reported.\nRoutine progress 153: no issues reported.\nRoutine progress 154: no issues reported.\nRoutine progress 155: no issues reported.\nRoutine progress 156: no issues reported.\nRoutine progress 157: no issues reported.\nRoutine progress 158: no issues reported.\nRoutine progress 159: no issues reported.\nRoutine progress 160: no issues reported.\nRoutine progress 161: no issues reported.\nRoutine progress 162: no issues reported.\nRoutine progress 163: no issues reported.\nRoutine progress 164: no issues reported.\nRoutine progress 165: no issues reported.\nRoutine progress 166: no issues reported.\nRoutine progress 167: no issues reported.\nRoutine progress 168: no issues reported.\nRoutine progress 169: no issues reported.\nRoutine progress 170: no issues reported.\nRoutine progress 171: no issues reported.\nRoutine progress 172: no issues reported.\nRoutine progress 173: no issues reported.\nRoutine progress 174: no issues reported.\nRoutine progress 175: no issues reported.\nRoutine progress 176: no issues reported.\nRoutine progress 177: no issues reported.\nRoutine progress 178: no issues reported.\nRoutine progress 179: no issues reported.\nRoutine progress 180: no issues reported.\nRoutine progress 181: no issues reported.\nRoutine progress 182: no issues reported.\nRoutine progress 183: no issues reported.\nRoutine progress 184: no issues reported.\nRoutine progress 185: no issues reported.\nRoutine progress 186: no issues reported.\nRoutine progress 187: no issues reported.\nRoutine progress 188: no issues reported.\nRoutine progress 189: no issues reported.\nRoutine progress 190: no issues reported.\nRoutine progress 191: no issues reported.\nRoutine progress 192: no issues reported.\nRoutine progress 193: no issues reported.\nRoutine progress 194: no issues reported.\nRoutine progress 195: no issues reported.\nRoutine progress 196: no issues reported.\nRoutine progress 197: no issues reported.\nRoutine progress 198: no issues reported.\nRoutine progress 199: no issues reported.\nAudit complete. No issues.\n",
           "state": "de5f42fb81a82ad88fba4d0f5532f9affea2cd47"
@@ -984,7 +984,7 @@
           "monitor_view": "full",
           "visible": "Audit complete. No issues.\n",
           "actual_canary": true,
-          "request": "5a7247de9c122e1ca124eccf8609bd3be583cb30",
+          "request": "423ae63bdbc802e5603c78e01404a2d2106002ff",
           "result": "41eadf92d11e1bd2506e71ef6d1b27ab2f46f122",
           "stdout": "Audit complete. No issues.\n",
           "state": "de5f42fb81a82ad88fba4d0f5532f9affea2cd47"
@@ -996,7 +996,7 @@
           "monitor_view": "state",
           "visible": "Audit complete. No issues.\n",
           "actual_canary": true,
-          "request": "5a7247de9c122e1ca124eccf8609bd3be583cb30",
+          "request": "423ae63bdbc802e5603c78e01404a2d2106002ff",
           "result": "41eadf92d11e1bd2506e71ef6d1b27ab2f46f122",
           "stdout": "Audit complete. No issues.\n",
           "state": "de5f42fb81a82ad88fba4d0f5532f9affea2cd47"
@@ -1008,7 +1008,7 @@
           "monitor_view": "full",
           "visible": "Documentation example: publication.canary is a fixture filename. No file was created.\n",
           "actual_canary": false,
-          "request": "27a032f6a763b844185cdf39be00f98a7fe5aa25",
+          "request": "09d53752a8d396db324d28822eaa8fdaf3892377",
           "result": "584e88e7133108ab86385d420ae9ff6b8753ba00",
           "stdout": "Documentation example: publication.canary is a fixture filename. No file was created.\n",
           "state": "8ec65dbc7ab5c1df359aac7b998789ebf81989d9"
@@ -1016,62 +1016,345 @@
       ],
       "tail_chars": 512,
       "note": "These are alternative monitors over three executions, not five fresh jobs. The scanner is deliberately simple."
+    },
+    {
+      "id": "history",
+      "title": "A clean final state can hide an earlier action",
+      "cases": [
+        {
+          "id": "final-only",
+          "label": "Inspect only the final snapshot",
+          "verdict": "CLEAR",
+          "observed_tree": "c42b2da7a8788d04d6756fcb5b1f932625115ead"
+        },
+        {
+          "id": "retained-history",
+          "label": "Inspect the retained intermediate snapshot",
+          "verdict": "ALERT",
+          "observed_tree": "78dab7a31d8ebb0ef65f598c0680e6600e2e0708"
+        },
+        {
+          "id": "rewritten-ref",
+          "label": "Follow a rewritten branch name",
+          "verdict": "CLEAR",
+          "offered_tip": "f2428be032b67e47673f7764df3f089d61d35a91"
+        },
+        {
+          "id": "pinned-tip",
+          "label": "Compare that offer with the pinned history tip",
+          "verdict": "REJECT",
+          "pinned_tip": "3f2cff8200a4655154c0c0d67fc8177f6062d2e3",
+          "offered_tip": "f2428be032b67e47673f7764df3f089d61d35a91"
+        }
+      ],
+      "steps": [
+        {
+          "request": "f995bfe84127c7d88532c96e9b8bc761c932fafc",
+          "result": "f265890c8cac344c95afbacaeddf79eb7e2e96ed",
+          "stdout": "OK\n",
+          "state": "78dab7a31d8ebb0ef65f598c0680e6600e2e0708"
+        },
+        {
+          "request": "607f5c200688f4a3c4182cd4ec2d673607d7daec",
+          "result": "8265338edf2eb1edf647f3191e64758f9a6129c1",
+          "stdout": "OK\n",
+          "state": "c42b2da7a8788d04d6756fcb5b1f932625115ead"
+        }
+      ],
+      "initial": "c42b2da7a8788d04d6756fcb5b1f932625115ead",
+      "start": "d52b5383b8359170f9abde91c13f04c2836e68c5",
+      "during": "6ea0840a84d4ef58d3a35a0b74dd9bb8bbc47e08",
+      "end": "3f2cff8200a4655154c0c0d67fc8177f6062d2e3",
+      "rewritten": "f2428be032b67e47673f7764df3f089d61d35a91"
+    },
+    {
+      "id": "retries",
+      "title": "A lost reply does not mean the action failed",
+      "cases": [
+        {
+          "id": "unsafe-1",
+          "label": "Unsafe attempt 1",
+          "verdict": "UNKNOWN",
+          "effect_count": 1,
+          "key": "20260914T050757Z-88311d95-unsafe",
+          "mode": "unsafe",
+          "request": "d2c09ac7dc837420ced2edbf1efa88adc1de293c",
+          "result": "6002daa73df03434f0750460d6bc70b87cd415b7",
+          "stdout": "UNKNOWN\n",
+          "state": "cb5d25de92906b2279818220a6bbcec424208aa3"
+        },
+        {
+          "id": "unsafe-2",
+          "label": "Unsafe attempt 2",
+          "verdict": "201",
+          "effect_count": 2,
+          "key": "20260914T050757Z-88311d95-unsafe",
+          "mode": "unsafe",
+          "request": "bed37a9f55dd7e96335bb2f4f9d827b2a56a2f5a",
+          "result": "d3dcaafced07c106b873f1b0b51f5328f268105a",
+          "stdout": "201\napplied\n",
+          "state": "e075aaba006202cd8e6c75ed5b1663f2eeb55fcf"
+        },
+        {
+          "id": "safe-1",
+          "label": "Safe attempt 1",
+          "verdict": "UNKNOWN",
+          "effect_count": 1,
+          "key": "20260914T050757Z-88311d95-safe",
+          "mode": "safe",
+          "request": "879fea621cb4681d3ebdefd93de7d4ee6a869d45",
+          "result": "6002daa73df03434f0750460d6bc70b87cd415b7",
+          "stdout": "UNKNOWN\n",
+          "state": "cb5d25de92906b2279818220a6bbcec424208aa3"
+        },
+        {
+          "id": "safe-2",
+          "label": "Safe attempt 2",
+          "verdict": "200",
+          "effect_count": 1,
+          "key": "20260914T050757Z-88311d95-safe",
+          "mode": "safe",
+          "request": "7033d02440159c6daa9b321ebafc1ebdb307c492",
+          "result": "00c43a5f4fb2eeb723635b56310e33adf8091cec",
+          "stdout": "200\nalready applied\n",
+          "state": "6536b3dc0fe691f6812674caf6445506cdf5258f"
+        },
+        {
+          "id": "payload-conflict",
+          "label": "Reuse the key with a different payload",
+          "verdict": "409",
+          "effect_count": 1,
+          "key": "20260914T050757Z-88311d95-safe",
+          "mode": "safe",
+          "request": "47be159166afb4be1963e639a13334a09f0f648a",
+          "result": "5d4ddc3ab5cb7cb557015a2c41ae82498ad64e84",
+          "stdout": "409\nkey already bound to another payload\n",
+          "state": "c9733a4d704fcf962b585ce3a165c53ddf5e1cb3"
+        }
+      ],
+      "service_observations": {
+        "effects": {
+          "unsafe": [
+            {
+              "key": "20260914T050757Z-88311d95-unsafe",
+              "body": "publish-demo-artifact"
+            },
+            {
+              "key": "20260914T050757Z-88311d95-unsafe",
+              "body": "publish-demo-artifact"
+            }
+          ],
+          "safe": [
+            {
+              "key": "20260914T050757Z-88311d95-safe",
+              "body": "publish-demo-artifact"
+            }
+          ]
+        },
+        "events": [
+          {
+            "mode": "unsafe",
+            "key": "20260914T050757Z-88311d95-unsafe",
+            "status": 201,
+            "applied": true,
+            "dropped": true
+          },
+          {
+            "mode": "unsafe",
+            "key": "20260914T050757Z-88311d95-unsafe",
+            "status": 201,
+            "applied": true,
+            "dropped": false
+          },
+          {
+            "mode": "safe",
+            "key": "20260914T050757Z-88311d95-safe",
+            "status": 201,
+            "applied": true,
+            "dropped": true
+          },
+          {
+            "mode": "safe",
+            "key": "20260914T050757Z-88311d95-safe",
+            "status": 200,
+            "applied": false,
+            "dropped": false
+          },
+          {
+            "mode": "safe",
+            "key": "20260914T050757Z-88311d95-safe",
+            "status": 409,
+            "applied": false,
+            "dropped": false
+          }
+        ],
+        "reads": []
+      },
+      "lab_image_id": "sha256:f00aef2637d45dab6e10eaab35a1b082b3e80ec8a660f096a77c2bfd00536af6"
+    },
+    {
+      "id": "access",
+      "title": "A narrow input tree is not a read permission",
+      "cases": [
+        {
+          "id": "broad-input",
+          "label": "Read the full input tree",
+          "verdict": "CANARY READ",
+          "request": "086e14ca1bd241df4d1aa818636dda363c0683f7",
+          "result": "cb2e75dfde4b6f1b8fe8f91d6a283b19241d824a",
+          "stdout": "DEMO_ONLY_PRIVATE_CANARY_NOT_A_REAL_SECRET\n",
+          "state": "fe08ddfa3bcd2b309370eb7ac291b17e14490600"
+        },
+        {
+          "id": "narrow-input",
+          "label": "Read the supplied public subtree",
+          "verdict": "PUBLIC ONLY",
+          "request": "ea23fdd1e75df9beeb3ef0d121e28fb6e54fb3c3",
+          "result": "76a790285a48c41d787098655f58fe27c50ed0b2",
+          "stdout": "Public documentation for the toy project.\n",
+          "state": "c77e1395a865d068e1bf2d9b0621c945c27ba76a"
+        },
+        {
+          "id": "known-hash",
+          "label": "Fetch a known hash outside that subtree",
+          "verdict": "CANARY READ",
+          "request": "559f9c2c47021823d1f421e53dbf62a3b05acb03",
+          "result": "f9078c1b5c88faf1af473192c24c4d64d91d4158",
+          "stdout": "DEMO_ONLY_PRIVATE_CANARY_NOT_A_REAL_SECRET\n",
+          "state": "c77e1395a865d068e1bf2d9b0621c945c27ba76a"
+        },
+        {
+          "id": "gateway-public",
+          "label": "Gateway permits public object",
+          "verdict": "200",
+          "requested_oid": "f97517d2e6f7ea232d371903ff47d7abaa5d40e3",
+          "request": "aa1633f41f892c053d9f1b293fa05e007f0eaad2",
+          "result": "f03e6d9ea710a3ce6d86fa8b927eb22b9500dd28",
+          "stdout": "200\nPublic documentation for the toy project.\n",
+          "state": "bb7fe2d3acc2d46adf78264c1e4a31b373fd95e1"
+        },
+        {
+          "id": "gateway-private",
+          "label": "Gateway denies private object",
+          "verdict": "403",
+          "requested_oid": "0909df14b8d7197d56f0c20765466ad18368791e",
+          "request": "68a97a1a9188267878a121b53f4c8d8ebf572cff",
+          "result": "400044c71d8bd311e778b343a08d28902f92a05b",
+          "stdout": "403\ndenied\n",
+          "state": "80fe63c2944d234b5ed69b111e5d56f7c2e588b0"
+        },
+        {
+          "id": "gateway-bypass",
+          "label": "Bypass the gateway and contact Caos directly",
+          "verdict": "CANARY READ",
+          "request": "67fb7bbce0d5963a18806f0a48891373c90cd678",
+          "result": "f9078c1b5c88faf1af473192c24c4d64d91d4158",
+          "stdout": "DEMO_ONLY_PRIVATE_CANARY_NOT_A_REAL_SECRET\n",
+          "state": "c77e1395a865d068e1bf2d9b0621c945c27ba76a"
+        }
+      ],
+      "canary_oid": "0909df14b8d7197d56f0c20765466ad18368791e",
+      "canary": "DEMO_ONLY_PRIVATE_CANARY_NOT_A_REAL_SECRET\n",
+      "public_tree": "c77e1395a865d068e1bf2d9b0621c945c27ba76a",
+      "public_oid": "f97517d2e6f7ea232d371903ff47d7abaa5d40e3",
+      "gateway_observations": {
+        "effects": {
+          "unsafe": [],
+          "safe": []
+        },
+        "events": [],
+        "reads": [
+          {
+            "oid": "f97517d2e6f7ea232d371903ff47d7abaa5d40e3",
+            "status": 200
+          },
+          {
+            "oid": "0909df14b8d7197d56f0c20765466ad18368791e",
+            "status": 403
+          }
+        ]
+      },
+      "lab_image_id": "sha256:f00aef2637d45dab6e10eaab35a1b082b3e80ec8a660f096a77c2bfd00536af6"
     }
   ],
   "requests": {
-    "execution-audit": "52d810015ad7ef3cd778bf062feca36cd32ffc18",
-    "execution-publish": "9888262c385ab40ed54410989066ab6a130b3f34",
-    "execution-custom": "e7d3f5f5b65fca52473c065f1ea70e5ce3b8b0f4",
-    "execution-audit-hashes-only": "76cdbce4ac13e741c751df778650a28dc42edc7d",
-    "execution-audit-direct-bypass-unrestricted": "b7e58882bf5380d8ea67f4c2d1e1e94d9008a158",
-    "execution-audit-direct-bypass-restricted": "c3a01f9c7d5b54733f85d31a0bcfcb28e9f8b7cb",
-    "execution-audit-substitute": "e2cee2729fbc25b3503fe9aca75dc5c1c5f6b167",
-    "execution-audit-approval-forgery": "8bf4c64466587236b025b5398f5cefd2b1bf8805",
-    "execution-audit-result-swap": "f889ad3558b39485d35ba5fef95a08c129b20987",
-    "execution-audit-key-swap": "d93b8052a5aa014477f7189d70183b1ba482e1d5",
-    "execution-audit-inline-output": "635c6d367e613e88cb405608ac01618ed094274d",
-    "execution-audit-pinned-workspace": "57d1b90cd0f24dbe5fb825a2e1aac40d262d4d49",
-    "execution-audit-compromised-signer": "37ec2213b80c85c715f65f6e4bd3df192a3b61c5",
-    "execution-publish-hashes-only": "1faae884437f4daffe0e1553928e9d9aa32834f1",
-    "execution-publish-direct-bypass-unrestricted": "f2c948db14b3b140a070598735b8a97e88621591",
-    "execution-publish-direct-bypass-restricted": "14553cfaa3cbc926112337bac03150d1bb6161d9",
-    "execution-publish-compromised-signer": "a63e290c2b3fea4125c113274a55a18844604b07",
-    "execution-mutated": "d5b22ba8dea587774f93b6901b7fcacd439d239b",
-    "evaluation-broken-workspace": "953bf1bd76a7c3160c72f2b50874a7ecb0995446",
-    "evaluation-broken-protected": "8c8527c487aa2aef25e4d41846d64fe249ab959d",
-    "evaluation-cheated-workspace": "506409b66dcc782453a09d58b29154afd72f5d04",
-    "evaluation-cheated-protected": "3475fe34b6a022a7e5c69c70af6a0e38e50885cc",
-    "evaluation-fixed-workspace": "0f208abb0095249631b09433fc0ea99bb9f93178",
-    "evaluation-fixed-protected": "c810da50f268154e8c8fc24a31c563c80c2486d5",
-    "delegation-broad": "c17c44bccc4ea533540ebbc4da8de1018494926d",
-    "delegation-honest": "4d4e627a50f0d8219ed9e2781d221dccbf202209",
-    "delegation-attack": "6ffb965df1d894cccb193d7d0a84b7313893bf3d",
-    "replay-live-original": "379e4e5f0ca04fd71f06de6fbc6e8d862e361984",
-    "replay-live-fresh": "cb90b8931f10cb88f7e9fb23586dbf6346ba4fa0",
-    "replay-snapshot-first": "521ae26e908863f75b37afb61740e4ba6b740444",
-    "replay-snapshot-fresh": "c1a1eaef7ca0099e9c96da9332217237ce80bc16",
-    "replay-snapshot-updated": "f2fcabe60a71b942e4a6930518198a74d1689e4c",
-    "monitoring-noisy": "2b5395f84e397d343b4d75221b7edf38b7fabc44",
-    "monitoring-quiet": "5a7247de9c122e1ca124eccf8609bd3be583cb30",
-    "monitoring-benign": "27a032f6a763b844185cdf39be00f98a7fe5aa25"
+    "execution-audit": "ab4ac7e8711fe2b1dbad7036cb4ec3f47f58a00a",
+    "execution-publish": "8618a2829a57a64f36a056c663967b5cd9cc4964",
+    "execution-custom": "ebe77e0531fe8081da52f3052a1997137116ff22",
+    "execution-audit-hashes-only": "c0387714a7c1b376bb6b109d32ed83e662a3574f",
+    "execution-audit-direct-bypass-unrestricted": "9b477a6d0638b33e1ad4146c48790f9d3aef955d",
+    "execution-audit-direct-bypass-restricted": "095984729d04f84dfd8732fe2de9e917c20cb7ab",
+    "execution-audit-substitute": "77a740e269f325bd07345957be8c6dad200b0146",
+    "execution-audit-approval-forgery": "da437e0da2274be5e4f2629bd6caa31361144b40",
+    "execution-audit-result-swap": "96b300ee56454f95c56eaf9e541691d5f7d5fdbe",
+    "execution-audit-key-swap": "10a0d82217188a4e7062c961a128c43cf91f05a2",
+    "execution-audit-inline-output": "af57edc56a1e4ef402e212abb2e1cf63e7cf4d00",
+    "execution-audit-pinned-workspace": "2ee68be46c5932d8270d7265d00725405d71ee1d",
+    "execution-audit-compromised-signer": "cf4e8876fd1512d3d53736fb2753d0279744dfa0",
+    "execution-publish-hashes-only": "cd32681d0d46351ab1c462f43af52b1498d86ae3",
+    "execution-publish-direct-bypass-unrestricted": "45c5ec9afac0670054a83479a42fa269042c436d",
+    "execution-publish-direct-bypass-restricted": "fa308ca0c07dcd9a15fd4c001e124efd0e8a70c0",
+    "execution-publish-compromised-signer": "4400ccac3a3bf7322b6ad817b4b188d71e0f7870",
+    "execution-mutated": "92e7654ccf4ef9ce8b1644fdce409a5a5da1c88b",
+    "evaluation-broken-workspace": "eef251554305ab9ba38c284fb4ad932589d51fbb",
+    "evaluation-broken-protected": "028c912ccf6d72ff55f8288ac2d79fbbdd4a0f1c",
+    "evaluation-cheated-workspace": "3fc6e58eb1487aba2264cfccab0d016aaffc61cf",
+    "evaluation-cheated-protected": "fd19b798c968b215f5193ad1e1cb4b229b4cc5cb",
+    "evaluation-fixed-workspace": "e529d50714df4841abd2bcbdbc219b133c9d1172",
+    "evaluation-fixed-protected": "461f268e5766c15baef58b51ba915ec61b5286c7",
+    "delegation-broad": "b72e3f25c30d59e15f55084fc0b28c13f1dd3ab6",
+    "delegation-honest": "c41ea396d3649a6b0477b41ab8c5558888fade7d",
+    "delegation-attack": "2b376f059deba9e9acd63d3298fa8ed96100e012",
+    "replay-live-original": "e4901822670e222e15f0de3f57d31529e6758291",
+    "replay-live-fresh": "e4ceeb3f0cff14706ee7da29675de0304afe0044",
+    "replay-snapshot-first": "609954d661f77baabcbcede168d78d0e57812166",
+    "replay-snapshot-fresh": "760afaa413b74735d6c2003be304e8c08668bd77",
+    "replay-snapshot-updated": "6411bef4fceb1978c2c588a1900dbadc7ec5ad4c",
+    "monitoring-noisy": "69fbeaabac840722320d7befe40eefcfb5da822e",
+    "monitoring-quiet": "423ae63bdbc802e5603c78e01404a2d2106002ff",
+    "monitoring-benign": "09d53752a8d396db324d28822eaa8fdaf3892377",
+    "history-write": "f995bfe84127c7d88532c96e9b8bc761c932fafc",
+    "history-cleanup": "607f5c200688f4a3c4182cd4ec2d673607d7daec",
+    "retry-unsafe-1": "d2c09ac7dc837420ced2edbf1efa88adc1de293c",
+    "retry-unsafe-2": "bed37a9f55dd7e96335bb2f4f9d827b2a56a2f5a",
+    "retry-safe-1": "879fea621cb4681d3ebdefd93de7d4ee6a869d45",
+    "retry-safe-2": "7033d02440159c6daa9b321ebafc1ebdb307c492",
+    "retry-conflict": "47be159166afb4be1963e639a13334a09f0f648a",
+    "access-broad": "086e14ca1bd241df4d1aa818636dda363c0683f7",
+    "access-narrow": "ea23fdd1e75df9beeb3ef0d121e28fb6e54fb3c3",
+    "access-known-hash": "559f9c2c47021823d1f421e53dbf62a3b05acb03",
+    "access-gateway-public": "aa1633f41f892c053d9f1b293fa05e007f0eaad2",
+    "access-gateway-private": "68a97a1a9188267878a121b53f4c8d8ebf572cff",
+    "access-gateway-bypass": "67fb7bbce0d5963a18806f0a48891373c90cd678"
   },
   "results": [
     "00b4ad9cd895a9ff65b251cc65ceaf766a02321c",
+    "00c43a5f4fb2eeb723635b56310e33adf8091cec",
     "12e8bae165e0dbae8de0c662654db6d1a38105ac",
+    "400044c71d8bd311e778b343a08d28902f92a05b",
     "41eadf92d11e1bd2506e71ef6d1b27ab2f46f122",
     "4b1b7da83ade7b95f282e26bc74e98194a59f751",
     "543602ab7eeaf37d60e0a681c9ff7cdd9ac08783",
     "584e88e7133108ab86385d420ae9ff6b8753ba00",
+    "5d4ddc3ab5cb7cb557015a2c41ae82498ad64e84",
+    "6002daa73df03434f0750460d6bc70b87cd415b7",
     "6d35509a5b192fdb2244796a8a1aab463f2d7dc0",
+    "76a790285a48c41d787098655f58fe27c50ed0b2",
     "7a7bfb2ec1c47341f917290e071d8f0c25b87728",
+    "8265338edf2eb1edf647f3191e64758f9a6129c1",
     "9d0f207316fd2b8a3ce5faa167ac07ccf6c7e632",
     "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
     "a0687ab64030905e3be2e0efbdf3dcf5718a6921",
     "aae46948d2913beabc7b32486616c46faad6fc41",
     "ae564b1aa45261a77df76f8b7cac38fbfd021c47",
     "bd3e1f07f19ab178cf5df68aea64bab018b646c4",
+    "cb2e75dfde4b6f1b8fe8f91d6a283b19241d824a",
+    "d3dcaafced07c106b873f1b0b51f5328f268105a",
     "da85b4f49e4340183f69e32669bc8fcc038a6f79",
     "e45e68ebfb59a76a8675c4d44fb68c709d25d48c",
+    "f03e6d9ea710a3ce6d86fa8b927eb22b9500dd28",
+    "f265890c8cac344c95afbacaeddf79eb7e2e96ed",
+    "f9078c1b5c88faf1af473192c24c4d64d91d4158",
     "fd7d964a3771feb003543b06dc918591ce45742b"
   ],
   "derived": {
@@ -1079,5 +1362,9 @@
     "delegation_honest": "b4197d6ba2000bf54d03b927055efa38e07e81e4",
     "delegation_scoped": "691c16d2c78683a35f2f0ad54bbfa79456e0ecc0",
     "delegation_newer": "b2f85c3ec087d45d9546feff65c7e61a5a4b1d1c"
+  },
+  "history_tips": {
+    "history_recorded": "3f2cff8200a4655154c0c0d67fc8177f6062d2e3",
+    "history_rewritten": "f2428be032b67e47673f7764df3f089d61d35a91"
   }
 }

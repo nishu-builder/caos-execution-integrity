@@ -1,46 +1,44 @@
 # Recorded validation
 
-The shared gallery contains **five demos and 37 scenarios**. All matched their expected outcomes on a real Caos stack. Successful attacks and false alarms are intentional observations, not hidden test failures.
+Eight experiments contain **52 scenarios**, including **15 added scenarios** for history, retries, and read access. All matched their expected outcomes in a combined run against a real Caos stack.
 
-| Demo | Scenarios | Measured result |
+| Experiment | Scenarios | Result |
 | --- | ---: | --- |
-| Execution | 15 | Same signed transcript with different effects; protected dispatch blocks selected attacks; bypass and trusted-signer failures remain visible |
-| Evaluation | 6 | Deleted test makes unchanged broken code pass only under workspace-selected tests |
-| Delegation | 5 | Broad authority changes a sibling policy; scoped integration preserves it and rejects wrong destination/stale parent |
-| Replay | 6 | Cached ALLOW survives a service change; fresh live execution returns DENY; captured-input replays remain stable |
-| Monitoring | 5 | Tail truncation and silent effects evade selected monitors; full evidence helps; benign text still produces a false alarm |
+| Execution | 15 | Protected dispatch blocks selected attacks; direct bypass and a lying trusted signer remain visible |
+| Evaluation | 6 | Deleting a test makes unchanged broken code pass only under the weakened test set |
+| Delegation | 5 | Scoped publication preserves a sibling policy and rejects a wrong destination or stale parent |
+| Replay | 6 | Cached answers, fresh queries, and captured-input replays produce distinguishable outcomes |
+| Monitoring | 5 | Truncation, silent effects, and false alarms expose distinct monitoring failures |
+| History | 4 | Equal initial/final trees conceal an intermediate effect; a pinned tip exposes a rewritten reference |
+| Retries | 5 | A lost response produces duplicate effects without idempotency; stable keys prevent the tested duplicate and reject changed payloads |
+| Read access | 6 | A known object remains readable outside a narrow input tree; a gateway rule is bypassed through the direct route |
 
-The execution demo also includes three live process experiments and six permission probes. Monitoring compares five configurations over three executions. Delegation reuses a child's real proposal to test two integration rejections. These counts are scenarios, not distinct process launches.
+These are scenario counts, not distinct worker counts. Several cases compare different observations of the same execution. The execution experiment also includes three live process cases and six permission probes.
 
 ## Provenance
 
-- Run: `20260914T044729Z-ae4a4abd` (UTC).
-- Tested execution source: `401a0d305e46d6c90d8288be4ae53228ecc06d7f`.
-- Source tree: `8c20d86cac591a1f5a22debc4000d280ee41bfb7`.
+- Run: `20260914T050757Z-88311d95` (UTC).
+- Tested execution source: `7bad8e74365d07c177214f5ddeec0c48ccef093f`.
+- Source tree: `4d400c0789b939d58d620c8600c57628e4d063cc`.
 - Caos revision: `5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3`.
-- Evidence commit: `35166b9e2387dc3ade8a94f263823fb6e0ca241d`.
-- Evidence branch: [evidence/gallery-20260914T044729Z-ae4a4abd](https://github.com/nishu-builder/caos-execution-integrity/tree/evidence/gallery-20260914T044729Z-ae4a4abd).
+- Evidence commit: `72079e264ceed5d359525f4ac7a84d77b838834a`.
+- Evidence branch: [evidence/gallery-20260914T050757Z-88311d95](https://github.com/nishu-builder/caos-execution-integrity/tree/evidence/gallery-20260914T050757Z-88311d95).
 
-Later edits package the measured sample and strengthen offline verification; the fixture execution code is unchanged.
+Subsequent changes package the measured data, prose, and validation notes. The fixture execution code is unchanged.
 
-## Checks performed
+## Checks
 
-- All five demos ran together through `demo.py run --only all`.
-- Monitoring also ran individually through the same command interface.
-- **20 unit tests passed**, including signature tampering, object integrity, scoped publication, stale parents, invalid destinations, nested symlinks, and replay input comparison.
-- The original and combined evidence bundles each imported into an empty Git repository, passed Git object checks, and verified offline without a Caos server.
-- Modified evaluation outcomes, delegated policy results, service-read observations, and monitor views were rejected by the verifier.
-- Browser checks passed for all five tabs and 37 rows, evidence inspectors, the original transcript comparison, keyboard navigation, direct links, and mobile layouts.
-- Temporary policy-service containers were removed after their runs.
+- All eight experiments ran together; read access also ran individually.
+- **28 unit tests passed**, including the six retry-ledger cases and script-free, escaped article rendering.
+- Original and current evidence bundles imported into empty Git repositories, passed Git object checks, and verified without a Caos server.
+- Negative checks rejected a substituted history anchor, a concealed duplicated effect, and a fabricated gateway verdict.
+- The plain article worked with JavaScript disabled: eight sections, 52 expandable cases, existing and new fragment links, and desktop/mobile layouts.
+- Temporary HTTP services and lab containers were removed after use.
 
-Run `python3 check_sample.py` after installing the locked requirements to repeat the offline checks. GitHub Actions runs the unit tests and sample verification on updates.
+GitHub Actions runs the same unit and offline evidence checks. Repeat them with `python3 -m unittest -v` and `python3 check_sample.py` after installing the locked dependencies.
 
-## Inspect and reuse
+## Evidence
 
-- [Interactive gallery](https://nishu-builder.github.io/caos-execution-integrity/).
-- [Combined raw results](docs/gallery/report.json).
-- [Standalone evidence bundle](docs/gallery/evidence.bundle).
-- [Execution receipt public keys](docs/gallery/trust.json).
-- [Original sample validation](docs/legacy-validation.md).
+[Read the article](https://nishu-builder.github.io/caos-execution-integrity/) · [Raw results](docs/gallery/report.json) · [Bundle](docs/gallery/evidence.bundle) · [Execution receipt public keys](docs/gallery/trust.json)
 
-The receipt keys authenticate statements by the execution demo's witness. The remaining demos retain operator observations and Git objects. Verification checks internal consistency against these published anchors; it cannot establish that a compromised witness, operator, runner, or external service was honest. The image base is pinned by digest, but its external bytes are not included in the bundle.
+The history commits are operator-created records, the idempotency ledger is in memory, and the private canary is fake fixture data. Verification checks the retained evidence's consistency; it does not independently attest a trusted component's honesty. External base-image bytes are not included in the bundle.
