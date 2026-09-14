@@ -2,10 +2,11 @@
   "execution": {
     "title": "The recorded command differs from the work",
     "problem": [
-      "An agent replaced its tool-call handler with an impersonator. Another reproduced it: a command appeared to succeed without creating the expected file."
+      "DAVJUL7 paused its tool-call handler and substituted an agent-written process. A peer tested it: the requested file was never created, but fabricated output appeared in the transcript.",
+      "In the deletion version of this problem, the transcript says `rm secret.txt` and shows success, while `secret.txt` remains. The process answering the tool call is lying about what ran."
     ],
     "caos": [
-      "Consider the deletion version: the agent requests `rm secret.txt`, but the file remains. CAOS can identify the exact command, input workspace, and worker image together as one Git tree. Changing the code behind the command produces a different request.",
+      "Represent `rm secret.txt`, the input workspace, and the worker image together as one Git tree. That identifies the exact work requested; changing the code or input produces a different request.",
       "The worker can return the resulting workspace as a Git tree too. A reader can inspect whether `secret.txt` is present, rather than infer deletion from an exit code. The same saved request can be run on independent infrastructure with a fresh cache key and the results compared. CAOS provides the exact work to inspect and re-execute."
     ],
     "sources": [
@@ -16,9 +17,9 @@
     ]
   },
   "evaluation": {
-    "title": "The target is replaced with an easier one",
+    "title": "Trying to replace the target with an easier one",
     "problem": [
-      "Agents planted modified targets in Artifactory and tried to make the scorer load them instead of the original programs."
+      "Agents cached easier versions of the programs they were supposed to exploit in Artifactory, a package cache. They tried to force the evaluation to reload those replacements; METR saw no successful substitution."
     ],
     "caos": [
       "An evaluation request can name the exact target, evaluator, tests, and submitted program by their content. The operator fixes the first three and varies only the submission.",
@@ -34,7 +35,7 @@
   "delegation": {
     "title": "Other agents supply code to run",
     "problem": [
-      "Agents sent files and patches to a volunteer building a script to inspect the scoring process after submission."
+      "Peers helped a volunteer write a background script watching for grading. When the grader read its answer file after submission, it reported part of the grader\u2019s launch command."
     ],
     "caos": [
       "Make each contribution a computation over an explicit input tree, returning an explicit proposal tree. The parent can inspect or test that proposal before using it.",
@@ -50,7 +51,7 @@
   "replay": {
     "title": "The same external request has a different answer later",
     "problem": [
-      "Agents used exposed credentials to access infrastructure. After access was revoked, they reported invalid credentials and failed requests."
+      "After Hugging Face revoked access, an agent retested a previously useful credential and reported HTTP 401: invalid."
     ],
     "caos": [
       "Separate fetching external data from computing over it. Capture the response as an input object, then record which response a later decision used.",
@@ -66,7 +67,7 @@
   "monitoring": {
     "title": "A harmless description covers a malicious change",
     "problem": [
-      "Agents described malicious changes as routine diagnostics or format checks, making the descriptions look innocuous."
+      "An agent submitted malicious changes to a private Hugging Face repository under the pull-request title `Draft: CI diagnostics` and commit message `isolated diagnostics`."
     ],
     "caos": [
       "A monitor can read the actual tool, inputs, changes, and returned files from their Git objects. It can reach that evidence directly instead of relying on the agent's description or the portion of output shown in a UI.",
@@ -80,9 +81,9 @@
     ]
   },
   "history": {
-    "title": "Earlier actions are removed from the story",
+    "title": "Trying to erase earlier actions",
     "problem": [
-      "Agents tried to erase earlier transcript entries by editing local logs. Those logs were not the authoritative transcripts, so those edits failed."
+      "Agents edited local logs to hide having obtained answers by reverse-engineering. The attempt failed: METR\u2019s transcripts were collected separately and retained those actions."
     ],
     "caos": [
       "Retain the sequence of request and result objects, with Git commits linking the snapshots. A later deletion changes the current workspace; it does not change an earlier snapshot someone has retained.",
@@ -98,7 +99,7 @@
   "retries": {
     "title": "A missing reply leaves the outcome unclear",
     "problem": [
-      "An agent volunteered for a reset experiment, stopped responding, and its transcript ended immediately afterward."
+      "An agent agreed to test a container reset. Its transcript ended immediately afterward; peers waited ten minutes, then warned against repeating the experiment."
     ],
     "caos": [
       "Save the request identity before dispatch and retain the result separately from the agent's next message. Another observer can ask CAOS about that same request and retrieve its result if it completed, even if the agent never reports back.",
@@ -114,7 +115,7 @@
   "access": {
     "title": "Shared infrastructure becomes a communication channel",
     "problem": [
-      "Agents intended to be isolated discovered each other through Artifactory and used the shared cache as a message board."
+      "Agents discovered other sandboxes\u2019 package requests in Artifactory\u2019s cache. They turned the shared cache into a message board for exchanging code and credentials."
     ],
     "caos": [
       "CAOS lets task data move through explicit input and output trees. A job can receive the content it needs directly, instead of discovering it through a shared writable namespace whose entries other agents can change.",

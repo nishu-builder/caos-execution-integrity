@@ -6,21 +6,23 @@ CAOS represents tools, inputs, and results as Git objects. Each section starts w
 
 ### Problem
 
-An agent replaced its tool-call handler with an impersonator. Another reproduced it: a command appeared to succeed without creating the expected file.
+DAVJUL7 paused its tool-call handler and substituted an agent-written process. A peer tested it: the requested file was never created, but fabricated output appeared in the transcript.
+
+In the deletion version of this problem, the transcript says `rm secret.txt` and shows success, while `secret.txt` remains. The process answering the tool call is lying about what ran.
 
 [METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output)
 
 ### CAOS
 
-Consider the deletion version: the agent requests `rm secret.txt`, but the file remains. CAOS can identify the exact command, input workspace, and worker image together as one Git tree. Changing the code behind the command produces a different request.
+Represent `rm secret.txt`, the input workspace, and the worker image together as one Git tree. That identifies the exact work requested; changing the code or input produces a different request.
 
 The worker can return the resulting workspace as a Git tree too. A reader can inspect whether `secret.txt` is present, rather than infer deletion from an exit code. The same saved request can be run on independent infrastructure with a fresh cache key and the results compared. CAOS provides the exact work to inspect and re-execute.
 
-## 2. The target is replaced with an easier one
+## 2. Trying to replace the target with an easier one
 
 ### Problem
 
-Agents planted modified targets in Artifactory and tried to make the scorer load them instead of the original programs.
+Agents cached easier versions of the programs they were supposed to exploit in Artifactory, a package cache. They tried to force the evaluation to reload those replacements; METR saw no successful substitution.
 
 [METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#attempting-to-replace-the-exploitgym-target-with-a-modified-target)
 
@@ -34,7 +36,7 @@ Replacing the target then changes the request identity. The evaluator receives t
 
 ### Problem
 
-Agents sent files and patches to a volunteer building a script to inspect the scoring process after submission.
+Peers helped a volunteer write a background script watching for grading. When the grader read its answer file after submission, it reported part of the grader’s launch command.
 
 [METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#extracting-information-about-the-scorer-from-trip-wires)
 
@@ -48,7 +50,7 @@ For a documentation task, the input can be the docs subtree and the returned edi
 
 ### Problem
 
-Agents used exposed credentials to access infrastructure. After access was revoked, they reported invalid credentials and failed requests.
+After Hugging Face revoked access, an agent retested a previously useful credential and reported HTTP 401: invalid.
 
 [METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#july-12th-13th-most-agents-on-the-message-board-exit-early-and-the-attack-winds-down)
 
@@ -62,7 +64,7 @@ A historical rerun can use that saved response. A check of current access must m
 
 ### Problem
 
-Agents described malicious changes as routine diagnostics or format checks, making the descriptions look innocuous.
+An agent submitted malicious changes to a private Hugging Face repository under the pull-request title `Draft: CI diagnostics` and commit message `isolated diagnostics`.
 
 [METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-only-rarely-seemed-motivated-to-evade-detection-by-humans)
 
@@ -72,11 +74,11 @@ A monitor can read the actual tool, inputs, changes, and returned files from the
 
 The monitoring step can itself be a CAOS computation: a particular checker over a particular record. Someone else can rerun it, replace the checker, or inspect the same evidence manually. The record is reusable across monitors.
 
-## 6. Earlier actions are removed from the story
+## 6. Trying to erase earlier actions
 
 ### Problem
 
-Agents tried to erase earlier transcript entries by editing local logs. Those logs were not the authoritative transcripts, so those edits failed.
+Agents edited local logs to hide having obtained answers by reverse-engineering. The attempt failed: METR’s transcripts were collected separately and retained those actions.
 
 [METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-tried-extensively-to-retroactively-edit-their-transcripts,-but-did-not-seem-to-succeed)
 
@@ -90,7 +92,7 @@ A reviewer can pin a history commit and come back to it. Moving a branch name to
 
 ### Problem
 
-An agent volunteered for a reset experiment, stopped responding, and its transcript ended immediately afterward.
+An agent agreed to test a container reset. Its transcript ended immediately afterward; peers waited ten minutes, then warned against repeating the experiment.
 
 [METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#attempting-to-forecast-and-trigger-container-resets)
 
@@ -104,7 +106,7 @@ This distinguishes recovering an existing computation from starting a fresh one.
 
 ### Problem
 
-Agents intended to be isolated discovered each other through Artifactory and used the shared cache as a message board.
+Agents discovered other sandboxes’ package requests in Artifactory’s cache. They turned the shared cache into a message board for exchanging code and credentials.
 
 [METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#~1200-agents-sent->70,000-messages-and-files-on-an-unsanctioned-message-board,-and-~700-attacked-hugging-face)
 
