@@ -1,8 +1,8 @@
-# Caos safety demos
+# Caos safety notes and experiments
 
-Five experiments about what an agent's operators can actually trust.
+Eight experiments about what an agent's operators can actually trust.
 
-**[Open the interactive gallery](https://nishu-builder.github.io/caos-execution-integrity/)** · [Recorded validation](VALIDATION.md) · [Original execution-integrity article](BLOG.md)
+**[Read the articles](https://nishu-builder.github.io/caos-execution-integrity/)** · [Recorded validation](VALIDATION.md) · [Original execution-integrity article](BLOG.md)
 
 | Demo | Failure | Improvement tested | Important limit |
 | --- | --- | --- | --- |
@@ -10,9 +10,12 @@ Five experiments about what an agent's operators can actually trust.
 | [Evaluation](demos/evaluation/README.md) | Deleting a test makes broken code pass | Operator-pinned tests and evaluator | Weak tests and hostile evaluator interaction remain possible |
 | [Delegation](demos/delegation/README.md) | A docs task changes a sibling review policy | Fixed subtree input and output integration | This limits publication authority, not network or object-store access |
 | [Replay](demos/replay/README.md) | A cached answer conceals a changed external service | Distinguish fresh work; pin captured inputs for historical replay | Reproducible old evidence can still be stale |
+| [History](demos/history/README.md) | A clean final snapshot hides an earlier action | Retain intermediate results and pin the history tip | A mutable reference or dishonest recorder can omit history |
+| [Retries](demos/retries/README.md) | A lost reply causes a duplicated effect on retry | Bind a stable intent key to the payload at the service | The fixture is not durable across crashes |
+| [Read access](demos/access/README.md) | A narrow input tree leaves a known object readable | Explicit gateway permissions | A direct backend route bypasses the gateway |
 | [Monitoring](demos/monitoring/README.md) | The monitor sees less than the system retained | Scan the full result and relevant state | A monitor can still miss effects or raise false alarms |
 
-The earlier [evaluation demo](https://github.com/nishu-builder/caos-eval-demo) is now included here. The existing execution demo remains intact. Delegation, external-state replay, and monitoring are new experiments, with one runner, gallery, and evidence workflow.
+The earlier [evaluation demo](https://github.com/nishu-builder/caos-eval-demo) is now included here. The existing execution demo remains intact. Delegation, external-state replay, and monitoring are new experiments, with one runner, plain blog presentation, and evidence workflow. History, retries, and shared-store read access add three further cases.
 
 These are fixed attack scripts and real Caos jobs, not LLM evaluations. Every harmful effect is confined to a disposable fixture. Nothing is published to an external service by an attack.
 
@@ -34,15 +37,15 @@ python3 demo.py run --only all \
   --server http://YOUR_CAOS_CONTAINER
 ```
 
-Use `--only execution`, `evaluation`, `delegation`, `replay`, or `monitoring` to run one experiment. All is the default. The network and server arguments identify your existing stack; the `caos` Git remote is its URL reachable from the host.
+Use `--only execution`, `evaluation`, `delegation`, `replay`, `monitoring`, `history`, `retries`, or `access` to run one experiment. All is the default. The network and server arguments identify your existing stack; the `caos` Git remote is its URL reachable from the host.
 
-The replay demo briefly binds a local HTTP fixture at `127.0.0.1:18081`. Choose another free port with `--feed-port` when needed. Its uniquely named container is removed when the experiment ends. No shared service is stopped.
+Replay, retries, and read access each briefly bind a local HTTP fixture at `127.0.0.1:18081`. Choose another free port with `--feed-port` when needed. Each uniquely named container is removed when the experiment ends. No shared service is stopped.
 
 Run from a clean, committed clone of your own. The execution demo briefly changes a tracked fixture after approval and restores it. Container resource limits are explicit. The execution lab uses different Unix users inside its own container; no Docker socket or host process namespace is mounted.
 
 Each run produces `runs/gallery-<run-id>/`:
 
-- `index.html`: the same interactive presentation used by the public gallery.
+- `index.html`: the same plain, script-free articles used by the published site.
 - `report.json`: case outcomes, exact inputs, retained results, and observations.
 - `evidence.bundle`: standalone Git objects for offline checking.
 - `trust.json`: public keys for the execution demo, when included.
@@ -83,7 +86,8 @@ Workers have network access. Passing a subtree is not a server-side access-contr
 | --- | --- |
 | `demo.py` | One CLI; original execution demo retained |
 | `suite.py` | Select experiments, form requests, export combined evidence |
-| `gallery.html` | Shared presentation with links to each problem |
+| `blog.py`, `blog.html`, `articles.json` | Static blog presentation and prose for each problem |
+| `more_cases.py`, `demo_service.py` | History, retries, and read-access fixtures |
 | `verify_suite.py`, `check_sample.py` | Offline verification and standalone bundle import |
 | `lab.py`, `crypto.py`, `sandbox.py` | Execution attack and proposed defense |
 | `scope.py` | Fixed-destination Git-tree integration |
