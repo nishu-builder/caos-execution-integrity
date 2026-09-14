@@ -28,6 +28,8 @@ def sign(key, body):
 
 
 def verify(public, envelope):
+    if not isinstance(envelope, dict) or not isinstance(envelope.get("body"), dict):
+        raise ValueError("invalid envelope")
     try:
         Ed25519PublicKey.from_public_bytes(bytes.fromhex(public)).verify(
             base64.b64decode(envelope["signature"], validate=True),

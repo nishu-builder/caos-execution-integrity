@@ -398,9 +398,9 @@ def suite(inputs):
         # The unprivileged proxy really resolves the wrong request through caos,
         # then returns the honest result ID. Its fixture observation is for this
         # controlled experiment, not evidence a hostile proxy would volunteer.
-        naive_auth = approval("hashes-only", inputs["audit"])
+        naive_auth = approval("hashes-only", inputs["audit-hashes-only"])
         naive = through_broker("hashes-only", "hashes-only", naive_auth, network_blocked=False,
-                               server=inputs["server"], alternate=inputs["publish"],
+                               server=inputs["server"], alternate=inputs["publish-hashes-only"],
                                alternate_result=honest_result)
         wrong_actual = naive["fixture_observation"]
         records.append(dict(name="hashes-only", approval=naive_auth, accepted=True,
@@ -411,9 +411,9 @@ def suite(inputs):
 
         for restricted in (False, True):
             label = "direct-bypass-restricted" if restricted else "direct-bypass-unrestricted"
-            auth = approval(label, inputs["audit"])
+            auth = approval(label, inputs["audit-" + label])
             response = through_broker(label, "direct-bypass", auth, network_blocked=restricted,
-                                       server=inputs["server"], alternate=inputs["publish"],
+                                       server=inputs["server"], alternate=inputs["publish-" + label],
                                        alternate_result=honest_result)
             extra = {"network_filter": restricted, "proxy_response": response}
             if not restricted:
@@ -427,7 +427,7 @@ def suite(inputs):
             record(label, auth, response, False, extra)
 
         for mode in ("substitute", "approval-forgery", "result-swap", "key-swap", "inline-output"):
-            auth = approval(mode, inputs["audit"])
+            auth = approval(mode, inputs["audit-" + mode])
             envelope = through_broker(mode, mode, auth, alternate=inputs["publish"],
                                       alternate_result=wrong_result)
             record(mode, auth, envelope, mode == "inline-output")
@@ -445,7 +445,7 @@ def suite(inputs):
                                 receipt=repeated, accepted=False, rejection=str(e),
                                 explanation="In-memory one-use ledger; no restart durability claim."))
 
-        for label, request in (("custom-tool", inputs["custom"]), ("pinned-workspace", inputs["audit"])):
+        for label, request in (("custom-tool", inputs["custom"]), ("pinned-workspace", inputs["audit-pinned-workspace"])):
             auth = approval(label, request)
             record(label, auth, through_broker(label, "honest", auth), True)
     finally:
@@ -453,12 +453,12 @@ def suite(inputs):
 
     # Fault injection deliberately compromises the trusted signer, not an untrusted API flag.
     Path(config["socket"]).unlink()
-    compromised_cfg = dict(config, fault_actual_request=inputs["publish"],
+    compromised_cfg = dict(config, fault_actual_request=inputs["publish-compromised-signer"],
                            fault_reported_result=honest_result)
     write(cfg, compromised_cfg)
     compromised = spawn("dispatcher", cfg)
     try:
-        auth = approval("compromised-signer", inputs["audit"])
+        auth = approval("compromised-signer", inputs["audit-compromised-signer"])
         envelope = through_broker("compromised-signer", "honest", auth)
         item = record("compromised-signer", auth, envelope, True,
                       {"explanation": "Signer deliberately lies about both dispatched request and returned result."})

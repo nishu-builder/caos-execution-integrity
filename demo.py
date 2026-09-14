@@ -86,8 +86,15 @@ def run(args):
     print("Preparing content-pinned caos requests...", flush=True)
     _, base = cli("eval-path", "worker").split()
     requests = {}
-    for name, command_text in (("audit", "bash tools/audit.sh"), ("publish", "bash tools/publish.sh"),
-                                ("custom", "bash tools/custom.sh")):
+    commands = [("audit", "bash tools/audit.sh"), ("publish", "bash tools/publish.sh"),
+                ("custom", "bash tools/custom.sh")]
+    labels = ("hashes-only", "direct-bypass-unrestricted", "direct-bypass-restricted",
+              "substitute", "approval-forgery", "result-swap", "key-swap",
+              "inline-output", "pinned-workspace", "compromised-signer")
+    commands += [("audit-" + label, "bash tools/audit.sh") for label in labels]
+    commands += [("publish-" + label, "bash tools/publish.sh") for label in
+                 ("hashes-only", "direct-bypass-unrestricted", "direct-bypass-restricted", "compromised-signer")]
+    for name, command_text in commands:
         requests[name] = oid(cli("prepare-request", f"--base:hash={base}",
                                   "--workspace:@=fixture", f"--command={command_text}",
                                   f"--salt={run_id}-{name}"))
