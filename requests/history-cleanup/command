@@ -1,0 +1,1 @@
+rm publication.canary; printf 'OK\n'

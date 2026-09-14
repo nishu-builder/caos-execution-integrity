@@ -1,0 +1,1 @@
+printf 'local effect\n' > publication.canary; printf 'OK\n'

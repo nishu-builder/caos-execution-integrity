@@ -1,0 +1,1 @@
+caos get-hash 0909df14b8d7197d56f0c20765466ad18368791e /cas/retrieved; caos get /cas/retrieved; cat /cas/retrieved

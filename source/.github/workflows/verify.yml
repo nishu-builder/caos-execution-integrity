@@ -1,0 +1,21 @@
+name: Verify lab and retained evidence
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install locked test dependencies
+        run: |
+          python3 -m venv .runtime/venv
+          .runtime/venv/bin/pip install --only-binary=:all: --require-hashes -r requirements.txt
+      - name: Test tampering and verification
+        run: .runtime/venv/bin/python -m unittest -v
+      - name: Verify retained evidence without a Caos server
+        run: .runtime/venv/bin/python check_sample.py
