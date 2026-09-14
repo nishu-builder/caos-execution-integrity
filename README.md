@@ -2,7 +2,7 @@
 
 Three ideas for checking agent work: rerun it independently, inspect the code behind its names, and detect changes or gaps in its history. The repository also includes eight runnable experiments and their recorded Git objects.
 
-**[Read the post](https://nishu-builder.github.io/caos-execution-integrity/)** · [Markdown version](NOTES.md) · [Recorded validation](VALIDATION.md) · [Original execution-integrity article](BLOG.md)
+**[New post: why CAOS could be useful for alignment work](https://nishu-builder.github.io/caos-execution-integrity/alignment.html)** · [Earlier post](https://nishu-builder.github.io/caos-execution-integrity/) · [Markdown version](NOTES.md) · [Recorded validation](VALIDATION.md) · [Original execution-integrity article](BLOG.md)
 
 | Demo | Failure | Improvement tested | Important limit |
 | --- | --- | --- | --- |
