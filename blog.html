@@ -18,15 +18,9 @@ footer{border-top:1px solid #ddd;padding-top:18px;margin:50px 0 30px;overflow-wr
 <body>
 <header><p class="meta"><a href="https://github.com/nishu-builder/caos-execution-integrity">Code and running instructions</a></p>
 <h1>Notes on Caos and agent safety</h1>
-<p>Caos makes an agent's work easier to name, retain, and inspect. A tool, its inputs, and its result can be represented as Git objects, so another person can examine the same bytes. That is useful for safety work, but it leaves important questions about who controls execution, which effects are observed, and what a recorded result actually establishes.</p>
-<p>These small experiments make some of those questions concrete. Each uses real Caos jobs and deliberately limited fixtures. The attacks are fixed scripts, so the results tell us about particular boundaries rather than an adaptive model's chance of breaking them.</p>
-<p>The examples below show both improvements and their limits. All effects are local fixtures; the private-data example uses an explicitly fake canary.</p>
-
+<p>Eight experiments about what an agent ran, what it changed, and what another person can check. Each uses a small script and real Caos jobs to isolate one problem.</p>
+<p>The useful idea in Caos is that tools, inputs, and results are Git objects. We can preserve the exact work, pass it to someone else, and rerun it. These examples explore what that changes.</p>
 </header>
-<section id="scope">
-<h2>What this lab establishes</h2>
-<p>These are mechanism demonstrations, not a deployable safety system. They run on one host with fixed attack scripts, short-lived keys, in-memory ledgers, and serial handlers. We have not tested human approval, authorization recovery after crashes, concurrent attacks, or an adaptive agent. Deployment would still need a protected review and display path, durable authorization, and controls on every route that can cause an external effect.</p>
-</section>
 <section id="rerun">
 <h2>Rerun the examples</h2>
 <p>The complete worker images and inputs are available as Git objects on the <a href="https://github.com/nishu-builder/caos-execution-integrity/tree/caos-rerun">caos-rerun branch</a> and in a <a href="https://nishu-builder.github.io/caos-execution-integrity/rerun/requests.bundle">downloadable bundle</a>. From a clone of the repository, with a compatible Caos server running:</p>
