@@ -47,7 +47,7 @@ def verify_receipt(public, envelope, approval):
     if body.get("type") != "resolution" or body.get("schema") != 1:
         raise ValueError("wrong receipt type")
     if body.get("status") != "resolved":
-        raise ValueError("dispatcher rejected request: " + body.get("reason", "unknown"))
-    if not re.fullmatch("[0-9a-f]{40}", body.get("result", "")):
+        raise ValueError("dispatcher rejected request: " + str(body.get("reason", "unknown")))
+    if not isinstance(body.get("result"), str) or not re.fullmatch("[0-9a-f]{40}", body["result"]):
         raise ValueError("invalid result identity")
     return body
