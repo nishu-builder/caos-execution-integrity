@@ -1,0 +1,131 @@
+{
+  "created": "1970-01-01T00:00:01Z",
+  "architecture": "amd64",
+  "os": "linux",
+  "config": {
+    "Env": [
+      "PATH=/bin:/bin"
+    ],
+    "Entrypoint": [
+      "/bin/caos",
+      "runner"
+    ]
+  },
+  "rootfs": {
+    "type": "layers",
+    "diff_ids": [
+      "sha256:98a106b6d7409a9b41fd82d7b434db064f4aca55765bb9467985fd4210580be6",
+      "sha256:a0036c9e5c9294cce48caf4bc0b51e37172212b5d27063b9273cede5eb3d62bb",
+      "sha256:1e1a50ec045550448cbe3282992b99a8eb115236e5b47c3ee9f7bd3124b6355f",
+      "sha256:6e77a8bc0d9cfb6be383c7ba6dd04f63ce5257d8e310802555de2208d6d1f08e",
+      "sha256:f94963c6fcd11070120bb53eb234887417f2b96b4d596ab1857a800cb590bf94",
+      "sha256:e8ffbfe669184147a5f3375d7ebd0e8f2ea997fe83d5773a54ebdb1bb224e15f",
+      "sha256:3f298afaaf7533969bd20718c7c290cd31532dc831644dc23bb4d4d8813aabd2",
+      "sha256:6caf3e2080c0000b2994e2396b39916e69937b9cebe3809856ac49769debb35d",
+      "sha256:5f0bb78522cac8376203055c09c5049fdea4c842f48329679e64a925458d2731",
+      "sha256:965076a3807e4e279253a9b66e7bed44f42271c8d78add6c0e62a449253b1946",
+      "sha256:eacd89b86636a44dc540fd2b913edbc2a726e781253a44d6755b71c03eb12d4b",
+      "sha256:2600e10e975334e9eb47a879a6a718f5c4b392dffc22528c3c92e9a0f205d7b4",
+      "sha256:20eabe193bbbe2b563ee92f6f70dce10fe8cd625a9706840fc4fdc8f73e9690d",
+      "sha256:3cd256ee8dfb688baeb217c43f42c01923253d281a700443fd09caf25b878c8b",
+      "sha256:f1c1da22e2eff03e9be7b31772527296f53262a7df3f6a9d9e5e823761c0c53e",
+      "sha256:91c90801527bf5b791e2f8a644ed4007745de27f67b7ce555ab9d05ede8c8090",
+      "sha256:48b17080114e4a5a7eb2e1a2ba5c105b75f20a38610073535401c4a5741b48a3",
+      "sha256:1a2bd2fc98a07f5529d06391934fa110b5bc12eab276a9ce75fc0dc5acd594b3",
+      "sha256:b68ec149ea8be58395d5637ee6314ac7b946696d9eab8bc1fa9f873954f1a70b",
+      "sha256:414886cb135d1cb3db690acaa28073ee44c1af65e8400fdfc25ed1058883889c",
+      "sha256:15bc99bcacbbaed70c3622fccdc6f267bf08c22497f60f6310468ef1af090db1",
+      "sha256:54403f1bf08c8ef27f0fb45e6ec595f243e9d47d319a6ddc412212c238f34954"
+    ]
+  },
+  "history": [
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/vppg2xpbpq0gssg1x4zxyigw5cx1v77y-bash-worker-root']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/g54b6ghpnn98hfdz4yqw87w10c3hx8bv-xgcc-15.2.0-libgcc']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/xyikkpwkyxx6syba3kfrr0h67ig5hwmn-gcc-15.2.0-libgcc']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/bf6wgamqnl3c91iamlb1branrfcwwy7x-libunistring-1.4.2']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/6qa00czc79b3nb6ld0mdyacfp2p1k3jx-libidn2-2.3.8']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/57iz36553175g3178pvxjij8z5rcsd4n-glibc-2.42-61']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/v2dzxxlyf0z8njnr3nar1wmdiw6hssb6-attr-2.5.2']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/yxla342pd0453pz2k0yybnyy1hig8dv4-acl-2.3.2']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/mh9f88s66k9i27yfwwng7x04mnykgfyg-oniguruma-6.9.10-lib']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/7a1hndk12kz9wwh9sz8hzkkwgxq6rrnk-jq-1.8.1']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/s04d6wm3kqjdgr7zdhlk214f6a2291ks-jq-1.8.1-bin']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/9qf6m6csaabfx2adfdk5771w8fjsqccs-pcre2-10.46']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/gn94gpcp5q08x4v6g8mvw8v4r65rcjzk-gnugrep-3.12']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/wl2nw5l4x4dg6kclbgpq7v9212i1s6cy-ncurses-6.6']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/ylf24iiwy5xphy8wfz6jgahncsfgsy2r-readline-8.3p3']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/chqq8mpmpyfi9kgsngya71akv5xicn03-gcc-15.2.0-lib']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/cspsij182bd9hsx64mz1p7p143inkrjn-gmp-with-cxx-6.3.0']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/cgjr3kj3hs7ngznyws5qfg16c8scpys0-bash-interactive-5.3p9']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/9ypz3flqsrl5xl495mm8h645gadjsxi1-coreutils-9.11']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/ww555mznia5v7sz2w85lblg4amvhkhv1-diffutils-3.12']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/c1cjgg6p8m8fssivzrc2p13mwwml3p3v-findutils-4.10.0']"
+    },
+    {
+      "created": "1970-01-01T00:00:01Z",
+      "comment": "store paths: ['/nix/store/h6q69i20wlnps3z47lwcf6qzha31f0lb-bash-customisation-layer']"
+    }
+  ]
+}
