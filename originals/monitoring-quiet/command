@@ -1,1 +1,0 @@
-printf 'local publication\n' > publication.canary; printf 'Audit complete. No issues.\n'

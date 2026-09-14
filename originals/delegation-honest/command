@@ -1,1 +1,0 @@
-printf 'Updated installation instructions.\n' > guide.txt
