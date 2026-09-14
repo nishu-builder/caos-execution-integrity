@@ -33,8 +33,8 @@ python3 verify.py docs/report.json \
   --approver-key 5a82731c341237cc07f6ded807f9cc7af40c88e3ed6c19367cd27fc71bcddd0d
 ```
 
-Or import [docs/evidence.bundle](docs/evidence.bundle) into an empty repository and pass its path with `--repo`.
+Or import [docs/evidence.bundle](evidence.bundle) into an empty repository and pass its path with `--repo`.
 
 These keys are the public trust anchors for this published sample. Only use them if you trust the publication. The private keys were generated inside the disposable lab container and were not exported. A replacement report with replacement keys is not evidence of the original run.
 
-[Open the interactive report locally](docs/index.html) or read [the raw report](docs/report.json). The HTML uses no external scripts or services. The bundle retains Git objects by identity; it does not freeze third-party services or certify that the trusted dispatcher was honest.
+[Open the interactive report locally](index.html) or read [the raw report](report.json). The HTML uses no external scripts or services. The bundle retains Git objects by identity; it does not freeze third-party services or certify that the trusted dispatcher was honest.
