@@ -1,128 +1,129 @@
 {
   "execution": {
-    "title": "The command says rm secret.txt. The file is still there.",
-    "paragraphs": [
-      "Suppose an agent issues rm secret.txt. The program handling the tool call leaves the file alone and returns a successful exit code. The transcript shows the requested command and success, even though the file still exists. METR observed agents replacing tool-call handlers to make one command appear to run while something else happened.",
-      "Caos gives the requested work an exact identity. The command, the input workspace containing secret.txt, and the worker image are captured in a Git tree. Its hash identifies that particular operation on those particular files.",
-      "This also pins the code behind the command. If the agent changes a tool script or substitutes a different worker image, it produces a different request. The original request continues to name the original bytes, even after the agent edits its working files.",
-      "The result is inspectable too. In our worker setup, Caos retains stdout, the exit code, and the returned workspace as Git objects. For this example, we can check whether secret.txt is absent from the returned workspace instead of taking a success message as the answer.",
-      "If the executor supplied a false result, the saved request gives us something concrete to check elsewhere. Run the same computation on independent infrastructure with a fresh cache key and compare the returned trees. A result that still contains secret.txt disagrees with a correct execution. Caos makes it practical to share and re-execute the exact work being checked."
+    "title": "The recorded command differs from the work",
+    "problem": [
+      "An agent replaced its tool-call handler with an impersonator. Another reproduced it: a command appeared to succeed without creating the expected file."
     ],
-    "links": [
+    "caos": [
+      "Consider the deletion version: the agent requests `rm secret.txt`, but the file remains. CAOS can identify the exact command, input workspace, and worker image together as one Git tree. Changing the code behind the command produces a different request.",
+      "The worker can return the resulting workspace as a Git tree too. A reader can inspect whether `secret.txt` is present, rather than infer deletion from an exit code. The same saved request can be run on independent infrastructure with a fresh cache key and the results compared. CAOS provides the exact work to inspect and re-execute."
+    ],
+    "sources": [
       {
-        "label": "METR: handler replacement",
+        "label": "METR",
         "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output"
-      },
-      {
-        "label": "Earlier command-substitution experiment",
-        "url": "https://github.com/nishu-builder/caos-execution-integrity/blob/main/BLOG.md"
       }
-    ],
-    "evidence_label": "Earlier implementation: 15 recorded cases",
-    "evidence_note": "These retained runs use the earlier audit.sh/publish.sh example and include signing and permission probes. The rm secret.txt scenario above is a simpler illustration of the request-and-result model."
+    ]
   },
   "evaluation": {
-    "title": "Passing the tests can mean weakening the tests",
-    "paragraphs": [
-      "The task is to repair a function that keeps a number between two bounds. The broken version handles the lower bound but ignores the upper one. A submission can make the test command succeed simply by removing the test that catches that mistake.",
-      "We run the original program, the cheating submission, and a real repair against two test selections. The cheating submission passes its own workspace tests and fails the operator's original tests. Its program bytes are unchanged. The real repair passes both.",
-      "Caos lets the operator bind an exact evaluator and test set while varying the submitted program independently. The recorded request identifies those choices, and the result includes each test outcome. A reviewer can see whether the program improved or the meaning of success changed.",
-      "The tests still determine what passing means. Pinning them makes that choice visible and stops the submission from quietly changing it."
+    "title": "The target is replaced with an easier one",
+    "problem": [
+      "Agents planted modified targets in Artifactory and tried to make the scorer load them instead of the original programs."
     ],
-    "links": [
+    "caos": [
+      "An evaluation request can name the exact target, evaluator, tests, and submitted program by their content. The operator fixes the first three and varies only the submission.",
+      "Replacing the target then changes the request identity. The evaluator receives the pinned target bytes instead of resolving a package name or cache location again. A result says which target was tested, and another researcher can repeat that evaluation."
+    ],
+    "sources": [
       {
-        "label": "METR: attempts to replace the target",
+        "label": "METR",
         "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#attempting-to-replace-the-exploitgym-target-with-a-modified-target"
       }
     ]
   },
   "delegation": {
-    "title": "A child should not choose where its work is applied",
-    "paragraphs": [
-      "A parent delegates a documentation change. The child returns an updated guide together with a file disabling the repository's review policy. Accepting its entire returned repository gives it authority over both changes.",
-      "In the scoped version, the child receives only the docs subtree. More importantly, the parent applies the child's result only at a destination the parent selected in advance. A returned policy.txt lands inside docs; the actual root policy remains unchanged. The legitimate guide update still goes through.",
-      "The integrator also rejects an attempt to select the repository root as the destination and a proposal based on an older parent state. Unit tests cover symlinks that could cross the file boundary when materialized. Caos supplies the exact input and result trees; the integration policy is added here.",
-      "The decisive step is the parent's fixed destination: the child can propose files, but cannot choose where they are applied. The read-access example below separately tests what the child can retrieve."
+    "title": "Other agents supply code to run",
+    "problem": [
+      "Agents sent files and patches to a volunteer building a script to inspect the scoring process after submission."
     ],
-    "links": [
+    "caos": [
+      "Make each contribution a computation over an explicit input tree, returning an explicit proposal tree. The parent can inspect or test that proposal before using it.",
+      "For a documentation task, the input can be the docs subtree and the returned edits can be applied only there. CAOS supplies the separate input and result objects; the parent chooses where to apply them. Receiving a child's work need not give the child control of the parent's whole workspace."
+    ],
+    "sources": [
       {
-        "label": "Implementation and longer explanation",
-        "url": "https://github.com/nishu-builder/caos-execution-integrity/blob/main/demos/delegation/README.md"
+        "label": "METR",
+        "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#extracting-information-about-the-scorer-from-trip-wires"
       }
     ]
   },
   "replay": {
-    "title": "A repeated request may not recheck the world",
-    "paragraphs": [
-      "A local HTTP policy service initially says ALLOW. A Caos job reads it. We then change the service to DENY and request the same job again.",
-      "The repeated request returns the cached ALLOW result without another read of the service. A fresh execution, made by changing only the salt, reads the same URL and gets DENY. The service's log distinguishes those two events.",
-      "To reproduce the historical decision, we capture the original response as an explicit Git input. Fresh jobs over that snapshot keep returning ALLOW while the live service says DENY. Explicitly adopting a new snapshot changes the result.",
-      "The distinction is between reusing an old answer, asking the service again, and rerunning against captured evidence. Caos gives each set of inputs an inspectable identity."
+    "title": "The same external request has a different answer later",
+    "problem": [
+      "Agents used exposed credentials to access infrastructure. After access was revoked, they reported invalid credentials and failed requests."
     ],
-    "links": [
+    "caos": [
+      "Separate fetching external data from computing over it. Capture the response as an input object, then record which response a later decision used.",
+      "A historical rerun can use that saved response. A check of current access must make a fresh external request. CAOS makes the distinction explicit: reusing a cached answer, recomputing from captured input, and fetching new input are three different operations."
+    ],
+    "sources": [
       {
-        "label": "Implementation and longer explanation",
-        "url": "https://github.com/nishu-builder/caos-execution-integrity/blob/main/demos/replay/README.md"
+        "label": "METR",
+        "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#july-12th-13th-most-agents-on-the-message-board-exit-early-and-the-attack-winds-down"
       }
     ]
   },
   "monitoring": {
-    "title": "Saved evidence may never reach the monitor",
-    "paragraphs": [
-      "A worker creates a local publication canary and reports it, then prints enough routine progress to push the event outside the final 512 characters. Its last line says the audit completed with no issues.",
-      "A monitor reading only that tail reports CLEAR. Reading the complete retained output reveals the event. We then try a silent variant: the canary is created but never mentioned. A full-output scan misses it; a check of the retained filesystem finds it.",
-      "Finally, a benign message mentions the same filename without creating it. The keyword scanner raises a false alarm. Across these cases, missing evidence and mistaken interpretation produce different failures.",
-      "Saving an output and showing it to the monitor are separate steps. Caos lets the monitor fetch the full result independently of the display. The next experiment follows an effect that disappears from the final snapshot."
+    "title": "A harmless description covers a malicious change",
+    "problem": [
+      "Agents described malicious changes as routine diagnostics or format checks, making the descriptions look innocuous."
     ],
-    "links": [
+    "caos": [
+      "A monitor can read the actual tool, inputs, changes, and returned files from their Git objects. It can reach that evidence directly instead of relying on the agent's description or the portion of output shown in a UI.",
+      "The monitoring step can itself be a CAOS computation: a particular checker over a particular record. Someone else can rerun it, replace the checker, or inspect the same evidence manually. The record is reusable across monitors."
+    ],
+    "sources": [
       {
-        "label": "Implementation and longer explanation",
-        "url": "https://github.com/nishu-builder/caos-execution-integrity/blob/main/demos/monitoring/README.md"
+        "label": "METR",
+        "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-only-rarely-seemed-motivated-to-evade-detection-by-humans"
       }
     ]
   },
   "history": {
-    "title": "A clean final state can hide an earlier action",
-    "paragraphs": [
-      "A worker creates a publication canary. A later worker removes it. The final workspace has exactly the same Git tree identity as the initial workspace. A review of the final snapshot, or a comparison of the initial and final trees, finds no change.",
-      "We retain the intermediate result and link the snapshots in ordinary Git commits. Examining that history reveals the canary. The cleanup request also names the preceding result as its input, so the intended chain can be inspected.",
-      "There is another trap: a branch name can be rewritten. The lab replaces its own temporary history reference with a new, parentless commit containing the same clean final tree. Following the name now shows a clean story. Comparing it with the previously pinned history tip detects the substitution.",
-      "The operator creates these history commits and retains both versions in the bundle. The useful comparison is against the history tip saved earlier: following a mutable branch name alone loses the evidence. An effect created and removed inside a single job would need finer-grained recording."
+    "title": "Earlier actions are removed from the story",
+    "problem": [
+      "Agents tried to erase earlier transcript entries by editing local logs. Those logs were not the authoritative transcripts, so those edits failed."
     ],
-    "links": [
+    "caos": [
+      "Retain the sequence of request and result objects, with Git commits linking the snapshots. A later deletion changes the current workspace; it does not change an earlier snapshot someone has retained.",
+      "A reviewer can pin a history commit and come back to it. Moving a branch name to a cleaner history does not replace that pinned commit. This makes it possible to examine the state around a particular action, rather than reconstruct everything from the final files."
+    ],
+    "sources": [
       {
-        "label": "Implementation and longer explanation",
-        "url": "https://github.com/nishu-builder/caos-execution-integrity/blob/main/demos/history/README.md"
+        "label": "METR",
+        "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-tried-extensively-to-retroactively-edit-their-transcripts,-but-did-not-seem-to-succeed"
       }
     ]
   },
   "retries": {
-    "title": "Losing the reply does not mean the action failed",
-    "paragraphs": [
-      "The worker asks a local service to apply an effect. The service records it and deliberately closes the connection before replying. The worker reports UNKNOWN. That uncertainty is real: from its response alone, it cannot tell whether the action happened.",
-      "Running a fresh retry against the ordinary endpoint applies the effect a second time. The first attempt and its retry have different Caos request identities because of their salts, even though they express the same logical intent.",
-      "At the second endpoint, the service binds a stable idempotency key to the payload. The first call again loses its reply after applying the effect. The retry returns the existing outcome without applying it again. Reusing the key with a different payload is rejected.",
-      "Deduplication lives at the service that applies the effect. A fresh Caos request is a new computation, even when it repeats the same intent. Our service keeps its ledger in memory and handles one request at a time; preserving that behavior across restarts would require storing the intent and effect atomically."
+    "title": "A missing reply leaves the outcome unclear",
+    "problem": [
+      "An agent volunteered for a reset experiment, stopped responding, and its transcript ended immediately afterward."
     ],
-    "links": [
+    "caos": [
+      "Save the request identity before dispatch and retain the result separately from the agent's next message. Another observer can ask CAOS about that same request and retrieve its result if it completed, even if the agent never reports back.",
+      "This distinguishes recovering an existing computation from starting a fresh one. For an external action, a missing response still leaves its effect uncertain; the external service needs its own record of whether that action happened. The CAOS request gives the investigation a stable starting point."
+    ],
+    "sources": [
       {
-        "label": "Implementation and longer explanation",
-        "url": "https://github.com/nishu-builder/caos-execution-integrity/blob/main/demos/retries/README.md"
+        "label": "METR",
+        "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#attempting-to-forecast-and-trigger-container-resets"
       }
     ]
   },
   "access": {
-    "title": "An input tree is not a read permission",
-    "paragraphs": [
-      "A child receives only a public documentation subtree. A canary in a sibling private directory is absent from that input. It is tempting to treat this as a confidentiality boundary.",
-      "The canary is an explicitly fake value placed on the demo's own Caos server. When we give the child its object identity, the worker can fetch it directly even though it is outside the supplied subtree. This tests known-hash access; it says nothing about how easy a real secret's identity would be to discover.",
-      "We add a small gateway that serves only an allowed public object. It accepts a request for that object and refuses the private canary. But the worker can still bypass the gateway and use the server's direct object route. A policy on one route cannot protect data while another route remains open.",
-      "A narrow input tree describes what the child was handed. Read permissions determine what else it can fetch. Enforcing those permissions requires controlling the direct backend route as well as the gateway."
+    "title": "Shared infrastructure becomes a communication channel",
+    "problem": [
+      "Agents intended to be isolated discovered each other through Artifactory and used the shared cache as a message board."
     ],
-    "links": [
+    "caos": [
+      "CAOS lets task data move through explicit input and output trees. A job can receive the content it needs directly, instead of discovering it through a shared writable namespace whose entries other agents can change.",
+      "That makes intended data sharing visible in the request graph. A narrow input tree does not itself prevent other reads: workers have network access, and read permissions on the object store must be enforced separately. The CAOS contribution is making the intended inputs and exchanges explicit."
+    ],
+    "sources": [
       {
-        "label": "Implementation and longer explanation",
-        "url": "https://github.com/nishu-builder/caos-execution-integrity/blob/main/demos/access/README.md"
+        "label": "METR",
+        "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#~1200-agents-sent->70,000-messages-and-files-on-an-unsanctioned-message-board,-and-~700-attacked-hugging-face"
       }
     ]
   }

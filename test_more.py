@@ -50,13 +50,24 @@ class BlogTests(unittest.TestCase):
     def test_evidence_is_escaped_and_readable_without_scripts(self):
         with tempfile.TemporaryDirectory() as d:
             target=Path(d)/"index.html"
-            render(self.report(),target)
+            render(self.report(),target,include_evidence=True)
             text=target.read_text()
             self.assertNotIn("<script",text)
             self.assertIn("&lt;script&gt;",text)
             self.assertIn('id="monitoring"',text)
             self.assertIn("<article",text)
             self.assertNotIn('role="tab"',text)
+
+    def test_blog_separates_problems_from_approaches(self):
+        report=json.loads((Path(__file__).parent/"docs/gallery/report.json").read_text())
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)/"index.html"
+            render(report,target)
+            text=target.read_text()
+            self.assertEqual(text.count("<h3>Problem</h3>"),8)
+            self.assertEqual(text.count("<h3>CAOS</h3>"),8)
+            self.assertNotIn('<details class="cases">',text)
+            self.assertIn("<code>rm secret.txt</code>",text)
 
     def test_evidence_link_cannot_execute_script(self):
         report=self.report()

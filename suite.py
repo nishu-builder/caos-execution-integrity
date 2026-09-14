@@ -327,7 +327,7 @@ def export(run, output):
 
 def render(report, path, asset_prefix=None):
     from blog import render as render_blog
-    render_blog(report, path, asset_prefix)
+    render_blog(report, path, asset_prefix, include_evidence=True)
 
 def inspect(report):
     for demo in report["demos"]:

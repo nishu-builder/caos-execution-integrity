@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Notes on Caos and agent safety</title>
+<title>CAOS and the METR incident</title>
 <style>
 body{max-width:740px;margin:48px auto;padding:0 22px;color:#222;background:#fff;font:18px/1.65 Georgia,"Times New Roman",serif}
 h1{font-size:32px;line-height:1.2;font-weight:normal;margin-bottom:12px}h2{font-size:25px;line-height:1.3;margin-top:54px;font-weight:normal}h3{font-size:20px}
@@ -17,17 +17,15 @@ footer{border-top:1px solid #ddd;padding-top:18px;margin:50px 0 30px;overflow-wr
 </head>
 <body>
 <header><p class="meta"><a href="https://github.com/nishu-builder/caos-execution-integrity">Code and running instructions</a></p>
-<h1>Notes on Caos and agent safety</h1>
-<p>Eight experiments about what an agent ran, what it changed, and what another person can check. Each uses a small script and real Caos jobs to isolate one problem.</p>
-<p>The useful idea in Caos is that tools, inputs, and results are Git objects. We can preserve the exact work, pass it to someone else, and rerun it. These examples explore what that changes.</p>
+<h1>CAOS and the METR incident</h1>
+<p>CAOS represents tools, inputs, and results as Git objects. Each section starts with something agents did in the METR incident, then describes how that representation could support a different approach.</p>
 </header>
-<section id="rerun">
-<h2>Rerun the examples</h2>
-<p>The complete worker images and inputs are available as Git objects on the <a href="https://github.com/nishu-builder/caos-execution-integrity/tree/caos-rerun">caos-rerun branch</a> and in a <a href="https://nishu-builder.github.io/caos-execution-integrity/rerun/requests.bundle">downloadable bundle</a>. From a clone of the repository, with a compatible Caos server running:</p>
-<pre><code>python3 reproduce.py run --server http://localhost:9090</code></pre>
-<p>This reruns 32 worker jobs with fresh cache keys and compares the complete result trees with the published results. All 32 matched in our validation. The live services and surrounding safety controls still need the full demo runner. See the <a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/REPRODUCE.md">reproduction guide</a> for setup and individual examples.</p>
-</section>
 <!--CONTENT-->
+<section id="rerun">
+<h2>Related runnable examples</h2>
+<p>The repository includes 32 worker jobs for exploring these mechanisms. See the <a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/REPRODUCE.md">reproduction guide</a> for setup.</p>
+<pre><code>python3 reproduce.py run --server http://localhost:9090</code></pre>
+</section>
 <footer><!--META--></footer>
 </body>
 </html>

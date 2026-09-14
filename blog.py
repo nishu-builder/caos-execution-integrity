@@ -1,4 +1,4 @@
-"""Render the measured cases as a plain, script-free article."""
+"""Render METR problems and CAOS approaches, with optional recorded examples."""
 import html
 import json
 from pathlib import Path
@@ -13,48 +13,61 @@ def href(value):
     return html.escape(value, quote=True)
 
 
-def render(report, path, asset_prefix=None):
+def prose(value):
+    # Only inline code is formatted; every piece remains HTML-escaped.
+    return "".join("<code>" + html.escape(part) + "</code>" if i % 2
+                   else html.escape(part) for i, part in enumerate(value.split("`")))
+
+
+def render(report, path, asset_prefix=None, include_evidence=False):
     articles = json.loads((ROOT / "articles.json").read_text())
     prefix = report.get("asset_prefix", "") if asset_prefix is None else asset_prefix
-    items = []
-    toc = []
+    # Validate even when this presentation doesn't expose the evidence links.
+    href(prefix + "report.json")
+    items, toc = [], []
     for index, demo in enumerate(report["demos"], 1):
         article = articles[demo["id"]]
         title = str(index) + ". " + article["title"]
         identity = html.escape(demo["id"], quote=True)
         toc.append('<li><a href="#' + identity + '">' + html.escape(article["title"]) + '</a></li>')
         items.append('<article id="' + identity + '"><h2>' + html.escape(title) + '</h2>')
-        items.extend("<p>" + html.escape(paragraph) + "</p>" for paragraph in article["paragraphs"])
-        if article.get("links"):
-            items.append('<p class="meta">' + " · ".join('<a href="' + href(link["url"]) + '">' +
-                          html.escape(link["label"]) + "</a>" for link in article["links"]) + "</p>")
-        rows = demo["raw"]["cases"] if demo["id"] == "execution" else demo["cases"]
-        evidence_label = article.get("evidence_label", "Inspect the " + str(len(rows)) + " measured cases")
-        items.append('<details class="cases"><summary>' + html.escape(evidence_label) + '</summary>')
-        if article.get("evidence_note"):
-            items.append('<p class="meta">' + html.escape(article["evidence_note"]) + '</p>')
-        for row in rows:
-            label = row.get("label", row.get("name", "")).replace("-", " ")
-            verdict = row.get("verdict", "Caller accepted response" if row.get("accepted") else "Caller rejected response")
-            if demo["id"] == "execution":
-                if row.get("actual_canary") is True:
-                    verdict += "; canary present in observed result"
-                elif row.get("actual_canary") is False:
-                    verdict += "; no canary in observed result"
-                else:
-                    verdict += "; no worker result observed"
-                if row.get("name") == "inline-output":
-                    verdict += "; forged inline output ignored"
-            items.append('<details class="case"><summary>' + html.escape(label + ": " + verdict) +
-                         "</summary><pre>" + html.escape(json.dumps(row, indent=2)) + "</pre></details>")
-        if demo["id"] == "execution":
-            items.append("<details><summary>The three live handler experiments</summary><pre>" +
-                         html.escape(json.dumps(demo["raw"]["os_experiment"], indent=2)) + "</pre></details>")
-        items.append("</details></article>")
-    content = "<nav aria-label=\"Contents\"><ol>" + "".join(toc) + "</ol></nav>" + "".join(items)
-    meta = '<p><a href="' + href(prefix + "evidence.bundle") + '">Download the evidence bundle</a> · <a href="' + href(prefix + "report.json") + '">Read the raw results</a></p>'
-    meta += '<p><a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/REPRODUCE.md">Rerun from Git objects</a> · <a href="https://nishu-builder.github.io/caos-execution-integrity/rerun/requests.bundle">Download complete worker objects</a></p>'
-    meta += "<p>Run " + html.escape(report["run_id"]) + ". Source " + html.escape(report["source_commit"]) + ". Caos " + html.escape(report["caos_revision"]) + ".</p>"
-    meta += '<p><a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/VALIDATION.md">Validation and setup details</a></p>'
+        items.append("<h3>Problem</h3>")
+        items.extend("<p>" + prose(p) + "</p>" for p in article["problem"])
+        items.append('<p class="meta">' + " · ".join(
+            '<a href="' + href(link["url"]) + '">' + html.escape(link["label"]) + "</a>"
+            for link in article["sources"]) + "</p>")
+        items.append("<h3>CAOS</h3>")
+        items.extend("<p>" + prose(p) + "</p>" for p in article["caos"])
+        if include_evidence:
+            rows = demo["raw"]["cases"] if demo["id"] == "execution" else demo["cases"]
+            items.append('<details class="cases"><summary>Related implementation: ' + str(len(rows)) + ' recorded cases</summary>')
+            for row in rows:
+                label = row.get("label", row.get("name", "")).replace("-", " ")
+                verdict = row.get("verdict", "Caller accepted response" if row.get("accepted") else "Caller rejected response")
+                items.append('<details class="case"><summary>' + html.escape(label + ": " + verdict) +
+                             "</summary><pre>" + html.escape(json.dumps(row, indent=2)) + "</pre></details>")
+            items.append("</details>")
+        items.append("</article>")
+    content = '<nav aria-label="Contents"><ol>' + "".join(toc) + "</ol></nav>" + "".join(items)
+    meta = '<p><a href="https://github.com/nishu-builder/caos-execution-integrity">Repository</a> · <a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/NOTES.md">Markdown version</a></p>'
+    if include_evidence:
+        meta += '<p><a href="' + href(prefix + "evidence.bundle") + '">Recorded objects</a> · <a href="' + href(prefix + "report.json") + '">Raw results</a></p>'
     template = (ROOT / "blog.html").read_text()
     Path(path).write_text(template.replace("<!--CONTENT-->", content).replace("<!--META-->", meta))
+
+
+def markdown():
+    articles = json.loads((ROOT / "articles.json").read_text())
+    parts = ["# CAOS and the METR incident", "",
+             "CAOS represents tools, inputs, and results as Git objects. Each section starts with something agents did in the METR incident, then describes how that representation could support a different approach.", ""]
+    for index, article in enumerate(articles.values(), 1):
+        parts += ["## " + str(index) + ". " + article["title"], "", "### Problem", ""]
+        for paragraph in article["problem"]:
+            parts += [paragraph, ""]
+        parts += [" · ".join("[" + l["label"] + "](" + l["url"] + ")" for l in article["sources"]), "", "### CAOS", ""]
+        for paragraph in article["caos"]:
+            parts += [paragraph, ""]
+    parts += ["## Related runnable examples", "",
+              "The repository includes 32 worker jobs for exploring these mechanisms. [Reproduction guide](REPRODUCE.md).", "",
+              "```sh", "python3 reproduce.py run --server http://localhost:9090", "```", ""]
+    return "\n".join(parts)
