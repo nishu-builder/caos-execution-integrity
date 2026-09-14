@@ -48,7 +48,7 @@ The output is under `runs/<run-id>/`:
 
 - `index.html`: interactive comparison; open it directly in a browser.
 - `report.json`: measured outcomes, approvals, signatures, and dispatcher journal.
-- `evidence.bundle`: standalone Git history retaining requests, results, worker image contents, and tested source.
+- `evidence.bundle`: standalone Git history retaining requests, results, worker image layers and base-image references, and tested source.
 - `evidence-ref` and `evidence-commit`: references for independent inspection.
 
 `python3 demo.py inspect` prints the latest matrix. The checked-in [sample report](docs/index.html) can also be opened locally without running Docker or Caos.
@@ -76,11 +76,13 @@ python3 -m venv .runtime/venv
   --approver-key YOUR_PINNED_APPROVER_PUBLIC_KEY
 ```
 
+For the checked-in sample, `.runtime/venv/bin/python check_sample.py` performs the empty-repository import and verification automatically, using `docs/trust.json` from this checkout.
+
 Do not treat a key supplied by an untrusted report as a trust anchor. Matching the keys printed in this repository establishes consistency with this publisher's sample; it does not independently prove the publisher or witness was honest.
 
 ## What is Caos, and what did we add?
 
-Caos supplies immutable Git request trees, worker execution, result objects, and portable evidence. Our worker includes the command, tool files, and runtime image in the request's reachable content.
+Caos supplies immutable Git request trees, worker execution, result objects, and portable evidence. Our worker includes the command, tool files, image layers, and a base-image digest in the request's reachable content. The external base image must still be available to execute it.
 
 **This repository adds** the approval signature, separate dispatcher, receipt signature, in-memory single-use approval ledger, proxy network filter, process attack, and verifier. Those are experimental extensions, not claims about stock Caos protections.
 

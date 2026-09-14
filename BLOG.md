@@ -74,7 +74,7 @@ Our second experiment runs actual Caos jobs. It prepares a request containing:
 
 - the command;
 - a Git tree of the workspace, including the tool;
-- the worker and runtime image;
+- the worker image layers and pinned base-image reference;
 - a unique per-case salt.
 
 The request has a content identity. Changing the script changes the request, even if the displayed command remains identical.
@@ -156,7 +156,7 @@ A signed receipt is an assertion from a trusted component. This experiment does 
 
 Caos makes the content of the work a first-class object: the tool, inputs, and result can be named, retained, compared, and handed to another researcher as Git objects. That gives the proposed dispatcher an exact request to authorize, and gives the verifier exact result bytes to inspect.
 
-The exported bundle contains the requests, result trees, worker image contents, report, and tested source. A reviewer can import it into an empty Git repository and check the signatures and object relationships without our running server. They still need a trusted starting key or trusted publication, and they must understand which claims depend on the witness.
+The exported bundle contains the requests, result trees, worker image layers, base-image reference, report, and tested source. A reviewer can import it into an empty Git repository and check the signatures and object relationships without our running server. They still need a trusted starting key or trusted publication, and they must understand which claims depend on the witness. Executing the request again also needs the external base image: the bundle retains its digest, not its image bytes.
 
 These are **resolution receipts**. Caos can answer a request from its cache, so a signed response does not by itself establish a new process launch. Each effect-producing case uses a fresh salted request, while the replay cases intentionally reuse identities. External state is not frozen by that salt or by Git.
 

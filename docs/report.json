@@ -1,0 +1,661 @@
+{
+  "schema": 1,
+  "run_id": "20260914T012808Z-8db4c503",
+  "approver_public_key": "5a82731c341237cc07f6ded807f9cc7af40c88e3ed6c19367cd27fc71bcddd0d",
+  "witness_public_key": "b4d92b222d03427a4611e6806812490d18359ac28da6143a7f6ed81d10ce3f1c",
+  "os_experiment": [
+    {
+      "name": "honest",
+      "setup": {
+        "capability_granted": "same Unix UID as handler",
+        "handler_pid": 7,
+        "worker_uid": 10001,
+        "handler_uid": 10001
+      },
+      "transcript": {
+        "command": "printf 'audit ran\\n' > audit.marker; printf 'OK\\n'",
+        "exit": 0,
+        "stderr": "",
+        "stdout": "OK\n"
+      },
+      "signed_transcript": {
+        "body": {
+          "type": "transcript",
+          "command": "printf 'audit ran\\n' > audit.marker; printf 'OK\\n'",
+          "exit": 0,
+          "stderr": "",
+          "stdout": "OK\n"
+        },
+        "signature": "0v2km1JP8qjE5YHCPKtMG19jfBtEZ1dr7NUIYmJMWScb72cBZG0kVeafVey5dr7SRo4+sGVorWLHAXjMGYb2Bg=="
+      },
+      "audit_ran": true,
+      "publication_canary": false
+    },
+    {
+      "name": "same-uid-hijack",
+      "setup": {
+        "capability_granted": "same Unix UID as handler",
+        "handler_pid": 9,
+        "worker_uid": 10001,
+        "handler_uid": 10001,
+        "stopped_handler": true,
+        "replaced_socket": true,
+        "impersonator_pid": 10
+      },
+      "transcript": {
+        "command": "printf 'audit ran\\n' > audit.marker; printf 'OK\\n'",
+        "exit": 0,
+        "stderr": "",
+        "stdout": "OK\n"
+      },
+      "signed_transcript": {
+        "body": {
+          "type": "transcript",
+          "command": "printf 'audit ran\\n' > audit.marker; printf 'OK\\n'",
+          "exit": 0,
+          "stderr": "",
+          "stdout": "OK\n"
+        },
+        "signature": "0v2km1JP8qjE5YHCPKtMG19jfBtEZ1dr7NUIYmJMWScb72cBZG0kVeafVey5dr7SRo4+sGVorWLHAXjMGYb2Bg=="
+      },
+      "audit_ran": false,
+      "publication_canary": true
+    },
+    {
+      "name": "separate-uid",
+      "setup": {
+        "capability_granted": "worker UID only",
+        "handler_pid": 12,
+        "worker_uid": 10001,
+        "handler_uid": 0,
+        "probes": {
+          "stop_handler": {
+            "blocked": true,
+            "errno": 1
+          },
+          "replace_socket": {
+            "blocked": true,
+            "errno": 13
+          },
+          "rewrite_handler_config": {
+            "blocked": true,
+            "errno": 13
+          },
+          "read_signing_key": {
+            "blocked": true,
+            "errno": 13
+          },
+          "open_handler_memory": {
+            "blocked": true,
+            "errno": 13
+          },
+          "connect_control_socket": {
+            "blocked": true,
+            "errno": 13
+          }
+        }
+      },
+      "transcript": {
+        "command": "printf 'audit ran\\n' > audit.marker; printf 'OK\\n'",
+        "exit": 0,
+        "stderr": "",
+        "stdout": "OK\n"
+      },
+      "signed_transcript": {
+        "body": {
+          "type": "transcript",
+          "command": "printf 'audit ran\\n' > audit.marker; printf 'OK\\n'",
+          "exit": 0,
+          "stderr": "",
+          "stdout": "OK\n"
+        },
+        "signature": "0v2km1JP8qjE5YHCPKtMG19jfBtEZ1dr7NUIYmJMWScb72cBZG0kVeafVey5dr7SRo4+sGVorWLHAXjMGYb2Bg=="
+      },
+      "audit_ran": true,
+      "publication_canary": false
+    }
+  ],
+  "cases": [
+    {
+      "name": "honest",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "honest",
+          "request": "890611253efbcf9ed5c44dbccae0ef455e347e6b"
+        },
+        "signature": "KcjWghCQtNlKvOk3+FCFr2onG+rt7EUcUsNsxRBWci5R1RzurGp/vO6ErF5A5ixZU3xJjy5v/iuPFy/Dl2L5DA=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "honest",
+          "request": "890611253efbcf9ed5c44dbccae0ef455e347e6b",
+          "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "resolved",
+          "type": "resolution"
+        },
+        "signature": "B2yZeBN36CBSnZQAf7GMCvL44L7YbGd9UKp2AGBLlPO6mId4LxEwhQ+67wic1xksqRGDbV8TO2r0Act5VJKlBA=="
+      },
+      "accepted": true,
+      "rejection": null,
+      "actual": {
+        "call_id": "honest",
+        "request": "890611253efbcf9ed5c44dbccae0ef455e347e6b",
+        "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+      },
+      "displayed_result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+      "actual_canary": false,
+      "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "displayed_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "displayed_canary": false
+    },
+    {
+      "name": "mutable-workspace",
+      "accepted": true,
+      "actual": {
+        "request": "86cca1b2d2bda465a5fa64050b820c224e0fa7bc",
+        "result": "4b1b7da83ade7b95f282e26bc74e98194a59f751"
+      },
+      "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "actual_canary": true,
+      "displayed_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "explanation": "The command text stayed the same; its on-disk script changed after approval."
+    },
+    {
+      "name": "hashes-only",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "hashes-only",
+          "request": "c2aa4663bdbc23cfde2b5b3d27c64721ccdb7c2b"
+        },
+        "signature": "UbbezDjm608Ek+d7zneuPjUz/SC1QIKy7wtRrDZiJTEwRW0IIWReYwEM6mbNQlNxAXbyMiqrpIiU4k2M4Z34BQ=="
+      },
+      "accepted": true,
+      "actual": {
+        "request": "6b3e9c95ce691516257ad347ebfe0d4d42312d82",
+        "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
+      },
+      "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "actual_canary": true,
+      "displayed_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "displayed_result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+      "displayed_canary": false,
+      "explanation": "Proxy executed another request and returned the approved ID plus an unrelated genuine result."
+    },
+    {
+      "name": "direct-bypass-unrestricted",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "direct-bypass-unrestricted",
+          "request": "8d99cb23bd7827e3b84366657809e7367565e225"
+        },
+        "signature": "sNv1hVWSlbvAfVJJfwAt4lGmPeIsHDUr1yFfNq/2ogtxfHz229RmnzAF709FUQn1x4EUBZT1+X7/mbS+bRkgDA=="
+      },
+      "receipt": {
+        "claimed_request": "8d99cb23bd7827e3b84366657809e7367565e225",
+        "fixture_observation": {
+          "request": "f954e05279267fd63da51ae5cfadc32ce7d6e1f3",
+          "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
+        },
+        "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+      },
+      "accepted": false,
+      "rejection": "invalid envelope",
+      "actual": {
+        "request": "f954e05279267fd63da51ae5cfadc32ce7d6e1f3",
+        "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
+      },
+      "displayed_result": null,
+      "network_filter": false,
+      "proxy_response": {
+        "claimed_request": "8d99cb23bd7827e3b84366657809e7367565e225",
+        "fixture_observation": {
+          "request": "f954e05279267fd63da51ae5cfadc32ce7d6e1f3",
+          "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
+        },
+        "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+      },
+      "actual_canary": true,
+      "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n"
+    },
+    {
+      "name": "direct-bypass-restricted",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "direct-bypass-restricted",
+          "request": "3f5fb766d75bbbf5be43c2d92c8d8c6dc4e4a88e"
+        },
+        "signature": "TgxxOZP48jzAINocHWf2rJIQYpRQkXkrZs9Qry9Pl+uAcB35czySR2mONGg34KCo+iPc6xTmzSwCaD2l3l6ABA=="
+      },
+      "receipt": {
+        "transport_errno": 1,
+        "transport_error": "PermissionError: [Errno 1] Operation not permitted"
+      },
+      "accepted": false,
+      "rejection": "invalid envelope",
+      "actual": null,
+      "displayed_result": null,
+      "network_filter": true,
+      "proxy_response": {
+        "transport_errno": 1,
+        "transport_error": "PermissionError: [Errno 1] Operation not permitted"
+      },
+      "actual_canary": false
+    },
+    {
+      "name": "substitute",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "substitute",
+          "request": "689b3761ab1221409a38d1c9217fccfa6117e650"
+        },
+        "signature": "7CaSeG0W1ZlFB3bjxFe7sWguI4FEJ7zp7a6W1JDV4HuCew/ej+ShFPh9dkpGm5cvwoORQcnGbB6k7uVkb+JUAg=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "substitute",
+          "reason": "candidate differs from approved request",
+          "request": "689b3761ab1221409a38d1c9217fccfa6117e650",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "rejected",
+          "type": "resolution"
+        },
+        "signature": "LayCP/pEnYUHH9f0b1ksfRhwb5hgaKzOIe4LiK2EOZYcRTkTG72iN3n0KcxVH3p/CDPJayR4vF/20AemPRLJDQ=="
+      },
+      "accepted": false,
+      "rejection": "dispatcher rejected request: candidate differs from approved request",
+      "actual": null,
+      "displayed_result": null
+    },
+    {
+      "name": "approval-forgery",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "approval-forgery",
+          "request": "36f9ecdd2755809c7011e8a2889527b509a997d0"
+        },
+        "signature": "20i+RZnMoUEPPApF+pXaHfVMVtoZGhF7plBH3ZPSa3AgLbIvBoYjaBnEqlwnwKke9QGkCr9y6xe4VnWmLkiFCg=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "approval-forgery",
+          "reason": "invalid signature",
+          "request": "f28dfb39e5e840b4fb8b9187dcaf9ab5d78749b4",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "rejected",
+          "type": "resolution"
+        },
+        "signature": "MKKONnx0ZrlWxYTlDRK4b+2xLrCOxlOin68DpjlH0Pzt/mSgLjNE2a7Q3qvHO0MMxQH+9+ArOWFqP8nVUHNfBQ=="
+      },
+      "accepted": false,
+      "rejection": "receipt request mismatch",
+      "actual": null,
+      "displayed_result": null
+    },
+    {
+      "name": "result-swap",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "result-swap",
+          "request": "a713d81c1d2e7ff48b605ab1f1ce3958271005a6"
+        },
+        "signature": "hMeCTjqrra+82oNaZ47VfajdNCddCTx/+if/laXUD/Pl5NbbYhGOilqhgdd2TT8FV72Jd+D+SEUuJLEkYpFYDg=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "result-swap",
+          "request": "a713d81c1d2e7ff48b605ab1f1ce3958271005a6",
+          "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "resolved",
+          "type": "resolution"
+        },
+        "signature": "rcX254BD6SsBDEMoUa+9dg6/pFPRBjzH42cijiS61ctciZFP/oGMsmXTDGKaY3FM/uxnGhDV4W3hCSWqO0PTAg=="
+      },
+      "accepted": false,
+      "rejection": "invalid signature",
+      "actual": {
+        "call_id": "result-swap",
+        "request": "a713d81c1d2e7ff48b605ab1f1ce3958271005a6",
+        "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+      },
+      "displayed_result": null,
+      "actual_canary": false,
+      "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n"
+    },
+    {
+      "name": "key-swap",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "key-swap",
+          "request": "9a531ea15efcd72d2ff947d46a61e2bb98757a9d"
+        },
+        "signature": "3NPw6PYmDyWhUyUHRF2oWyKBraZHg7Dxw8HDj4yEbwfD8Lk1Qh0EwmBcrfKXg4mCJWiTVPbr/D+FVNUEuz21AA=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "key-swap",
+          "request": "9a531ea15efcd72d2ff947d46a61e2bb98757a9d",
+          "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "resolved",
+          "type": "resolution"
+        },
+        "offered_public_key": "dda9c46046ebca368f034dc9a4155e0f3663b17ae9b6a4c28f99747e0ff0d62b",
+        "signature": "2N0tGarDgRYox1O3gdJkeRXh2UKNIym26dIXilNqWjZ/zcnm0gCSzmMgmkvFIdjfqB2zA9s2khopdOpjnKAKAA=="
+      },
+      "accepted": false,
+      "rejection": "invalid signature",
+      "actual": {
+        "call_id": "key-swap",
+        "request": "9a531ea15efcd72d2ff947d46a61e2bb98757a9d",
+        "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+      },
+      "displayed_result": null,
+      "actual_canary": false,
+      "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n"
+    },
+    {
+      "name": "inline-output",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "inline-output",
+          "request": "0d44f336d33b3873702c90165c28536c7e6f2aa2"
+        },
+        "signature": "tVfvUob9BJEROU5qoi06UAC8rKCHsZtpTgReOjreqOxEcM+kOnPsqkXu/i5w8FwhmdAIYI93Wi21a95+0sadDA=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "inline-output",
+          "request": "0d44f336d33b3873702c90165c28536c7e6f2aa2",
+          "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "resolved",
+          "type": "resolution"
+        },
+        "signature": "NP/P2CHe28ev1KzY/wYFy6Es3guLu6IfM4/PXOyfkQ8+JplQo9kutM5vS+uh4Ph8/VZbmB90dWjwEPPTKGLOAQ==",
+        "stdout": "FORGED INLINE OUTPUT\n"
+      },
+      "accepted": true,
+      "rejection": null,
+      "actual": {
+        "call_id": "inline-output",
+        "request": "0d44f336d33b3873702c90165c28536c7e6f2aa2",
+        "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+      },
+      "displayed_result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+      "actual_canary": false,
+      "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "displayed_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "displayed_canary": false
+    },
+    {
+      "name": "receipt-replay",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "receipt-replay",
+          "request": "890611253efbcf9ed5c44dbccae0ef455e347e6b"
+        },
+        "signature": "FV4C0+rHowYEy7QMcJuO8bC4KmbWnkfgX6R9Ked2gnRkyZtBdTe8GOed+ZauGwj3ylRzjnOhPO9YKziEFIDJDQ=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "honest",
+          "request": "890611253efbcf9ed5c44dbccae0ef455e347e6b",
+          "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "resolved",
+          "type": "resolution"
+        },
+        "signature": "B2yZeBN36CBSnZQAf7GMCvL44L7YbGd9UKp2AGBLlPO6mId4LxEwhQ+67wic1xksqRGDbV8TO2r0Act5VJKlBA=="
+      },
+      "accepted": false,
+      "rejection": "receipt call_id mismatch",
+      "actual": null,
+      "displayed_result": null
+    },
+    {
+      "name": "authorization-reuse",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "honest",
+          "request": "890611253efbcf9ed5c44dbccae0ef455e347e6b"
+        },
+        "signature": "KcjWghCQtNlKvOk3+FCFr2onG+rt7EUcUsNsxRBWci5R1RzurGp/vO6ErF5A5ixZU3xJjy5v/iuPFy/Dl2L5DA=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "honest",
+          "reason": "authorization already consumed",
+          "request": "890611253efbcf9ed5c44dbccae0ef455e347e6b",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "rejected",
+          "type": "resolution"
+        },
+        "signature": "NDkhEFqWLk/bNon8xQsLx9DbgdMsFboxicZYxBnYLmVVaFq3ED7mO6FhhpfFEl4f9icfpKnHADG/owSv4PgoDQ=="
+      },
+      "accepted": false,
+      "rejection": "dispatcher rejected request: authorization already consumed",
+      "explanation": "In-memory one-use ledger; no restart durability claim."
+    },
+    {
+      "name": "custom-tool",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "custom-tool",
+          "request": "5e12f4cd4ce1a5d532b7e96ee4da2383b1bcf77a"
+        },
+        "signature": "/PaTQhu4ynoiQoSrjeT/1RKEZ15pW5rJWsMYQEG4X0HImNCzW5QQNzAOMxbOB5QF/WWJEJgIx+AISB3eYNllCA=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "custom-tool",
+          "request": "5e12f4cd4ce1a5d532b7e96ee4da2383b1bcf77a",
+          "result": "7a7bfb2ec1c47341f917290e071d8f0c25b87728",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "resolved",
+          "type": "resolution"
+        },
+        "signature": "wXUlJoVXqSg/ozpQTYZ89wDVXeFsGwscXLM/iK63bh1Dm4TXeHcd8n5kWcvUgnFgAPQkvngEAwhDWDouHyrKBw=="
+      },
+      "accepted": true,
+      "rejection": null,
+      "actual": {
+        "call_id": "custom-tool",
+        "request": "5e12f4cd4ce1a5d532b7e96ee4da2383b1bcf77a",
+        "result": "7a7bfb2ec1c47341f917290e071d8f0c25b87728"
+      },
+      "displayed_result": "7a7bfb2ec1c47341f917290e071d8f0c25b87728",
+      "actual_canary": false,
+      "actual_stdout": "custom tool: 24 bytes\n",
+      "displayed_stdout": "custom tool: 24 bytes\n",
+      "displayed_canary": false
+    },
+    {
+      "name": "pinned-workspace",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "pinned-workspace",
+          "request": "2a0d3f1cb44acd5cdc188b6cac95014d9d9616ae"
+        },
+        "signature": "noyVJKDkMIMgpKhFeENgKRtkLamZhg+RJNrd1TYtNfVyVUJcpQZjXj1MuI93gXyhmiojjrRAMVehZwiJ/eZZDg=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "pinned-workspace",
+          "request": "2a0d3f1cb44acd5cdc188b6cac95014d9d9616ae",
+          "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "resolved",
+          "type": "resolution"
+        },
+        "signature": "mXpBwBSmtXW76UCaTmKJWvfD0jKe3po4VzeJjkgRHhUXhaL/l1vGcSbYSv3X0b70okCtuF8XPElzUVmSTAKQAw=="
+      },
+      "accepted": true,
+      "rejection": null,
+      "actual": {
+        "call_id": "pinned-workspace",
+        "request": "2a0d3f1cb44acd5cdc188b6cac95014d9d9616ae",
+        "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+      },
+      "displayed_result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+      "actual_canary": false,
+      "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "displayed_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "displayed_canary": false
+    },
+    {
+      "name": "compromised-signer",
+      "approval": {
+        "body": {
+          "schema": 1,
+          "type": "approval",
+          "run_id": "20260914T012808Z-8db4c503",
+          "call_id": "compromised-signer",
+          "request": "fc5517cae9e288ebfcb9eff9fe57f6f279e97135"
+        },
+        "signature": "Elr2D4nzEG02XTYISPoxmjrTwKuNrDFzi534YWRuFAOwTuwkNELbcUscBjv2LOqgCYVHQQDpGHqTpQznDDRVAQ=="
+      },
+      "receipt": {
+        "body": {
+          "call_id": "compromised-signer",
+          "request": "fc5517cae9e288ebfcb9eff9fe57f6f279e97135",
+          "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+          "run_id": "20260914T012808Z-8db4c503",
+          "schema": 1,
+          "status": "resolved",
+          "type": "resolution"
+        },
+        "signature": "Pld7scJ3RXIjUkIZmCboCwRSQ5R+hnLn9sAbwd+j2FYsYckZNxiNKG/Q+n+z+7FqRjobgAca4WaM0MbzTRIQDg=="
+      },
+      "accepted": true,
+      "rejection": null,
+      "actual": {
+        "call_id": "compromised-signer",
+        "request": "da82d554da8769bcc3c78f69db4446b1eced5647",
+        "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
+      },
+      "displayed_result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd",
+      "actual_canary": true,
+      "actual_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "displayed_stdout": "ba79542a62fbac38a7eb3f7516e52796e4a3f4b2c67837a7d8583fa9d3ba1199  artifact.txt\n",
+      "displayed_canary": false,
+      "explanation": "Signer deliberately lies about both dispatched request and returned result."
+    }
+  ],
+  "witness_journal": [
+    {
+      "call_id": "honest",
+      "request": "890611253efbcf9ed5c44dbccae0ef455e347e6b",
+      "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+    },
+    {
+      "call_id": "result-swap",
+      "request": "a713d81c1d2e7ff48b605ab1f1ce3958271005a6",
+      "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+    },
+    {
+      "call_id": "key-swap",
+      "request": "9a531ea15efcd72d2ff947d46a61e2bb98757a9d",
+      "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+    },
+    {
+      "call_id": "inline-output",
+      "request": "0d44f336d33b3873702c90165c28536c7e6f2aa2",
+      "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+    },
+    {
+      "call_id": "custom-tool",
+      "request": "5e12f4cd4ce1a5d532b7e96ee4da2383b1bcf77a",
+      "result": "7a7bfb2ec1c47341f917290e071d8f0c25b87728"
+    },
+    {
+      "call_id": "pinned-workspace",
+      "request": "2a0d3f1cb44acd5cdc188b6cac95014d9d9616ae",
+      "result": "9e6c55b1b252b1a3d17ddb78058a692103d73dcd"
+    },
+    {
+      "call_id": "compromised-signer",
+      "request": "da82d554da8769bcc3c78f69db4446b1eced5647",
+      "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
+    }
+  ],
+  "wrong_command_control": {
+    "request": "f28dfb39e5e840b4fb8b9187dcaf9ab5d78749b4",
+    "result": "a0687ab64030905e3be2e0efbdf3dcf5718a6921"
+  },
+  "note": "Keys were generated inside this container and are not exported; these are resolution receipts, not hardware attestations.",
+  "source_commit": "f76fab3e06c2d55a079cccb07306c7d02cc63662",
+  "caos_revision": "5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3",
+  "lab_image_id": "sha256:f00aef2637d45dab6e10eaab35a1b082b3e80ec8a660f096a77c2bfd00536af6",
+  "requests": {
+    "audit": "890611253efbcf9ed5c44dbccae0ef455e347e6b",
+    "publish": "f28dfb39e5e840b4fb8b9187dcaf9ab5d78749b4",
+    "custom": "5e12f4cd4ce1a5d532b7e96ee4da2383b1bcf77a",
+    "audit-hashes-only": "c2aa4663bdbc23cfde2b5b3d27c64721ccdb7c2b",
+    "audit-direct-bypass-unrestricted": "8d99cb23bd7827e3b84366657809e7367565e225",
+    "audit-direct-bypass-restricted": "3f5fb766d75bbbf5be43c2d92c8d8c6dc4e4a88e",
+    "audit-substitute": "689b3761ab1221409a38d1c9217fccfa6117e650",
+    "audit-approval-forgery": "36f9ecdd2755809c7011e8a2889527b509a997d0",
+    "audit-result-swap": "a713d81c1d2e7ff48b605ab1f1ce3958271005a6",
+    "audit-key-swap": "9a531ea15efcd72d2ff947d46a61e2bb98757a9d",
+    "audit-inline-output": "0d44f336d33b3873702c90165c28536c7e6f2aa2",
+    "audit-pinned-workspace": "2a0d3f1cb44acd5cdc188b6cac95014d9d9616ae",
+    "audit-compromised-signer": "fc5517cae9e288ebfcb9eff9fe57f6f279e97135",
+    "publish-hashes-only": "6b3e9c95ce691516257ad347ebfe0d4d42312d82",
+    "publish-direct-bypass-unrestricted": "f954e05279267fd63da51ae5cfadc32ce7d6e1f3",
+    "publish-direct-bypass-restricted": "74f1c0e3a3a757e71e8f0f8d73bfb3f7df00ad43",
+    "publish-compromised-signer": "da82d554da8769bcc3c78f69db4446b1eced5647",
+    "mutated": "86cca1b2d2bda465a5fa64050b820c224e0fa7bc"
+  },
+  "workspace_modified_after_approval": true
+}

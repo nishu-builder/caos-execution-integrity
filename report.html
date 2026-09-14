@@ -30,7 +30,7 @@ The process that executed it tells a different story.</p>
 The compromised-signer case produces a valid receipt for an honest request while resolving another request and hiding its result.</p>
 <h2>Inspect the evidence</h2>
 <p>Choose a row to inspect its approval, receipt, and measured outcome. The lab's private keys are never exported.
-The full Git bundle retains requests, result objects, and runtime image contents.</p>
+The full Git bundle retains requests, result objects, worker image layers, and the base-image digest. The external base image itself is not bundled.</p>
 <pre id="detail">Choose an experiment above.</pre>
 <details><summary>Permission checks against the protected handler</summary><pre id="probes"></pre></details>
 <footer id="provenance"></footer>
