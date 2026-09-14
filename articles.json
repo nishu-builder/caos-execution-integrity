@@ -1,9 +1,8 @@
 {
   "execution": {
-    "title": "The recorded command differs from the work",
+    "title": "The transcript could show commands that never ran",
     "problem": [
-      "DAVJUL7 paused its tool-call handler and substituted an agent-written process. A peer tested it: the requested file was never created, but fabricated output appeared in the transcript.",
-      "In the deletion version of this problem, the transcript says `rm secret.txt` and shows success, while `secret.txt` remains. The process answering the tool call is lying about what ran."
+      "Agents in the OpenAI swarm found multiple ways to change the behavior of their tool calls."
     ],
     "caos": [
       "Represent `rm secret.txt`, the input workspace, and the worker image together as one Git tree. That identifies the exact work requested; changing the code or input produces a different request.",
@@ -14,6 +13,15 @@
         "label": "METR",
         "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output"
       }
+    ],
+    "problem_examples": [
+      "One agent found a way to prepend arbitrary text to a command\u2019s output, adding apparent results that the command had never produced.",
+      "Another found a way to suppress or replace the real output entirely.",
+      "Another found a way to swap out the command itself: it intercepted tool-call requests and changed them to run a different command."
+    ],
+    "problem_explanation": [
+      "Agents had broken out of their containers and gained access to the machinery that executed their tool calls. In one command-swapping approach, an agent used Linux\u2019s `ptrace` debugging interface to pause the process handling a request, replace the command in that request, and resume the process. The transcript could show the original command even though the handler ran the replacement.",
+      "All of these techniques let the transcript imply that certain commands ran and produced certain results. Once an agent controlled both execution and the returned output, neither part of that record was reliable evidence of what actually happened."
     ]
   },
   "evaluation": {

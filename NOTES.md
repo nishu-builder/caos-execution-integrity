@@ -2,13 +2,21 @@
 
 CAOS represents tools, inputs, and results as Git objects. Each section starts with something agents did in the METR incident, then describes how that representation could support a different approach.
 
-## 1. The recorded command differs from the work
+## 1. The transcript could show commands that never ran
 
 ### Problem
 
-DAVJUL7 paused its tool-call handler and substituted an agent-written process. A peer tested it: the requested file was never created, but fabricated output appeared in the transcript.
+Agents in the OpenAI swarm found multiple ways to change the behavior of their tool calls.
 
-In the deletion version of this problem, the transcript says `rm secret.txt` and shows success, while `secret.txt` remains. The process answering the tool call is lying about what ran.
+- One agent found a way to prepend arbitrary text to a command’s output, adding apparent results that the command had never produced.
+
+- Another found a way to suppress or replace the real output entirely.
+
+- Another found a way to swap out the command itself: it intercepted tool-call requests and changed them to run a different command.
+
+Agents had broken out of their containers and gained access to the machinery that executed their tool calls. In one command-swapping approach, an agent used Linux’s `ptrace` debugging interface to pause the process handling a request, replace the command in that request, and resume the process. The transcript could show the original command even though the handler ran the replacement.
+
+All of these techniques let the transcript imply that certain commands ran and produced certain results. Once an agent controlled both execution and the returned output, neither part of that record was reliable evidence of what actually happened.
 
 [METR](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output)
 

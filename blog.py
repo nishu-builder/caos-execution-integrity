@@ -33,6 +33,9 @@ def render(report, path, asset_prefix=None, include_evidence=False):
         items.append('<article id="' + identity + '"><h2>' + html.escape(title) + '</h2>')
         items.append("<h3>Problem</h3>")
         items.extend("<p>" + prose(p) + "</p>" for p in article["problem"])
+        if article.get("problem_examples"):
+            items.append("<ul>" + "".join("<li>" + prose(p) + "</li>" for p in article["problem_examples"]) + "</ul>")
+        items.extend("<p>" + prose(p) + "</p>" for p in article.get("problem_explanation", []))
         items.append('<p class="meta">' + " · ".join(
             '<a href="' + href(link["url"]) + '">' + html.escape(link["label"]) + "</a>"
             for link in article["sources"]) + "</p>")
@@ -63,6 +66,10 @@ def markdown():
     for index, article in enumerate(articles.values(), 1):
         parts += ["## " + str(index) + ". " + article["title"], "", "### Problem", ""]
         for paragraph in article["problem"]:
+            parts += [paragraph, ""]
+        for example in article.get("problem_examples", []):
+            parts += ["- " + example, ""]
+        for paragraph in article.get("problem_explanation", []):
             parts += [paragraph, ""]
         parts += [" · ".join("[" + l["label"] + "](" + l["url"] + ")" for l in article["sources"]), "", "### CAOS", ""]
         for paragraph in article["caos"]:
