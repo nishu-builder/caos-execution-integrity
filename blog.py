@@ -29,9 +29,10 @@ def render(report, path, asset_prefix=None):
             items.append('<p class="meta">' + " · ".join('<a href="' + href(link["url"]) + '">' +
                           html.escape(link["label"]) + "</a>" for link in article["links"]) + "</p>")
         rows = demo["raw"]["cases"] if demo["id"] == "execution" else demo["cases"]
-        if demo["id"] == "execution":
-            items.append('<p class="meta">Each case shows the caller’s decision and the observed effect separately.</p>')
-        items.append("<details class=\"cases\"><summary>Inspect the " + str(len(rows)) + " measured cases</summary>")
+        evidence_label = article.get("evidence_label", "Inspect the " + str(len(rows)) + " measured cases")
+        items.append('<details class="cases"><summary>' + html.escape(evidence_label) + '</summary>')
+        if article.get("evidence_note"):
+            items.append('<p class="meta">' + html.escape(article["evidence_note"]) + '</p>')
         for row in rows:
             label = row.get("label", row.get("name", "")).replace("-", " ")
             verdict = row.get("verdict", "Caller accepted response" if row.get("accepted") else "Caller rejected response")

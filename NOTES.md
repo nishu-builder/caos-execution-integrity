@@ -12,21 +12,19 @@ python3 reproduce.py run --server http://localhost:9090
 
 This reruns 32 worker jobs with fresh cache keys and compares the complete result trees with the published results. All 32 matched in our validation. Live services and surrounding safety controls still need the full demo runner. See the [reproduction guide](REPRODUCE.md) for setup and individual examples.
 
-## 1. A recorded command can conceal different execution
+## 1. The command says rm secret.txt. The file is still there.
 
-An agent asks to run an audit. A process handling the request runs something else and returns the expected output. The transcript records a convincing lie. METR describes agents replacing a tool-call handler this way.
+Suppose an agent issues rm secret.txt. The program handling the tool call leaves the file alone and returns a successful exit code. The transcript shows the requested command and success, even though the file still exists. METR observed agents replacing tool-call handlers to make one command appear to run while something else happened.
 
-Our attacker pauses a handler running under the same Unix user and replaces its socket. The requested command would create an audit marker; the replacement creates a publication canary. Both print OK. Signing either transcript preserves the same misleading story.
+Caos gives the requested work an exact identity. The command, the input workspace containing secret.txt, and the worker image are captured in a Git tree. Its hash identifies that particular operation on those particular files.
 
-Running the handler as a separate Unix user blocks the takeover. Caos then lets us identify exactly what to run: the command, tool, image, and inputs are one Git tree. Our dispatcher checks that tree against the approved request, asks Caos to run it, and signs the returned result identity.
+This also pins the code behind the command. If the agent changes a tool script or substitutes a different worker image, it produces a different request. The original request continues to name the original bytes, even after the agent edits its working files.
 
-The output the reader sees must come from that result. In the inline-output case, the proxy adds FORGED INLINE OUTPUT beside a valid receipt. The caller ignores the extra field and fetches stdout from the verified Git object. Verifying the receipt and then displaying the proxy's text would undo the protection.
+The result is inspectable too. In our worker setup, Caos retains stdout, the exit code, and the returned workspace as Git objects. For this example, we can check whether secret.txt is absent from the returned workspace instead of taking a success message as the answer.
 
-The lab controller signs preselected requests automatically. For human approval, the useful question is what changed in the tool and inputs; the hash pins the snapshot being reviewed.
+If the executor supplied a false result, the saved request gives us something concrete to check elsewhere. Run the same computation on independent infrastructure with a fresh cache key and compare the returned trees. A result that still contains secret.txt disagrees with a correct execution. Caos makes it practical to share and re-execute the exact work being checked.
 
-Two cases show where this breaks. A proxy with direct access to the backend bypasses the dispatcher and creates the canary despite a rejected response. A compromised dispatcher runs the wrong command and signs a valid lie. Separating execution authority, identifying the work, and checking its result each solve a different part of the problem.
-
-[METR: handler replacement](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output) · [Full explanation](https://github.com/nishu-builder/caos-execution-integrity/blob/main/BLOG.md)
+[METR: handler replacement](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output) · [Earlier command-substitution experiment](https://github.com/nishu-builder/caos-execution-integrity/blob/main/BLOG.md)
 
 ## 2. Passing the tests can mean weakening the tests
 
