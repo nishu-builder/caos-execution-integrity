@@ -75,7 +75,7 @@ def export_evidence(report, requests, output):
     return ref
 
 
-def run(args):
+def run_execution(args):
     if git("status", "--porcelain"):
         raise RuntimeError("Commit source changes before running so the evidence names the tested code.")
     image = command("docker", "image", "inspect", args.image, "--format", "{{.Id}}")
@@ -163,6 +163,8 @@ def main():
     sub = parser.add_subparsers(dest="action", required=True)
     p = sub.add_parser("run")
     p.add_argument("--image", default="caos-execution-integrity:local")
+    p.add_argument("--only", choices=("all", "execution", "evaluation", "delegation", "replay"), default="all")
+    p.add_argument("--feed-port", type=int, default=18081, help="Loopback port for the temporary replay policy service")
     p.add_argument("--network", required=True, help="Docker network that can reach the caos server")
     p.add_argument("--server", required=True, help="caos URL reachable from that network")
     p = sub.add_parser("inspect")
@@ -172,13 +174,24 @@ def main():
     p.add_argument("output")
     args = parser.parse_args()
     if args.action == "run":
+        from suite import run
         run(args)
     else:
         path = args.report
         if not path:
-            run_id = (ROOT / "runs/latest").read_text().strip()
+            latest = ROOT / "runs/latest-gallery"
+            if not latest.exists():
+                latest = ROOT / "runs/latest"
+            run_id = latest.read_text().strip()
             path = ROOT / "runs" / run_id / "report.json"
         report = json.loads(Path(path).read_text())
+        if report.get("schema") == 2:
+            import suite
+            if args.action == "inspect":
+                suite.inspect(report)
+            else:
+                suite.render(report, Path(args.output))
+            return
         if args.action == "inspect":
             inspect_report(report)
         else:
