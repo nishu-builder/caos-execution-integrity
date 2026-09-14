@@ -1,0 +1,1 @@
+/nix/store/gn94gpcp5q08x4v6g8mvw8v4r65rcjzk-gnugrep-3.12/share/locale/id/LC_MESSAGES/grep.mo

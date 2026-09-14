@@ -1,0 +1,1 @@
+/nix/store/cgjr3kj3hs7ngznyws5qfg16c8scpys0-bash-interactive-5.3p9/share/locale/fr/LC_MESSAGES/bash.mo

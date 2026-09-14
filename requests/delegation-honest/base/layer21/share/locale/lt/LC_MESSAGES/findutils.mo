@@ -1,0 +1,1 @@
+/nix/store/c1cjgg6p8m8fssivzrc2p13mwwml3p3v-findutils-4.10.0/share/locale/lt/LC_MESSAGES/findutils.mo

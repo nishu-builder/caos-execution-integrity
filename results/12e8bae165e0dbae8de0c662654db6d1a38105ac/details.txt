@@ -1,0 +1,2 @@
+PASS clamp(0, 10, 5) = 5
+PASS clamp(0, 10, -2) = 0

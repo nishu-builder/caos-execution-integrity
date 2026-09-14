@@ -1,0 +1,1 @@
+/nix/store/ww555mznia5v7sz2w85lblg4amvhkhv1-diffutils-3.12/share/locale/he/LC_MESSAGES/diffutils.mo
