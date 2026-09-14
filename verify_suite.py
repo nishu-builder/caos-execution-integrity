@@ -71,6 +71,12 @@ def check_suite(report, repo, trust=None):
                     key = "worker1" if field == "worker" else field
                     require(at(repo, row["request"], key) == row[field], "request binding changed")
                     require(read(repo, row["result"], field + ".oid").strip() == row[field], "receipt binding changed")
+                fixture = name.rsplit("-", 1)[0]
+                require(row["submission"] == at(repo,report["source_tree"],
+                        "demos/evaluation/fixtures/" + fixture + "/clamp.sh"), "submission differs from fixture")
+                if name.endswith("workspace"):
+                    require(row["tests"] == at(repo,report["source_tree"],
+                            "demos/evaluation/fixtures/" + fixture + "/tests.tsv"), "workspace test selection changed")
                 require(row["worker"] == worker, "evaluator changed")
                 if name.endswith("protected"):
                     require(row["tests"] == tests, "protected tests changed")
@@ -117,6 +123,7 @@ def check_suite(report, repo, trust=None):
                     require(read(repo,row["request"],"workspace/captured-policy.txt") == row["stdout"], "snapshot decision mismatch")
             original,cached,fresh = (rows[k] for k in ("live-original","cached-repeat","live-fresh"))
             require(original["request"] == cached["request"] and original["result"] == cached["result"], "repeat not cached")
+            require(original["request"] != fresh["request"], "fresh live call reused the cached request")
             require(args_without_salt(repo,original["request"]) == args_without_salt(repo,fresh["request"]), "fresh call changed inputs")
             first,second = rows["snapshot-first"],rows["snapshot-fresh"]
             require(first["request"] != second["request"], "snapshot replay did not execute a fresh request")

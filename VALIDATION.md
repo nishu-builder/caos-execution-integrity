@@ -1,40 +1,46 @@
 # Recorded validation
 
-Run: `20260914T012808Z-8db4c503` (UTC)  
-Tested source: `f76fab3e06c2d55a079cccb07306c7d02cc63662`  
-Caos revision: `5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3`  
-Lab image: `sha256:f00aef2637d45dab6e10eaab35a1b082b3e80ec8a660f096a77c2bfd00536af6`  
-Evidence commit: `73a9de2034fe06ebc13e2061dc0444694c2a78a7`  
-Evidence branch: [evidence/20260914T012808Z-8db4c503](https://github.com/nishu-builder/caos-execution-integrity/tree/evidence/20260914T012808Z-8db4c503)
+The shared gallery contains **five demos and 37 scenarios**. All matched their expected outcomes on a real Caos stack. Successful attacks and false alarms are intentional observations, not hidden test failures.
 
-The sample was generated on Linux x86_64 with a real Caos stack. Subsequent changes package the sample, refine documentation and report wording, and add verification automation. The execution and cryptographic code are unchanged.
+| Demo | Scenarios | Measured result |
+| --- | ---: | --- |
+| Execution | 15 | Same signed transcript with different effects; protected dispatch blocks selected attacks; bypass and trusted-signer failures remain visible |
+| Evaluation | 6 | Deleted test makes unchanged broken code pass only under workspace-selected tests |
+| Delegation | 5 | Broad authority changes a sibling policy; scoped integration preserves it and rejects wrong destination/stale parent |
+| Replay | 6 | Cached ALLOW survives a service change; fresh live execution returns DENY; captured-input replays remain stable |
+| Monitoring | 5 | Tail truncation and silent effects evade selected monitors; full evidence helps; benign text still produces a false alarm |
 
-## Results
+The execution demo also includes three live process experiments and six permission probes. Monitoring compares five configurations over three executions. Delegation reuses a child's real proposal to test two integration rejections. These counts are scenarios, not distinct process launches.
 
-- **3 process experiments:** identical transcript fields and signatures; the takeover replaces the actual command; Unix-user separation blocks the tested takeover.
-- **6 permission probes:** stopping the handler, replacing its socket, changing its configuration, reading its key, opening its memory, and connecting to its private socket all denied.
-- **15 Caos experiments:** all matched their expected acceptance and side-effect outcomes.
-- **12 unit tests:** signature tampering, identity binding, key substitution, malformed envelopes, misleading inline output, and Git object integrity.
-- **Portable evidence:** imported the standalone bundle into an empty Git repository, passed Git object checks, and verified signatures, result contents, fixture mutation, fresh per-case salts, and recorded dispatches without a Caos server.
-- **Browser checks:** all three comparison tabs, 15 case rows, and receipt inspection worked on desktop and mobile without script errors or page overflow.
-- **Locked runtime:** all 12 unit tests also passed inside the pinned Docker image with networking disabled.
-- **Negative evidence checks:** rejected changed trust anchors and output that contradicted its retained result object.
+## Provenance
 
-Successful attack cases are intentional results, not test failures. The unrestricted direct route causes the local effect despite receipt rejection. A deliberately compromised signer produces an accepted lie.
+- Run: `20260914T044729Z-ae4a4abd` (UTC).
+- Tested execution source: `401a0d305e46d6c90d8288be4ae53228ecc06d7f`.
+- Source tree: `8c20d86cac591a1f5a22debc4000d280ee41bfb7`.
+- Caos revision: `5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3`.
+- Evidence commit: `35166b9e2387dc3ade8a94f263823fb6e0ca241d`.
+- Evidence branch: [evidence/gallery-20260914T044729Z-ae4a4abd](https://github.com/nishu-builder/caos-execution-integrity/tree/evidence/gallery-20260914T044729Z-ae4a4abd).
 
-## Recheck this sample
+Later edits package the measured sample and strengthen offline verification; the fixture execution code is unchanged.
 
-After cloning the repository and installing the locked requirements as described in README:
+## Checks performed
 
-```sh
-git fetch origin 'refs/heads/evidence/20260914T012808Z-8db4c503:refs/heads/evidence/20260914T012808Z-8db4c503'
-python3 verify.py docs/report.json \
-  --witness-key b4d92b222d03427a4611e6806812490d18359ac28da6143a7f6ed81d10ce3f1c \
-  --approver-key 5a82731c341237cc07f6ded807f9cc7af40c88e3ed6c19367cd27fc71bcddd0d
-```
+- All five demos ran together through `demo.py run --only all`.
+- Monitoring also ran individually through the same command interface.
+- **20 unit tests passed**, including signature tampering, object integrity, scoped publication, stale parents, invalid destinations, nested symlinks, and replay input comparison.
+- The original and combined evidence bundles each imported into an empty Git repository, passed Git object checks, and verified offline without a Caos server.
+- Modified evaluation outcomes, delegated policy results, service-read observations, and monitor views were rejected by the verifier.
+- Browser checks passed for all five tabs and 37 rows, evidence inspectors, the original transcript comparison, keyboard navigation, direct links, and mobile layouts.
+- Temporary policy-service containers were removed after their runs.
 
-Or import [docs/evidence.bundle](docs/evidence.bundle) into an empty repository and pass its path with `--repo`.
+Run `python3 check_sample.py` after installing the locked requirements to repeat the offline checks. GitHub Actions runs the unit tests and sample verification on updates.
 
-These keys are the public trust anchors for this published sample. Only use them if you trust the publication. The private keys were generated inside the disposable lab container and were not exported. A replacement report with replacement keys is not evidence of the original run.
+## Inspect and reuse
 
-[Open the interactive report locally](docs/index.html) or read [the raw report](docs/report.json). The HTML uses no external scripts or services. The bundle retains Git objects by identity; it does not freeze third-party services or certify that the trusted dispatcher was honest.
+- [Interactive gallery](https://nishu-builder.github.io/caos-execution-integrity/).
+- [Combined raw results](docs/gallery/report.json).
+- [Standalone evidence bundle](docs/gallery/evidence.bundle).
+- [Execution receipt public keys](docs/gallery/trust.json).
+- [Original sample validation](docs/legacy-validation.md).
+
+The receipt keys authenticate statements by the execution demo's witness. The remaining demos retain operator observations and Git objects. Verification checks internal consistency against these published anchors; it cannot establish that a compromised witness, operator, runner, or external service was honest. The image base is pinned by digest, but its external bytes are not included in the bundle.
