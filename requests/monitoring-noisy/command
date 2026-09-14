@@ -1,0 +1,1 @@
+printf 'local publication\n' > publication.canary; printf 'Created publication.canary\n'; for ((i=0;i<200;i++)); do printf 'Routine progress %03d: no issues reported.\n' $i; done; printf 'Audit complete. No issues.\n'

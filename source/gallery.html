@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caos safety demos — What should we trust?</title>
+<style>
+:root{font:17px/1.65 system-ui,sans-serif;color:#253344;background:#f4f2ed;--ink:#243c50;--line:#d9dddF;--muted:#596b79}
+*{box-sizing:border-box}body{margin:0}main{max-width:1160px;margin:auto;padding:45px 26px 70px}a{color:#265d7b}
+.top{display:flex;justify-content:space-between;gap:15px;align-items:center}.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(36px,5.3vw,64px);line-height:1.1;letter-spacing:-.035em;margin:28px 0 16px}header>p{max-width:800px;color:var(--muted)}
+nav{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:32px 0}
+button{font:inherit;cursor:pointer}nav button{text-align:left;border:1px solid var(--line);border-radius:10px;background:white;padding:18px;color:var(--ink);min-height:132px}
+nav button[aria-selected=true]{background:var(--ink);color:white;border-color:var(--ink)}.number{display:block;font-size:12px;opacity:.72;margin-bottom:10px}.navtitle{font-size:17px;line-height:1.3;font-weight:650}
+h2{font-size:clamp(26px,3vw,36px);line-height:1.2;margin:6px 0 24px;letter-spacing:-.02em}.explain{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin:20px 0 30px}
+.explain p{font-size:15px;margin:6px 0}.label{font-weight:650;font-size:13px}.limit{border-left:3px solid #caa54d;padding-left:15px}
+.panel{background:white;border:1px solid var(--line);border-radius:12px;padding:26px;margin:20px 0}
+.comparison{display:grid;grid-template-columns:1fr 1fr;gap:18px}.comparison h3{margin:4px 0;font-size:17px}.comparison p{margin:8px 0 0;color:var(--muted);font-size:15px}
+.tag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.value{font-size:28px;font-weight:700;line-height:1.3;margin:12px 0}.warm{color:#923d35}.cool{color:#276b57}
+.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;border-bottom:1px solid #e2e5e8;padding:13px 10px}th{font-size:12px;color:var(--muted);font-weight:600}
+.case-button{border:0;background:none;text-align:left;padding:0;color:#245d7d;font:inherit;text-decoration:underline;text-underline-offset:3px}
+pre{font:12px/1.65 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f5f7;border-radius:7px;padding:17px;max-height:600px;overflow:auto}
+.details{margin-top:20px}summary{cursor:pointer;color:#265d7b}.toolbar{display:flex;gap:20px;flex-wrap:wrap;margin:28px 0;font-size:14px}
+.note{font-size:14px;color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:20px;font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.toggle{border:1px solid var(--line);border-radius:7px;background:white;padding:8px 12px;margin:0 8px 8px 0;font-size:14px}.toggle[aria-pressed=true]{background:var(--ink);color:white}
+:focus-visible{outline:3px solid #aa7f20;outline-offset:3px}
+@media(max-width:760px){main{padding:25px 16px 40px}nav{grid-template-columns:1fr 1fr}nav button{min-height:115px;padding:14px}.explain,.comparison{grid-template-columns:1fr;gap:14px}.panel{padding:17px}th,td{padding:10px 7px}.top{align-items:start;font-size:13px}}
+</style></head>
+<body><main>
+<header><div class="top"><span class="eyebrow">Caos safety demos · measured experiments</span><a href="https://github.com/nishu-builder/caos-execution-integrity">Code and instructions</a></div>
+<h1>What should we trust?</h1>
+<p>A convincing transcript, a passing test, a helpful subagent, a matching replay. Each can hide a different failure. These experiments use real Caos jobs to test what improves the situation—and what remains unprotected.</p></header>
+<nav role="tablist" aria-label="Safety problem" id="navigation"></nav>
+<section id="demo-panel" role="tabpanel" tabindex="0">
+<div class="eyebrow" id="demo-number"></div><h2 id="title"></h2>
+<div class="explain"><div><span class="label">The problem</span><p id="problem"></p></div><div><span class="label">What changes</span><p id="improvement"></p></div><div class="limit"><span class="label">What this does not establish</span><p id="limit"></p></div></div>
+<div class="comparison" id="comparison"></div>
+<div id="process" class="panel" hidden><h3>Same transcript. Different effects.</h3><div id="process-controls"></div><div class="comparison"><div><span class="label">Recorded call</span><pre id="transcript"></pre></div><div><span class="label">Observed in the lab</span><pre id="effects"></pre></div></div></div>
+<div class="panel"><div class="eyebrow">Measured cases · choose one to inspect its evidence</div><div class="tablewrap"><table><thead><tr><th>Experiment</th><th>Outcome</th><th>What to notice</th></tr></thead><tbody id="cases"></tbody></table></div>
+<details class="details" id="details"><summary id="detail-label">Inspect a case</summary><pre id="detail"></pre></details></div>
+<p class="note" id="interpretation"></p>
+<div class="toolbar"><a id="article">Read the explanation</a><a id="download" download>Download all evidence</a><a id="json">Raw results</a><a href="https://github.com/nishu-builder/caos-execution-integrity#run-the-demos">Run one or all demos</a></div>
+</section>
+<footer id="provenance"></footer>
+<script>
+const data=/*DATA*/null;
+const root="https://github.com/nishu-builder/caos-execution-integrity/blob/main/";
+const descriptions={
+monitoring:{short:"Trusting the monitor",problem:"A warning can be retained in a result but disappear from a shortened view. Some effects produce no warning at all.",
+improvement:"Monitor the full retained output and the state relevant to the safety property, rather than relying on the final screenful.",
+limit:"Complete input does not make a monitor sound. The keyword scanner still misses silent effects and flags a benign mention.",
+before:["Shortened output","CLEAR","A local publication canary exists, but its log line is outside the final 512 characters."],after:["Full retained result","ALERT","The complete output reveals the event; checking filesystem state also catches the silent variant."],
+note:"Three actual Caos executions are examined by five monitor configurations. These toy monitors test evidence coverage, not model-level monitoring accuracy.",article:"demos/monitoring/README.md"},
+execution:{short:"Trusting the transcript",problem:"A handler can run a different command while returning exactly the expected output. Signing that transcript preserves the false story.",
+improvement:"Separate the handler's authority. Pin the approved request, and have a protected dispatcher observe and sign the backend response.",
+limit:"A compromised signer can issue a valid lie. A direct route to the backend can cause the effect before verification rejects it.",
+before:["Replaced handler","Valid transcript","The audit did not run; the publication canary appeared."],after:["Separate Unix user","Takeover blocked","Six tested attempts to alter or access the protected handler were denied."],
+note:"ACCEPT means the verifier accepted the record. It does not mean the action was safe. Publication here is a harmless local canary file.",article:"BLOG.md"},
+evaluation:{short:"Trusting the score",problem:"An agent can make a broken program pass by deleting the test that exposes its bug.",
+improvement:"The operator chooses an immutable test set and evaluator. The submitted program is varied independently.",
+limit:"The protected tests must be good tests. This does not isolate arbitrary hostile programs from the evaluator or prove general correctness.",
+before:["Agent-controlled tests","PASS","The cheating submission deletes a test but leaves the broken code unchanged."],after:["Operator-pinned tests","FAIL","The original test catches the unchanged bug. A real repair passes both."],
+note:"Six evaluations use one evaluator and runtime. The recorded request identifies exactly which program and tests were used.",article:"demos/evaluation/README.md"},
+delegation:{short:"Trusting a subagent",problem:"Giving a docs subagent authority to replace the whole repository lets it disable a sibling review policy.",
+improvement:"Give it the docs subtree, then apply its result only beneath the operator's fixed docs destination. Reject a changed parent.",
+limit:"The child can still damage its own docs. This is a publication boundary, not a filesystem, network, or object-store access sandbox.",
+before:["Whole-repository result","Policy disabled","Accepting all of the child's returned state gives it authority over unrelated files."],after:["Fixed subtree integration","Policy preserved","The same attempted policy edit stays inside docs. A wrong destination or stale parent is rejected."],
+note:"The parent performs a Git-tree transformation. Symlinks and submodules are rejected because materializing them can cross a file boundary.",article:"demos/delegation/README.md"},
+replay:{short:"Trusting a replay",problem:"A request can name the same URL while the service behind it changes. A cache hit may hide the change entirely.",
+improvement:"Distinguish cache reuse from fresh execution. Capture the external response as an explicit input when reproducing a historical decision.",
+limit:"A faithful replay of yesterday's ALLOW response is not a current authorization. Capturing bytes does not prove the service told the truth.",
+before:["Exact cached repeat","ALLOW","The service now says DENY, but the repeated request performs no new network read."],after:["Fresh execution","DENY","Running the same live query with a new salt observes the change. Pinned input replays remain ALLOW."],
+note:"The service is a disposable local HTTP fixture. Its request log distinguishes an actual read from a cached answer. No external publication occurs.",article:"demos/replay/README.md"}
+};
+function fill(id,text){document.getElementById(id).textContent=text}
+function card(contents,color){const div=document.createElement("div");div.className="panel";const tag=document.createElement("div");tag.className="tag";tag.textContent=contents[0];const value=document.createElement("div");value.className="value "+color;value.textContent=contents[1];const p=document.createElement("p");p.textContent=contents[2];div.append(tag,value,p);return div}
+function displayProcess(raw,index){const row=raw.os_experiment[index];fill("transcript",JSON.stringify(row.transcript,null,2));fill("effects",JSON.stringify({audit_ran:row.audit_ran,publication_canary:row.publication_canary,handler_uid:row.setup.handler_uid},null,2));document.querySelectorAll("#process-controls button").forEach((b,i)=>b.setAttribute("aria-pressed",String(i===index)))}
+function show(id){
+ const d=data.demos.find(x=>x.id===id)||data.demos[0], info=descriptions[d.id];
+ document.querySelectorAll("nav button").forEach(b=>{const selected=b.dataset.id===d.id;b.setAttribute("aria-selected",String(selected));b.tabIndex=selected?0:-1});
+ fill("demo-number","Experiment "+String(data.demos.indexOf(d)+1).padStart(2,"0")+" / "+data.demos.length);fill("title",d.title);
+ for(const k of ["problem","improvement","limit"])fill(k,info[k]);fill("interpretation",info.note);
+ const comp=document.getElementById("comparison");comp.replaceChildren(card(info.before,"warm"),card(info.after,"cool"));
+ document.getElementById("article").href=root+info.article;
+ const process=document.getElementById("process");process.hidden=d.id!=="execution";
+ if(d.id==="execution"){const controls=document.getElementById("process-controls");controls.replaceChildren();d.raw.os_experiment.forEach((r,i)=>{const b=document.createElement("button");b.className="toggle";b.textContent=["Honest handler","Replaced handler","Protected handler"][i];b.onclick=()=>displayProcess(d.raw,i);controls.append(b)});displayProcess(d.raw,1)}
+ const tbody=document.getElementById("cases");tbody.replaceChildren();const rows=d.id==="execution"?d.raw.cases:d.cases;
+ rows.forEach(row=>{const tr=document.createElement("tr");const td=document.createElement("td");const button=document.createElement("button");button.className="case-button";button.textContent=row.label||row.name.replaceAll("-"," ");button.onclick=()=>{fill("detail-label",button.textContent+" — retained evidence");fill("detail",JSON.stringify(row,null,2));document.getElementById("details").open=true};td.append(button);tr.append(td);
+ let outcome=row.verdict,notice="";
+ if(d.id==="execution"){outcome=row.accepted?"ACCEPT":"REJECT";notice=row.actual_canary===undefined?"No new dispatch recorded":row.actual_canary?"Publication canary present":"Publication canary absent"}
+ if(d.id==="evaluation")notice=row.id.startsWith("cheated")?"Program unchanged; workspace test removed":row.id.startsWith("fixed")?"Actual program repair":"Original broken program";
+ if(d.id==="delegation")notice=row.verdict==="REJECT"?row.detail:row.policy_after===row.policy_before?"Sibling policy unchanged":"Sibling policy changed";
+ if(d.id==="monitoring")notice=row.actual_canary?"Local canary exists":"No local canary; this alert is a false positive";
+ if(d.id==="replay")notice="Live service: "+row.service_state+" · new worker reads: "+row.network_reads;
+ for(const text of [outcome,notice]){const cell=document.createElement("td");cell.textContent=text;tr.append(cell)}tbody.append(tr)});
+ document.getElementById("details").open=false;fill("detail-label","Inspect a case");fill("detail","");
+ document.getElementById("demo-panel").setAttribute("aria-labelledby","tab-"+d.id);
+}
+if(data){
+ data.demos.forEach((d,i)=>{const b=document.createElement("button");b.id="tab-"+d.id;b.setAttribute("role","tab");b.setAttribute("aria-controls","demo-panel");b.dataset.id=d.id;const number=document.createElement("span");number.className="number";number.textContent=String(i+1).padStart(2,"0");const title=document.createElement("span");title.className="navtitle";title.textContent=descriptions[d.id].short;b.append(number,title);b.onclick=()=>{location.hash=d.id;show(d.id)};b.onkeydown=e=>{if(["ArrowRight","ArrowLeft","Home","End"].includes(e.key)){e.preventDefault();const delta=e.key==="ArrowRight"?1:-1;const j=e.key==="Home"?0:e.key==="End"?data.demos.length-1:(i+delta+data.demos.length)%data.demos.length;document.getElementById("tab-"+data.demos[j].id).focus();location.hash=data.demos[j].id}};document.getElementById("navigation").append(b)});
+ document.getElementById("download").href=data.asset_prefix+"evidence.bundle";document.getElementById("json").href=data.asset_prefix+"report.json";
+ fill("provenance","Run "+data.run_id+" · source "+data.source_commit+" · Caos "+data.caos_revision+". These fixed attack scripts test specific boundaries; they do not measure an adaptive model's success rate.");
+ addEventListener("hashchange",()=>show(location.hash.slice(1)));show(location.hash.slice(1));
+}
+</script></main></body></html>

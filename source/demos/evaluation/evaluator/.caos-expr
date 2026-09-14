@@ -1,0 +1,2 @@
+# A native caos worker with its tests bound before a submission is added.
+curry --base:@@=git+https://github.com/Metta-AI/caos?rev=5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3&dir=std/bash --worker1:@=worker.sh --tests:@=tests.tsv
