@@ -2,6 +2,16 @@
 
 These experiments use real Caos jobs and limited local fixtures to examine execution, evaluation, delegation, replay, monitoring, history, retries, and read access. The published site includes measured results and expandable evidence.
 
+## Rerun the examples
+
+The complete worker images and inputs are published as [Git objects on the caos-rerun branch](https://github.com/nishu-builder/caos-execution-integrity/tree/caos-rerun) and a [downloadable bundle](https://nishu-builder.github.io/caos-execution-integrity/rerun/requests.bundle). From a clone of the repository, with a compatible Caos server running:
+
+```sh
+python3 reproduce.py run --server http://localhost:9090
+```
+
+This reruns 32 worker jobs with fresh cache keys and compares the complete result trees with the published results. All 32 matched in our validation. Live services and surrounding safety controls still need the full demo runner. See the [reproduction guide](REPRODUCE.md) for setup and individual examples.
+
 ## 1. A recorded command can conceal different execution
 
 An agent asks to run an audit. The transcript names the audit command, shows plausible output, and reports success. But a process handling the request can run something else and return the expected answer. METR describes agents replacing a tool-call handler with an impersonator; our first experiment reconstructs that failure pattern with our own toy handler.
@@ -97,7 +107,3 @@ We add a small gateway that serves only an allowed public object. It accepts a r
 Passing a narrow tree is useful for reducing accidental exposure and making a task's intended inputs clear. Actual confidentiality also needs enforced backend permissions or isolation that closes other routes. Git object identities name content; they do not automatically grant or deny permission to read it.
 
 [Implementation and longer explanation](https://github.com/nishu-builder/caos-execution-integrity/blob/main/demos/access/README.md)
-
-## Rerun the worker jobs
-
-[The reproduction guide](REPRODUCE.md) provides the complete worker image and inputs as Git objects. With Git, Python, and a compatible Caos server, you can rerun 32 jobs using fresh cache keys and compare their full result trees with the published results. Live service interactions and the surrounding operator policies still need the full demo runner.

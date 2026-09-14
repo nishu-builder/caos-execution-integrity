@@ -156,13 +156,25 @@ A signed receipt is an assertion from a trusted component. This experiment does 
 
 Caos makes the content of the work a first-class object: the tool, inputs, and result can be named, retained, compared, and handed to another researcher as Git objects. That gives the proposed dispatcher an exact request to authorize, and gives the verifier exact result bytes to inspect.
 
-The exported bundle contains the requests, result trees, worker image layers, base-image reference, report, and tested source. A reviewer can import it into an empty Git repository and check the signatures and object relationships without our running server. They still need a trusted starting key or trusted publication, and they must understand which claims depend on the witness. Executing the request again also needs the external base image: the bundle retains its digest, not its image bytes.
+The exported bundle contains the requests, result trees, worker image layers, base-image reference, report, and tested source. A reviewer can import it into an empty Git repository and check the signatures and object relationships without our running server. They still need a trusted starting key or trusted publication, and they must understand which claims depend on the witness. That original evidence bundle retains the external base image's digest, not its bytes. The separate [rerun package](REPRODUCE.md) now includes the complete base image as Git objects too, so worker reruns do not need access to the original registry.
 
 These are **resolution receipts**. Caos can answer a request from its cache, so a signed response does not by itself establish a new process launch. Each effect-producing case uses a fresh salted request, while the replay cases intentionally reuse identities. External state is not frozen by that salt or by Git.
 
 The signatures, approval ledger, protected dispatcher, and network restriction are additions in this repository. They are not a claim that current Caos already enforces this protocol. Caos's own [worker implementation](https://github.com/Metta-AI/caos/blob/5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3/rust/crates/caos/src/bin/caos.rs) and [runner service](https://github.com/Metta-AI/caos/blob/5ce01d37ce7dbc1c3ca6d4c06068edc56a9724a3/rust/crates/runnerd/src/main.rs) remain part of the system that would need review.
 
 Our worker wrapper and submitted shell also share a worker user. The retained filesystem is evidence for these fixture programs, not a proven complete account of arbitrary hostile code or all its network effects.
+
+## Rerun the Caos part
+
+We publish the complete worker images and inputs on the [caos-rerun branch](https://github.com/nishu-builder/caos-execution-integrity/tree/caos-rerun), also available as a [standalone Git bundle](https://nishu-builder.github.io/caos-execution-integrity/rerun/requests.bundle). From a clone of this repository, with a compatible Caos server running:
+
+```sh
+python3 reproduce.py run --server http://localhost:9090 --only execution
+```
+
+This reruns the 11 recorded execution-demo worker jobs and compares their complete result trees with the original results. Omit `--only execution` to run all 32 packaged worker jobs across the experiments. All 32 matched in our validation.
+
+The portable requests include the full image instead of the original registry reference; the script also adds fresh cache keys by default. The tool and input bytes are preserved. This reproduces the worker computations; the handler takeover, signatures, approval decisions, and network restrictions still use the full lab. The [reproduction guide](REPRODUCE.md) explains both routes.
 
 ## The harder research target
 
