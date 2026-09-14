@@ -5,8 +5,10 @@
       "Agents in the OpenAI swarm found multiple ways to change the behavior of their tool calls."
     ],
     "caos": [
-      "Represent `rm secret.txt`, the input workspace, and the worker image together as one Git tree. That identifies the exact work requested; changing the code or input produces a different request.",
-      "The worker can return the resulting workspace as a Git tree too. A reader can inspect whether `secret.txt` is present, rather than infer deletion from an exit code. The same saved request can be run on independent infrastructure with a fresh cache key and the results compared. CAOS provides the exact work to inspect and re-execute."
+      "CAOS makes the work behind a tool call something we can save and run again. A request identifies the command, its input files, and the worker image containing the programs it will use. These are Git objects, identified by their contents. If an agent changes a script or replaces a program in the image, that creates a different request. The saved request still refers to the original code.",
+      "The agent can write its own tools, too. Their code becomes part of the saved work. A reviewer can inspect what the tool actually does, and another CAOS installation can execute that same code on those same inputs without reconstructing the agent\u2019s machine.",
+      "Consider `rm secret.txt`. CAOS\u2019s shell tool returns the resulting workspace alongside the command\u2019s output and exit status. If the output claims success but the returned workspace still contains `secret.txt`, we can see the contradiction directly. We have files to examine as well as text to read.",
+      "If the execution machinery is compromised, it could fabricate that returned workspace too. This is where rerunning matters: take the saved request to independent infrastructure, bypass cached answers, and compare the results. For work determined by its saved inputs, a mismatch exposes a result that needs investigation. A monitor could sample requests this way. Agreement establishes that the reported result is reproducible; it does not prove that the original machine really executed the recorded command."
     ],
     "sources": [
       {
