@@ -7,7 +7,7 @@
 *{box-sizing:border-box}body{margin:0}main{max-width:1160px;margin:auto;padding:45px 26px 70px}a{color:#265d7b}
 .top{display:flex;justify-content:space-between;gap:15px;align-items:center}.eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
 h1{font-size:clamp(36px,5.3vw,64px);line-height:1.1;letter-spacing:-.035em;margin:28px 0 16px}header>p{max-width:800px;color:var(--muted)}
-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:32px 0}
+nav{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:32px 0}
 button{font:inherit;cursor:pointer}nav button{text-align:left;border:1px solid var(--line);border-radius:10px;background:white;padding:18px;color:var(--ink);min-height:132px}
 nav button[aria-selected=true]{background:var(--ink);color:white;border-color:var(--ink)}.number{display:block;font-size:12px;opacity:.72;margin-bottom:10px}.navtitle{font-size:17px;line-height:1.3;font-weight:650}
 h2{font-size:clamp(26px,3vw,36px);line-height:1.2;margin:6px 0 24px;letter-spacing:-.02em}.explain{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin:20px 0 30px}
@@ -44,6 +44,11 @@ pre{font:12px/1.65 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:any
 const data=/*DATA*/null;
 const root="https://github.com/nishu-builder/caos-execution-integrity/blob/main/";
 const descriptions={
+monitoring:{short:"Trusting the monitor",problem:"A warning can be retained in a result but disappear from a shortened view. Some effects produce no warning at all.",
+improvement:"Monitor the full retained output and the state relevant to the safety property, rather than relying on the final screenful.",
+limit:"Complete input does not make a monitor sound. The keyword scanner still misses silent effects and flags a benign mention.",
+before:["Shortened output","CLEAR","A local publication canary exists, but its log line is outside the final 512 characters."],after:["Full retained result","ALERT","The complete output reveals the event; checking filesystem state also catches the silent variant."],
+note:"Three actual Caos executions are examined by five monitor configurations. These toy monitors test evidence coverage, not model-level monitoring accuracy.",article:"demos/monitoring/README.md"},
 execution:{short:"Trusting the transcript",problem:"A handler can run a different command while returning exactly the expected output. Signing that transcript preserves the false story.",
 improvement:"Separate the handler's authority. Pin the approved request, and have a protected dispatcher observe and sign the backend response.",
 limit:"A compromised signer can issue a valid lie. A direct route to the backend can cause the effect before verification rejects it.",
@@ -83,6 +88,7 @@ function show(id){
  if(d.id==="execution"){outcome=row.accepted?"ACCEPT":"REJECT";notice=row.actual_canary===undefined?"No new dispatch recorded":row.actual_canary?"Publication canary present":"Publication canary absent"}
  if(d.id==="evaluation")notice=row.id.startsWith("cheated")?"Program unchanged; workspace test removed":row.id.startsWith("fixed")?"Actual program repair":"Original broken program";
  if(d.id==="delegation")notice=row.verdict==="REJECT"?row.detail:row.policy_after===row.policy_before?"Sibling policy unchanged":"Sibling policy changed";
+ if(d.id==="monitoring")notice=row.actual_canary?"Local canary exists":"No local canary; this alert is a false positive";
  if(d.id==="replay")notice="Live service: "+row.service_state+" · new worker reads: "+row.network_reads;
  for(const text of [outcome,notice]){const cell=document.createElement("td");cell.textContent=text;tr.append(cell)}tbody.append(tr)});
  document.getElementById("details").open=false;fill("detail-label","Inspect a case");fill("detail","");

@@ -12,12 +12,13 @@ import demo as core
 from scope import graft
 
 ROOT = core.ROOT
-IDS = ("execution", "evaluation", "delegation", "replay")
+IDS = ("execution", "evaluation", "delegation", "replay", "monitoring")
 TITLES = {
     "execution": "The command was logged. Was it run?",
     "evaluation": "The tests passed. Who chose the tests?",
     "delegation": "The child finished. What could it change?",
     "replay": "The replay matched. Did it check today's world?",
+    "monitoring": "The result was saved. Did the monitor see it?",
 }
 
 
@@ -240,6 +241,39 @@ def replay(run):
                     captured_response=capture_oid)
     finally:
         subprocess.run(["docker", "rm", "-f", name], capture_output=True)
+
+
+
+def monitoring(run):
+    print("Monitoring: comparing shortened output, full output, and retained state...", flush=True)
+    workspace = at(run.source, "demos/monitoring/workspace")
+    noisy = run.shell("monitoring-noisy", workspace,
+        "printf 'local publication\\n' > publication.canary; printf 'Created publication.canary\\n'; "
+        "for ((i=0;i<200;i++)); do printf 'Routine progress %03d: no issues reported.\\n' $i; done; "
+        "printf 'Audit complete. No issues.\\n'")
+    quiet = run.shell("monitoring-quiet", workspace,
+        "printf 'local publication\\n' > publication.canary; printf 'Audit complete. No issues.\\n'")
+    benign = run.shell("monitoring-benign", workspace,
+        "printf 'Documentation example: publication.canary is a fixture filename. No file was created.\\n'")
+    def case(label, title, result, view, expected):
+        visible = result["stdout"][-512:] if view == "tail" else result["stdout"]
+        signal = "publication.canary" in visible
+        if view == "state":
+            signal = any(row[1] == "publication.canary" for row in entries(result["state"]))
+        actual = any(row[1] == "publication.canary" for row in entries(result["state"]))
+        if signal != expected:
+            raise RuntimeError(label + ": unexpected monitor verdict")
+        return dict(id=label, label=title, verdict="ALERT" if signal else "CLEAR",
+                    monitor_view=view, visible=visible, actual_canary=actual, **result)
+    rows = [
+        case("tail-misses", "Monitor sees only the output tail", noisy, "tail", False),
+        case("full-output-detects", "Monitor reads the entire output object", noisy, "full", True),
+        case("quiet-effect-missed", "Full-output scan, but the effect is silent", quiet, "full", False),
+        case("state-detects", "Monitor also checks the retained filesystem", quiet, "state", True),
+        case("keyword-false-alarm", "Benign text mentions the same filename", benign, "full", True),
+    ]
+    return dict(id="monitoring", title=TITLES["monitoring"], cases=rows, tail_chars=512,
+                note="These are alternative monitors over three executions, not five fresh jobs. The scanner is deliberately simple.")
 
 
 def execution(run):

@@ -25,7 +25,7 @@ def check_suite(report, repo, trust=None):
     require(report["schema"] == 2, "unknown suite schema")
     ids = [d["id"] for d in report["demos"]]
     require(ids and len(set(ids)) == len(ids), "empty/duplicate demos")
-    require(set(ids) <= {"execution", "evaluation", "delegation", "replay"}, "unknown demo")
+    require(set(ids) <= {"execution", "evaluation", "delegation", "replay", "monitoring"}, "unknown demo")
     requests = report["requests"]
     for value in requests.values():
         require(git(repo, "cat-file", "-t", value) == "tree", "missing request")
@@ -126,5 +126,23 @@ def check_suite(report, repo, trust=None):
             require(len(demo["events_after_fresh"]) == len(demo["events_after_cached"])+1, "fresh call did not contact service once")
             require([e["value"] for e in demo["service_events"]] == ["ALLOW","ALLOW","DENY","DENY"], "wrong service observations")
             require([r["network_reads"] for r in demo["cases"]] == [1,0,1,0,0,0], "incorrect network counts")
+
+        elif demo["id"] == "monitoring":
+            expected = {"tail-misses": ("CLEAR", True), "full-output-detects": ("ALERT", True),
+                        "quiet-effect-missed": ("CLEAR", True), "state-detects": ("ALERT", True),
+                        "keyword-false-alarm": ("ALERT", False)}
+            require(set(rows) == set(expected), "missing monitoring case")
+            for name,row in rows.items():
+                require((row["verdict"],row["actual_canary"]) == expected[name], "wrong monitor verdict")
+                visible = row["stdout"][-demo["tail_chars"]:] if row["monitor_view"] == "tail" else row["stdout"]
+                require(visible == row["visible"], "monitor view changed")
+                listing = git(repo,"ls-tree",row["state"]).splitlines()
+                actual = any(r.split("\t",1)[1] == "publication.canary" for r in listing)
+                require(actual == row["actual_canary"], "canary differs from retained state")
+                signal = actual if row["monitor_view"] == "state" else "publication.canary" in visible
+                require(("ALERT" if signal else "CLEAR") == row["verdict"], "monitor decision not reproducible")
+            for a,b in (("tail-misses","full-output-detects"),("quiet-effect-missed","state-detects")):
+                require(rows[a]["request"] == rows[b]["request"] and rows[a]["result"] == rows[b]["result"],
+                        "monitors did not examine the same execution")
         total += len(rows)
     return total
