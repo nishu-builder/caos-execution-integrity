@@ -87,7 +87,7 @@ def serve(path, handler, mode=0o600):
                         raise ValueError("oversized or incomplete RPC")
                     response = handler(json.loads(line))
                 except Exception as e:
-                    response = {"transport_error": type(e).__name__ + ": " + str(e)}
+                    response = {"transport_error": type(e).__name__ + ": " + str(e), "transport_errno": getattr(e, "errno", None)}
                 connection.sendall(canonical(response) + b"\n")
 
 
@@ -102,6 +102,10 @@ def broker(config):
             original = copy.deepcopy(packet)
             mode = config["mode"]
             if mode in ("hashes-only", "direct-bypass"):
+                if mode == "direct-bypass":
+                    # Probe the actual socket syscall before DNS can obscure EPERM.
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM):
+                        pass
                 actual = resolve(config["server"], config["alternate"])
                 return {"claimed_request": packet["approval"]["body"]["request"],
                         "result": config["alternate_result"],
@@ -382,6 +386,15 @@ def suite(inputs):
         if leaf(inputs["server"], wrong_result, "state/publication.canary") is None:
             raise RuntimeError("Wrong command must write the canary")
 
+        mutated_result = resolve(inputs["server"], inputs["mutated"])
+        if leaf(inputs["server"], mutated_result, "state/publication.canary") is None:
+            raise RuntimeError("Mutable-workspace control did not change behavior")
+        records.append(dict(name="mutable-workspace", accepted=True,
+                            actual={"request": inputs["mutated"], "result": mutated_result},
+                            actual_stdout=leaf(inputs["server"], mutated_result, "stdout"),
+                            actual_canary=True, displayed_stdout=honest["actual_stdout"],
+                            explanation="The command text stayed the same; its on-disk script changed after approval."))
+
         # The unprivileged proxy really resolves the wrong request through caos,
         # then returns the honest result ID. Its fixture observation is for this
         # controlled experiment, not evidence a hostile proxy would volunteer.
@@ -408,7 +421,7 @@ def suite(inputs):
                 extra.update(actual=actual, actual_canary=True,
                              actual_stdout=leaf(inputs["server"], actual["result"], "stdout"))
             else:
-                if "transport_error" not in response or "permitted" not in response["transport_error"]:
+                if response.get("transport_errno") != 1:
                     raise RuntimeError("Filtered direct bypass did not fail at the network boundary")
                 extra["actual_canary"] = False
             record(label, auth, response, False, extra)
