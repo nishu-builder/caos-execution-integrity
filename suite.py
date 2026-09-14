@@ -314,11 +314,16 @@ def export(run, output):
     (output / "report.json").write_text(report_text)
     (output / "evidence-ref").write_text(ref + "\n")
     (output / "evidence-commit").write_text(commit + "\n")
+    execution_demo = next((d for d in run.demos if d["id"] == "execution"), None)
+    trust = {k: execution_demo["raw"][k] for k in ("witness_public_key", "approver_public_key")} if execution_demo else {}
+    (output / "trust.json").write_text(json.dumps(trust, indent=2) + "\n")
     render(report, output / "index.html")
     return report
 
 
-def render(report, path):
+def render(report, path, asset_prefix=None):
+    if asset_prefix is not None:
+        report = dict(report, asset_prefix=asset_prefix)
     template = (ROOT / "gallery.html").read_text()
     path.write_text(template.replace("/*DATA*/null", json.dumps(report).replace("<", "\\u003c")))
 

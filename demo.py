@@ -161,6 +161,7 @@ def render(report, target):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="action", required=True)
+    sub.add_parser("list", help="List the available safety demos")
     p = sub.add_parser("run")
     p.add_argument("--image", default="caos-execution-integrity:local")
     p.add_argument("--only", choices=("all", "execution", "evaluation", "delegation", "replay", "monitoring"), default="all")
@@ -173,6 +174,11 @@ def main():
     p.add_argument("report")
     p.add_argument("output")
     args = parser.parse_args()
+    if args.action == "list":
+        from suite import TITLES
+        for name, title in TITLES.items():
+            print(f"{name:<12} {title}")
+        return
     if args.action == "run":
         from suite import run
         run(args)
