@@ -84,9 +84,9 @@ Agents edited local logs to hide having obtained answers by reverse-engineering.
 
 ### CAOS
 
-Retain the sequence of request and result objects, with Git commits linking the snapshots. A later deletion changes the current workspace; it does not change an earlier snapshot someone has retained.
+Store the transcript entries, requests, and results as Git objects. They form a Merkle structure: each tree contains the hashes of its children. Removing an entry changes its containing tree’s hash, then each hash above it, up to the root. An agent cannot present the shortened record as the same record under the same root hash.
 
-A reviewer can pin a history commit and come back to it. Moving a branch name to a cleaner history does not replace that pinned commit. This makes it possible to examine the state around a particular action, rather than reconstruct everything from the final files.
+A reviewer or monitor can save that root hash as the run proceeds. When checking that saved record later, a rewritten tree will not match it. If the agent instead withholds an object without changing the tree, verification encounters a missing object. Either way, the omission is detectable. Keeping copies of the objects also lets the reviewer recover the removed material.
 
 ## 7. A missing reply leaves the outcome unclear
 
