@@ -42,3 +42,13 @@ GitHub Actions runs the same unit and offline evidence checks. Repeat them with 
 [Read the article](https://nishu-builder.github.io/caos-execution-integrity/) · [Raw results](docs/gallery/report.json) · [Bundle](docs/gallery/evidence.bundle) · [Execution receipt public keys](docs/gallery/trust.json)
 
 The history commits are operator-created records, the idempotency ledger is in memory, and the private canary is fake fixture data. Verification checks the retained evidence's consistency; it does not independently attest a trusted component's honesty. External base-image bytes are not included in the bundle.
+
+## Portable Git-object reruns (2026-09-14)
+
+All 32 self-contained worker jobs were rerun with fresh salts from an empty client Git repository using the portable package. Every returned result tree matched the original recorded result. The image contains all 22 original base layers plus the original Caos overlay; there is no external base-image reference. The same existing Caos server was used; this was not a newly provisioned server or a different kernel.
+
+The final runner source was 49fefbd5fae5e5599cd7902c6457c072b6b71419. The [machine-readable rerun record](docs/rerun/validation.json) includes original, portable, and submitted requests and expected and returned results. Their Git objects are published on the [evidence/rerun-20260914 branch](https://github.com/nishu-builder/caos-execution-integrity/tree/evidence/rerun-20260914), pinned by [validation-commit](docs/rerun/validation-commit).
+
+The portable package was imported and checked in an empty repository. Verification checks that the original tool and inputs are unchanged, that the portable image is the imported base plus original overlay, and that every required Git object is present. The known-hash access job explicitly uploads its fake canary. Two exact-request invocations also returned matching results; exact mode is allowed to reuse the cache.
+
+38 unit tests pass, including altered-input rejection, manifest replacement, a forged receipt's result being excluded from expectations, lost-response request retention without retry, and different-result detection. The existing 15-case and 52-case evidence checks also pass. These checks establish consistency and observed rerun behavior, not independent runner attestation.
