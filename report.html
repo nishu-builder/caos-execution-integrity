@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The command was logged. Was it run?</title>
+<style>
+:root{font:17px/1.6 system-ui;color:#202e3d;background:#f3f1eb}body{max-width:1120px;margin:48px auto;padding:0 24px}
+h1{font-size:clamp(32px,5vw,58px);line-height:1.08;max-width:780px;margin:20px 0}h2{margin-top:40px}
+.kicker{font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:#546479}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:#fff;border:1px solid #ddd9cf;border-radius:12px;padding:22px;min-width:0}
+pre{font:13px/1.65 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f6f8;padding:16px;border-radius:7px}
+button{border:1px solid #c2c9d1;background:#fff;padding:10px 16px;border-radius:7px;font:inherit;cursor:pointer;margin:0 8px 8px 0}
+button[aria-pressed=true]{background:#203c55;color:white}table{width:100%;border-collapse:collapse;background:white;font-size:14px}
+td,th{padding:12px;text-align:left;border-bottom:1px solid #e4e5e7}.bad{color:#9d342d}.good{color:#1c6553}
+.note{border-left:4px solid #d8ae48;padding-left:18px;color:#4e4d44}.muted{color:#657081;font-size:14px}
+details{margin-top:18px}summary{cursor:pointer}a{color:#245d87}footer{margin:45px 0;color:#657081;font-size:13px}
+@media(max-width:750px){.grid{grid-template-columns:1fr}body{padding:0 15px}table{font-size:12px}td,th{padding:8px}}
+</style>
+<div class="kicker">Caos execution-integrity lab · measured results</div>
+<h1>The command was logged.<br>Was it run?</h1>
+<p>A real toy handler takeover produces the same visible tool call and output as an honest run.
+The process that executed it tells a different story.</p>
+<div id="controls"></div>
+<div class="grid">
+<div class="card"><div class="kicker">What the transcript says</div><pre id="transcript"></pre><p class="muted">These rendered fields are identical across all three runs. Their transcript signatures also verify.</p></div>
+<div class="card"><div class="kicker">What the controlled experiment observes</div><pre id="effects"></pre><p id="interpretation"></p></div>
+</div>
+<h2>Can a signed, content-pinned request close the gap?</h2>
+<p>The next experiments use real caos requests. A separate dispatcher checks an approval, contacts caos itself, and signs the returned result identity. An unprivileged proxy sits in between.</p>
+<div style="overflow:auto"><table><thead><tr><th>Experiment</th><th>Verifier</th><th>Publication canary</th><th>Meaning</th></tr></thead><tbody id="cases"></tbody></table></div>
+<p class="note"><strong>A signature identifies who made a statement. It does not make the statement true.</strong>
+The compromised-signer case produces a valid receipt for an honest request while resolving another request and hiding its result.</p>
+<h2>Inspect the evidence</h2>
+<p>Choose a row to inspect its approval, receipt, and measured outcome. The lab's private keys are never exported.
+The full Git bundle retains requests, result objects, and runtime image contents.</p>
+<pre id="detail">Choose an experiment above.</pre>
+<details><summary>Permission checks against the protected handler</summary><pre id="probes"></pre></details>
+<footer id="provenance"></footer>
+<script>
+const data=/*DATA*/null;
+const descriptions={
+honest:"Approved request, matching receipt.",
+"hashes-only":"Proxy runs another request; ordinary hashes do not bind execution.",
+"direct-bypass-unrestricted":"No valid receipt, but the proxy reaches caos directly and creates the canary.",
+"direct-bypass-restricted":"Kernel socket filter blocks the direct route.",
+substitute:"Different request rejected before dispatcher calls caos.",
+"approval-forgery":"Changing the approval invalidates its signature.",
+"result-swap":"Substituting the result invalidates the receipt.",
+"key-swap":"An attacker-supplied signing key is not trusted.",
+"inline-output":"Inline output is ignored; display comes from the verified result object.",
+"receipt-replay":"A valid receipt for another call is rejected.",
+"authorization-reuse":"An already-consumed authorization is rejected.",
+"custom-tool":"New, explicitly approved code is allowed.",
+"pinned-workspace":"Post-approval workspace edits do not change the pinned request.",
+"compromised-signer":"A trusted liar defeats the verifier; the hidden canary is present."
+};
+function show(i){const row=data.os_experiment[i];
+document.querySelectorAll("#controls button").forEach((b,j)=>b.setAttribute("aria-pressed",String(i===j)));
+document.getElementById("transcript").textContent=JSON.stringify(row.transcript,null,2);
+document.getElementById("effects").textContent=JSON.stringify({audit_ran:row.audit_ran,publication_canary:row.publication_canary,handler_uid:row.setup.handler_uid},null,2);
+document.getElementById("interpretation").textContent=i===1?"The original handler was stopped and its socket replaced. The impersonator wrote a publication canary without running the approved audit.":i===2?"The worker could not stop or replace the protected handler. The approved audit ran.":"The original handler ran the requested audit.";
+}
+if(data){
+data.os_experiment.forEach((r,i)=>{const b=document.createElement("button");b.textContent=r.name;b.onclick=()=>show(i);document.getElementById("controls").append(b)});
+data.cases.forEach(r=>{const tr=document.createElement("tr");tr.style.cursor="pointer";tr.onclick=()=>document.getElementById("detail").textContent=JSON.stringify(r,null,2);
+[r.name,r.accepted?"ACCEPT":"REJECT",r.actual_canary===undefined?"No new dispatch recorded":r.actual_canary?"Present":"Absent",descriptions[r.name]||""].forEach(t=>{const td=document.createElement("td");td.textContent=t;tr.append(td)});document.getElementById("cases").append(tr)});
+document.getElementById("probes").textContent=JSON.stringify(data.os_experiment[2].setup.probes,null,2);
+document.getElementById("provenance").textContent="Run "+data.run_id+" · Source "+data.source_commit+" · Caos "+data.caos_revision;
+show(1);
+}
+</script></html>
