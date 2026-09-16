@@ -67,5 +67,3 @@ Moreover, shared CAOS conversations can be experimented on much more easily. Wou
 Preserving the surrounding environment could also help with agents that behave differently when they suspect an evaluation, since tests can be built from situations encountered during ordinary work with fewer changes that reveal the test.
 
 Investigators can inspect runs, rerun individual computations, or branch to test counterfactual scenarios. Secrets are supplied at execution rather than stored in the argtree, so a reviewer runs under their own keys and pays for their own compute and model calls. Auditing someone's run doesn't require being trusted with their access or funded by them.
-
-The [demo repository](https://github.com/nishu-builder/caos-execution-integrity) includes [32 saved worker jobs you can rerun](https://github.com/nishu-builder/caos-execution-integrity/blob/main/REPRODUCE.md).
