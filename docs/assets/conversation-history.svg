@@ -1,44 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="690" viewBox="0 0 720 690" role="img" aria-labelledby="title desc">
-<title id="title">A CAOS conversation and its saved state</title>
-<desc id="desc">The main conversation advances through commits A, B, and C. A subagent starts with selected state from A, keeps a separate conversation, and can return file changes to the main conversation. Snapshot B links to messages, source commits, and execution records containing compute requests and results. Solid arrows show conversation progression. Dashed arrows show references or transfer of state, not Git parent links.</desc>
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#555" stroke-width="1.4"/></marker></defs>
-<style>text{font-family:Arial,Helvetica,sans-serif;fill:#262626;font-size:17px}.label{font-size:15px;fill:#555}.heading{font-size:18px;font-weight:600}.box{fill:#fff;stroke:#999;stroke-width:1.2}.line{fill:none;stroke:#555;stroke-width:1.4;marker-end:url(#arrow)}.ref{stroke-dasharray:5 5}</style>
-<rect width="720" height="690" fill="#fff"/>
-<text x="24" y="28" class="heading">Conversation snapshots</text>
-<text x="24" y="52" class="label">Each box is a commit; time runs left to right.</text>
-<text x="24" y="87" class="label">Main conversation</text>
-<rect class="box" x="24" y="100" width="144" height="52" rx="3"/>
-<text x="96" y="132" text-anchor="middle">Snapshot A</text>
-<rect x="288" y="100" width="144" height="52" rx="3" fill="#f2f5f7" stroke="#466276" stroke-width="1.4"/>
-<text x="360" y="132" text-anchor="middle">Snapshot B</text>
-<rect class="box" x="552" y="100" width="144" height="52" rx="3"/>
-<text x="624" y="132" text-anchor="middle">Snapshot C</text>
-<path class="line" d="M168 126H282"/><path class="line" d="M432 126H546"/>
-<text x="24" y="214" class="label">Subagent conversation</text>
-<rect class="box" x="288" y="226" width="144" height="52" rx="3"/>
-<text x="360" y="258" text-anchor="middle">Snapshot S1</text>
-<rect class="box" x="552" y="226" width="144" height="52" rx="3"/>
-<text x="624" y="258" text-anchor="middle">Snapshot S2</text>
-<path class="line" d="M432 252H546"/>
-<path class="line ref" d="M96 152V176H360V220"/>
-<text x="184" y="168" class="label">Copy selected state</text>
-<path class="line ref" d="M624 226V158"/>
-<text x="611" y="183" text-anchor="end" class="label">Bring back</text>
-<text x="611" y="203" text-anchor="end" class="label">file changes</text>
-<text x="24" y="312" class="label">Dashed arrows transfer state; the transcripts remain separate.</text>
-<line x1="24" y1="337" x2="696" y2="337" stroke="#ddd"/>
-<text x="24" y="371" class="heading">What snapshot B links to</text>
-<rect x="24" y="390" width="672" height="266" rx="3" fill="#fafafa" stroke="#bbb"/>
-<text x="44" y="420">Conversation B</text>
-<path class="line ref" d="M62 435V611H110"/>
-<path class="line ref" d="M62 462H110"/>
-<path class="line ref" d="M62 518H110"/>
-<rect class="box" x="118" y="441" width="554" height="42" rx="2"/>
-<text x="134" y="468">Messages, notes, and other conversation files</text>
-<rect class="box" x="118" y="497" width="554" height="42" rx="2"/>
-<text x="134" y="524">Source commits → exact files and their code history</text>
-<rect class="box" x="118" y="553" width="554" height="81" rx="2"/>
-<text x="134" y="580">Execution records → requests and results</text>
-<text x="134" y="609" class="label">Request (argtree): program + inputs, identified by hash</text>
-<text x="24" y="680" class="label">Unchanged objects can be shared across snapshots and conversations.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="676" viewBox="0 0 720 676" role="img" aria-labelledby="title desc">
+<title id="title">What CAOS records during a conversation</title><desc id="desc">An example bash call creates a model.complete commit declaring the call, a tool.start commit recording its task before dispatch, and a tool.complete commit recording the result. Arrows point backward to Git parents. A conversation commit has a file tree and execution events in its commit message. Source code is referenced through a gitlink to a separate code commit with its own ancestry.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#555" stroke-width="1.4"/></marker></defs><style>text{font-family:Arial,Helvetica,sans-serif;fill:#262626;font-size:17px}.small{font-size:15px;fill:#555}.heading{font-size:18px;font-weight:600}.mono{font-family:monospace;font-size:16px}.box{fill:white;stroke:#999;stroke-width:1.2}.arrow{fill:none;stroke:#555;stroke-width:1.4;marker-end:url(#arrow)}.ref{stroke-dasharray:5 5}</style><rect width="720" height="676" fill="white"/>
+<text x="24" y="28" class="heading">Several commits can be recorded within one turn</text>
+<text x="24" y="53" class="small">A bash call, for example. Solid arrows point to Git parents.</text>
+<rect class="box" x="24" y="76" width="184" height="76" rx="3"/><text x="116" y="101" text-anchor="middle">C0: model response</text><text x="116" y="126" text-anchor="middle" class="mono">model.complete</text><text x="116" y="144" text-anchor="middle" class="small">Declares the tool call</text>
+<rect class="box" x="268" y="76" width="184" height="76" rx="3"/><text x="360" y="101" text-anchor="middle">C1: task recorded</text><text x="360" y="126" text-anchor="middle" class="mono">tool.start</text><text x="360" y="144" text-anchor="middle" class="small">Before dispatch</text>
+<rect x="512" y="76" width="184" height="76" rx="3" fill="#f2f5f7" stroke="#466276"/><text x="604" y="101" text-anchor="middle">C2: result recorded</text><text x="604" y="126" text-anchor="middle" class="mono">tool.complete</text><text x="604" y="144" text-anchor="middle" class="small">Applies accepted changes</text>
+<path class="arrow" d="M268 114H214"/><path class="arrow" d="M512 114H458"/>
+<text x="24" y="181" class="small">Other events also create commits; they are omitted here.</text>
+<line x1="24" y1="202" x2="696" y2="202" stroke="#ddd"/>
+<text x="24" y="233" class="heading">C2 and the Git objects it refers to</text>
+<rect x="24" y="252" width="672" height="365" rx="3" fill="#fafafa" stroke="#bbb"/>
+<text x="44" y="281">Parent hash → C1</text>
+<text x="44" y="318" class="heading">Tree hash → conversation files</text>
+<rect class="box" x="44" y="333" width="414" height="127" rx="2"/>
+<text x="60" y="361"><tspan class="mono">.caos/transcript/</tspan>  messages</text>
+<text x="60" y="393">Notes, memories, and other files</text>
+<text x="60" y="425"><tspan class="mono">repo/</tspan>  a gitlink to a source commit</text>
+<path class="arrow ref" d="M458 421H502"/>
+<rect class="box" x="510" y="391" width="162" height="54" rx="2"/>
+<text x="591" y="414" text-anchor="middle">Source commit S1</text><text x="591" y="434" text-anchor="middle" class="small">Points to code files</text>
+<path class="arrow" d="M591 445V480"/><text x="602" y="469" class="small">parent</text>
+<rect class="box" x="510" y="487" width="162" height="39" rx="2"/><text x="591" y="512" text-anchor="middle">Source commit S0</text>
+<text x="44" y="493" class="heading">Commit message → execution events</text>
+<text x="44" y="527" class="mono">tool.complete</text>
+<text x="44" y="554">Tool record: task hash, input, result, proposed changes</text>
+<text x="44" y="580">Payload: the tool observation shown to the model</text>
+<text x="44" y="603" class="small">These records are in the commit message, outside its file tree.</text>
+<text x="24" y="650">Code history and conversation history have separate parent links.</text>
+
 </svg>

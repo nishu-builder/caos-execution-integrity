@@ -8,11 +8,17 @@ CAOS (content-addressed operating system) combines these. Programs (Docker image
 
 CAOS can represent trajectories of computation. Imagine a commit history reflecting changes to a file system and the argtrees that generated the transitions in that history. This, too, is portable: it can be reproduced or forked from any point and on any other computer.
 
-CAOS offers an agent harness that applies this to LLM agent trajectories. Each turn of conversation is a commit whose parent is the previous turn of conversation, and whose tree has the source code it's working on. Every tool call is an argtree checked into that history alongside its result, so the history holds not just what the agent said but the programs it ran and the files they read and wrote. Subagents are separate conversation branches, possibly forked from the main conversation branch, and can get merged back via merge commits.
+CAOS offers an agent harness that applies this to LLM agent trajectories. A turn produces several commits as messages, model responses, and tool activity are recorded. Each conversation commit has one parent. Its tree holds the transcript, ordinary files, and references to source-code commits, which have their own history. Compute requests and their results are recorded as execution events in commit messages.
 
-![How CAOS conversation snapshots connect to subagents, source files, compute requests, and results.](docs/assets/conversation-history.svg)
+![How a CAOS turn creates commits, and where transcript files, source-code references, and execution events are stored.](docs/assets/conversation-history.svg)
 
-*Conversation history and source-code history are linked by hashes. A turn can span several commits. Subagents keep their own transcripts while their file changes can be brought back.*
+*Example: a dispatched bash call. Execution events belong to commit messages; source-code commits have a separate history.*
+
+Forking a conversation preserves its earlier transcript and files. Spawning a subagent instead creates a new conversation with selected files and a fresh transcript. Its file changes can later be applied to the parent. Code histories can merge; conversation histories remain separate.
+
+![The difference between forking a conversation and spawning a subagent.](docs/assets/conversation-branches.svg)
+
+*Forks retain earlier conversation history. Spawned subagents start a new transcript; harvesting applies their content changes.*
 
 Unlike Claude Code or Codex, CAOS agents aren't tied to being run on a given instance. An earlier state can be inspected, a computation can be sent to another machine, and a run can be forked from a particular turn.
 
