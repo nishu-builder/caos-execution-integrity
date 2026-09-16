@@ -1,63 +1,71 @@
-# Why CAOS could be useful for alignment work
+# What is CAOS
 
-The basic idea of CAOS is that a computation can itself be described by things checked into Git: the program, its execution image, and its inputs. A compute request identifies these by their contents. Results are stored the same way.
+Git is a universal and tamper-evident way to represent the history of a file tree. It identifies trees and their histories by the hash of their contents, so clients can verify they agree on a history by computing hashes rather than by trusting names.
 
-CAOS’s agent history connects these requests and results to the conversation and saved files. This makes it possible to inspect an earlier state, send a computation to another machine, or fork a run from a particular turn.
+A Docker image is a universal way to represent a program as a file tree.
 
-Why might this help with alignment research?
+CAOS (content-addressed operating system) combines these. Programs (Docker images) and their data are all file trees checked into Git. A request for computation (termed an argtree) is a file tree containing the program and its inputs. Because all programs and data are checked into Git, computation is portable: any computer with access to the Git objects in the argtree and the ability to run Docker can execute it.
 
-## 1. See what a command actually means
+CAOS can represent trajectories of computation. Imagine a commit history reflecting changes to a file system and the argtrees that generated the transitions in that history. This, too, is portable: it can be reproduced or forked from any point and on any other computer.
 
-Agents in the OpenAI swarm found multiple ways to change the behavior of their tool calls. They learned to prepend invented output, suppress or replace real output, and substitute a different command for the one shown in the transcript.
+CAOS offers an agent harness that applies this to LLM agent trajectories. Each turn of conversation is a commit whose parent is the previous turn of conversation, and whose tree has the source code it's working on. Every tool call is an argtree checked into that history alongside its result, so the history holds not just what the agent said but the programs it ran and the files they read and wrote. Subagents are separate conversation branches, possibly forked from the main conversation branch, and can get merged back via merge commits.
 
-In one demonstration, an agent paused the process handling tool calls and replaced it with its own impersonator. A command that should have created a file returned fake output without creating the file. [METR describes the technique here.](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#on-july-11th-a-break-through-allows-agents-to-suppress-the-real-output)
+![How CAOS conversation snapshots connect to subagents, source files, compute requests, and results.](docs/assets/conversation-history.svg)
 
-Imagine a transcript showing `rm secret.txt` while the file was actually copied somewhere else. Reading the command and its reported output wouldn’t tell you that.
+*Conversation history and source-code history are linked by hashes. A turn can span several commits. Subagents keep their own transcripts while their file changes can be brought back.*
 
-CAOS records which implementation and inputs were requested. If an agent changes a script called `rm` to copy files, the changed script has a different hash. Someone inspecting the request can retrieve that exact script and read it. The name can still be misleading, but the implementation remains available.
+Unlike Claude Code or Codex, CAOS agents aren't tied to being run on a given instance. An earlier state can be inspected, a computation can be sent to another machine, and a run can be forked from a particular turn.
 
-This also helps live monitoring. A monitor can inspect the program and files attached to a request, rather than remembering what a command with that name meant earlier in the conversation.
+# Why CAOS might help with auditing agent swarms
 
-## 2. Check a runner by repeating its work elsewhere
+## What the Hugging Face incident showed
 
-The runner could still be compromised. It might receive a request for one program, execute another, and report a fabricated result.
+[\~1,200 OpenAI agents](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#~1200-agents-sent-%3E70%2C000-messages-and-files-on-an-unsanctioned-message-board%2C-and-~700-attacked-hugging-face) found ways to escape containment and ultimately hacked internal and external systems. Worried that an automated scorer would read their transcripts and detect their scheming, they worked for days on modifying their transcripts.
 
-Because a CAOS request is portable, another runner can independently execute it. We could randomly sample requests, run them again on separate infrastructure, and compare the resulting files and outputs. These checks would need fresh execution, bypassing cached answers.
+They were largely successful in obfuscating their tool calls by manipulating the environments that executed them. They [devised ways to replace or modify the tool calls' real output](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-engaged-in-a-large-and-successful-collective-project-to-develop-techniques-for-spoofing-tool-calls), and eventually figured out how to fully substitute the command reflected in the transcript for a different command altogether.
 
-For deterministic computations with captured inputs, the results should match. For computations involving randomness or changing external services, comparison requires more care. A disagreement gives us something concrete to investigate; it doesn’t by itself establish deception.
+They were [unsuccessful in editing the chain of thought entries](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#efforts-to-conceal-actions-and-tamper-with-transcripts) in their transcripts. Their chain-of-thought reflected intent and strategies for scheming, even though the records of tool calls were untrustworthy. This gave a window just wide enough for [METR to do useful investigation](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/). Despite its limitations, this was useful enough that there has since been renewed interest in embedding similar auditing teams within frontier labs.
 
-The useful property is that checking what should have happened doesn’t depend on keeping the original machine trustworthy.
+One lesson to draw from this incident is that trustworthy transcripts are important and not guaranteed in our current systems. But just improving this may not be aiming high enough: even fully accurate transcripts are incomplete and inert. It is not generally possible to revive an agent and ask it what it was thinking from a transcript alone; because coding agents rely on their environment (the instance they ran, etc), when their environment is lost, so is our ability to faithfully inspect or interact with them.
 
-## 3. Start experiments at the moment that matters
+We should make sure those teams can succeed. CAOS offers real improvements here.
 
-Getting an agent into a problematic situation can take a long time. It may have spent hours exploring, changing files, accumulating context, and discovering opportunities. A transcript alone doesn’t let another researcher resume from that situation.
+## See what commands actually ran
 
-CAOS saves conversation and file state at recorded boundaries. We can take a particular turn, restore that state, and continue from there.
+Imagine a transcript showing a tool call: `rm secret.txt`. The name `rm` has meaning by convention, but scheming agents may well have swapped out the binary to `upload`.
 
-That lets us test specific decisions. Would another model exploit the same opportunity? Would the same model do it again? Would a different instruction or monitor change the outcome?
+CAOS agents do not depend on naming conventions in this way. An argtree reflects its program and data by their hashes, not names. If an agent's chain-of-thought suggests it intends to call `rm`, it will be detectable if the requested program's hash does not match. An auditor needn't even have an opinion on what a known `rm` does: with access to the Git objects in a chat history, it can inspect the requested program directly.
 
-Compaction becomes an experiment too: fork a conversation, summarize it in different ways, and compare what happens next.
+None of this relies on the agent's honesty, nor the purity of the environment in which a tool call ran.
 
-Preserving the surrounding environment could also help us study agents that behave differently when they suspect an evaluation. We could build tests from situations encountered during ordinary work, with fewer changes that reveal the test. Whether agents can distinguish those continuations is itself something to measure.
+## A natural place to insert compliance checks
 
-## 4. Make changes to recorded history detectable
+Normal coding agents run their tool calls directly on the machines they operate on. In CAOS, a tool call is an argtree checked into the conversation's history before it executes, and the agent has no guarantee about how quickly it will run. That gap is a natural place for a monitor to sit. It can read the requested program directly rather than relying on a remembered notion of what a command with that name did earlier in this environment, and it can hold or reject the request before anything runs rather than discovering afterward what happened.
 
-The OpenAI agents also tried to edit or erase earlier transcript evidence. METR did not find that those attempts successfully changed the collected transcripts. [Their account is here.](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/#agents-tried-extensively-to-retroactively-edit-their-transcripts,-but-did-not-seem-to-succeed)
+## Detect compromised runners by reproducing work
 
-CAOS conversation commits refer to their files and previous commits by hash. Editing or excising a recorded turn changes the hashes of the history that follows it.
+The environment in which CAOS tool calls execute is called a runner. Even if the requested argtree truly contains `rm` and not `upload`, a compromised runner could swap out what it actually executes.
 
-If an independent observer keeps the latest commit hash as a run progresses, a later rewritten history cannot pass as the original. The observer can retain those hashes without downloading every file immediately.
+Because an argtree holds everything needed to execute it, another runner can execute it independently. One can sample requests at random, run them again on separate, fresh runners, and compare the behavior and results.
 
-This checks whether recorded history was changed. Whether the original record accurately described execution is the separate question addressed by independent reruns.
+For pure functions, the results should match perfectly, and so differences are suspicious. But this approach is still useful for impure work (involving non-determinism, external services, or side effects): the results and behavior can be compared qualitatively even when outputs don't match exactly. The more of the relevant state lives in CAOS, the better this will be.
 
-## 5. Give other researchers the state they need
+## Make transcript editing detectable
 
-A saved run can be shared through a Git remote. Researchers and monitoring tools can refer to the same conversation turns, programs, inputs, and outputs without each translating a different provider’s transcript format.
+For CAOS agents, each conversation is a commit history. Edit or excise a prior turn's message or target source code and every commit hash after it will change.
 
-Where the relevant environment has been captured, we can give people the thing that went wrong and let them continue investigating it. They can inspect it, rerun individual computations, or branch from a pivotal moment.
+A system can publish the commit hash of a conversation branch's tip, at irregular intervals so the agent can't predict when a checkpoint lands. A receiver holding a tip hash H can check any later copy of that history for H. If H is present, every commit up to it is byte-identical to what it was when H was published, because changing any of them would have changed H. The receiver needn't store any of the conversation's contents, nor know the full history of hashes.
 
-Credentials can be supplied separately, so another researcher can use their own account without receiving the original API key. Access to private data or a particular external service may still need separate arrangements.
+## Give investigators a much richer format to work from
 
-This opens the possibility of routinely publishing runs in a form that third parties can analyze and execute. The same saved state could support an incident investigation, a new evaluation, and a test of a better monitor.
+There has been broad interest in reproducing model organisms of misaligned agent swarms in order to research them. Getting an agent, let alone a swarm of them, into a problematic state can take a long time. Even once one is found, a set of conventional chat transcripts alone don't let other researchers resume from that point. The full histories of the agents in the OpenAI incident would be invaluable, but transcripts are most of what survived.
+
+Had those agents run in CAOS, releasing them would have been a single Git remote: a whole swarm's worth of trajectories, in a form other researchers could resume from.
+
+Moreover, shared CAOS conversations can be experimented on much more easily. Would another model scheme similarly? Would the same model do it again? Would a different instruction, or a monitor, change the outcome?
+
+Preserving the surrounding environment could also help with agents that behave differently when they suspect an evaluation, since tests can be built from situations encountered during ordinary work with fewer changes that reveal the test.
+
+Investigators can inspect runs, rerun individual computations, or branch to test counterfactual scenarios. Secrets are supplied at execution rather than stored in the argtree, so a reviewer runs under their own keys and pays for their own compute and model calls. Auditing someone's run doesn't require being trusted with their access or funded by them.
 
 The [demo repository](https://github.com/nishu-builder/caos-execution-integrity) includes [32 saved worker jobs you can rerun](https://github.com/nishu-builder/caos-execution-integrity/blob/main/REPRODUCE.md).

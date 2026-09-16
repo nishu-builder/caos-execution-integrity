@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="690" viewBox="0 0 720 690" role="img" aria-labelledby="title desc">
+<title id="title">A CAOS conversation and its saved state</title>
+<desc id="desc">The main conversation advances through commits A, B, and C. A subagent starts with selected state from A, keeps a separate conversation, and can return file changes to the main conversation. Snapshot B links to messages, source commits, and execution records containing compute requests and results. Solid arrows show conversation progression. Dashed arrows show references or transfer of state, not Git parent links.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#555" stroke-width="1.4"/></marker></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#262626;font-size:17px}.label{font-size:15px;fill:#555}.heading{font-size:18px;font-weight:600}.box{fill:#fff;stroke:#999;stroke-width:1.2}.line{fill:none;stroke:#555;stroke-width:1.4;marker-end:url(#arrow)}.ref{stroke-dasharray:5 5}</style>
+<rect width="720" height="690" fill="#fff"/>
+<text x="24" y="28" class="heading">Conversation snapshots</text>
+<text x="24" y="52" class="label">Each box is a commit; time runs left to right.</text>
+<text x="24" y="87" class="label">Main conversation</text>
+<rect class="box" x="24" y="100" width="144" height="52" rx="3"/>
+<text x="96" y="132" text-anchor="middle">Snapshot A</text>
+<rect x="288" y="100" width="144" height="52" rx="3" fill="#f2f5f7" stroke="#466276" stroke-width="1.4"/>
+<text x="360" y="132" text-anchor="middle">Snapshot B</text>
+<rect class="box" x="552" y="100" width="144" height="52" rx="3"/>
+<text x="624" y="132" text-anchor="middle">Snapshot C</text>
+<path class="line" d="M168 126H282"/><path class="line" d="M432 126H546"/>
+<text x="24" y="214" class="label">Subagent conversation</text>
+<rect class="box" x="288" y="226" width="144" height="52" rx="3"/>
+<text x="360" y="258" text-anchor="middle">Snapshot S1</text>
+<rect class="box" x="552" y="226" width="144" height="52" rx="3"/>
+<text x="624" y="258" text-anchor="middle">Snapshot S2</text>
+<path class="line" d="M432 252H546"/>
+<path class="line ref" d="M96 152V176H360V220"/>
+<text x="184" y="168" class="label">Copy selected state</text>
+<path class="line ref" d="M624 226V158"/>
+<text x="611" y="183" text-anchor="end" class="label">Bring back</text>
+<text x="611" y="203" text-anchor="end" class="label">file changes</text>
+<text x="24" y="312" class="label">Dashed arrows transfer state; the transcripts remain separate.</text>
+<line x1="24" y1="337" x2="696" y2="337" stroke="#ddd"/>
+<text x="24" y="371" class="heading">What snapshot B links to</text>
+<rect x="24" y="390" width="672" height="266" rx="3" fill="#fafafa" stroke="#bbb"/>
+<text x="44" y="420">Conversation B</text>
+<path class="line ref" d="M62 435V611H110"/>
+<path class="line ref" d="M62 462H110"/>
+<path class="line ref" d="M62 518H110"/>
+<rect class="box" x="118" y="441" width="554" height="42" rx="2"/>
+<text x="134" y="468">Messages, notes, and other conversation files</text>
+<rect class="box" x="118" y="497" width="554" height="42" rx="2"/>
+<text x="134" y="524">Source commits → exact files and their code history</text>
+<rect class="box" x="118" y="553" width="554" height="81" rx="2"/>
+<text x="134" y="580">Execution records → requests and results</text>
+<text x="134" y="609" class="label">Request (argtree): program + inputs, identified by hash</text>
+<text x="24" y="680" class="label">Unchanged objects can be shared across snapshots and conversations.</text>
+</svg>
