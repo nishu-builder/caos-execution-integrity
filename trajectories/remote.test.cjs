@@ -21,7 +21,7 @@ const git=(...args)=>execFileSync('git',['-C',repo,...args],{encoding:'utf8'}).t
   const query=new URLSearchParams({remote:repo,head});
   await page.goto(base+'?'+query);await page.waitForSelector('#browser:not([hidden])').catch(async e=>{throw Error((await page.locator('#notice').innerText())+' '+errors.join('; '));});
   assert.match(await page.locator('#facts').innerText(),/1 conversations/);
-  assert.match(await page.locator('#description').innerText(),new RegExp(head));
+  assert.match(await page.locator('#loaded-source').innerText(),new RegExp(head));
   await page.click('[data-tab="files"]');assert.match(await page.locator('.file-content').innerText(),/Freshly fetched through Git/);
   const objectURL=await page.locator('#event-heading a').getAttribute('href');
   const result=await page.request.get(origin+objectURL);assert.equal(result.status(),200);
@@ -31,20 +31,20 @@ const git=(...args)=>execFileSync('git',['-C',repo,...args],{encoding:'utf8'}).t
   // A different commit on the same remote must produce different data, not a fixture/cache hit.
   fs.writeFileSync(path.join(repo,'hello.txt'),'Second independent snapshot.\n');git('add','.');git('commit','--quiet','-m','tool.complete');const second=git('rev-parse','HEAD');
   await page.fill('#source-head',second);await page.click('#load-run button[type="submit"]');
-  await page.waitForFunction(h=>document.querySelector('#description').textContent.includes(h),second);
+  await page.waitForFunction(h=>document.querySelector('#loaded-source').textContent.includes(h),second);
   await page.click('[data-tab="files"]');assert.match(await page.locator('.file-content').innerText(),/Second independent snapshot/);
   await page.selectOption('#side','before');assert.match(await page.locator('.file-content').innerText(),/Freshly fetched through Git/);
-  await page.selectOption('#example','repair');await page.waitForFunction(()=>document.querySelector('#facts').textContent.includes('3 conversations'));
-  assert.equal(new URL(page.url()).searchParams.has('remote'),false);
+  await page.locator('.example-links').evaluate(e=>e.open=true);await page.click('[data-example="repair"]');await page.waitForFunction(()=>document.querySelector('#facts').textContent.includes('3 conversations'));
+  assert.equal(new URL(page.url()).searchParams.get('remote'),new URL('git',base).href);
   let response=await page.request.post(origin+'/api/load',{data:{kind:'remote',source:repo,head:'not-a-hash'}});assert.equal(response.status(),400);
   response=await page.request.post(origin+'/api/load',{headers:{Origin:'https://another-site.invalid'},data:{kind:'remote',source:repo,head}});assert.equal(response.status(),403);
   response=await page.request.post(origin+'/api/load',{headers:{'Content-Type':'text/plain'},data:'{}'});assert.equal(response.status(),415);
   if(process.env.LIVE_CAOS_SERVER){
-   await page.fill('#source-url',process.env.LIVE_CAOS_SERVER);await page.selectOption('#source-kind','server');
+   await page.fill('#source-url',process.env.LIVE_CAOS_SERVER);await page.locator('.connection-options').evaluate(e=>e.open=true);await page.selectOption('#source-kind','server');
    await page.fill('#source-head','845c4cd46019a73064cbe3c9d4927a668046d315');await page.click('#load-run button[type="submit"]');
-   await page.waitForFunction(()=>document.querySelector('#description').textContent.startsWith('Loaded from http'));
+   await page.waitForFunction(()=>document.querySelector('#loaded-source').textContent.includes('845c4cd46019a73064cbe3c9d4927a668046d315'));
    assert.match(await page.locator('#facts').innerText(),/3 conversations/);
-   assert.equal(new URL(page.url()).searchParams.get('server'),process.env.LIVE_CAOS_SERVER);
+   assert.equal(new URL(page.url()).searchParams.get('remote'),process.env.LIVE_CAOS_SERVER);
    await page.screenshot({path:process.env.SCREENSHOT_PATH||'/tmp/trajectory-remote.png',fullPage:true});
   }
   assert.deepEqual(errors,[]);

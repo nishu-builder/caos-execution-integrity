@@ -11,7 +11,13 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
     page.on("request", (r) => requests.push(r.url()));
     await page.route("**/api/**", (route) => route.abort());
     await page.goto(base);
-    await page.waitForSelector("#browser:not([hidden])");
+    await page.waitForSelector("#source-url");
+    assert.equal(await page.locator("#browser").isVisible(), false);
+    assert.equal(await page.locator("#source-url").inputValue(), "");
+    assert.ok(
+      !requests.some((u) => u.includes("/data/")),
+      "landing page silently loaded an example",
+    );
     // Compare the independently reconstructed objects and records, allowing diff presentation differences.
     async function checkWorker(
       kind,
@@ -22,7 +28,7 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
       return page.evaluate(
         async ({ kind, source, head, expected }) => {
           const result = await new Promise((resolve, reject) => {
-            const w = new Worker("remote-worker.js?v=browser-1");
+            const w = new Worker("remote-worker.js?v=browser-2");
             w.onmessage = ({ data }) => {
               if (data.type === "result") {
                 w.terminate();
@@ -36,6 +42,11 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
             w.onerror = (e) => reject(Error(e.message));
             w.postMessage({ kind, source, head });
           });
+          if (
+            kind === "auto" &&
+            result.kind !== (source.includes("/loose") ? "loose" : "server")
+          )
+            throw Error("Incorrect connection detection: " + result.kind);
           const recorded = await (
             await fetch("data/" + expected + ".json")
           ).json();
@@ -65,6 +76,7 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
             )
               throw Error("Browser export differs: " + key);
           return {
+            kind: result.kind,
             conversations: result.data.conversations.length,
             objects: result.objects.length,
           };
@@ -74,11 +86,11 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
     }
     console.log(
       "CAOS object parity:",
-      await checkWorker("server", remote + "/caos"),
+      await checkWorker("auto", remote + "/caos"),
     );
     console.log(
       "Loose Git object parity:",
-      await checkWorker("loose", remote + "/loose"),
+      await checkWorker("auto", remote + "/loose.git"),
     );
     console.log(
       "Cleanup record parity:",
@@ -112,9 +124,11 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
         throw Error(await page.locator("#notice").innerText());
       });
     assert.match(
-      await page.locator("#description").innerText(),
-      /Loaded in your browser/,
+      await page.locator("#loaded-source").innerText(),
+      /smart\/fresh.git/,
     );
+    assert.match(await page.locator("#detail").innerText(), /<img src=x/);
+    assert.equal(await page.evaluate(() => window.injected), undefined);
     await page.click('[data-tab="files"]');
     assert.match(
       await page.locator(".file-content").innerText(),
@@ -129,7 +143,7 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
     await page.fill("#source-head", fixture.second);
     await page.click('#load-run button[type="submit"]');
     await page.waitForFunction(
-      (h) => document.querySelector("#description").textContent.includes(h),
+      (h) => document.querySelector("#loaded-source").textContent.includes(h),
       fixture.second,
     );
     await page.click('[data-tab="files"]');
@@ -171,7 +185,7 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
       ["corrupt", /hash mismatch/],
     ]) {
       await page.goto(
-        base + "?" + new URLSearchParams({ server: remote + "/" + path, head }),
+        base + "?" + new URLSearchParams({ remote: remote + "/" + path, head }),
       );
       await page.waitForFunction(
         () => document.querySelector("#cancel-load").hidden,
@@ -179,30 +193,61 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
       assert.match(await page.locator("#notice").innerText(), match);
       assert.equal(await page.locator("#browser").isVisible(), false);
     }
+    await page.goto(
+      base +
+        "?" +
+        new URLSearchParams({
+          remote: remote + "/loose",
+          head,
+          transport: "server",
+        }),
+    );
+    await page.waitForFunction(
+      () => document.querySelector("#cancel-load").hidden,
+    );
+    assert.equal(await page.locator("#browser").isVisible(), false);
+    assert.match(await page.locator("#notice").innerText(), /404/);
+    await page.locator(".connection-options").evaluate((e) => (e.open = true));
+    await page.selectOption("#source-kind", "auto");
+    await page.click('#load-run button[type="submit"]');
+    await page.waitForSelector("#browser:not([hidden])");
+    assert.equal(new URL(page.url()).searchParams.has("transport"), false);
+    assert.equal(
+      new URL(page.url()).searchParams.get("remote"),
+      remote + "/loose",
+    );
+    // A legacy source link preserves the selected conversation and event.
+    await page.goto(
+      base +
+        "?" +
+        new URLSearchParams({
+          loose: remote + "/loose",
+          head,
+          conversation: "trajectory-repair-01a08d2c",
+          event: "bfa96869f2458bf7bfcc834da1bc02982469f13e",
+        }),
+    );
+    await page.waitForSelector("#browser:not([hidden])");
+    assert.equal(
+      new URL(page.url()).searchParams.get("event"),
+      "bfa96869f2458bf7bfcc834da1bc02982469f13e",
+    );
+    assert.equal(new URL(page.url()).searchParams.has("loose"), false);
     // The standalone site's published object layout is readable with no helper at all.
     await page.goto(base);
-    await page.waitForSelector("#browser:not([hidden])");
-    await page.click("#open-run-button");
-    await page.click("#try-remote");
+    await page.waitForSelector("#source-url");
+    await page.route("**/data/*.json", (route) => route.abort());
+    await page.locator(".example-links").evaluate((e) => (e.open = true));
+    await page.click('[data-example="repair"]');
     await page.waitForFunction(
-      () =>
-        document
-          .querySelector("#description")
-          .textContent.startsWith("Loaded in your browser"),
+      () => document.querySelector("#browser").hidden === false,
       null,
       { timeout: 60000 },
     );
     assert.match(await page.locator("#facts").innerText(), /3 conversations/);
     assert.equal(
-      new URL(page.url()).searchParams.get("loose"),
+      new URL(page.url()).searchParams.get("remote"),
       new URL("git", base).href,
-    );
-    await page.fill("#source-head", head);
-    await page.click('#load-run button[type="submit"]');
-    await page.click("#cancel-load");
-    await page.waitForFunction(
-      () =>
-        document.querySelector("#notice").textContent === "Loading cancelled.",
     );
     await page.setViewportSize({ width: 390, height: 844 });
     assert.equal(
@@ -223,6 +268,13 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
         path: process.env.SCREENSHOT_DIR + "/remote-desktop.png",
         fullPage: true,
       });
+    await page.fill("#source-head", head);
+    await page.click('#load-run button[type="submit"]');
+    await page.click("#cancel-load");
+    await page.waitForFunction(
+      () =>
+        document.querySelector("#notice").textContent === "Loading cancelled.",
+    );
     console.log(
       "Passed: independent record parity, fresh smart Git remote, new commit, before/after, reload, no helper or fixture fetches, CORS failure, corrupt-object rejection, published Git objects, cancellation.",
     );

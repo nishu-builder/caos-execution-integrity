@@ -16,6 +16,6 @@ def main():
    if hashlib.sha1(raw).hexdigest()!=oid:raise ValueError('Hash mismatch: '+oid)
    target=a.output/'objects'/oid[:2]/oid[2:];target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(zlib.compress(raw));count+=1
  (a.output/'info').mkdir(exist_ok=True);(a.output/'info/refs').write_text('\n'.join(refs)+'\n')
- (a.output/'HEAD').write_text('ref: refs/heads/repair\n')
+ (a.output/'HEAD').write_text('ref: '+refs[0].split('\t')[1]+'\n')
  print('Published',count,'verified object references as loose Git objects.')
 if __name__=='__main__':main()

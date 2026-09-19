@@ -1,5 +1,5 @@
 import { Buffer } from "buffer";
-import { Objects, oidPattern } from "./objects.js";
+import { openObjects, oidPattern } from "./objects.js";
 import { Exporter } from "./exporter.js";
 self.Buffer = Buffer;
 self.onmessage = async ({ data: options }) => {
@@ -14,9 +14,9 @@ self.onmessage = async ({ data: options }) => {
   try {
     if (!oidPattern.test(options.head))
       throw Error("Enter a full 40-character conversation commit hash.");
-    if (!["server", "remote", "loose"].includes(options.kind))
+    if (!["auto", "server", "remote", "loose"].includes(options.kind))
       throw Error("Unknown remote type.");
-    const objects = new Objects({ ...options, progress });
+    const objects = await openObjects({ ...options, progress });
     const data = await new Exporter(objects).export(
       options.head,
       objects.source,
@@ -25,9 +25,10 @@ self.onmessage = async ({ data: options }) => {
       oid,
       bytes: value.raw,
     }));
-    self.postMessage({ type: "result", data, objects: raw }, [
-      ...new Set(raw.map((o) => o.bytes.buffer)),
-    ]);
+    self.postMessage(
+      { type: "result", kind: objects.kind, data, objects: raw },
+      [...new Set(raw.map((o) => o.bytes.buffer))],
+    );
   } catch (error) {
     self.postMessage({
       type: "error",

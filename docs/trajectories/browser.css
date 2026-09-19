@@ -221,33 +221,7 @@ button {
   margin: 0 auto;
   padding: 24px 32px 0;
 }
-.run-toolbar {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-.run-picker {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-right: auto;
-  min-width: 0;
-}
-.run-picker > .icon {
-  color: var(--muted);
-}
-.run-picker select {
-  max-width: 430px;
-  width: 100%;
-  min-width: 180px;
-  border: 1px solid var(--line);
-  background: var(--wash);
-  border-radius: 6px;
-  padding: 6px 28px 6px 10px;
-  font-size: 12px;
-  font-weight: 600;
-  height: 32px;
-}
+
 .run-heading {
   display: flex;
   align-items: center;
@@ -285,37 +259,7 @@ h1 {
   font-weight: 600;
   color: var(--ink);
 }
-#highlights {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin: 18px 0 0;
-}
-#highlights:empty {
-  display: none;
-}
-#highlights > span {
-  color: var(--muted);
-  font-size: 12px;
-  margin-right: 5px;
-}
-#highlights button {
-  font-size: 12px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 3px 10px;
-  color: var(--blue);
-  background: white;
-}
-#highlights button:hover {
-  background: var(--wash);
-}
-#highlights button.active {
-  background: #ddf4ff;
-  border-color: #54aeff66;
-  color: #0550ae;
-}
+
 #browser {
   display: grid;
   grid-template-columns: 218px 292px minmax(0, 1fr);
@@ -944,29 +888,21 @@ summary {
   font-size: 13px;
 }
 .open-run {
-  display: none;
+  display: block;
   border: 1px solid var(--line);
   border-radius: 6px;
-  margin: 16px 0 0;
+  margin: 0;
   background: white;
 }
-.open-run[open] {
-  display: block;
-}
 .open-run summary {
-  padding: 10px 14px;
-  background: var(--wash);
-  color: var(--ink);
-  font-weight: 600;
-  border-radius: 6px 6px 0 0;
-  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
 }
 .open-run-body {
   padding: 16px;
 }
 .open-run form {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 12px;
   align-items: end;
 }
@@ -1096,20 +1032,7 @@ footer a {
   .page {
     padding: 16px 16px 0;
   }
-  .run-toolbar {
-    flex-wrap: wrap;
-  }
-  .run-picker {
-    flex-basis: 100%;
-    margin-bottom: 4px;
-  }
-  .run-picker select {
-    max-width: 100%;
-    min-width: 0;
-  }
-  .run-toolbar > .button {
-    flex: 1;
-  }
+
   .run-heading {
     margin-top: 18px;
     gap: 8px;
@@ -1124,10 +1047,7 @@ footer a {
   #facts {
     gap: 8px 16px;
   }
-  #highlights {
-    margin-top: 14px;
-    gap: 6px;
-  }
+
   #browser {
     height: auto;
     display: block;
@@ -1343,4 +1263,42 @@ footer a {
 }
 .connection-options p {
   max-width: 850px;
+}
+
+/* One entry point; examples are explicit links rather than a second run selector. */
+.open-run form {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto auto;
+}
+.run-heading {
+  justify-content: space-between;
+}
+.run-heading h1 {
+  flex: 1;
+}
+#loaded-source {
+  overflow-wrap: anywhere;
+  margin: 10px 0 0;
+}
+.example-links {
+  margin-top: 12px;
+  font-size: 13px;
+}
+.example-links summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+.example-links a {
+  display: block;
+  margin-top: 8px;
+}
+#run-summary {
+  margin-top: 24px;
+}
+@media (max-width: 800px) {
+  .open-run form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .run-heading {
+    flex-wrap: wrap;
+  }
 }

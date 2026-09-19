@@ -12,8 +12,7 @@ const icon = (name) =>
   `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const short = (oid) => (oid ? oid.slice(0, 10) : "—");
 const pretty = (value) => JSON.stringify(value, null, 2);
-let catalog,
-  data,
+let data,
   conversation,
   event,
   tab = "activity",
@@ -22,8 +21,8 @@ let catalog,
   fileQuery = "",
   loadVersion = 0,
   liveSource = null,
-  downloadURL = null,
-  highlights = [];
+  downloadURL = null;
+const detectedSources = new Map();
 let activeWorker = null,
   rejectWorker = null;
 const objectURLs = new Map();
@@ -110,10 +109,12 @@ function observationText(value) {
 }
 function updateURL() {
   const u = new URL(location.href);
-  for (const key of ["server", "remote", "loose", "head"])
+  for (const key of ["server", "remote", "loose", "head", "transport"])
     u.searchParams.delete(key);
   if (liveSource) {
-    u.searchParams.set(liveSource.kind, liveSource.source);
+    u.searchParams.set("remote", liveSource.source);
+    if (liveSource.override !== "auto")
+      u.searchParams.set("transport", liveSource.override);
     u.searchParams.set("head", liveSource.head);
   }
   for (const [k, v] of Object.entries({
@@ -374,14 +375,6 @@ function renderDetail() {
     position = shown.findIndex((e) => e.oid === event.oid);
   $("previous-event").disabled = position <= 0;
   $("next-event").disabled = position >= shown.length - 1;
-  $("highlights")
-    .querySelectorAll("button")
-    .forEach((b) =>
-      b.classList.toggle(
-        "active",
-        highlights[Number(b.dataset.highlight)]?.event === event.oid,
-      ),
-    );
   $("event-heading").innerHTML =
     `<h2>${icon("commit")}${esc(label(event))}</h2><div class="hash">${esc(event.kind)} · ${objectLink(event.oid, true)}</div>`;
   document.querySelectorAll("[data-tab]").forEach((b) => {
@@ -451,40 +444,19 @@ function render() {
   renderDetail();
   updateURL();
 }
-function showRun(loaded, entry, fromURL) {
+function showRun(loaded, fromURL) {
   data = loaded;
-  highlights = entry.highlights || [];
   $("run-title").textContent = data.title;
-  $("run-kind").textContent = liveSource
-    ? "Remote snapshot"
-    : "Recorded example";
+  $("run-summary").hidden = false;
+  document.querySelector(".example-links").open = false;
   const q = new URLSearchParams(location.search);
   tab =
     fromURL && ["activity", "files", "request", "record"].includes(q.get("tab"))
       ? q.get("tab")
       : "activity";
-  if (liveSource && !$("example").querySelector('option[value="live"]'))
-    $("example").insertAdjacentHTML(
-      "beforeend",
-      '<option value="live">Loaded run</option>',
-    );
-  $("example").value = entry.id;
-  $("description").textContent = data.description;
-  $("highlights").innerHTML =
-    (entry.highlights?.length ? "<span>Key moments</span>" : "") +
-    (entry.highlights || [])
-      .map((h, i) => `<button data-highlight="${i}">${esc(h.label)}</button>`)
-      .join("");
-  $("highlights")
-    .querySelectorAll("button")
-    .forEach(
-      (b) =>
-        (b.onclick = () => {
-          const h = entry.highlights[Number(b.dataset.highlight)];
-          tab = "activity";
-          selectConversation(h.conversation, h.event);
-        }),
-    );
+  $("description").textContent =
+    "Conversation and child heads recorded at this commit.";
+  $("loaded-source").textContent = liveSource.source + " · " + liveSource.head;
   const count = data.conversations.reduce((n, c) => n + c.events.length, 0),
     calls = data.conversations.reduce(
       (n, c) =>
@@ -500,24 +472,16 @@ function showRun(loaded, entry, fromURL) {
     `<span>${icon("branch")}<span><strong>${data.conversations.length}</strong> conversations</span></span><span>${icon("commit")}<span><strong>${count}</strong> commits</span></span><span>${icon("code")}<span><strong>${calls}</strong> tool results</span></span><span>${icon("box")}<span><strong>${data.evidence.objects.length}</strong> Git objects</span></span>`;
   if (downloadURL) URL.revokeObjectURL(downloadURL);
   downloadURL = null;
-  if (liveSource) {
-    downloadURL = URL.createObjectURL(
-      new Blob([JSON.stringify(data)], { type: "application/json" }),
-    );
-    $("download").href = downloadURL;
-    $("download").download = "conversation-" + liveSource.head + ".json";
-  } else {
-    $("download").href = "data/" + data.id + ".json";
-    $("download").download = "";
-  }
+  downloadURL = URL.createObjectURL(
+    new Blob([JSON.stringify(data)], { type: "application/json" }),
+  );
+  $("download").href = downloadURL;
+  $("download").download = "conversation-" + liveSource.head + ".json";
   $("notice").hidden = true;
   $("browser").hidden = false;
-  const first = entry.highlights?.[0];
   selectConversation(
-    fromURL && q.get("conversation")
-      ? q.get("conversation")
-      : first?.conversation || data.root,
-    fromURL && q.get("event") ? q.get("event") : first?.event,
+    fromURL && q.get("conversation") ? q.get("conversation") : data.root,
+    fromURL && q.get("event") ? q.get("event") : undefined,
   );
   if (fromURL && q.get("file")) {
     file = q.get("file");
@@ -525,33 +489,9 @@ function showRun(loaded, entry, fromURL) {
     updateURL();
   }
 }
-async function loadExample(id, fromURL = false) {
-  cancelLoad();
-  $("cancel-load").hidden = true;
-  const version = ++loadVersion;
-  $("notice").hidden = false;
-  $("notice").textContent = "Loading captured run…";
-  $("browser").hidden = true;
-  try {
-    const entry =
-      catalog.examples.find((e) => e.id === id) || catalog.examples[0];
-    const response = await fetch("data/" + entry.id + ".json");
-    if (!response.ok) throw Error("Could not load example: " + response.status);
-    const loaded = await response.json();
-    if (version !== loadVersion) return;
-    clearObjects();
-    liveSource = null;
-    showRun(loaded, entry, fromURL);
-  } catch (error) {
-    if (version === loadVersion) {
-      $("notice").textContent = error.message;
-      $("browser").hidden = true;
-    }
-  }
-}
 function browserRead(options, version) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker("remote-worker.js?v=browser-1");
+    const worker = new Worker("remote-worker.js?v=browser-2");
     activeWorker = worker;
     rejectWorker = reject;
     worker.onmessage = ({ data: message }) => {
@@ -610,6 +550,7 @@ async function loadRemote(kind, source, head, fromURL = false) {
     const u = new URL(location.href);
     for (const key of [
       "example",
+      "transport",
       "server",
       "remote",
       "loose",
@@ -620,16 +561,17 @@ async function loadRemote(kind, source, head, fromURL = false) {
       "file",
     ])
       u.searchParams.delete(key);
-    u.searchParams.set(kind, source);
+    u.searchParams.set("remote", source);
+    if (kind !== "auto") u.searchParams.set("transport", kind);
     u.searchParams.set("head", head);
     history.replaceState(null, "", u);
   }
-  $("open-run").open = true;
   $("source-kind").value = kind;
   $("source-url").value = source;
   $("source-head").value = head;
   $("notice").hidden = false;
   $("browser").hidden = true;
+  $("run-summary").hidden = true;
   $("cancel-load").hidden = false;
   $("notice").textContent = "Reading Git objects in your browser…";
   try {
@@ -640,8 +582,8 @@ async function loadRemote(kind, source, head, fromURL = false) {
       kind,
       source,
       head,
-      proxy:
-        !fromURL && kind === "remote" ? $("source-proxy").value.trim() : "",
+      proxy: !fromURL ? $("source-proxy").value.trim() : "",
+      preferred: detectedSources.get(source),
       token: fromURL ? "" : $("source-token").value,
     };
     const localMode =
@@ -649,13 +591,14 @@ async function loadRemote(kind, source, head, fromURL = false) {
       ["localhost", "127.0.0.1"].includes(location.hostname) &&
       new URLSearchParams(location.search).get("reader") === "local";
     const useLocal =
-      localMode || (kind === "remote" && !/^https?:\/\//i.test(source));
+      localMode ||
+      (["remote", "auto"].includes(kind) && !/^https?:\/\//i.test(source));
     if (useLocal) {
       $("cancel-load").hidden = true;
       $("notice").textContent = "Reading through the local viewer…";
     }
     const loaded = useLocal
-      ? await localRead(kind, source, head)
+      ? await localRead(kind === "auto" ? "remote" : kind, source, head)
       : await browserRead(options, version);
     if (version !== loadVersion) return;
     clearObjects();
@@ -666,8 +609,9 @@ async function loadRemote(kind, source, head, fromURL = false) {
           new Blob([object.bytes], { type: "application/octet-stream" }),
         ),
       );
-    liveSource = { kind, source, head };
-    showRun(loaded.data, { id: "live" }, fromURL);
+    detectedSources.set(source, loaded.kind || kind);
+    liveSource = { kind: loaded.kind || kind, override: kind, source, head };
+    showRun(loaded.data, fromURL);
   } catch (error) {
     if (version === loadVersion) {
       $("notice").textContent = error.message;
@@ -678,12 +622,6 @@ async function loadRemote(kind, source, head, fromURL = false) {
   }
 }
 $("cancel-load").onclick = cancelLoad;
-$("try-remote").onclick = () =>
-  loadRemote(
-    "loose",
-    new URL("git", location.href).href,
-    "845c4cd46019a73064cbe3c9d4927a668046d315",
-  );
 $("load-run").onsubmit = (e) => {
   e.preventDefault();
   loadRemote(
@@ -726,17 +664,6 @@ document.querySelectorAll("[data-panel]").forEach(
       button.textContent = open ? "Hide" : "Show";
     }),
 );
-$("open-run-button").onclick = () => {
-  const open = !$("open-run").open;
-  $("open-run").open = open;
-  $("open-run-button").setAttribute("aria-expanded", String(open));
-  if (open) $("source-url").focus();
-};
-$("open-run").ontoggle = () =>
-  $("open-run-button").setAttribute(
-    "aria-expanded",
-    String($("open-run").open),
-  );
 $("copy-link").onclick = async () => {
   try {
     await navigator.clipboard.writeText(location.href);
@@ -758,29 +685,47 @@ document.querySelectorAll("[data-tab]").forEach(
       updateURL();
     }),
 );
-$("example").onchange = () => {
-  if ($("example").value === "live" && liveSource)
-    loadRemote(liveSource.kind, liveSource.source, liveSource.head);
-  else loadExample($("example").value);
-};
+
+const examples = new Map();
+document.querySelectorAll("[data-example]").forEach((link) => {
+  const source = new URL("git", location.href).href,
+    head = link.dataset.head;
+  const url = new URL(location.pathname, location.origin);
+  url.searchParams.set("remote", source);
+  url.searchParams.set("head", head);
+  link.href = url.href;
+  examples.set(link.dataset.example, { source, head });
+  link.onclick = (e) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    // Example links never reuse credentials intended for another remote.
+    $("source-token").value = "";
+    $("source-proxy").value = "";
+    const current = new URL(location.href);
+    current.searchParams.delete("reader");
+    history.replaceState(null, "", current);
+    loadRemote("auto", source, head);
+  };
+});
 (async () => {
-  try {
-    const r = await fetch("data/index.json");
-    if (!r.ok) throw Error("Example index could not be loaded.");
-    catalog = await r.json();
-    $("example").innerHTML = catalog.examples
-      .map((e) => `<option value="${esc(e.id)}">${esc(e.title)}</option>`)
-      .join("");
-    const q = new URLSearchParams(location.search);
-    if (q.has("server") || q.has("remote") || q.has("loose"))
-      await loadRemote(
-        q.has("server") ? "server" : q.has("loose") ? "loose" : "remote",
-        q.get("server") || q.get("remote") || q.get("loose"),
-        q.get("head") || "",
-        true,
-      );
-    else await loadExample(q.get("example"), true);
-  } catch (e) {
-    $("notice").textContent = e.message;
+  const q = new URLSearchParams(location.search);
+  if (q.has("server") || q.has("remote") || q.has("loose")) {
+    const kind = q.has("server")
+      ? "server"
+      : q.has("loose")
+        ? "loose"
+        : q.get("transport") || "auto";
+    await loadRemote(
+      kind,
+      q.get("server") || q.get("remote") || q.get("loose"),
+      q.get("head") || "",
+      true,
+    );
+  } else if (q.has("example")) {
+    const entry = examples.get(q.get("example"));
+    if (entry) await loadRemote("auto", entry.source, entry.head, true);
+    else
+      $("notice").textContent =
+        "Unknown example. Enter a remote URL and conversation hash.";
   }
 })();

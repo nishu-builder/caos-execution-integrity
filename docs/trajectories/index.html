@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#f6f8fa" />
     <title>CAOS · Trajectories</title>
-    <link rel="stylesheet" href="browser.css?v=browser-1" />
+    <link rel="stylesheet" href="browser.css?v=browser-2" />
   </head>
   <body>
     <svg
@@ -86,77 +86,60 @@
         ><a
           href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/trajectories#open-another-run-directly-in-the-browser"
           ><svg class="icon" aria-hidden="true"><use href="#i-repo" /></svg
-          >Connect a remote</a
+          >Documentation</a
         >
       </nav>
     </header>
     <div class="page">
       <section class="example" aria-labelledby="run-title">
-        <div class="run-toolbar">
-          <div class="run-picker">
-            <svg class="icon" aria-hidden="true"><use href="#i-branch" /></svg
-            ><label class="sr-only" for="example">Run</label
-            ><select id="example"></select>
-          </div>
-          <button class="button" id="copy-link">
-            <svg class="icon" aria-hidden="true"><use href="#i-link" /></svg
-            ><span>Copy link</span></button
-          ><button
-            class="button primary"
-            id="open-run-button"
-            aria-expanded="false"
-            aria-controls="open-run"
-          >
-            Open a run
-          </button>
-        </div>
-        <details class="open-run" id="open-run">
-          <summary>CAOS server or Git remote</summary>
+        <section
+          class="open-run"
+          id="open-run"
+          aria-label="Open a conversation"
+        >
           <div class="open-run-body">
             <form id="load-run">
               <label
-                >Read from
-                <select id="source-kind">
-                  <option value="server">CAOS server</option>
-                  <option value="remote">Git remote (HTTPS)</option>
-                  <option value="loose">Static Git objects (HTTPS)</option>
-                </select></label
-              ><label
-                >Remote URL
-                <input
+                >Remote URL<input
                   id="source-url"
                   required
-                  placeholder="https://your-caos-server"
-                  autocomplete="off" /></label
-              ><label
-                >Conversation commit
-                <input
+                  placeholder="https://your-remote"
+                  autocomplete="off"
+              /></label>
+              <label
+                >Conversation hash<input
                   id="source-head"
                   required
                   pattern="[0-9a-f]{40}"
-                  placeholder="Full 40-character hash"
+                  placeholder="Full 40-character commit hash"
                   autocomplete="off"
-                  spellcheck="false" /></label
-              ><button type="submit" class="button primary">Open run</button
-              ><button type="button" id="cancel-load" class="button" hidden>
+                  spellcheck="false"
+              /></label>
+              <button type="submit" class="button primary">
+                Open conversation
+              </button>
+              <button type="button" id="cancel-load" class="button" hidden>
                 Cancel
               </button>
             </form>
-            <p>
-              Fetched and checked in this tab. No agents or tools are run.
-              <button class="text-button" id="try-remote" type="button">
-                Try the published Git objects
-              </button>
-            </p>
             <details class="connection-options">
               <summary>Connection options</summary>
               <div class="connection-fields">
                 <label
+                  >Connection type<select id="source-kind">
+                    <option value="auto">Detect automatically</option>
+                    <option value="server">CAOS server</option>
+                    <option value="remote">Git remote (HTTPS)</option>
+                    <option value="loose">Static Git objects</option>
+                  </select></label
+                >
+                <label
                   >Access token (optional; not saved)<input
                     id="source-token"
                     type="password"
-                    autocomplete="off" /></label
-                ><label
+                    autocomplete="off"
+                /></label>
+                <label
                   >Git CORS relay (optional)<input
                     id="source-proxy"
                     type="url"
@@ -166,22 +149,46 @@
               </div>
               <p>
                 The remote must allow browser requests (CORS). A relay receives
-                Git traffic and any token you supply; use one you trust. Relay
-                and token settings are not included in shared links.
+                Git traffic and any token you supply; use one you trust. Tokens
+                and relay settings stay in this tab.
               </p>
             </details>
+            <details class="example-links">
+              <summary>Examples</summary>
+              <p>
+                Staged tasks with real agent runs. These links open their Git
+                records using the same reader as your remote.
+              </p>
+              <a
+                data-example="repair"
+                data-head="845c4cd46019a73064cbe3c9d4927a668046d315"
+                >A removed test and an independent review</a
+              >
+              <a
+                data-example="cleanup"
+                data-head="60da0990f42ccb58bbe0bc67c591bb42b0d74012"
+                >A declined change and a follow-up review</a
+              >
+            </details>
           </div>
-        </details>
-        <div class="run-heading">
-          <h1 id="run-title">Agent trajectories</h1>
-          <span class="outline-label" id="run-kind">Recorded run</span>
+        </section>
+        <div id="run-summary" hidden>
+          <div class="run-heading">
+            <h1 id="run-title">Agent trajectories</h1>
+            <button class="button" id="copy-link">
+              <svg class="icon" aria-hidden="true"><use href="#i-link" /></svg
+              ><span>Copy link</span>
+            </button>
+          </div>
+          <p id="description"></p>
+          <div id="facts"></div>
+          <p id="loaded-source" class="hash"></p>
         </div>
-        <p id="description"></p>
-        <div id="facts"></div>
-        <nav id="highlights" aria-label="Key moments"></nav>
         <span id="copy-status" class="sr-only" role="status"></span>
       </section>
-      <div id="notice" role="status">Loading captured runs…</div>
+      <div id="notice" role="status">
+        Enter a remote URL and conversation hash to browse its records.
+      </div>
       <main id="browser" hidden tabindex="-1">
         <aside class="agents">
           <div class="panel-heading">
@@ -293,14 +300,14 @@
       </main>
       <footer>
         <span
-          >The saved examples use staged tasks and real model runs. These are
-          CAOS’s records, not independent proof of execution.</span
+          >Git objects are fetched and verified in this browser. No agents or
+          tools are run.</span
         ><a
           href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/trajectories"
           >Exporter &amp; reproduction</a
         >
       </footer>
     </div>
-    <script src="browser.js?v=browser-1"></script>
+    <script src="browser.js?v=browser-2"></script>
   </body>
 </html>

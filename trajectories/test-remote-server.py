@@ -11,6 +11,8 @@ with tempfile.TemporaryDirectory(prefix='browser-remote-test-') as tmp:
  repo.mkdir();git('init','--quiet');git('config','user.name','Browser test');git('config','user.email','test@example.invalid')
  (repo/'.caos').mkdir();(repo/'.caos/identity.json').write_text('{"id":"fresh-browser-run"}')
  (repo/'.caos/title').write_text('A conversation fetched entirely in the browser');(repo/'hello.txt').write_text('First snapshot.\n')
+ (repo/'.caos/transcript').mkdir()
+ (repo/'.caos/transcript/0001.json').write_text(json.dumps({'message_id':'test-message','role':'assistant','blocks':[{'type':'text','text':'<img src=x onerror="window.injected=1">'}]}))
  git('add','.');git('commit','--quiet','-m','conversation.root');first=git('rev-parse','HEAD')
  (repo/'hello.txt').write_text('Second snapshot, from a new Git commit.\n');git('add','.');git('commit','--quiet','-m','tool.complete');second=git('rev-parse','HEAD')
  repo.rename(root/'work')
@@ -46,12 +48,13 @@ with tempfile.TemporaryDirectory(prefix='browser-remote-test-') as tmp:
     try:
      with urllib.request.urlopen(req,timeout=60) as r:return self.answer(r.status,r.read(),r.headers.get('Content-Type','application/octet-stream'))
     except urllib.error.HTTPError as e:return self.answer(e.code,e.read())
-   if '/object/' in path:
+   if any(path.startswith(prefix+'/object/') for prefix in ['/caos','/blocked','/corrupt']):
     oid=path.rsplit('/',1)[1];target=ROOT/'docs/trajectories/data/objects'/oid
     if len(oid)!=40 or any(c not in '0123456789abcdef' for c in oid) or not target.is_file():return self.answer(404,b'Not found')
     raw=target.read_bytes()
     if path.startswith('/corrupt/'):raw=raw+b'altered'
     return self.answer(200,raw,cors=not path.startswith('/blocked/'))
+   if path.startswith('/loose.git/'):path=path.replace('/loose.git/','/loose/',1)
    if path.startswith('/loose/objects/'):
     oid=path[len('/loose/objects/'):].replace('/','')
     if len(oid)!=40 or any(c not in '0123456789abcdef' for c in oid):return self.answer(404,b'')

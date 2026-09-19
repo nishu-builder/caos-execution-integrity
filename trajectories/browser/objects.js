@@ -191,6 +191,8 @@ export class Objects {
       throw Error(
         `Remote returned HTTP ${response.status} for ${path}. Check access and that the referenced object is present.`,
       );
+    if (response.headers.get("content-type")?.includes("text/html"))
+      throw Error("This endpoint returned a web page, not Git objects.");
     return response;
   }
   async initGit() {
@@ -356,4 +358,34 @@ export class Objects {
     }
     return tree;
   }
+}
+
+export async function openObjects(options) {
+  if (options.kind !== "auto") return new Objects(options);
+  const order = [
+    ...new Set(
+      [
+        options.preferred,
+        ...(options.source.endsWith(".git") ? ["remote"] : []),
+        "server",
+        "loose",
+        "remote",
+      ].filter(Boolean),
+    ),
+  ];
+  for (const kind of order) {
+    options.progress("Detecting how to read this remote…");
+    const objects = new Objects({ ...options, kind });
+    try {
+      await objects.get(options.head);
+      return objects;
+    } catch (error) {
+      // Never hide a failed integrity check by trying another endpoint.
+      if (/hash mismatch|inspection.*limit|memory limit/.test(error.message))
+        throw error;
+    }
+  }
+  throw Error(
+    "Could not read this hash from the remote. Check the URL, access and CORS settings. Connection options can set a type or Git relay.",
+  );
 }
