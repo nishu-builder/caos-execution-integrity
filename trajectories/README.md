@@ -2,7 +2,7 @@
 
 [Open the browser](https://nishu-builder.github.io/caos-execution-integrity/trajectories/).
 
-Follow parent and child conversations, see which files changed at each step, compare before and after, and inspect recorded tool arguments, outputs, and compute requests. Each step links to its original Git object. Links preserve the selected conversation, step, file, and tab.
+Follow parent and child conversations, see which files changed at each step, compare before and after, and inspect recorded tool arguments, outputs, and compute requests. Numbered diffs, previous/next controls, and a copy-link button make it easier to inspect and share a particular step. On mobile, the conversation list and history can be expanded when needed. Each step links to its original Git object. Links preserve the selected conversation, step, file, and tab.
 
 ## The recorded examples
 

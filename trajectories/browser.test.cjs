@@ -25,6 +25,7 @@ function url(event,tab='activity',file='') {return base+'?'+new URLSearchParams(
  assert.ok(!(await page.locator('.file-content pre').innerText()).includes('100 150'));
  await page.click('[data-tab="activity"]');
  assert.match(await page.locator('.diff').innerText(),/-.*100 150/);
+ assert.equal(await page.locator('.diff-line.remove .line-number').first().innerText(),'4');
  await page.screenshot({path:process.env.SCREENSHOT_DIR?path.join(process.env.SCREENSHOT_DIR,'browser-diff.png'):'/tmp/trajectory-browser-diff.png',fullPage:true});
  await page.getByRole('button',{name:'Bug fixed',exact:true}).click();
  assert.match(await page.locator('.diff').innerText(),/discount.sh/);
@@ -51,12 +52,26 @@ function url(event,tab='activity',file='') {return base+'?'+new URLSearchParams(
  assert.match(await page.locator('#detail').innerText(),/<img src=x/);
  assert.equal(await page.evaluate(()=>window.injected),undefined);
  await page.unroute('**/repair.json');
+ await page.goto(url(weakened));await page.waitForSelector('#browser:not([hidden])');
+ const selected=new URL(page.url()).searchParams.get('event');
+ await page.click('#next-event');assert.notEqual(new URL(page.url()).searchParams.get('event'),selected);
+ await page.click('#previous-event');assert.equal(new URL(page.url()).searchParams.get('event'),selected);
+ await page.context().grantPermissions(['clipboard-read','clipboard-write']);await page.click('#copy-link');
+ assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),page.url());
+ await page.click('#open-run-button');assert.equal(await page.locator('#open-run-button').getAttribute('aria-expanded'),'true');
+ assert.equal(await page.locator('#source-url').isVisible(),true);await page.click('#open-run-button');
+
  await page.setViewportSize({width:390,height:844});
  await page.goto(url(weakened,'files',filename));await page.waitForSelector('.file-content pre');
+ assert.equal(await page.locator('#conversations').isVisible(),false);
+ await page.getByRole('button',{name:'Toggle conversations',exact:true}).click();assert.equal(await page.locator('#conversations').isVisible(),true);
+ await page.getByRole('button',{name:'Toggle conversations',exact:true}).click();
+ await page.getByRole('button',{name:'Toggle history',exact:true}).click();assert.equal(await page.locator('#events').isVisible(),true);
+ await page.getByRole('button',{name:'Toggle history',exact:true}).click();
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
  assert.equal(overflow,false,'mobile page has horizontal overflow');
  await page.screenshot({path:process.env.SCREENSHOT_DIR?path.join(process.env.SCREENSHOT_DIR,'browser-mobile.png'):'/tmp/trajectory-browser-mobile.png',fullPage:true});
  assert.deepEqual(errors,[]);
  await browser.close();
- console.log('Passed: snapshots, diffs, deep links, requests, raw evidence, child navigation, filtering, example switching, untrusted text, mobile layout.');
+ console.log('Passed: snapshots, diffs, deep links, requests, raw evidence, child navigation, filtering, example switching, untrusted text, diff line numbers, event navigation, copy link, remote form, mobile panels and layout.');
 })().catch(e=>{console.error(e);process.exit(1)});

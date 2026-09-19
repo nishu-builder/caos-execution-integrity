@@ -1,20 +1,289 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CAOS trajectory browser</title><link rel="stylesheet" href="browser.css"></head>
-<body>
-<header><a class="brand" href="./">CAOS trajectories</a><span>Inspect recorded conversations, tool calls, and file changes</span><a href="../alignment.html">About CAOS</a></header>
-<details class="open-run" id="open-run"><summary>Open a run from a CAOS server or Git remote</summary>
-<form id="load-run"><label>Read from <select id="source-kind"><option value="server">CAOS server</option><option value="remote">Git remote or local repository</option></select></label><label>URL or repository path <input id="source-url" required placeholder="http://127.0.0.1:19090" autocomplete="off"></label><label>Conversation commit <input id="source-head" required pattern="[0-9a-f]{40}" placeholder="Full 40-character hash" autocomplete="off" spellcheck="false"></label><button type="submit" class="small-button">Open run</button></form>
-<p>Reads the conversation and the child heads recorded in it. Loading a hash does not run any agent or tool.</p>
-<div id="local-help" hidden><p>The published site cannot connect to arbitrary Git remotes. From a clone of <a href="https://github.com/nishu-builder/caos-execution-integrity">this repository</a>, start the local viewer and open the URL it prints. Your Git credentials stay on your machine.</p><pre id="launch-command"></pre></div>
-</details>
-<section class="example"><label for="example">Run</label><select id="example"></select><p id="description"></p><div id="facts"></div><nav id="highlights" aria-label="Key moments"></nav></section>
-<div id="notice" role="status">Loading captured runs…</div>
-<main id="browser" hidden>
-<aside class="agents"><h2>Conversations</h2><nav id="conversations" aria-label="Conversations"></nav><p class="hint">Children have their own transcripts. Applying their files does not merge the conversations.</p><a id="download" download>Download captured data</a></aside>
-<section class="timeline"><div class="timeline-top"><h2 id="conversation-title"></h2><label class="sr-only" for="search">Search this conversation</label><input id="search" type="search" placeholder="Search calls, text, or filenames"><label class="sr-only" for="filter">Filter events</label><select id="filter"><option value="activity">Messages and tool activity</option><option value="changes">File changes</option><option value="all">All commits</option></select></div><div id="events" role="list"></div></section>
-<section class="inspector"><div class="inspect-top"><div id="event-heading"></div><nav class="tabs" aria-label="Event details"><button data-tab="activity">What happened</button><button data-tab="files">Files</button><button data-tab="request">Compute request</button><button data-tab="record">Raw record</button></nav></div><div id="detail"></div></section>
-</main>
-<footer>The saved examples are deliberately staged tasks with real model responses and tool executions. The viewer shows CAOS’s records; it does not independently attest to runner execution. <a href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/trajectories">Exporter and reproduction instructions</a></footer>
-<script src="browser.js"></script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f6f8fa" />
+    <title>CAOS · Trajectories</title>
+    <link rel="stylesheet" href="browser.css?v=github-1" />
+  </head>
+  <body>
+    <svg
+      class="icon-definitions"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <symbol id="i-repo" viewBox="0 0 16 16">
+          <path
+            d="M3 13.5V3a1.5 1.5 0 0 1 1.5-1.5H13v13H4.5a1.5 1.5 0 0 1 0-3H13M6 4h4M6 7h3"
+          />
+        </symbol>
+        <symbol id="i-branch" viewBox="0 0 16 16">
+          <circle cx="4" cy="3" r="1.5" />
+          <circle cx="4" cy="13" r="1.5" />
+          <circle cx="12" cy="3" r="1.5" />
+          <path d="M4 4.5v7M12 4.5v1A4.5 4.5 0 0 1 7.5 10H4" />
+        </symbol>
+        <symbol id="i-commit" viewBox="0 0 16 16">
+          <circle cx="8" cy="8" r="3" />
+          <path d="M1 8h4m6 0h4" />
+        </symbol>
+        <symbol id="i-file" viewBox="0 0 16 16">
+          <path d="M9.5 1.5H3v13h10v-9zm0 0v4H13" />
+        </symbol>
+        <symbol id="i-code" viewBox="0 0 16 16">
+          <path d="m5 4-4 4 4 4m6-8 4 4-4 4M9 2 7 14" />
+        </symbol>
+        <symbol id="i-search" viewBox="0 0 16 16">
+          <circle cx="6.5" cy="6.5" r="4.5" />
+          <path d="m10 10 4 4" />
+        </symbol>
+        <symbol id="i-link" viewBox="0 0 16 16">
+          <path
+            d="m6 10 4-4M5 7 3 9a2.8 2.8 0 0 0 4 4l2-2M7 5l2-2a2.8 2.8 0 0 1 4 4l-2 2"
+          />
+        </symbol>
+        <symbol id="i-download" viewBox="0 0 16 16">
+          <path d="M8 1v9m-3-3 3 3 3-3M2 10v4h12v-4" />
+        </symbol>
+        <symbol id="i-box" viewBox="0 0 16 16">
+          <path d="m8 1 6 3v8l-6 3-6-3V4zm0 6 6-3M8 7 2 4m6 3v8M5 2.5l6 3V9" />
+        </symbol>
+        <symbol id="i-message" viewBox="0 0 16 16">
+          <path d="M2 2h12v9H7l-4 3v-3H2zM5 5h6M5 8h4" />
+        </symbol>
+        <symbol id="i-left" viewBox="0 0 16 16">
+          <path d="m10 3-5 5 5 5" />
+        </symbol>
+        <symbol id="i-right" viewBox="0 0 16 16">
+          <path d="m6 3 5 5-5 5" />
+        </symbol>
+      </defs>
+    </svg>
+    <a class="skip-link" href="#browser">Skip to conversations</a>
+    <header class="site-header">
+      <div class="site-top">
+        <a class="brand" href="./"
+          ><svg class="icon" aria-hidden="true"><use href="#i-repo" /></svg
+          ><span
+            >caos <span class="breadcrumb-divider">/</span>
+            <strong>trajectories</strong></span
+          ></a
+        ><span class="outline-label">Run explorer</span
+        ><a class="about-link" href="../alignment.html">About CAOS</a
+        ><a
+          class="button source-link"
+          href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/trajectories"
+          ><svg class="icon" aria-hidden="true"><use href="#i-code" /></svg
+          >Source</a
+        >
+      </div>
+      <nav class="site-nav" aria-label="Project">
+        <a class="selected" href="./" aria-current="page"
+          ><svg class="icon" aria-hidden="true"><use href="#i-branch" /></svg
+          >Conversations</a
+        ><a
+          href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/trajectories#open-a-run-from-another-server-or-git-remote"
+          ><svg class="icon" aria-hidden="true"><use href="#i-repo" /></svg
+          >Connect a remote</a
+        >
+      </nav>
+    </header>
+    <div class="page">
+      <section class="example" aria-labelledby="run-title">
+        <div class="run-toolbar">
+          <div class="run-picker">
+            <svg class="icon" aria-hidden="true"><use href="#i-branch" /></svg
+            ><label class="sr-only" for="example">Run</label
+            ><select id="example"></select>
+          </div>
+          <button class="button" id="copy-link">
+            <svg class="icon" aria-hidden="true"><use href="#i-link" /></svg
+            ><span>Copy link</span></button
+          ><button
+            class="button primary"
+            id="open-run-button"
+            aria-expanded="false"
+            aria-controls="open-run"
+          >
+            Open a run
+          </button>
+        </div>
+        <details class="open-run" id="open-run">
+          <summary>CAOS server or Git remote</summary>
+          <div class="open-run-body">
+            <form id="load-run">
+              <label
+                >Read from
+                <select id="source-kind">
+                  <option value="server">CAOS server</option>
+                  <option value="remote">Git remote or local repository</option>
+                </select></label
+              ><label
+                >URL or repository path
+                <input
+                  id="source-url"
+                  required
+                  placeholder="http://127.0.0.1:19090"
+                  autocomplete="off" /></label
+              ><label
+                >Conversation commit
+                <input
+                  id="source-head"
+                  required
+                  pattern="[0-9a-f]{40}"
+                  placeholder="Full 40-character hash"
+                  autocomplete="off"
+                  spellcheck="false" /></label
+              ><button type="submit" class="button primary">Open run</button>
+            </form>
+            <p>
+              Reads the conversation and the child heads recorded in it. Loading
+              a hash does not run any agent or tool.
+            </p>
+            <div id="local-help" hidden>
+              <p>
+                Start the local viewer from a clone of
+                <a
+                  href="https://github.com/nishu-builder/caos-execution-integrity"
+                  >this repository</a
+                >, then open the URL it prints. It connects to the remote using
+                your machine’s access.
+              </p>
+              <pre id="launch-command"></pre>
+            </div>
+          </div>
+        </details>
+        <div class="run-heading">
+          <h1 id="run-title">Agent trajectories</h1>
+          <span class="outline-label" id="run-kind">Recorded run</span>
+        </div>
+        <p id="description"></p>
+        <div id="facts"></div>
+        <nav id="highlights" aria-label="Key moments"></nav>
+        <span id="copy-status" class="sr-only" role="status"></span>
+      </section>
+      <div id="notice" role="status">Loading captured runs…</div>
+      <main id="browser" hidden tabindex="-1">
+        <aside class="agents">
+          <div class="panel-heading">
+            <h2>Conversations</h2>
+            <span class="counter" id="conversation-count"></span
+            ><button
+              class="mobile-toggle button"
+              data-panel="agents"
+              aria-label="Toggle conversations"
+              aria-expanded="false"
+              aria-controls="conversations"
+            >
+              Show
+            </button>
+          </div>
+          <nav id="conversations" aria-label="Conversations"></nav>
+          <div class="sidebar-bottom">
+            <p class="hint">
+              Each child has its own transcript. Applying its files does not
+              merge the conversations.
+            </p>
+            <a id="download" class="button" download
+              ><svg class="icon" aria-hidden="true">
+                <use href="#i-download" /></svg
+              >Download data</a
+            >
+          </div>
+        </aside>
+        <section class="timeline" aria-label="Conversation history">
+          <div class="timeline-top">
+            <div class="panel-heading">
+              <h2>History</h2>
+              <span class="counter" id="event-count"></span
+              ><button
+                class="mobile-toggle button"
+                data-panel="timeline"
+                aria-label="Toggle history"
+                aria-expanded="false"
+                aria-controls="events"
+              >
+                Show
+              </button>
+            </div>
+            <p id="conversation-title"></p>
+            <div class="search-field">
+              <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg
+              ><label class="sr-only" for="search"
+                >Search this conversation</label
+              ><input
+                id="search"
+                type="search"
+                placeholder="Find a call, message, or file"
+              />
+            </div>
+            <label class="sr-only" for="filter">Filter events</label
+            ><select id="filter">
+              <option value="activity">Messages and tool activity</option>
+              <option value="changes">File changes</option>
+              <option value="all">All commits</option>
+            </select>
+          </div>
+          <div id="events" role="list"></div>
+        </section>
+        <section class="inspector" aria-label="Selected event">
+          <div class="inspect-top">
+            <div class="event-toolbar">
+              <div id="event-heading"></div>
+              <div class="event-navigation">
+                <button
+                  class="icon-button"
+                  id="previous-event"
+                  aria-label="Previous event"
+                  title="Previous event"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-left" />
+                  </svg></button
+                ><button
+                  class="icon-button"
+                  id="next-event"
+                  aria-label="Next event"
+                  title="Next event"
+                >
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-right" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <nav class="tabs" aria-label="Event details">
+              <button data-tab="activity">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-message" /></svg
+                >What happened</button
+              ><button data-tab="files">
+                <svg class="icon" aria-hidden="true"><use href="#i-file" /></svg
+                >Files</button
+              ><button data-tab="request">
+                <svg class="icon" aria-hidden="true"><use href="#i-box" /></svg
+                >Compute request</button
+              ><button data-tab="record">
+                <svg class="icon" aria-hidden="true"><use href="#i-code" /></svg
+                >Raw record
+              </button>
+            </nav>
+          </div>
+          <div id="detail"></div>
+        </section>
+      </main>
+      <footer>
+        <span
+          >The saved examples use staged tasks and real model runs. These are
+          CAOS’s records, not independent proof of execution.</span
+        ><a
+          href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/trajectories"
+          >Exporter &amp; reproduction</a
+        >
+      </footer>
+    </div>
+    <script src="browser.js?v=github-1"></script>
+  </body>
+</html>
