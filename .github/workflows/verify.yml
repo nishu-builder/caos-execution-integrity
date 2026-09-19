@@ -32,14 +32,18 @@ jobs:
         run: |
           cd trajectories
           npm ci
+          npm run build
+          git diff --exit-code -- ../docs/trajectories/remote-worker.js ../docs/trajectories/remote-worker.js.LEGAL.txt ../docs/trajectories/THIRD-PARTY.txt ../docs/trajectories/isomorphic-git-source.cjs
           npx playwright install --with-deps chromium
       - name: Test the trajectory browser
         run: |
-          python3 trajectories/serve.py --port 18184 > /tmp/trajectory-http.log 2>&1 &
+          python3 -m http.server 18184 --bind 127.0.0.1 --directory docs > /tmp/trajectory-http.log 2>&1 &
           server_pid=$!
-          trap 'kill "$server_pid"' EXIT
+          python3 trajectories/test-remote-server.py --port 18191 > /tmp/trajectory-remote.log 2>&1 &
+          remote_pid=$!
+          trap 'kill "$server_pid" "$remote_pid"' EXIT
           for attempt in $(seq 1 30); do
-            if curl --fail --silent http://127.0.0.1:18184/trajectories/ > /dev/null; then break; fi
+            if curl --fail --silent http://127.0.0.1:18184/trajectories/ > /dev/null && curl --fail --silent http://127.0.0.1:18191/fixture.json > /dev/null; then break; fi
             sleep 1
           done
           cd trajectories

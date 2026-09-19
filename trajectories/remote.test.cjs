@@ -30,7 +30,7 @@ const git=(...args)=>execFileSync('git',['-C',repo,...args],{encoding:'utf8'}).t
   assert.equal(new URL(page.url()).searchParams.get('remote'),repo);
   // A different commit on the same remote must produce different data, not a fixture/cache hit.
   fs.writeFileSync(path.join(repo,'hello.txt'),'Second independent snapshot.\n');git('add','.');git('commit','--quiet','-m','tool.complete');const second=git('rev-parse','HEAD');
-  await page.fill('#source-head',second);await page.click('#load-run button');
+  await page.fill('#source-head',second);await page.click('#load-run button[type="submit"]');
   await page.waitForFunction(h=>document.querySelector('#description').textContent.includes(h),second);
   await page.click('[data-tab="files"]');assert.match(await page.locator('.file-content').innerText(),/Second independent snapshot/);
   await page.selectOption('#side','before');assert.match(await page.locator('.file-content').innerText(),/Freshly fetched through Git/);
@@ -41,18 +41,13 @@ const git=(...args)=>execFileSync('git',['-C',repo,...args],{encoding:'utf8'}).t
   response=await page.request.post(origin+'/api/load',{headers:{'Content-Type':'text/plain'},data:'{}'});assert.equal(response.status(),415);
   if(process.env.LIVE_CAOS_SERVER){
    await page.fill('#source-url',process.env.LIVE_CAOS_SERVER);await page.selectOption('#source-kind','server');
-   await page.fill('#source-head','845c4cd46019a73064cbe3c9d4927a668046d315');await page.click('#load-run button');
+   await page.fill('#source-head','845c4cd46019a73064cbe3c9d4927a668046d315');await page.click('#load-run button[type="submit"]');
    await page.waitForFunction(()=>document.querySelector('#description').textContent.startsWith('Loaded from http'));
    assert.match(await page.locator('#facts').innerText(),/3 conversations/);
    assert.equal(new URL(page.url()).searchParams.get('server'),process.env.LIVE_CAOS_SERVER);
    await page.screenshot({path:process.env.SCREENSHOT_PATH||'/tmp/trajectory-remote.png',fullPage:true});
   }
-  // The static hosted page explains how to start the reader; it never pretends to connect.
-  await page.route('**/api/viewer',route=>route.fulfill({status:404,body:'Not found'}));
-  await page.goto(base+'?'+query);await page.waitForSelector('#local-help:not([hidden])');
-  assert.match(await page.locator('#launch-command').innerText(),/serve.py --remote/);
-  assert.match(await page.locator('#launch-command').innerText(),new RegExp(head));
   assert.deepEqual(errors,[]);
-  console.log('Passed: fresh Git remote, new commit, before/after, raw object integrity, deep-link reload, example switching, local API protections, hosted-page instructions.');
+  console.log('Passed: fresh Git remote, new commit, before/after, raw object integrity, deep-link reload, example switching, local API protections.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1}).finally(()=>fs.rmSync(repo,{recursive:true,force:true}));

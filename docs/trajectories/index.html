@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#f6f8fa" />
     <title>CAOS · Trajectories</title>
-    <link rel="stylesheet" href="browser.css?v=github-1" />
+    <link rel="stylesheet" href="browser.css?v=browser-1" />
   </head>
   <body>
     <svg
@@ -84,7 +84,7 @@
           ><svg class="icon" aria-hidden="true"><use href="#i-branch" /></svg
           >Conversations</a
         ><a
-          href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/trajectories#open-a-run-from-another-server-or-git-remote"
+          href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/trajectories#open-another-run-directly-in-the-browser"
           ><svg class="icon" aria-hidden="true"><use href="#i-repo" /></svg
           >Connect a remote</a
         >
@@ -118,14 +118,15 @@
                 >Read from
                 <select id="source-kind">
                   <option value="server">CAOS server</option>
-                  <option value="remote">Git remote or local repository</option>
+                  <option value="remote">Git remote (HTTPS)</option>
+                  <option value="loose">Static Git objects (HTTPS)</option>
                 </select></label
               ><label
-                >URL or repository path
+                >Remote URL
                 <input
                   id="source-url"
                   required
-                  placeholder="http://127.0.0.1:19090"
+                  placeholder="https://your-caos-server"
                   autocomplete="off" /></label
               ><label
                 >Conversation commit
@@ -136,23 +137,39 @@
                   placeholder="Full 40-character hash"
                   autocomplete="off"
                   spellcheck="false" /></label
-              ><button type="submit" class="button primary">Open run</button>
+              ><button type="submit" class="button primary">Open run</button
+              ><button type="button" id="cancel-load" class="button" hidden>
+                Cancel
+              </button>
             </form>
             <p>
-              Reads the conversation and the child heads recorded in it. Loading
-              a hash does not run any agent or tool.
+              Fetched and checked in this tab. No agents or tools are run.
+              <button class="text-button" id="try-remote" type="button">
+                Try the published Git objects
+              </button>
             </p>
-            <div id="local-help" hidden>
+            <details class="connection-options">
+              <summary>Connection options</summary>
+              <div class="connection-fields">
+                <label
+                  >Access token (optional; not saved)<input
+                    id="source-token"
+                    type="password"
+                    autocomplete="off" /></label
+                ><label
+                  >Git CORS relay (optional)<input
+                    id="source-proxy"
+                    type="url"
+                    placeholder="https://your-trusted-relay"
+                    autocomplete="off"
+                /></label>
+              </div>
               <p>
-                Start the local viewer from a clone of
-                <a
-                  href="https://github.com/nishu-builder/caos-execution-integrity"
-                  >this repository</a
-                >, then open the URL it prints. It connects to the remote using
-                your machine’s access.
+                The remote must allow browser requests (CORS). A relay receives
+                Git traffic and any token you supply; use one you trust. Relay
+                and token settings are not included in shared links.
               </p>
-              <pre id="launch-command"></pre>
-            </div>
+            </details>
           </div>
         </details>
         <div class="run-heading">
@@ -284,6 +301,6 @@
         >
       </footer>
     </div>
-    <script src="browser.js?v=github-1"></script>
+    <script src="browser.js?v=browser-1"></script>
   </body>
 </html>

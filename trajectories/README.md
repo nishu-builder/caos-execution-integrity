@@ -31,40 +31,57 @@ The JSON files under `docs/trajectories/data/` are browser indexes. `objects/` c
 
 This is an **inspection export**. It includes conversation records, workspace snapshots, and recorded request arguments, but not complete worker image closures. It cannot by itself restart the captured agents. The older [worker reproduction package](../REPRODUCE.md) is separate.
 
-## Open a run from another server or Git remote
+## Open another run directly in the browser
 
-Start the local viewer from this repository:
+On the [published page](https://nishu-builder.github.io/caos-execution-integrity/trajectories/), choose **Open a run**, enter its URL and conversation commit hash, then open it. No install or local viewer is needed for browser-accessible remotes.
 
-```sh
-python3 trajectories/serve.py \
-  --server http://127.0.0.1:19090 \
-  --head 845c4cd46019a73064cbe3c9d4927a668046d315
-```
+The reader runs in a Web Worker. It fetches original Git objects, verifies each hash, reconstructs the conversations and workspace snapshots, and follows the child heads recorded at that commit. It does not execute tools. Git storage is in memory; tokens are not saved, added to URLs, or included in exports. Cancel stops the worker and its network requests.
 
-Use your own server and **conversation commit hash**. Open the URL it prints. It reads the original Git objects, checks their hashes, and follows the child heads recorded in that conversation. It never executes the recorded tools or resumes the agents. A hash pins a snapshot; the viewer does not follow a moving branch automatically.
+Supported sources:
 
-For Git transport, including SSH or a local repository:
+- **CAOS server:** its HTTP `GET /object/<hash>` endpoint.
+- **Git remote (HTTPS):** smart Git HTTP, using isomorphic-git in the browser. No checkout occurs. The remote must contain the referenced objects and allow fetching their hashes.
+- **Static Git objects:** Git's standard `objects/ab/cdef…` layout, with zlib-compressed objects. **Try the published Git objects** loads one of the real runs this way, without reading its prebuilt JSON export.
 
-```sh
-python3 trajectories/serve.py \
-  --remote git@your-host:your-conversations.git \
-  --head YOUR_40_CHARACTER_CONVERSATION_COMMIT
-```
-
-Git uses your existing SSH keys or credential helper. Fetches go into a temporary bare repository; no worktree is checked out. The remote must hold the referenced conversations, source commits, and compute requests and permit fetching their hashes. An ordinary code repository or the JSON export files alone are insufficient. Missing objects produce an error rather than an incomplete view.
-
-You can also start `python3 trajectories/serve.py` without arguments and use **Open a run** to enter a server or remote and hash. The URL retains them, along with the selected event and file:
+Shareable links retain the source, conversation, selected event, and file:
 
 ```text
-http://127.0.0.1:18184/trajectories/?server=URL_ENCODED_SERVER&head=CONVERSATION_COMMIT
-http://127.0.0.1:18184/trajectories/?remote=URL_ENCODED_GIT_REMOTE&head=CONVERSATION_COMMIT
+https://nishu-builder.github.io/caos-execution-integrity/trajectories/?server=URL_ENCODED_SERVER&head=CONVERSATION_COMMIT
+https://nishu-builder.github.io/caos-execution-integrity/trajectories/?remote=URL_ENCODED_HTTPS_GIT_REMOTE&head=CONVERSATION_COMMIT
 ```
 
-A colleague can open the same link with their own local viewer and access to that remote. Avoid putting credentials in the URL; use Git's credential helper for authenticated remotes. CAOS HTTP loading currently accepts a server URL without credentials.
+Use `loose=` for a static object store. The commit pins a snapshot; it does not follow a moving branch automatically.
 
-The published GitHub Pages site has the same form and can receive the same query parameters, but shows the command to start the local viewer. CAOS's object endpoint does not currently provide CORS headers, and browsers cannot speak SSH Git. The local viewer handles those connections on your machine; private runs are not uploaded to GitHub or another hosted service. It binds only to loopback and removes its temporary captures when stopped. Use `--port` if the default port is occupied.
+### Browser access
 
-The parser supports the CAOS chat v3 format used here. A different harness format may require parser changes.
+The remote must use HTTPS and allow this page's origin through [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS). This is a browser restriction; JavaScript cannot bypass it. CAOS currently needs those headers configured at its HTTP front end. Localhost HTTP may also require browser permission to access the local network.
+
+For object reads, allow `GET` from `https://nishu-builder.github.io`. If using the optional bearer token, also allow the `Authorization` header and its `OPTIONS` preflight. For smart Git, allow `GET` and `POST` on `info/refs` and `git-upload-pack`, and the requested Git headers.
+
+Many Git hosts, including GitHub's clone endpoint, do not allow direct browser requests. **Connection options** accepts an explicit [isomorphic-git-compatible CORS relay](https://isomorphic-git.org/docs/en/fetch). No relay is used by default. It sees the Git traffic and any token you provide, so choose one you trust. Relay and token settings are never included in shared links. Git tokens use HTTP Basic authentication with username `x-access-token`; CAOS and static-object tokens use Bearer authentication.
+
+SSH and filesystem paths cannot be read by a hosted page. The optional local reader remains available for those, or for a server whose CORS configuration you cannot change:
+
+```sh
+python3 trajectories/serve.py --remote git@your-host:conversations.git --head YOUR_CONVERSATION_COMMIT
+# Or: --server http://127.0.0.1:19090 --head YOUR_CONVERSATION_COMMIT
+```
+
+This prints a local URL with `reader=local`. That mode uses your machine's Git credentials and the Python reader. The GitHub Pages app does not use it.
+
+The parser supports CAOS chat v3 records. Missing or modified objects produce errors. Limits are 32 MiB per object, 256 MiB of captured objects, 512 MiB of in-memory Git files, and 10,000 commits per conversation. The published static object store is an inspection package, with the same scope as the JSON export; complete worker image closures are not included.
+
+### Build the browser reader
+
+```sh
+cd trajectories
+npm ci
+npm run build
+```
+
+The committed worker bundle contains the pinned Git, diff, and Buffer dependencies; the page loads no third-party scripts. Sources are in `browser/`. `build.mjs` also fixes the pinned Git library’s assumption that every remote advertises a default branch; the tests include a remote without one. CI rebuilds the bundle and checks it matches the committed output.
+
+`python3 trajectories/publish_objects.py` converts the verified captured objects to the published loose-object layout. It does not invent or rewrite any Git object.
 
 ## Generate new runs
 
@@ -88,7 +105,7 @@ To browse the new export separately:
 
 ```sh
 mkdir -p /tmp/my-trajectory-browser
-cp docs/trajectories/{index.html,browser.css,browser.js} /tmp/my-trajectory-browser/
+cp docs/trajectories/{index.html,browser.css,browser.js,remote-worker.js,remote-worker.js.LEGAL.txt} /tmp/my-trajectory-browser/
 cp -R /absolute/path/to/new-run-directory/data /tmp/my-trajectory-browser/
 python3 -m http.server 18185 --bind 127.0.0.1 --directory /tmp/my-trajectory-browser
 ```
@@ -111,14 +128,16 @@ Add `{"examples":[{"id":"my-run","title":"My run","head":"CONVERSATION_HEAD_OID"
 
 ## Browser checks
 
-The page itself has no external dependencies. Its tests use Playwright:
+The page serves its bundled dependencies locally. Its tests use Playwright:
 
 ```sh
 cd trajectories
 npm ci
 npx playwright install chromium
-# With `python3 trajectories/serve.py` running from the repository root:
+# In separate terminals from the repository root, start:
+# python3 -m http.server 18184 --bind 127.0.0.1 --directory docs
+# python3 trajectories/test-remote-server.py --port 18191
 npm test
 ```
 
-Checks cover real file snapshots and diffs, deep links, request inspection, child navigation, search, example switching, safe rendering of agent-controlled text, mobile layout, and loading a newly created Git remote at two different commits. Linux may require Playwright's system dependencies; CI installs these on its disposable runner.
+Checks cover real file snapshots and diffs, deep links, request inspection, child navigation, search, example switching, safe rendering of agent-controlled text, mobile layout, and browser-only loading from a newly created smart Git remote at two different commits. The browser export is compared against the original recorded conversations and requests. Tests also check CORS enforcement, tampered-object rejection, cancellation, and that remote loads never call a viewer API or use the saved JSON examples. Linux may require Playwright's system dependencies; CI installs these on its disposable runner.

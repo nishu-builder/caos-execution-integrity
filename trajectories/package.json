@@ -2,9 +2,16 @@
   "name": "caos-trajectory-browser-tests",
   "private": true,
   "scripts": {
-    "test": "node browser.test.cjs && node remote.test.cjs"
+    "test": "node browser.test.cjs && node browser-remote.test.cjs",
+    "build": "node build.mjs"
   },
   "devDependencies": {
+    "esbuild": "0.25.10",
     "playwright": "1.63.0"
+  },
+  "dependencies": {
+    "buffer": "6.0.3",
+    "diff": "8.0.4",
+    "isomorphic-git": "1.37.1"
   }
 }

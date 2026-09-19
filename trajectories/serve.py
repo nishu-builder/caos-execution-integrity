@@ -160,7 +160,7 @@ def main():
         parser.error('--head must be a full 40-character commit hash')
     with tempfile.TemporaryDirectory(prefix='caos-viewer-') as cache:
         server = ViewerServer(args.port, cache)
-        query = urlencode({('server' if args.server else 'remote'): args.server or args.remote, 'head': args.head}) if args.head else ''
+        query = urlencode({('server' if args.server else 'remote'): args.server or args.remote, 'head': args.head, 'reader': 'local'}) if args.head else ''
         print(f'Open http://127.0.0.1:{server.server_port}/trajectories/' + ('?' + query if query else ''), flush=True)
         print('Read-only viewer. Captures are temporary and removed when it stops.', flush=True)
         try:

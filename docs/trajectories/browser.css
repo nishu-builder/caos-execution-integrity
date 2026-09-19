@@ -1301,4 +1301,46 @@ footer a {
   }
 }
 
-@media (max-width: 800px) { footer a { display: block; } }
+@media (max-width: 800px) {
+  footer a {
+    display: block;
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+.text-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--blue);
+  font: inherit;
+  cursor: pointer;
+}
+.text-button:hover {
+  text-decoration: underline;
+}
+.connection-options {
+  margin: 14px 0 0;
+}
+.connection-options summary {
+  border: 0;
+  padding: 0;
+  background: none;
+  font-weight: 400;
+  color: var(--muted);
+}
+.connection-fields {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.connection-fields label {
+  min-width: 200px;
+  flex: 1;
+}
+.connection-options p {
+  max-width: 850px;
+}

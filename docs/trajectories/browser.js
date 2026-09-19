@@ -24,9 +24,25 @@ let catalog,
   liveSource = null,
   downloadURL = null,
   highlights = [];
+let activeWorker = null,
+  rejectWorker = null;
+const objectURLs = new Map();
+function clearObjects() {
+  for (const url of objectURLs.values()) URL.revokeObjectURL(url);
+  objectURLs.clear();
+}
+function cancelLoad() {
+  if (activeWorker) {
+    activeWorker.terminate();
+    activeWorker = null;
+    const reject = rejectWorker;
+    rejectWorker = null;
+    reject?.(Error("Loading cancelled."));
+  }
+}
 const objectLink = (oid, compact = false) =>
   data.evidence.objects.includes(oid)
-    ? `<a href="${esc(data.object_base || "data/objects/")}${esc(oid)}" download="${esc(oid)}.git-object" title="${esc(oid)}">${esc(compact ? short(oid) : oid)}</a>`
+    ? `<a href="${esc(objectURLs.get(oid) || (data.object_base || "data/objects/") + oid)}" download="${esc(oid)}.git-object" title="${esc(oid)}">${esc(compact ? short(oid) : oid)}</a>`
     : esc(oid);
 const code = (text) => `<pre>${esc(text)}</pre>`;
 function numberedCode(text) {
@@ -94,7 +110,8 @@ function observationText(value) {
 }
 function updateURL() {
   const u = new URL(location.href);
-  for (const key of ["server", "remote", "head"]) u.searchParams.delete(key);
+  for (const key of ["server", "remote", "loose", "head"])
+    u.searchParams.delete(key);
   if (liveSource) {
     u.searchParams.set(liveSource.kind, liveSource.source);
     u.searchParams.set("head", liveSource.head);
@@ -509,6 +526,8 @@ function showRun(loaded, entry, fromURL) {
   }
 }
 async function loadExample(id, fromURL = false) {
+  cancelLoad();
+  $("cancel-load").hidden = true;
   const version = ++loadVersion;
   $("notice").hidden = false;
   $("notice").textContent = "Loading captured run…";
@@ -520,8 +539,8 @@ async function loadExample(id, fromURL = false) {
     if (!response.ok) throw Error("Could not load example: " + response.status);
     const loaded = await response.json();
     if (version !== loadVersion) return;
+    clearObjects();
     liveSource = null;
-    $("local-help").hidden = true;
     showRun(loaded, entry, fromURL);
   } catch (error) {
     if (version === loadVersion) {
@@ -530,8 +549,62 @@ async function loadExample(id, fromURL = false) {
     }
   }
 }
-const shellQuote = (value) => "'" + value.replaceAll("'", "'\"'\"'") + "'";
+function browserRead(options, version) {
+  return new Promise((resolve, reject) => {
+    const worker = new Worker("remote-worker.js?v=browser-1");
+    activeWorker = worker;
+    rejectWorker = reject;
+    worker.onmessage = ({ data: message }) => {
+      if (message.type === "progress") {
+        if (version === loadVersion) $("notice").textContent = message.message;
+        return;
+      }
+      worker.terminate();
+      if (activeWorker === worker) {
+        activeWorker = null;
+        rejectWorker = null;
+      }
+      if (message.type === "error") reject(Error(message.message));
+      else resolve(message);
+    };
+    worker.onerror = () => {
+      worker.terminate();
+      if (activeWorker === worker) {
+        activeWorker = null;
+        rejectWorker = null;
+      }
+      reject(
+        Error(
+          "The browser reader stopped. Try a smaller run or reload the page.",
+        ),
+      );
+    };
+    worker.postMessage(options);
+  });
+}
+async function localRead(kind, source, head) {
+  if (!["localhost", "127.0.0.1"].includes(location.hostname))
+    throw Error(
+      "Use an HTTPS clone URL. SSH and filesystem paths require the optional local viewer.",
+    );
+  const response = await fetch("/api/load", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ kind, source, head }),
+  });
+  if (!response.ok) {
+    let error;
+    try {
+      error = (await response.json()).error;
+    } catch {}
+    throw Error(
+      error || "A filesystem or SSH remote requires the optional local viewer.",
+    );
+  }
+  return { data: await response.json(), objects: [] };
+}
 async function loadRemote(kind, source, head, fromURL = false) {
+  cancelLoad();
   const version = ++loadVersion;
   if (!fromURL) {
     const u = new URL(location.href);
@@ -539,6 +612,7 @@ async function loadRemote(kind, source, head, fromURL = false) {
       "example",
       "server",
       "remote",
+      "loose",
       "head",
       "conversation",
       "event",
@@ -554,48 +628,62 @@ async function loadRemote(kind, source, head, fromURL = false) {
   $("source-kind").value = kind;
   $("source-url").value = source;
   $("source-head").value = head;
-  $("local-help").hidden = true;
   $("notice").hidden = false;
   $("browser").hidden = true;
-  $("notice").textContent =
-    "Reading conversation objects and recorded child heads…";
+  $("cancel-load").hidden = false;
+  $("notice").textContent = "Reading Git objects in your browser…";
   try {
     if (!/^[0-9a-f]{40}$/.test(head))
       throw Error("Enter a full 40-character conversation commit hash.");
     if (!source.trim()) throw Error("Enter a server URL or Git remote.");
-    const health = await fetch("/api/viewer");
-    if (
-      !health.ok ||
-      !(health.headers.get("content-type") || "").includes("application/json")
-    ) {
-      if (version !== loadVersion) return;
-      $("launch-command").textContent =
-        "python3 trajectories/serve.py --" +
-        kind +
-        " " +
-        shellQuote(source) +
-        " --head " +
-        shellQuote(head);
-      $("local-help").hidden = false;
-      throw Error("Start the local viewer to open this run.");
+    const options = {
+      kind,
+      source,
+      head,
+      proxy:
+        !fromURL && kind === "remote" ? $("source-proxy").value.trim() : "",
+      token: fromURL ? "" : $("source-token").value,
+    };
+    const localMode =
+      kind !== "loose" &&
+      ["localhost", "127.0.0.1"].includes(location.hostname) &&
+      new URLSearchParams(location.search).get("reader") === "local";
+    const useLocal =
+      localMode || (kind === "remote" && !/^https?:\/\//i.test(source));
+    if (useLocal) {
+      $("cancel-load").hidden = true;
+      $("notice").textContent = "Reading through the local viewer…";
     }
-    const response = await fetch("/api/load", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ kind, source, head }),
-    });
-    const loaded = await response.json();
+    const loaded = useLocal
+      ? await localRead(kind, source, head)
+      : await browserRead(options, version);
     if (version !== loadVersion) return;
-    if (!response.ok) throw Error(loaded.error || "Could not load this run.");
+    clearObjects();
+    for (const object of loaded.objects)
+      objectURLs.set(
+        object.oid,
+        URL.createObjectURL(
+          new Blob([object.bytes], { type: "application/octet-stream" }),
+        ),
+      );
     liveSource = { kind, source, head };
-    showRun(loaded, { id: "live" }, fromURL);
+    showRun(loaded.data, { id: "live" }, fromURL);
   } catch (error) {
     if (version === loadVersion) {
       $("notice").textContent = error.message;
       $("browser").hidden = true;
     }
+  } finally {
+    if (version === loadVersion) $("cancel-load").hidden = true;
   }
 }
+$("cancel-load").onclick = cancelLoad;
+$("try-remote").onclick = () =>
+  loadRemote(
+    "loose",
+    new URL("git", location.href).href,
+    "845c4cd46019a73064cbe3c9d4927a668046d315",
+  );
 $("load-run").onsubmit = (e) => {
   e.preventDefault();
   loadRemote(
@@ -684,10 +772,10 @@ $("example").onchange = () => {
       .map((e) => `<option value="${esc(e.id)}">${esc(e.title)}</option>`)
       .join("");
     const q = new URLSearchParams(location.search);
-    if (q.has("server") || q.has("remote"))
+    if (q.has("server") || q.has("remote") || q.has("loose"))
       await loadRemote(
-        q.has("server") ? "server" : "remote",
-        q.get("server") || q.get("remote"),
+        q.has("server") ? "server" : q.has("loose") ? "loose" : "remote",
+        q.get("server") || q.get("remote") || q.get("loose"),
         q.get("head") || "",
         true,
       );
