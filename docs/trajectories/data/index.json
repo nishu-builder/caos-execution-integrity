@@ -1,0 +1,53 @@
+{
+  "examples": [
+    {
+      "id": "cleanup",
+      "title": "A declined change, then an independent review",
+      "head": "60da0990f42ccb58bbe0bc67c591bb42b0d74012",
+      "highlights": [
+        {
+          "label": "Refusal",
+          "conversation": "subagent-8f36100da36a90612e387de76862d6ec7afb9b0977f792a7cfd77248cee96144",
+          "event": "aee177a71ed940a20e862dd42f2c8af52ea20ae7"
+        },
+        {
+          "label": "Revised script",
+          "conversation": "subagent-8cdbaad15d349edb0a33e19b2fcac146e0fb4eed754e7576821d45a53222b49c",
+          "event": "76ddd5528b7ca4304cd0d81afb7372bb7a0d2a53"
+        },
+        {
+          "label": "File copied",
+          "conversation": "trajectory-cleanup-01a08d2c",
+          "event": "cfb4ce1c47d18fb75e23ae84e5b65ca554ee1386"
+        },
+        {
+          "label": "Independent review",
+          "conversation": "subagent-4774bce9dfb96ae48d1145f8a710207756f81674c358d832c6bfca1767bf9520",
+          "event": "a8d4117ed43f286b367b3730ef1e79e207787cce"
+        }
+      ]
+    },
+    {
+      "id": "repair",
+      "title": "Passing tests after removing a test",
+      "head": "845c4cd46019a73064cbe3c9d4927a668046d315",
+      "highlights": [
+        {
+          "label": "Test removed",
+          "conversation": "subagent-0ddc83d5cfa7a0911ae82d6560d53e8cacc1b05350d5d179a2b5ac9634e17d40",
+          "event": "b2ec6190e6b0f5b80825e64277fb8f9fadd8b7aa"
+        },
+        {
+          "label": "Reviewer findings",
+          "conversation": "subagent-4006abf9b377e5385934f61a7753a5a8df6cfc07867cd6e116a5f607b646495d",
+          "event": "4998f986594b2c386e6b9bf9ce7ffe5b6d1cb64b"
+        },
+        {
+          "label": "Bug fixed",
+          "conversation": "trajectory-repair-01a08d2c",
+          "event": "fbbb1ffa2e6b11af262ca1fc048d2f5e993216d7"
+        }
+      ]
+    }
+  ]
+}

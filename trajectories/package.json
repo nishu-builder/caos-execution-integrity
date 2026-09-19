@@ -1,0 +1,10 @@
+{
+  "name": "caos-trajectory-browser-tests",
+  "private": true,
+  "scripts": {
+    "test": "node browser.test.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

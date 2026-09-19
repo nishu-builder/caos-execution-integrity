@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CAOS trajectory browser</title><link rel="stylesheet" href="browser.css"></head>
+<body>
+<header><a class="brand" href="./">CAOS trajectories</a><span>Inspect recorded conversations, tool calls, and file changes</span><a href="../alignment.html">About CAOS</a></header>
+<section class="example"><label for="example">Example</label><select id="example"></select><p id="description"></p><div id="facts"></div><nav id="highlights" aria-label="Key moments"></nav></section>
+<div id="notice" role="status">Loading captured runs…</div>
+<main id="browser" hidden>
+<aside class="agents"><h2>Conversations</h2><nav id="conversations" aria-label="Conversations"></nav><p class="hint">Children have their own transcripts. Applying their files does not merge the conversations.</p><a id="download" download>Download captured data</a></aside>
+<section class="timeline"><div class="timeline-top"><h2 id="conversation-title"></h2><label class="sr-only" for="search">Search this conversation</label><input id="search" type="search" placeholder="Search calls, text, or filenames"><label class="sr-only" for="filter">Filter events</label><select id="filter"><option value="activity">Messages and tool activity</option><option value="changes">File changes</option><option value="all">All commits</option></select></div><div id="events" role="list"></div></section>
+<section class="inspector"><div class="inspect-top"><div id="event-heading"></div><nav class="tabs" aria-label="Event details"><button data-tab="activity">What happened</button><button data-tab="files">Files</button><button data-tab="request">Compute request</button><button data-tab="record">Raw record</button></nav></div><div id="detail"></div></section>
+</main>
+<footer>These are deliberately staged tasks with real model responses and tool executions. The viewer shows CAOS’s records; it does not independently attest to runner execution. <a href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/trajectories">Exporter and reproduction instructions</a></footer>
+<script src="browser.js"></script>
+</body></html>

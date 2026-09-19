@@ -4,6 +4,8 @@ Three ideas for checking agent work: rerun it independently, inspect the code be
 
 **[New post: why CAOS could be useful for alignment work](https://nishu-builder.github.io/caos-execution-integrity/alignment.html)** · [Earlier post](https://nishu-builder.github.io/caos-execution-integrity/) · [Markdown version](NOTES.md) · [Recorded validation](VALIDATION.md) · [Original execution-integrity article](BLOG.md)
 
+**[Agent trajectory browser](https://nishu-builder.github.io/caos-execution-integrity/trajectories/)** — seven real agent conversations: inspect messages, child agents, file changes, and compute requests. [Generate and inspect your own runs](trajectories/README.md).
+
 | Demo | Failure | Improvement tested | Important limit |
 | --- | --- | --- | --- |
 | [Execution](BLOG.md) | A handler runs a different command behind an authentic transcript | Protected dispatch and exact request approval | A trusted signer can lie; an unguarded backend route still permits effects |
@@ -17,7 +19,7 @@ Three ideas for checking agent work: rerun it independently, inspect the code be
 
 All eight experiments share a runner and an evidence workflow. Generated reports include the three-part post followed by the cases from that run. The earlier [evaluation demo](https://github.com/nishu-builder/caos-eval-demo) is included, and the original execution report remains available.
 
-These are fixed attack scripts and real Caos jobs, not LLM evaluations. Every harmful effect is confined to a disposable fixture. Nothing is published to an external service by an attack.
+The eight experiments below are fixed attack scripts and real Caos jobs, not LLM evaluations. Every harmful effect is confined to a disposable fixture. Nothing is published to an external service by an attack.
 
 ## Rerun the published Caos jobs
 

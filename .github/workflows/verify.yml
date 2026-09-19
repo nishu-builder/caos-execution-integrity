@@ -21,3 +21,26 @@ jobs:
         run: .runtime/venv/bin/python check_sample.py
       - name: Verify portable worker objects in an empty repository
         run: python3 reproduce.py verify
+      - name: Verify captured agent conversations and their outcomes
+        run: python3 trajectories/verify.py
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install browser test dependencies
+        run: |
+          cd trajectories
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Test the trajectory browser
+        run: |
+          python3 -m http.server 18184 --bind 127.0.0.1 --directory docs > /tmp/trajectory-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:18184/trajectories/ > /dev/null; then break; fi
+            sleep 1
+          done
+          cd trajectories
+          npm test
