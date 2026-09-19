@@ -3,8 +3,8 @@ const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const short = oid => oid ? oid.slice(0,10) : '—';
 const pretty = value => JSON.stringify(value,null,2);
-let catalog, data, conversation, event, tab='activity', side='after', file='', fileQuery='', loadVersion=0;
-const objectLink = oid => data.evidence.objects.includes(oid) ? `<a href="data/objects/${esc(oid)}" download="${esc(oid)}.git-object">${esc(oid)}</a>` : esc(oid);
+let catalog, data, conversation, event, tab='activity', side='after', file='', fileQuery='', loadVersion=0, liveSource=null, downloadURL=null;
+const objectLink = oid => data.evidence.objects.includes(oid) ? `<a href="${esc(data.object_base||'data/objects/')}${esc(oid)}" download="${esc(oid)}.git-object">${esc(oid)}</a>` : esc(oid);
 const code = text => `<pre>${esc(text)}</pre>`;
 function argumentsHTML(args) {
  if(args && typeof args==='object' && typeof args.content==='string') {const {content,...rest}=args;return code(pretty(rest))+'<h3>File content supplied</h3>'+code(content);}
@@ -30,7 +30,9 @@ function observationText(value) {
 }
 function updateURL() {
  const u=new URL(location.href);
- for(const [k,v] of Object.entries({example:data.id,conversation:conversation.id,event:event.oid,tab,file:file||null})) { if(v) u.searchParams.set(k,v); else u.searchParams.delete(k); }
+ for(const key of ['server','remote','head']) u.searchParams.delete(key);
+ if(liveSource){u.searchParams.set(liveSource.kind,liveSource.source);u.searchParams.set('head',liveSource.head);}
+ for(const [k,v] of Object.entries({example:liveSource?null:data.id,conversation:conversation.id,event:event.oid,tab,file:file||null})) { if(v) u.searchParams.set(k,v); else u.searchParams.delete(k); }
  history.replaceState(null,'',u);
 }
 function selectConversation(id, oid) {
@@ -115,26 +117,61 @@ function renderDetail() {
  if($('file-search')) $('file-search').oninput=()=>{const input=$('file-search');fileQuery=input.value;const pos=input.selectionStart;renderDetail();$('file-search').focus();$('file-search').setSelectionRange(pos,pos);};
 }
 function render(){renderConversations();renderEvents();renderDetail();updateURL();}
+function showRun(loaded, entry, fromURL) {
+ data=loaded;
+ const q=new URLSearchParams(location.search);tab=fromURL&&['activity','files','request','record'].includes(q.get('tab'))?q.get('tab'):'activity';
+ if(liveSource && !$('example').querySelector('option[value="live"]')) $('example').insertAdjacentHTML('beforeend','<option value="live">Loaded run</option>');
+ $('example').value=entry.id;$('description').textContent=data.description;
+ $('highlights').innerHTML=(entry.highlights?.length?'<span>Key moments</span>':'')+(entry.highlights||[]).map((h,i)=>`<button data-highlight="${i}">${esc(h.label)}</button>`).join('');
+ $('highlights').querySelectorAll('button').forEach(b=>b.onclick=()=>{const h=entry.highlights[Number(b.dataset.highlight)];tab='activity';selectConversation(h.conversation,h.event);});
+ const count=data.conversations.reduce((n,c)=>n+c.events.length,0), calls=data.conversations.reduce((n,c)=>n+c.events.reduce((n,e)=>n+toolRecords(e).filter(r=>r.status!=='started').length,0),0);
+ $('facts').innerHTML=`<span>${data.conversations.length} conversations</span><span>${count} commits</span><span>${calls} tool results</span><span>${data.evidence.objects.length} captured Git objects</span>`;
+ if(downloadURL) URL.revokeObjectURL(downloadURL);
+ downloadURL=null;
+ if(liveSource){downloadURL=URL.createObjectURL(new Blob([JSON.stringify(data)],{type:'application/json'}));$('download').href=downloadURL;$('download').download='conversation-'+liveSource.head+'.json';}
+ else {$('download').href='data/'+data.id+'.json';$('download').download='';}
+ $('notice').hidden=true;$('browser').hidden=false;
+ const first=entry.highlights?.[0];
+ selectConversation(fromURL&&q.get('conversation')?q.get('conversation'):(first?.conversation||data.root),fromURL&&q.get('event')?q.get('event'):first?.event);
+ if(fromURL&&q.get('file')){file=q.get('file');renderDetail();updateURL();}
+}
 async function loadExample(id, fromURL=false) {
  const version=++loadVersion;
  $('notice').hidden=false;$('notice').textContent='Loading captured run…';$('browser').hidden=true;
  try {
   const entry=catalog.examples.find(e=>e.id===id)||catalog.examples[0];
   const response=await fetch('data/'+entry.id+'.json');if(!response.ok)throw Error('Could not load example: '+response.status);
-  const loaded=await response.json();if(version!==loadVersion)return;data=loaded;
-  const q=new URLSearchParams(location.search);tab=fromURL&&['activity','files','request','record'].includes(q.get('tab'))?q.get('tab'):'activity';
-  $('example').value=entry.id;$('description').textContent=data.description;
-  $('highlights').innerHTML=(entry.highlights?.length?'<span>Key moments</span>':'')+(entry.highlights||[]).map((h,i)=>`<button data-highlight="${i}">${esc(h.label)}</button>`).join('');
-  $('highlights').querySelectorAll('button').forEach(b=>b.onclick=()=>{const h=entry.highlights[Number(b.dataset.highlight)];tab='activity';selectConversation(h.conversation,h.event);});
-  const count=data.conversations.reduce((n,c)=>n+c.events.length,0), calls=data.conversations.reduce((n,c)=>n+c.events.reduce((n,e)=>n+toolRecords(e).filter(r=>r.status!=='started').length,0),0);
-  $('facts').innerHTML=`<span>${data.conversations.length} conversations</span><span>${count} commits</span><span>${calls} tool results</span><span>${data.evidence.objects.length} captured Git objects</span>`;
-  $('download').href='data/'+data.id+'.json';$('notice').hidden=true;$('browser').hidden=false;
-  const first=entry.highlights?.[0];
-  selectConversation(fromURL&&q.get('conversation')?q.get('conversation'):(first?.conversation||data.root),fromURL&&q.get('event')?q.get('event'):first?.event);
-  if(fromURL&&q.get('file')){file=q.get('file');renderDetail();updateURL();}
- } catch(error){$('notice').textContent=error.message;$('browser').hidden=true;}
+  const loaded=await response.json();if(version!==loadVersion)return;
+  liveSource=null;$('local-help').hidden=true;
+  showRun(loaded,entry,fromURL);
+ } catch(error){if(version===loadVersion){$('notice').textContent=error.message;$('browser').hidden=true;}}
 }
+const shellQuote = value => "'"+value.replaceAll("'", "'\"'\"'")+"'";
+async function loadRemote(kind, source, head, fromURL=false) {
+ const version=++loadVersion;
+ if(!fromURL){const u=new URL(location.href);for(const key of ['example','server','remote','head','conversation','event','tab','file'])u.searchParams.delete(key);u.searchParams.set(kind,source);u.searchParams.set('head',head);history.replaceState(null,'',u);}
+ $('open-run').open=true;$('source-kind').value=kind;$('source-url').value=source;$('source-head').value=head;
+ $('local-help').hidden=true;$('notice').hidden=false;$('browser').hidden=true;
+ $('notice').textContent='Reading conversation objects and recorded child heads…';
+ try {
+  if(!/^[0-9a-f]{40}$/.test(head)) throw Error('Enter a full 40-character conversation commit hash.');
+  if(!source.trim()) throw Error('Enter a server URL or Git remote.');
+  const health=await fetch('/api/viewer');
+  if(!health.ok || !(health.headers.get('content-type')||'').includes('application/json')) {
+   if(version!==loadVersion)return;
+   $('launch-command').textContent='python3 trajectories/serve.py --'+kind+' '+shellQuote(source)+' --head '+shellQuote(head);
+   $('local-help').hidden=false;
+   throw Error('Start the local viewer to open this run.');
+  }
+  const response=await fetch('/api/load',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind,source,head})});
+  const loaded=await response.json();if(version!==loadVersion)return;
+  if(!response.ok)throw Error(loaded.error||'Could not load this run.');
+  liveSource={kind,source,head};
+  showRun(loaded,{id:'live'},fromURL);
+ } catch(error){if(version===loadVersion){$('notice').textContent=error.message;$('browser').hidden=true;}}
+}
+$('load-run').onsubmit=e=>{e.preventDefault();loadRemote($('source-kind').value,$('source-url').value.trim(),$('source-head').value.trim());};
 $('search').oninput=renderEvents;$('filter').onchange=renderEvents;
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;renderDetail();updateURL();});
-$('example').onchange=()=>loadExample($('example').value);
-(async()=>{try{const r=await fetch('data/index.json');if(!r.ok)throw Error('Example index could not be loaded.');catalog=await r.json();$('example').innerHTML=catalog.examples.map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join('');await loadExample(new URLSearchParams(location.search).get('example'),true);}catch(e){$('notice').textContent=e.message;}})();
+$('example').onchange=()=>{if($('example').value==='live'&&liveSource)loadRemote(liveSource.kind,liveSource.source,liveSource.head);else loadExample($('example').value);};
+(async()=>{try{const r=await fetch('data/index.json');if(!r.ok)throw Error('Example index could not be loaded.');catalog=await r.json();$('example').innerHTML=catalog.examples.map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join('');const q=new URLSearchParams(location.search);if(q.has('server')||q.has('remote'))await loadRemote(q.has('server')?'server':'remote',q.get('server')||q.get('remote'),q.get('head')||'',true);else await loadExample(q.get('example'),true);}catch(e){$('notice').textContent=e.message;}})();

@@ -35,7 +35,7 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Test the trajectory browser
         run: |
-          python3 -m http.server 18184 --bind 127.0.0.1 --directory docs > /tmp/trajectory-http.log 2>&1 &
+          python3 trajectories/serve.py --port 18184 > /tmp/trajectory-http.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid"' EXIT
           for attempt in $(seq 1 30); do

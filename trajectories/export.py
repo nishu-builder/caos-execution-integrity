@@ -18,6 +18,10 @@ class Objects:
         self.forbidden = forbidden
         self.cache = {}
 
+    def fetch_raw(self, oid):
+        with urllib.request.urlopen(self.server + '/object/' + oid, timeout=45) as response:
+            return response.read(32 * 1024 * 1024 + 1)
+
     def get(self, oid):
         if not OID.fullmatch(oid):
             raise ValueError('Invalid Git object identity: ' + str(oid))
@@ -27,8 +31,7 @@ class Objects:
         if target.exists():
             raw = target.read_bytes()
         else:
-            with urllib.request.urlopen(self.server + '/object/' + oid, timeout=45) as response:
-                raw = response.read(32 * 1024 * 1024 + 1)
+            raw = self.fetch_raw(oid)
         if len(raw) > 32 * 1024 * 1024:
             raise ValueError('Object exceeds export size bound: ' + oid)
         if hashlib.sha1(raw).hexdigest() != oid:
@@ -67,7 +70,7 @@ class Objects:
         text = message.decode()
         event_kind, sep, body = text.partition('\n\n')
         events = json.loads(body)['events'] if sep and body.strip().startswith('{') and '"events"' in body else []
-        return {'oid': oid, 'tree': fields['tree'][0], 'parents': fields.get('parent', []), 'kind': event_kind, 'events': events, 'message': text}
+        return {'oid': oid, 'tree': fields['tree'][0], 'parents': fields.get('parent', []), 'kind': event_kind.strip(), 'events': events, 'message': text}
 
     def at(self, tree, path):
         for part in path.split('/'):
@@ -190,6 +193,9 @@ class Exporter:
         return result
 
     def conversation(self, head):
+        identity_oid = self.o.at(self.o.commit(head)['tree'], '.caos/identity.json')
+        if not identity_oid:
+            raise ValueError('This is not a CAOS conversation commit. Use the conversation head, not a source-code commit.')
         chain = []
         current = head
         while True:
@@ -202,7 +208,7 @@ class Exporter:
             current = commit['parents'][0]
         chain.reverse()
         root_tree = chain[-1]['tree']
-        identity = json.loads(self.o.get(self.o.at(root_tree, '.caos/identity.json'))[1])
+        identity = json.loads(self.o.get(identity_oid)[1])
         cid = identity['id']
         if cid in self.conversations:
             return cid

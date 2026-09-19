@@ -31,6 +31,41 @@ The JSON files under `docs/trajectories/data/` are browser indexes. `objects/` c
 
 This is an **inspection export**. It includes conversation records, workspace snapshots, and recorded request arguments, but not complete worker image closures. It cannot by itself restart the captured agents. The older [worker reproduction package](../REPRODUCE.md) is separate.
 
+## Open a run from another server or Git remote
+
+Start the local viewer from this repository:
+
+```sh
+python3 trajectories/serve.py \
+  --server http://127.0.0.1:19090 \
+  --head 845c4cd46019a73064cbe3c9d4927a668046d315
+```
+
+Use your own server and **conversation commit hash**. Open the URL it prints. It reads the original Git objects, checks their hashes, and follows the child heads recorded in that conversation. It never executes the recorded tools or resumes the agents. A hash pins a snapshot; the viewer does not follow a moving branch automatically.
+
+For Git transport, including SSH or a local repository:
+
+```sh
+python3 trajectories/serve.py \
+  --remote git@your-host:your-conversations.git \
+  --head YOUR_40_CHARACTER_CONVERSATION_COMMIT
+```
+
+Git uses your existing SSH keys or credential helper. Fetches go into a temporary bare repository; no worktree is checked out. The remote must hold the referenced conversations, source commits, and compute requests and permit fetching their hashes. An ordinary code repository or the JSON export files alone are insufficient. Missing objects produce an error rather than an incomplete view.
+
+You can also start `python3 trajectories/serve.py` without arguments and use **Open a run** to enter a server or remote and hash. The URL retains them, along with the selected event and file:
+
+```text
+http://127.0.0.1:18184/trajectories/?server=URL_ENCODED_SERVER&head=CONVERSATION_COMMIT
+http://127.0.0.1:18184/trajectories/?remote=URL_ENCODED_GIT_REMOTE&head=CONVERSATION_COMMIT
+```
+
+A colleague can open the same link with their own local viewer and access to that remote. Avoid putting credentials in the URL; use Git's credential helper for authenticated remotes. CAOS HTTP loading currently accepts a server URL without credentials.
+
+The published GitHub Pages site has the same form and can receive the same query parameters, but shows the command to start the local viewer. CAOS's object endpoint does not currently provide CORS headers, and browsers cannot speak SSH Git. The local viewer handles those connections on your machine; private runs are not uploaded to GitHub or another hosted service. It binds only to loopback and removes its temporary captures when stopped. Use `--port` if the default port is occupied.
+
+The parser supports the CAOS chat v3 format used here. A different harness format may require parser changes.
+
 ## Generate new runs
 
 Requires a running CAOS stack, a compatible CAOS checkout and CLI, Python 3.10+, Git, and your own Anthropic API key. Provisioning the stack is separate. The pinned revision above is the version used here; newer conversation formats may need exporter changes.
@@ -82,8 +117,8 @@ The page itself has no external dependencies. Its tests use Playwright:
 cd trajectories
 npm ci
 npx playwright install chromium
-# With the local server from “Inspect locally” running:
+# With `python3 trajectories/serve.py` running from the repository root:
 npm test
 ```
 
-Checks cover real file snapshots and diffs, deep links, request inspection, child navigation, search, example switching, safe rendering of agent-controlled text, and mobile layout. Linux may require Playwright's system dependencies; CI installs these on its disposable runner.
+Checks cover real file snapshots and diffs, deep links, request inspection, child navigation, search, example switching, safe rendering of agent-controlled text, mobile layout, and loading a newly created Git remote at two different commits. Linux may require Playwright's system dependencies; CI installs these on its disposable runner.
