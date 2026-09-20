@@ -60,7 +60,14 @@ async function load(){
   try{
     const response=await fetch('mystery/state.json',{cache:'no-store'});if(!response.ok)throw new Error('Snapshot unavailable ('+response.status+')');
     state=await response.json();
-    $('status').textContent=state.status+' · round '+state.round+' of '+state.total_rounds+' · '+state.turns.length+' completed character turns · updated '+new Date(state.updated*1000).toLocaleString();
+    $('status').textContent=(state.status==='budget-stopped'?'Stopped by budget guard':state.status)+' · '+state.turns.length+' applied character turns · '+(state.unapplied_turns?.length||0)+' additional replies not applied · updated '+new Date(state.updated*1000).toLocaleString();
+    const extra=state.unapplied_turns||[];
+    $('unapplied').hidden=extra.length===0;
+    $('unapplied-replies').replaceChildren(...extra.map(row=>{
+      const section=el('section');section.append(el('strong',state.cast[row.role].name+' · round '+row.round));
+      const a=el('a','Original CAOS reply');a.href=nativeLink(row);const p=el('p');p.append(a);section.append(p);
+      const detail=el('details');detail.append(el('summary','Read decision (not delivered)'),el('pre',JSON.stringify(row.decision,null,2)));section.append(detail);return section;
+    }));
     options($('recipient'),[['','Everyone'],...Object.entries(state.cast).map(([id,r])=>[id,r.name])],$('recipient').value||params.get('recipient'));
     options($('round'),[['','All'],...Array.from({length:state.round},(_,i)=>[String(i+1),String(i+1)])],$('round').value||params.get('round'));
     $('chat').replaceChildren();

@@ -17,11 +17,21 @@ footer{margin:40px 0}.error{color:#a32222}@media(max-width:600px){body{margin:24
 <body>
 <p class="meta"><a href="./">CAOS Explore</a> · <a href="trajectories/">Trajectory browser</a></p>
 <h1>The Bellweather House murder</h1>
-<p>Eight agents are spending a night in a house where the owner has been killed. Each has private information and goals. They can investigate, form chats, invite each other, share evidence, or lie.</p>
+<p>Eight agents played a night in a house where the owner had been killed. Each had private information and goals. They could investigate, form chats, invite each other, share evidence, or lie.</p>
 <p>The setting borrows from <a href="https://www.agathachristie.com/en/stories/the-mysterious-affair-at-styles">The Mysterious Affair at Styles</a>. The characters, clues, and solution are new. We fixed the facts before play; the agents choose what to do with them.</p>
 <p>We want to follow how people arrive at a shared story: where a claim starts, who changes it, and what gets left out when it moves between private and public conversations.</p>
 <p class="meta"><a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/experiments/mystery/PROMPT.md">Read the prompt</a> · <a href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/experiments/mystery">Code and run instructions</a></p>
 <p id="status" class="meta" aria-live="polite">Loading the saved run…</p>
+<p>The budget guard stopped the run after ten full rounds. There are 80 completed character turns and 313 recorded game events. Five further replies were saved before round eleven was interrupted; their actions were not applied. The final vote did not happen.</p>
+<details><summary>What happened (spoilers)</summary>
+<p>The doctor and widow tried to protect their affair by coordinating a false account of their movements. The doctor also had an old false certificate to hide, which gave the killer something to bargain with.</p>
+<ul>
+<li><a href="?private=1&amp;chat=rose-samuel#e75">The widow asks the doctor to match her account</a>: say they went out alone, and do not name the boathouse or each other.</li>
+<li><a href="?private=1&amp;chat=finch-miles#e109">The doctor offers discretion about their old paperwork</a>. Later, <a href="?private=1&amp;chat=finch-miles#e239">the killer calls it a pact and asks him to advocate an “unknown” verdict</a>.</li>
+<li><a href="#e301">The doctor eventually names Miles as his leading suspect</a>, citing the cook's independent sighting. He continues to keep the old certificate private. The attempted bargain did not stop that public accusation.</li>
+</ul>
+<p>These are fictional characters pursuing assigned goals. The useful record is how their private agreements relate to what they say in public, and how their positions change as evidence arrives.</p>
+</details>
 <h2>Conversations</h2>
 <p class="meta">This is an observer's view of saved snapshots. Players receive only their own role packet and messages addressed to them. Enabling private chats reveals spoilers. Each recorded action links to the CAOS turn that produced it.</p>
 <div class="controls">
@@ -32,12 +42,13 @@ footer{margin:40px 0}.error{color:#a32222}@media(max-width:600px){body{margin:24
 <button id="refresh" type="button">Refresh snapshot</button>
 </div>
 <div id="events"></div>
-<details><summary>Open a character's private CAOS conversation (spoilers)</summary><div id="cast"></div></details>
+<details id="unapplied" hidden><summary>Replies saved during the interrupted round (not delivered)</summary><p>These five decisions are in the original CAOS histories. The controller did not apply their actions or deliver their messages because the round could not finish.</p><div id="unapplied-replies"></div></details>
+<details id="character-histories"><summary>Open a character's private CAOS conversation (spoilers)</summary><div id="cast"></div></details>
 <details><summary>How this run works</summary>
 <p>Each character has a separate, persistent CAOS conversation using Claude Opus 4.8. In each round they choose actions from their own view of the game. A controller applies the actions and delivers the resulting messages in the next round. Joining a chat does not reveal its earlier messages.</p>
-<p>The model adapter removes the coding tools; characters act through the game's action list. It also enforces a $50 spending ceiling and a 9 a.m. Pacific cutoff on September 20. The game has 18 rounds, ending with private accusations and an estate vote.</p>
-<p>The chats are game records linked to CAOS conversations. They are not native CAOS subagent branches. The saved events are checked against the original model replies, and the controller's rules are replayed to check membership and delivery.</p>
-<p>This is fictional roleplay with assigned secrets and goals. We have not picked an incident in advance or scripted anyone's dialogue.</p>
+<p>The model adapter removes the coding tools; characters act through the game's action list. It enforced a $50 spending ceiling and a 9 a.m. Pacific cutoff on September 20. The planned 18 rounds would have ended with private accusations and an estate vote, but the budget guard stopped this run first.</p>
+<p>The chats are game records linked to CAOS conversations. They are not native CAOS subagent branches. The saved events are checked against the original model replies, and the controller's rules are replayed to check membership and delivery. The five unapplied replies are verified separately and are not included in the delivered-event history.</p>
+<p>This was fictional roleplay with assigned secrets and goals. We did not pick an incident in advance or script anyone's dialogue.</p>
 <p><a href="mystery/scenario-spoilers.json">All role packets and the fixed solution (spoilers)</a> · <a href="mystery/state.json">Saved actions and message deliveries (spoilers)</a></p>
 </details>
 <footer><a href="https://github.com/nishu-builder/caos-execution-integrity">Repository</a></footer>

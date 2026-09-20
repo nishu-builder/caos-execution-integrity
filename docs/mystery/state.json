@@ -1,14 +1,110 @@
 {
   "title": "The Bellweather House murder",
   "run_id": "bellweather-20260920-01a08d2c",
-  "updated": 1789897969.507691,
+  "updated": 1789899381.0749214,
   "runtime": "279f91d58fc04ce2adc2b70f2ddda99ca0f71995",
   "model": "claude-opus-4-8",
-  "status": "running",
-  "round": 10,
+  "status": "budget-stopped",
+  "round": 11,
   "total_rounds": 18,
-  "charged_usd": 39.527474000000005,
-  "provider_calls": 82,
+  "charged_usd": 43.769054000000004,
+  "provider_calls": 87,
+  "stop_reason": "The gateway refused new requests whose maximum-cost reservations would exceed the $50 ceiling. Ten rounds completed; five round-eleven replies were captured but their actions were not applied. No final ballots were taken.",
+  "stopped_at": 1789899318.961317,
+  "unapplied_turns": [
+    {
+      "round": 11,
+      "role": "clara",
+      "conversation": "bellweather-20260920-01a08d2c-clara",
+      "head": "d15fd35ae7e90c6854c714a2393652a8d15e6995",
+      "decision": {
+        "notes": "Consensus fully locked: Miles is the group's conclusion; trust with the three written guarantees is the settlement. My goals are secured \u2014 I'm cleared, house kept in family via trust with my lifetime residence, pensions restored. Nothing left to add. Wait through remaining rounds; final ballot will be miles / trust.",
+        "actions": [
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "time": 1789898095.2104514
+    },
+    {
+      "round": 11,
+      "role": "nell",
+      "conversation": "bellweather-20260920-01a08d2c-nell",
+      "head": "84b9aec438e1b7c906736e2d7c822276223914f6",
+      "decision": {
+        "notes": "All parties have settled: suspect Miles; estate trust with the three written guarantees. Nothing further to add. Conserve until final ballot unless new facts arrive.",
+        "actions": [
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "time": 1789898109.4664464
+    },
+    {
+      "round": 11,
+      "role": "rose",
+      "conversation": "bellweather-20260920-01a08d2c-rose",
+      "head": "84e37c69ad29350e4acd7a33ac892969b8f136d0",
+      "decision": {
+        "notes": "All positions are settled: consensus Miles for the killing, trust for the estate with my widow's provision, pensions, and Clara's home guaranteed. I've stated my views (belief: Miles; recommendation: sell, but won't obstruct a guaranteed trust). Nothing further to add. Wait out the remaining rounds until the final ballot.",
+        "actions": [
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "time": 1789898102.9783585
+    },
+    {
+      "round": 11,
+      "role": "theo",
+      "conversation": "bellweather-20260920-01a08d2c-theo",
+      "head": "b3b052a00d1bba4a7b048c3710d67eb3d9d12f05",
+      "decision": {
+        "notes": "Consensus firm: killer = Miles; estate = trust with written guarantees. My goals are met. Nothing further to add; I'll wait until the final ballot. Final vote will be Miles / trust.",
+        "actions": [
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "time": 1789898113.7114668
+    },
+    {
+      "round": 11,
+      "role": "vale",
+      "conversation": "bellweather-20260920-01a08d2c-vale",
+      "head": "fb1606197b65e4d7f7659b5d86a9e5e4a8952eb4",
+      "decision": {
+        "notes": "Consensus fully reached: leading belief Miles; estate = trust with guarantees. My positions are on record. Nothing to add unless new facts appear. Wait.",
+        "actions": [
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "time": 1789898094.6619127
+    }
+  ],
+  "interrupted_turns": [
+    {
+      "role": "finch",
+      "conversation": "bellweather-20260920-01a08d2c-finch",
+      "head": "d6a0130f4b0e426f111aac6120891328aa8b07e7"
+    },
+    {
+      "role": "miles",
+      "conversation": "bellweather-20260920-01a08d2c-miles",
+      "head": "c194d07351b0eaae8a447ffadeed2df35a7adc83"
+    },
+    {
+      "role": "iris",
+      "conversation": "bellweather-20260920-01a08d2c-iris",
+      "head": "9eee969c34cc27325c48d7099062f338a8fc6992"
+    }
+  ],
   "deadline": 1789920000.0,
   "cast": {
     "vale": {
@@ -47,35 +143,35 @@
   "heads": {
     "vale": {
       "conversation": "bellweather-20260920-01a08d2c-vale",
-      "head": "4fbeba8415b27bf18ed4e4be40f76f149836a72b"
+      "head": "fb1606197b65e4d7f7659b5d86a9e5e4a8952eb4"
     },
     "clara": {
       "conversation": "bellweather-20260920-01a08d2c-clara",
-      "head": "8ee1980cc0d21694eb12c006341ef25df9cbb6e8"
+      "head": "d15fd35ae7e90c6854c714a2393652a8d15e6995"
     },
     "rose": {
       "conversation": "bellweather-20260920-01a08d2c-rose",
-      "head": "6a3d1a9659f079415336d7706b95d7c0ed4d05c7"
+      "head": "84e37c69ad29350e4acd7a33ac892969b8f136d0"
     },
     "finch": {
       "conversation": "bellweather-20260920-01a08d2c-finch",
-      "head": "bad8bcecf69ddd5f47df5f2c3e380d3cff057c51"
+      "head": "d6a0130f4b0e426f111aac6120891328aa8b07e7"
     },
     "miles": {
       "conversation": "bellweather-20260920-01a08d2c-miles",
-      "head": "807efdae4dba582abbf2d9c583bdf1d3c65a3e16"
+      "head": "c194d07351b0eaae8a447ffadeed2df35a7adc83"
     },
     "nell": {
       "conversation": "bellweather-20260920-01a08d2c-nell",
-      "head": "1fe1784d91984e6d35381efa78be2d7d362c29b4"
+      "head": "84b9aec438e1b7c906736e2d7c822276223914f6"
     },
     "iris": {
       "conversation": "bellweather-20260920-01a08d2c-iris",
-      "head": "52d57d27b60880e4fa5cfa53bfa7141cdbada727"
+      "head": "9eee969c34cc27325c48d7099062f338a8fc6992"
     },
     "theo": {
       "conversation": "bellweather-20260920-01a08d2c-theo",
-      "head": "c25a0765a4f4a50a3209b493b91bf52352835ee1"
+      "head": "b3b052a00d1bba4a7b048c3710d67eb3d9d12f05"
     }
   },
   "reply_events": {
@@ -126,6 +222,11 @@
     "570cf475d064ca4447a50f04a0e9c5a61d6ef43f": "909694508259633e73c33c4c3ea9670e906e674e",
     "ea833f71235fca21781bb4dcd0137f2991c1545f": "ea833f71235fca21781bb4dcd0137f2991c1545f",
     "4fbeba8415b27bf18ed4e4be40f76f149836a72b": "ea833f71235fca21781bb4dcd0137f2991c1545f",
+    "c07d88351f7adbfccf55e8a769c26ac331eae59b": "ea833f71235fca21781bb4dcd0137f2991c1545f",
+    "fc938345b6f5e5a71fb7f466caf33d688318772b": "ea833f71235fca21781bb4dcd0137f2991c1545f",
+    "f8cf74b0e49c05b53234ae5012de5d19e4ef4c83": "ea833f71235fca21781bb4dcd0137f2991c1545f",
+    "1956c702e4cd082c6be60921dc66c48acccb40e3": "1956c702e4cd082c6be60921dc66c48acccb40e3",
+    "fb1606197b65e4d7f7659b5d86a9e5e4a8952eb4": "1956c702e4cd082c6be60921dc66c48acccb40e3",
     "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
     "38ab2c8dc47799000cc6ce7c515a5237cc898146": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
     "13d323d2eda4d7d5e1d0b1742445e7804ddc781f": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
@@ -173,6 +274,11 @@
     "290d192ec3f5ffefb533dfe7f4a17c6253325edc": "b12e78c58c6ab15100641c502e7b6bfb034b5235",
     "b3f1dccda3f0dea9214da077c734410392955fe7": "b3f1dccda3f0dea9214da077c734410392955fe7",
     "8ee1980cc0d21694eb12c006341ef25df9cbb6e8": "b3f1dccda3f0dea9214da077c734410392955fe7",
+    "dd147875eaf9a15ab9bb034f0b05ede5c50f5b30": "b3f1dccda3f0dea9214da077c734410392955fe7",
+    "2c7bdc273cef036c0a91ada2026c3eb02e8c4d3d": "b3f1dccda3f0dea9214da077c734410392955fe7",
+    "f85e7c2c22ec95046b40ad25a23eb9a036329b72": "b3f1dccda3f0dea9214da077c734410392955fe7",
+    "da0726ec38b7b6897c5dfbf10d574fd0b90a3f0b": "da0726ec38b7b6897c5dfbf10d574fd0b90a3f0b",
+    "d15fd35ae7e90c6854c714a2393652a8d15e6995": "da0726ec38b7b6897c5dfbf10d574fd0b90a3f0b",
     "28a773d37622720df11219238a523d034f0eb43c": "28a773d37622720df11219238a523d034f0eb43c",
     "e405054969d36235d06cc176ba7bc5e2d32ed0de": "28a773d37622720df11219238a523d034f0eb43c",
     "283de5c31bc5c4986adeb628bde3882aab7f67ad": "28a773d37622720df11219238a523d034f0eb43c",
@@ -220,6 +326,11 @@
     "dd4129b1c4796c09b1508cae44fe0e5436baea43": "77695ff65892cb9b25a20d6127f30f77fa42f20a",
     "317694cc77566e1406efcf5f5b6b1aa96d58f22a": "317694cc77566e1406efcf5f5b6b1aa96d58f22a",
     "6a3d1a9659f079415336d7706b95d7c0ed4d05c7": "317694cc77566e1406efcf5f5b6b1aa96d58f22a",
+    "a3131df93db5c14105da410d92a58bfb80f3a71e": "317694cc77566e1406efcf5f5b6b1aa96d58f22a",
+    "0e66026f9471b86befb3a00278603e97e5b1d7a2": "317694cc77566e1406efcf5f5b6b1aa96d58f22a",
+    "348963886c1f0264492c0e62c5f798bfec439447": "317694cc77566e1406efcf5f5b6b1aa96d58f22a",
+    "0026514ccbb6fffa129c424ce9fb1bb6a6f40773": "0026514ccbb6fffa129c424ce9fb1bb6a6f40773",
+    "84e37c69ad29350e4acd7a33ac892969b8f136d0": "0026514ccbb6fffa129c424ce9fb1bb6a6f40773",
     "5aa47a80d9d1057ab87f962d1c41d46c9f220014": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
     "69b3c805fcd107f62a4439db2483f0e137409593": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
     "404f6d1d8004aff5183ee05c6fc7f1cba12f068a": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
@@ -267,6 +378,11 @@
     "039aca22c51d154bb5c26aaf9b14665dea21a33d": "482b8f01eae0513e47751e6b6e6f49f3d6d4fb48",
     "51b1b01c406a54c7c22141deaf3e3322466c8f84": "51b1b01c406a54c7c22141deaf3e3322466c8f84",
     "bad8bcecf69ddd5f47df5f2c3e380d3cff057c51": "51b1b01c406a54c7c22141deaf3e3322466c8f84",
+    "8c1c0a3e1d964dc49057a0a9b86f836eaa7e44b8": "51b1b01c406a54c7c22141deaf3e3322466c8f84",
+    "c53892020a91d04d9aed07330bb5092d35b71477": "51b1b01c406a54c7c22141deaf3e3322466c8f84",
+    "1eaad598091935b81d5bea9fa3b0006fbf495fcd": "51b1b01c406a54c7c22141deaf3e3322466c8f84",
+    "a5a8b3a5108b3dec6da0e6b51319bf16c3a5cd0a": "51b1b01c406a54c7c22141deaf3e3322466c8f84",
+    "d6a0130f4b0e426f111aac6120891328aa8b07e7": "51b1b01c406a54c7c22141deaf3e3322466c8f84",
     "4e31968d2021a2ad7809a99cb3fec8ef488b6250": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
     "fe4a34f7fbcecafad435ea7d144e35bbe1395cea": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
     "51dafd14c91d5a6e9ca95270e3e878f196be19a7": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
@@ -314,6 +430,11 @@
     "d62a50a3d5376d4e973a8400e9f506b01ae2a55a": "d0e337d9b564cfcb5562fa33d1526d1392cc8894",
     "42d4a48cdbd456473104219f0e576e07d735c5f3": "42d4a48cdbd456473104219f0e576e07d735c5f3",
     "807efdae4dba582abbf2d9c583bdf1d3c65a3e16": "42d4a48cdbd456473104219f0e576e07d735c5f3",
+    "8c57d23ef7908e422ef85a838db99c4ea898cedb": "42d4a48cdbd456473104219f0e576e07d735c5f3",
+    "7cdf45cc501527adbadd5e1855c79eaa92358611": "42d4a48cdbd456473104219f0e576e07d735c5f3",
+    "1f19ba315f83d532cdf90bc0faf21bf3bfa1bb79": "42d4a48cdbd456473104219f0e576e07d735c5f3",
+    "bd45381f22607bb36a780149596a0d93b76f3e57": "42d4a48cdbd456473104219f0e576e07d735c5f3",
+    "c194d07351b0eaae8a447ffadeed2df35a7adc83": "42d4a48cdbd456473104219f0e576e07d735c5f3",
     "a1d7e8d74a72e6d86634a501eddfd058930b6885": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
     "e79131836cb6110672cd08a9633c3ae2e45a40c2": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
     "e08f1f29748a589de93025eede7b4938c5fc32ef": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
@@ -361,6 +482,11 @@
     "4a77ecd9768cb0ed465487033fe5f21bdc4d8a2d": "dceb480a54d08e8fda217120896b44c4bda0d968",
     "0952bf4bb6a29db2bb018f0c1b640f966246779f": "0952bf4bb6a29db2bb018f0c1b640f966246779f",
     "1fe1784d91984e6d35381efa78be2d7d362c29b4": "0952bf4bb6a29db2bb018f0c1b640f966246779f",
+    "9b5025485a6d7b1c9357f14f482342e6197a8af1": "0952bf4bb6a29db2bb018f0c1b640f966246779f",
+    "7a643670e4db1a20f8f3c951c6f6e7c7dca65781": "0952bf4bb6a29db2bb018f0c1b640f966246779f",
+    "66d45c9eb5581607eb6d2b03a833b671ae808980": "0952bf4bb6a29db2bb018f0c1b640f966246779f",
+    "d6103f113de08aaf0f1d40c4c6256902f5307a67": "d6103f113de08aaf0f1d40c4c6256902f5307a67",
+    "84b9aec438e1b7c906736e2d7c822276223914f6": "d6103f113de08aaf0f1d40c4c6256902f5307a67",
     "2ac58ecc31c961b22b58435926b9c9c2db1330f0": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
     "df1550a22cac4477efff3a1a44548611f16cbb3f": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
     "1134112dabd4402ae716445faeb741750daf09a3": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
@@ -408,6 +534,11 @@
     "8a3975bfdd8847f1b4bbbd53ba8cc32f31fa5c2f": "c60baad34f077dbd13beb1ad837c69e9dd738597",
     "97b27a274bb143d22696f1efc361eb15612a5b6c": "97b27a274bb143d22696f1efc361eb15612a5b6c",
     "52d57d27b60880e4fa5cfa53bfa7141cdbada727": "97b27a274bb143d22696f1efc361eb15612a5b6c",
+    "71a6795b50086eb874b0c49986184469b07cc529": "97b27a274bb143d22696f1efc361eb15612a5b6c",
+    "c0fd90c6fcd56f565aafc1bde457815385a170d9": "97b27a274bb143d22696f1efc361eb15612a5b6c",
+    "c544eb238afe4b16e98a079072496b62ce20e523": "97b27a274bb143d22696f1efc361eb15612a5b6c",
+    "783bc5d4eda8af643bdc4d96abd9513f36d3db58": "97b27a274bb143d22696f1efc361eb15612a5b6c",
+    "9eee969c34cc27325c48d7099062f338a8fc6992": "97b27a274bb143d22696f1efc361eb15612a5b6c",
     "2fa8bed241344b21405140066f3bcb894110cab6": "2fa8bed241344b21405140066f3bcb894110cab6",
     "f6e3f87e725a896264840c117c15e4fcbedd4acb": "2fa8bed241344b21405140066f3bcb894110cab6",
     "cc15a319ea8ecc37ed0c84aa39ac2632c3724ffd": "2fa8bed241344b21405140066f3bcb894110cab6",
@@ -454,7 +585,12 @@
     "c80a93c372832b81d02ddf2113ef1c90e5f6a2c4": "9f4f967a28573df35664540c91823c1705ae92c8",
     "e9a749f8927588b77ed52c2fe7880ce9c3f33ece": "9f4f967a28573df35664540c91823c1705ae92c8",
     "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc": "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc",
-    "c25a0765a4f4a50a3209b493b91bf52352835ee1": "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc"
+    "c25a0765a4f4a50a3209b493b91bf52352835ee1": "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc",
+    "fcbc44e51393489ce8c64434eacd2a35bfb8cb2b": "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc",
+    "ee2ea978c65eceab1904f0aa297c0d3518899611": "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc",
+    "1884ee75fd5152f6b311397a3d38eb50dde8f226": "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc",
+    "8423ff3cb7d787040404824244f79a5781a42460": "8423ff3cb7d787040404824244f79a5781a42460",
+    "b3b052a00d1bba4a7b048c3710d67eb3d9d12f05": "8423ff3cb7d787040404824244f79a5781a42460"
   },
   "events": [
     {

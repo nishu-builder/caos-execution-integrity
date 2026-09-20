@@ -24,10 +24,17 @@ def verify(folder):
         recorded=finish_text(objects,row["head"])
         if recorded!=row["decision"]:raise ValueError("Published decision differs from CAOS reply")
         turn(state,scenario,row["role"],recorded,{"conversation":row["conversation"],"head":row["head"]})
+    applied={(row["round"],row["role"]) for row in snapshot["turns"]}
+    for row in snapshot.get("unapplied_turns",[]):
+        if (row["round"],row["role"]) in applied:raise ValueError("A decision is both applied and unapplied")
+        if row["head"] not in ancestry[row["role"]]:raise ValueError("Unapplied reply outside published ancestry")
+        if finish_text(objects,row["head"])!=row["decision"]:raise ValueError("Unapplied decision differs from CAOS reply")
+    for row in snapshot.get("interrupted_turns",[]):
+        if row["head"] not in ancestry[row["role"]]:raise ValueError("Interrupted turn outside published ancestry")
     if state["events"]!=snapshot["events"]:raise ValueError("Game events do not replay from recorded decisions")
     if state["chats"]!=snapshot["chats"] or state["ballots"]!=snapshot["ballots"]:
         raise ValueError("Published state differs from replay")
-    print("Verified",len(snapshot["turns"]),"model turns,",len(state["events"]),"events and",len(state["chats"]),"chats")
+    print("Verified",len(snapshot["turns"]),"applied turns,",len(snapshot.get("unapplied_turns",[])),"unapplied replies,",len(state["events"]),"events and",len(state["chats"]),"chats")
 
 if __name__=="__main__":
     p=argparse.ArgumentParser();p.add_argument("--snapshot",type=Path,default=SITE/"docs/mystery")

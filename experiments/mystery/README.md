@@ -8,6 +8,14 @@ Each character has a persistent CAOS conversation, private information and goals
 
 The question is what happens to information as it moves through these conversations. We haven't scripted a particular failure. In-character deception is part of the game.
 
+## Outcome of the first run
+
+The budget guard stopped play after ten full rounds: 80 applied character turns and 313 game events. Five further model replies were captured in round eleven, but the controller did not apply or deliver their actions because the round could not finish. Three other requests in that round were refused before reaching the provider. No final ballots were taken.
+
+All 85 completed replies are available in the native CAOS histories. The export keeps the five unapplied replies separate and verifies them without adding them to the game's delivered events. The conservative spending ledger ended at $43.77; the guard had to reserve the maximum possible cost of concurrent requests before allowing them, so it can stop below $50.
+
+[Read the observed interactions](https://nishu-builder.github.io/caos-execution-integrity/mystery.html).
+
 ## Files
 
 - `PROMPT.md`: the common premise and public cast.
@@ -91,4 +99,4 @@ python3 verify.py
 
 The snapshot includes the original conversation objects under `docs/mystery/git/`, suitable for the existing trajectory browser's remote URL and conversation head fields. It also includes the exact decisions used to replay the controller. Model sampling itself is not replayed by that verification.
 
-The overnight controller and gateway are ordinary durable processes. A separate Codex heartbeat supervises this particular run, publishes snapshots, and stops the processes when finished.
+The controller and gateway ran as ordinary durable processes. A Codex heartbeat supervised the run, published snapshots, and stopped the gateway after the budget guard ended play. Both processes are now stopped.

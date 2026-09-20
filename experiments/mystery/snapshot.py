@@ -2,7 +2,7 @@
 """Publish a completed-turn snapshot, including original CAOS objects."""
 import argparse, json, sqlite3, subprocess, sys, time
 from pathlib import Path
-from run import export, save, SITE
+from run import export, save, git, SITE
 
 def main():
     p=argparse.ArgumentParser()
@@ -21,6 +21,22 @@ def main():
         if result["head"]!=value["source"]["head"]:raise ValueError("Source head mismatch")
         turns.append({"round":int(round_),"role":role,**result,"seen_through":value["seen_through"]})
         latest[role]=result
+    unapplied=[];interrupted=[]
+    terminal=state["status"] in ("complete","stopped","budget-stopped","failed")
+    if terminal:
+        for path in sorted((root/"turns").glob("*/result.json")):
+            round_text,role=path.parent.name.split("-",1)
+            if str(int(round_text))+":"+role in state["completed"]:continue
+            result=json.loads(path.read_text())
+            unapplied.append({"round":int(round_text),"role":role,**result})
+            latest[role]=result
+        # Include rejected/unfinished turns in each native conversation's history too.
+        for role,row in latest.items():
+            ref="refs/caos/v3/conversations/"+row["conversation"].encode().hex()+"/head"
+            head=git(cfg["harness"],"ls-remote","caos",ref).split()[0]
+            if head!=row["head"]:
+                interrupted.append({"role":role,"conversation":row["conversation"],"head":head})
+                latest[role]={**row,"head":head}
     examples=[];reply_events={}
     for role,row in latest.items():
         title=scenario["roles"][role]["name"]
@@ -40,7 +56,7 @@ def main():
     snapshot={"title":scenario["title"],"run_id":cfg["run_id"],"updated":time.time(),
               "runtime":cfg["runtime"],"model":"claude-opus-4-8","status":state["status"],
               "round":state["round"],"total_rounds":scenario["rounds"],"charged_usd":cost[0],
-              "provider_calls":cost[1],"deadline":cfg["deadline"],"cast":{k:{"name":v["name"],"public":v["public"]} for k,v in scenario["roles"].items()},
+              "provider_calls":cost[1],"stop_reason":state.get("stop_reason"),"stopped_at":state.get("stopped_at"),"unapplied_turns":unapplied,"interrupted_turns":interrupted,"deadline":cfg["deadline"],"cast":{k:{"name":v["name"],"public":v["public"]} for k,v in scenario["roles"].items()},
               "heads":{k:{"conversation":v["conversation"],"head":v["head"]} for k,v in latest.items()},
               "reply_events":reply_events,"events":state["events"],"chats":state["chats"],"ballots":state["ballots"],"turns":turns}
     raw=json.dumps(snapshot,ensure_ascii=True,indent=2).encode()
