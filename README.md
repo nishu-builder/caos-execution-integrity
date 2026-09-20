@@ -41,7 +41,3 @@ See [browser checks](trajectories/README.md#browser-checks) for the test setup. 
 | `trajectories/` | Reader source, exporter, run generator, and tests |
 
 GitHub Pages serves `docs/` from `main`. The public address still uses `caos-execution-integrity` so existing viewer and post links continue to work. Runs can be published to other remotes; they do not need to live in this repository.
-
-## Earlier work
-
-The earlier eight-demo lab, receipt and approval machinery, reports, and superseded posts were removed from the current tree. They remain at [the pre-cleanup commit](https://github.com/nishu-builder/caos-execution-integrity/tree/84bebe774576a0cc10dacce96fbd37bd851d0673), including the [old reproduction guide](https://github.com/nishu-builder/caos-execution-integrity/blob/84bebe774576a0cc10dacce96fbd37bd851d0673/REPRODUCE.md). The current experiments and viewer do not depend on them.
