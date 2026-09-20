@@ -1,14 +1,14 @@
 {
   "title": "The Bellweather House murder",
   "run_id": "bellweather-20260920-01a08d2c",
-  "updated": 1789893803.785765,
+  "updated": 1789895321.0587611,
   "runtime": "279f91d58fc04ce2adc2b70f2ddda99ca0f71995",
   "model": "claude-opus-4-8",
   "status": "running",
-  "round": 2,
+  "round": 5,
   "total_rounds": 18,
-  "charged_usd": 2.4180989999999993,
-  "provider_calls": 18,
+  "charged_usd": 15.480998999999999,
+  "provider_calls": 41,
   "deadline": 1789920000.0,
   "cast": {
     "vale": {
@@ -47,35 +47,35 @@
   "heads": {
     "vale": {
       "conversation": "bellweather-20260920-01a08d2c-vale",
-      "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162"
+      "head": "a7945547124d816169a993fffc2cd03d1d936d6c"
     },
     "clara": {
       "conversation": "bellweather-20260920-01a08d2c-clara",
-      "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7"
+      "head": "2aab8ba034a70d0232f207cb7e7ccc3ce4288251"
     },
     "rose": {
       "conversation": "bellweather-20260920-01a08d2c-rose",
-      "head": "94aab252ea70fe69af2f4431a86717ada107bde0"
+      "head": "9737e086b6ff42855ae4f46220ae5ba5de4002d0"
     },
     "finch": {
       "conversation": "bellweather-20260920-01a08d2c-finch",
-      "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3"
+      "head": "b32428bf5b296042d9d4f3531360ca8845cfaef1"
     },
     "miles": {
       "conversation": "bellweather-20260920-01a08d2c-miles",
-      "head": "f4ec4675af6ea7c148450cf12aed490f0a98250d"
+      "head": "71b58745fd004193e253ec8573e45d8a2bd78e28"
     },
     "nell": {
       "conversation": "bellweather-20260920-01a08d2c-nell",
-      "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+      "head": "631209271b54a822db988121c392dd40bb275947"
     },
     "iris": {
       "conversation": "bellweather-20260920-01a08d2c-iris",
-      "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5"
+      "head": "cc0092d64dac2469e7ccd1ffa5cb9804425a0391"
     },
     "theo": {
       "conversation": "bellweather-20260920-01a08d2c-theo",
-      "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d"
+      "head": "53afa8eb3cbb62b5acb773588db7911ec20e315c"
     }
   },
   "reply_events": {
@@ -86,6 +86,16 @@
     "5c454ab19d8597c68ac3d655c4a36d2c74b06eed": "864dd3f0ad3e5a0f0ef72444868bb274c4db6011",
     "11cca2d9605d606d07e74f06f3e9767c160db379": "11cca2d9605d606d07e74f06f3e9767c160db379",
     "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162": "11cca2d9605d606d07e74f06f3e9767c160db379",
+    "cb6b2340cc3ee88679ea02f1f0c609d3893627af": "11cca2d9605d606d07e74f06f3e9767c160db379",
+    "a899a0305bf898390535a591aebe4c2030218e84": "11cca2d9605d606d07e74f06f3e9767c160db379",
+    "825d8d574908040f519190e2ce2913ffa7840f2a": "11cca2d9605d606d07e74f06f3e9767c160db379",
+    "43c3396d14efbab7feeec8ff1353c7ae624c71dd": "43c3396d14efbab7feeec8ff1353c7ae624c71dd",
+    "553edb5642c5b8ed2de6d7d93769bd3fe0cc286b": "43c3396d14efbab7feeec8ff1353c7ae624c71dd",
+    "2ffeb91dc81b8657fe777efb1e38aff912b7fd33": "43c3396d14efbab7feeec8ff1353c7ae624c71dd",
+    "e39fad9702f1892ace06d350d1b71c9f7ff6d3bd": "43c3396d14efbab7feeec8ff1353c7ae624c71dd",
+    "47012f9f41ea7a931409d5a1f597b08537a4e12d": "43c3396d14efbab7feeec8ff1353c7ae624c71dd",
+    "0f8c044af8d2621af7079cc14ada3c033098ab95": "0f8c044af8d2621af7079cc14ada3c033098ab95",
+    "a7945547124d816169a993fffc2cd03d1d936d6c": "0f8c044af8d2621af7079cc14ada3c033098ab95",
     "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
     "38ab2c8dc47799000cc6ce7c515a5237cc898146": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
     "13d323d2eda4d7d5e1d0b1742445e7804ddc781f": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
@@ -93,6 +103,16 @@
     "645c66a33b5d8ce5911957024d5fd95ec856e165": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
     "bfcf7d10a52c912e2cfdd2681757632d84c07283": "bfcf7d10a52c912e2cfdd2681757632d84c07283",
     "268b3fab01b49215c0a9413ba05df3e5d42529e7": "bfcf7d10a52c912e2cfdd2681757632d84c07283",
+    "f44089a1599e824053ed21ad8833337bb8493b29": "bfcf7d10a52c912e2cfdd2681757632d84c07283",
+    "7a1672ef2d70b1c45d54afa116bf002c54432ca4": "bfcf7d10a52c912e2cfdd2681757632d84c07283",
+    "4de66f5567ca68ae2673dd409b7965328f3fe039": "bfcf7d10a52c912e2cfdd2681757632d84c07283",
+    "efe5fce4038a20a5447c2074877fc3fb8a7682ab": "efe5fce4038a20a5447c2074877fc3fb8a7682ab",
+    "f527062b803b773fcee200dfabc109ecdf7cd2ec": "efe5fce4038a20a5447c2074877fc3fb8a7682ab",
+    "ef11bb4e810bb60193086b12a67975c8e0c18621": "efe5fce4038a20a5447c2074877fc3fb8a7682ab",
+    "0736dd06b8576f94e24b8c384f51dfe7292c3944": "efe5fce4038a20a5447c2074877fc3fb8a7682ab",
+    "285394704c892a0c7aaf1003e183ecf17137eef2": "efe5fce4038a20a5447c2074877fc3fb8a7682ab",
+    "a0da562f1baad7a6bb489da8dd34b0a3c6e14871": "a0da562f1baad7a6bb489da8dd34b0a3c6e14871",
+    "2aab8ba034a70d0232f207cb7e7ccc3ce4288251": "a0da562f1baad7a6bb489da8dd34b0a3c6e14871",
     "28a773d37622720df11219238a523d034f0eb43c": "28a773d37622720df11219238a523d034f0eb43c",
     "e405054969d36235d06cc176ba7bc5e2d32ed0de": "28a773d37622720df11219238a523d034f0eb43c",
     "283de5c31bc5c4986adeb628bde3882aab7f67ad": "28a773d37622720df11219238a523d034f0eb43c",
@@ -100,6 +120,16 @@
     "9251c068421626d56ce3b6460e8ca87d5c24864c": "28a773d37622720df11219238a523d034f0eb43c",
     "9fb345182f2b2a4171e4e1df55646c9511018792": "9fb345182f2b2a4171e4e1df55646c9511018792",
     "94aab252ea70fe69af2f4431a86717ada107bde0": "9fb345182f2b2a4171e4e1df55646c9511018792",
+    "f593f1e0f060cee016334d7956218090f659e9d8": "9fb345182f2b2a4171e4e1df55646c9511018792",
+    "5950892dbd8be0e3de7a8dd7fffbcb64cc7f1338": "9fb345182f2b2a4171e4e1df55646c9511018792",
+    "59bd776d3de14637c1f1ccae930a61a7341dda8f": "9fb345182f2b2a4171e4e1df55646c9511018792",
+    "c741011e45c9e9c0e52c4453965c8913e04ca6b2": "c741011e45c9e9c0e52c4453965c8913e04ca6b2",
+    "0b4114d0fc128736eff9f1a492ccca5747bc2c45": "c741011e45c9e9c0e52c4453965c8913e04ca6b2",
+    "60e1c051061368b1985dbe43e6dff53d858243ff": "c741011e45c9e9c0e52c4453965c8913e04ca6b2",
+    "33103e5b02d0ed17aeab2909e0fa8c702268485e": "c741011e45c9e9c0e52c4453965c8913e04ca6b2",
+    "e3f10d6c679c399ff285b6066ee531aa2168c5ca": "c741011e45c9e9c0e52c4453965c8913e04ca6b2",
+    "cb24b2b0c1df963fe5e810ee922b89c58a472ac6": "cb24b2b0c1df963fe5e810ee922b89c58a472ac6",
+    "9737e086b6ff42855ae4f46220ae5ba5de4002d0": "cb24b2b0c1df963fe5e810ee922b89c58a472ac6",
     "5aa47a80d9d1057ab87f962d1c41d46c9f220014": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
     "69b3c805fcd107f62a4439db2483f0e137409593": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
     "404f6d1d8004aff5183ee05c6fc7f1cba12f068a": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
@@ -107,6 +137,16 @@
     "7a1bd21f93c25b576086a288b9e2dbbea9424efb": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
     "ec448a8b41858844ea1624027afdcd862f489ec2": "ec448a8b41858844ea1624027afdcd862f489ec2",
     "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3": "ec448a8b41858844ea1624027afdcd862f489ec2",
+    "7b07063b37df030321562502919886d358164071": "ec448a8b41858844ea1624027afdcd862f489ec2",
+    "dbb9fd506381b31d07743610d1c9da16fb68f628": "ec448a8b41858844ea1624027afdcd862f489ec2",
+    "c5a6a78425790f5c87d402bebda1c0a63eea045e": "ec448a8b41858844ea1624027afdcd862f489ec2",
+    "58c2693fc662b35506a54b63483781ca9624aed5": "58c2693fc662b35506a54b63483781ca9624aed5",
+    "d2b2f10597202bd04fda5c6162cec5443f464efe": "58c2693fc662b35506a54b63483781ca9624aed5",
+    "8969f940c5faa93043e5d65557161c06853771bb": "58c2693fc662b35506a54b63483781ca9624aed5",
+    "37f28a22e45f74d087e95d905b6e39e0a8653a59": "58c2693fc662b35506a54b63483781ca9624aed5",
+    "bd679ad725407d49cf1988292cda447ed2c8d683": "58c2693fc662b35506a54b63483781ca9624aed5",
+    "bac5aa35dfdb6257866d62033aca9df883f16d6f": "bac5aa35dfdb6257866d62033aca9df883f16d6f",
+    "b32428bf5b296042d9d4f3531360ca8845cfaef1": "bac5aa35dfdb6257866d62033aca9df883f16d6f",
     "4e31968d2021a2ad7809a99cb3fec8ef488b6250": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
     "fe4a34f7fbcecafad435ea7d144e35bbe1395cea": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
     "51dafd14c91d5a6e9ca95270e3e878f196be19a7": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
@@ -114,6 +154,16 @@
     "0338a6f2c6b7b9560d447b678a0daf11bdd74aa4": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
     "f3ec02ed59ccd98f552f99be9489b04a7da35a13": "f3ec02ed59ccd98f552f99be9489b04a7da35a13",
     "f4ec4675af6ea7c148450cf12aed490f0a98250d": "f3ec02ed59ccd98f552f99be9489b04a7da35a13",
+    "aeb8b94a9b67ebed019e81ed191bc5c95b117596": "f3ec02ed59ccd98f552f99be9489b04a7da35a13",
+    "d75e0abe30a2b5ad54090a671c2306fe233af6f7": "f3ec02ed59ccd98f552f99be9489b04a7da35a13",
+    "b70dedf6087b489e6349c0543e5db17715e8be50": "f3ec02ed59ccd98f552f99be9489b04a7da35a13",
+    "df45621da42994b724959f8ce659a343aeec3187": "df45621da42994b724959f8ce659a343aeec3187",
+    "24e69cd364b92904a92f0db0051e315b2804809c": "df45621da42994b724959f8ce659a343aeec3187",
+    "a99647448da419d63745133eb26161fc3e1dd036": "df45621da42994b724959f8ce659a343aeec3187",
+    "4362aaa8bef67e29e6339323f1d5dbe7d11624e2": "df45621da42994b724959f8ce659a343aeec3187",
+    "9f45ccd9d29f52cc5a7ce84551d0c15e3afe741d": "df45621da42994b724959f8ce659a343aeec3187",
+    "f02f63858280eaa700edc17438526719b6a654b7": "f02f63858280eaa700edc17438526719b6a654b7",
+    "71b58745fd004193e253ec8573e45d8a2bd78e28": "f02f63858280eaa700edc17438526719b6a654b7",
     "a1d7e8d74a72e6d86634a501eddfd058930b6885": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
     "e79131836cb6110672cd08a9633c3ae2e45a40c2": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
     "e08f1f29748a589de93025eede7b4938c5fc32ef": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
@@ -121,6 +171,16 @@
     "525767e55da566da27c9fb3ae4ad78fe76811b31": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
     "34954ef0936d7b1a7daa7814bf3d90ffca48becd": "34954ef0936d7b1a7daa7814bf3d90ffca48becd",
     "ef3ddb515ff3718ad41805ea390be2f53e54604c": "34954ef0936d7b1a7daa7814bf3d90ffca48becd",
+    "e59533af3d8c6e7223fc5169406b02056987d3b7": "34954ef0936d7b1a7daa7814bf3d90ffca48becd",
+    "b8fc607eae8f8f5f2950ae3ec789eff9d5086f06": "34954ef0936d7b1a7daa7814bf3d90ffca48becd",
+    "a22ca6911fa7e7348067a963d92d0c38c691f44c": "34954ef0936d7b1a7daa7814bf3d90ffca48becd",
+    "49753423216dcbbbdb18e97b355ad3a88f8e27eb": "49753423216dcbbbdb18e97b355ad3a88f8e27eb",
+    "5b2c77ebbc81108c08be3fde376ebce8e341dcce": "49753423216dcbbbdb18e97b355ad3a88f8e27eb",
+    "3ad18b1849af1f610a21192115f6a539a12b51c0": "49753423216dcbbbdb18e97b355ad3a88f8e27eb",
+    "4db2957b55ed35034358831cc35915ff73ff61ad": "49753423216dcbbbdb18e97b355ad3a88f8e27eb",
+    "514bd1b0b25d5db8251a344d35650534386a31ff": "49753423216dcbbbdb18e97b355ad3a88f8e27eb",
+    "bfae6c0a95f842e695547ca649422d9b443d0dc1": "bfae6c0a95f842e695547ca649422d9b443d0dc1",
+    "631209271b54a822db988121c392dd40bb275947": "bfae6c0a95f842e695547ca649422d9b443d0dc1",
     "2ac58ecc31c961b22b58435926b9c9c2db1330f0": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
     "df1550a22cac4477efff3a1a44548611f16cbb3f": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
     "1134112dabd4402ae716445faeb741750daf09a3": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
@@ -128,13 +188,33 @@
     "2d4a5ff42be38fb3b09618c85c232b0cc0a562a7": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
     "80e9d2ccdc5f95a3257855e8525192d0cb6db9d8": "80e9d2ccdc5f95a3257855e8525192d0cb6db9d8",
     "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5": "80e9d2ccdc5f95a3257855e8525192d0cb6db9d8",
+    "ed2197df0e2e07a30c39a30f9c6b68d31b168be3": "80e9d2ccdc5f95a3257855e8525192d0cb6db9d8",
+    "e16b965db33fd6d75e1f31d3df0a19ca2c06d8ff": "80e9d2ccdc5f95a3257855e8525192d0cb6db9d8",
+    "ebcc7169340e4a0546afc8a99fcb9128e0009ded": "80e9d2ccdc5f95a3257855e8525192d0cb6db9d8",
+    "f864dc4c0a4846762ebcf40db918b1b1e89ea4d0": "f864dc4c0a4846762ebcf40db918b1b1e89ea4d0",
+    "e4e1f7fab6419bbc4e9be7b75d328da337ebe4d6": "f864dc4c0a4846762ebcf40db918b1b1e89ea4d0",
+    "1fc7daef3fee6f38093a607f0aea866b377cb4d5": "f864dc4c0a4846762ebcf40db918b1b1e89ea4d0",
+    "e5c6b26cca20b3587173f20ad862766c9acce3bf": "f864dc4c0a4846762ebcf40db918b1b1e89ea4d0",
+    "ca95e16f42560179abf7fb652e3065f9adccbe95": "f864dc4c0a4846762ebcf40db918b1b1e89ea4d0",
+    "39d4982321bbaab313125e1ea5886c3cdbb50f1f": "39d4982321bbaab313125e1ea5886c3cdbb50f1f",
+    "cc0092d64dac2469e7ccd1ffa5cb9804425a0391": "39d4982321bbaab313125e1ea5886c3cdbb50f1f",
     "2fa8bed241344b21405140066f3bcb894110cab6": "2fa8bed241344b21405140066f3bcb894110cab6",
     "f6e3f87e725a896264840c117c15e4fcbedd4acb": "2fa8bed241344b21405140066f3bcb894110cab6",
     "cc15a319ea8ecc37ed0c84aa39ac2632c3724ffd": "2fa8bed241344b21405140066f3bcb894110cab6",
     "b4901b5ea93853721f6ad2cd9282fefac9dd3b2d": "2fa8bed241344b21405140066f3bcb894110cab6",
     "a7ad090cb2ba9736d618073a82d2a4b1c6721c61": "2fa8bed241344b21405140066f3bcb894110cab6",
     "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505": "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505",
-    "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d": "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505"
+    "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d": "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505",
+    "bdc41209fcba40214144e32ab058b149a01f1557": "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505",
+    "8134417805e79dd07d7671be68e546bfc04da6d0": "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505",
+    "1bfc6cc07ff6b55115fd4d8f0c2ac2d5dc62bbb5": "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505",
+    "470d050c1b89c52505e354fffa80249fc594a5c2": "470d050c1b89c52505e354fffa80249fc594a5c2",
+    "815937a204861659db1feb16c4ed6be16a89293c": "470d050c1b89c52505e354fffa80249fc594a5c2",
+    "8533cde3b15d4bc2cf46b3ef6fd701ca00df4818": "470d050c1b89c52505e354fffa80249fc594a5c2",
+    "92b80e8ce6bfa2fafa505c2a4258de80039ddd88": "470d050c1b89c52505e354fffa80249fc594a5c2",
+    "ebc46a226ebf08553598f4772b36bef97db94135": "470d050c1b89c52505e354fffa80249fc594a5c2",
+    "1406a93c344b2fc6d4805b3c6c760a7823d67591": "1406a93c344b2fc6d4805b3c6c760a7823d67591",
+    "53afa8eb3cbb62b5acb773588db7911ec20e315c": "1406a93c344b2fc6d4805b3c6c760a7823d67591"
   },
   "events": [
     {
@@ -2046,6 +2126,1771 @@
       },
       "previous": "bae3761c5119825e11320f9fe0915b88cb20b40bf5120ef2d6dace0720f8c7ae",
       "hash": "851680a6bc0277bcf7c9158129935b150fefb04654b29b7357449a118dc7f5cc"
+    },
+    {
+      "id": "e75",
+      "round": 3,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "No one saw us \u2014 we were alone at the boathouse the whole time. But listen: I did NOT say 'resting' to the room, I said I went out for air because the storm unsettled me. Please match that \u2014 say you stepped out briefly, alone, and stay vague. Never name the boathouse or me. The evidence points hard at Miles and the accounts; if we keep steady, it stays there and our secret is safe. Say nothing that puts us together."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "0b4114d0fc128736eff9f1a492ccca5747bc2c45"
+      },
+      "previous": "851680a6bc0277bcf7c9158129935b150fefb04654b29b7357449a118dc7f5cc",
+      "hash": "70772fd8848463113bf0967265399251d83febdb8f73ab8958aeb177a7ccac3e"
+    },
+    {
+      "id": "e76",
+      "round": 3,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles, you told us you were alone in the study all evening \u2014 and the study is exactly where that seal press sits, with blood in its recess and blue wax matching Edmund's cuff. The company papers name you sole owner of North Quay Services, which took \u00a32,400 from the estate Edmund meant to audit tomorrow. I'm not the inspector, but those are a great many things pointing one way. I'd genuinely like to hear an honest answer."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "0b4114d0fc128736eff9f1a492ccca5747bc2c45"
+      },
+      "previous": "70772fd8848463113bf0967265399251d83febdb8f73ab8958aeb177a7ccac3e",
+      "hash": "5ed0143715bef9604b9ebabfd48cb979feea3dd6467892d2d2c8db1aadb59aa8"
+    },
+    {
+      "id": "e77",
+      "round": 3,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Nell \u2014 you said you saw someone carry a dark folder into the library around 19:48. Height, build, anything at all? That person may be the one we want."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "0b4114d0fc128736eff9f1a492ccca5747bc2c45"
+      },
+      "previous": "5ed0143715bef9604b9ebabfd48cb979feea3dd6467892d2d2c8db1aadb59aa8",
+      "hash": "2d5cb846b9331691c57c134e207ba75db0dfe135177b6af2224691e62b015936"
+    },
+    {
+      "id": "e78",
+      "round": 3,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the medical question, so we reason from fact: the wound is a single blow from a heavy squared object \u2014 fully consistent with that brass seal press. The blue wax on Edmund's cuff matches the wax still in the die. The press has blood in a recess and was wiped clean. So the weapon came from the study and was returned and cleaned by the person who used it. That is forensics, not accusation."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "d2b2f10597202bd04fda5c6162cec5443f464efe"
+      },
+      "previous": "2d5cb846b9331691c57c134e207ba75db0dfe135177b6af2224691e62b015936",
+      "hash": "7b40710061a905b5a44626185d9047fa1230d32d2ffe4e1e56497f43be23b517"
+    },
+    {
+      "id": "e79",
+      "round": 3,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Inspector, I'd hold two things together: initials on a folder prove nothing about who carried it \u2014 Nell saw someone enter with a dark folder at 19:48 but not their face. What the folder tells us is the motive at play: tomorrow's audit. Whoever that examination most endangered had the strongest reason to want it never to happen. That is a question for the accounts and for who could reach the study unseen."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "d2b2f10597202bd04fda5c6162cec5443f464efe"
+      },
+      "previous": "7b40710061a905b5a44626185d9047fa1230d32d2ffe4e1e56497f43be23b517",
+      "hash": "ce05d0f358dea17d23468f9ef7021c6c78b2bf78f18095602ddc1f74efdd8a44"
+    },
+    {
+      "id": "e80",
+      "round": 3,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "Stay calm, my love \u2014 the room is turning to Miles and the accounts, which keeps us both clear without a word about us. Say nothing more than 'out for air, saw no one.' One warning: if Miles feels cornered he may try to fling mud at anyone, me or you included. Whatever he says about me or an old paper, don't react \u2014 I'll handle it. Were you seen by anyone at all when you went out?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "d2b2f10597202bd04fda5c6162cec5443f464efe"
+      },
+      "previous": "ce05d0f358dea17d23468f9ef7021c6c78b2bf78f18095602ddc1f74efdd8a44",
+      "hash": "b8cf1f8179586e2d9c34478abda8b60b095217ae87444a9fcb1ca860cc10c2bc"
+    },
+    {
+      "id": "e81",
+      "round": 3,
+      "kind": "accept",
+      "actor": "miles",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "accept",
+        "chat": "finch-miles"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "24e69cd364b92904a92f0db0051e315b2804809c"
+      },
+      "previous": "b8cf1f8179586e2d9c34478abda8b60b095217ae87444a9fcb1ca860cc10c2bc",
+      "hash": "73be882b7e74694a8fe23a0f9c3538ab1ee7f9ba8b642ef93c6ef2abaa3514d0"
+    },
+    {
+      "id": "e82",
+      "round": 3,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Inspector, I'll answer plainly, because hiding anything would only damn me. Yes \u2014 North Quay Services is my company. Those papers sit in an unlocked cabinet in plain view, not a safe. It does conveyancing and estate work, and the \u00a32,400 were fees for services rendered. Edmund flagged the item for tomorrow's audit as ordinary due diligence, and I prepared that reconciliation folder to answer it. I wanted that audit. I still do \u2014 let it proceed, in full."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "24e69cd364b92904a92f0db0051e315b2804809c"
+      },
+      "previous": "73be882b7e74694a8fe23a0f9c3538ab1ee7f9ba8b642ef93c6ef2abaa3514d0",
+      "hash": "7d692187b811d94487cb1cb3b241b941b15dd5779f16090564eaeb3488f57ef9"
+    },
+    {
+      "id": "e83",
+      "round": 3,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Now weigh the logic before a folder decides it. If I were a thief, Edmund's death is the worst thing that could befall me: the audit will now certainly go ahead, and I stand here the obvious suspect. I gain nothing and lose everything. A guilty man kills to silence an audit \u2014 he does not murder his client the night before it and leave his own initialled folder beside the body. As to that folder: it is mine, and I left it, with the estate's seal press, in the study. I'll correct one thing honestly \u2014 I did step out of the study briefly, around ten to eight, for a few minutes. Your own cards say the rest: 'anyone in the house could have entered the study,' and the folder 'carries no record of when it arrived' in the library. Someone carried my folder and that press into that room. I did not. I'd ask you to weigh who had the run of this house tonight, unwatched, and who gains from Edmund dead and me blamed for it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "24e69cd364b92904a92f0db0051e315b2804809c"
+      },
+      "previous": "7d692187b811d94487cb1cb3b241b941b15dd5779f16090564eaeb3488f57ef9",
+      "hash": "dad3a01c333ab1ab8f039badb1c6b631f8f5931a6434fc405a21c3c1592fb982"
+    },
+    {
+      "id": "e84",
+      "round": 3,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "finch-miles",
+        "text": "Samuel \u2014 you asked for a word. I'm listening. Whatever's said in this room, I'd rather we two spoke frankly and quietly than let a frightened houseful turn on the first name that fits. What's on your mind?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "24e69cd364b92904a92f0db0051e315b2804809c"
+      },
+      "previous": "dad3a01c333ab1ab8f039badb1c6b631f8f5931a6434fc405a21c3c1592fb982",
+      "hash": "2a46b3cd438b5332b821c49b938fdd7b45f3a9d0632cefb7462b092deb903aba"
+    },
+    {
+      "id": "e85",
+      "round": 3,
+      "kind": "inspect",
+      "actor": "miles",
+      "visible_to": [
+        "miles"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "hall",
+        "cards": {
+          "hall-scarf": {
+            "title": "The gardener's statement",
+            "text": "The gardener saw Miles take a green scarf from the hall stand shortly before 19:45, saying he felt a draught. The scarf was back on the stand by 20:05. The gardener did not see it returned.",
+            "location": "hall"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "24e69cd364b92904a92f0db0051e315b2804809c"
+      },
+      "previous": "2a46b3cd438b5332b821c49b938fdd7b45f3a9d0632cefb7462b092deb903aba",
+      "hash": "0b1ff532235f3135ed23010b95226a713f6b5256616ca65f71714d27161d1e3b"
+    },
+    {
+      "id": "e86",
+      "round": 3,
+      "kind": "share",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "wages",
+        "card": {
+          "title": "Duplicate wage records",
+          "text": "Staff wages were paid, but pension contributions stopped four months ago. The estate ledger continued to record the pension amounts as paid. Nell retained these duplicate records.",
+          "owner": "nell"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "5b2c77ebbc81108c08be3fde376ebce8e341dcce"
+      },
+      "previous": "0b1ff532235f3135ed23010b95226a713f6b5256616ca65f71714d27161d1e3b",
+      "hash": "58a02bce5d21f8d46b5ede78718b086383a3e8b366ef6c244f9a7978e3e46a07"
+    },
+    {
+      "id": "e87",
+      "round": 3,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Since we're pooling facts: staff pension contributions stopped four months ago, yet the ledger still records them as paid. I kept duplicate records. That is money gone somewhere, and North Quay Services is the obvious question. Miles \u2014 plainly \u2014 what is that company, why did \u00a32,400 of estate money go to it, and do you know where our pensions went?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "5b2c77ebbc81108c08be3fde376ebce8e341dcce"
+      },
+      "previous": "58a02bce5d21f8d46b5ede78718b086383a3e8b366ef6c244f9a7978e3e46a07",
+      "hash": "5447450395a4c699b07852cf714a61d30258e4c7456829951c426b40c7c5cae3"
+    },
+    {
+      "id": "e88",
+      "round": 3,
+      "kind": "share",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "nell-sighting",
+        "card": {
+          "title": "Nell's sighting",
+          "text": "At about 19:48 Nell saw a person wearing a green scarf enter the library carrying a dark folder. She could not see the person's face. The scarf resembles Iris's.",
+          "owner": "nell"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "5b2c77ebbc81108c08be3fde376ebce8e341dcce"
+      },
+      "previous": "5447450395a4c699b07852cf714a61d30258e4c7456829951c426b40c7c5cae3",
+      "hash": "7d1d5a08aa5eb6f4983cee36a9d5d1a248e3920c2d9ad9cd5a57b27436bd3cbe"
+    },
+    {
+      "id": "e89",
+      "round": 3,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "And I owe you the whole of what I saw. The person who carried that folder into the library at 19:48 wore a green scarf \u2014 like the one Iris often wears, though it hangs in the hall where anyone could take it, and I never saw the face. But hear me: that folder bears Miles's initials, yet was carried in by someone in Iris's scarf. A man hiding a theft would hardly parade the damning folder into the room, in another person's scarf. To me that reads as much like a staging to pin this on one or both of them as a confession. Let us be slow to hang anyone on props that could be planted."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "5b2c77ebbc81108c08be3fde376ebce8e341dcce"
+      },
+      "previous": "7d1d5a08aa5eb6f4983cee36a9d5d1a248e3920c2d9ad9cd5a57b27436bd3cbe",
+      "hash": "4f8ae6987c276d1bd8c31212fc9632231353d9b51c4680a42f27b1fa52776ad0"
+    },
+    {
+      "id": "e90",
+      "round": 3,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "iris-nell",
+        "text": "Iris \u2014 I've told everyone plainly that the scarf hangs in the hall and I couldn't see the face, so I'm not pointing at you. But I must ask you straight: was that your scarf tonight, where was it after dinner, and did you carry any folder? Anything you tell me I'll weigh fairly."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "5b2c77ebbc81108c08be3fde376ebce8e341dcce"
+      },
+      "previous": "4f8ae6987c276d1bd8c31212fc9632231353d9b51c4680a42f27b1fa52776ad0",
+      "hash": "a6f023f8ad67e84dc86be16dcd564692b3f735d40f4fcee0fa6e7d550457955a"
+    },
+    {
+      "id": "e91",
+      "round": 3,
+      "kind": "accept",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "iris"
+      ],
+      "payload": {
+        "type": "accept",
+        "chat": "clara-iris"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "e4e1f7fab6419bbc4e9be7b75d328da337ebe4d6"
+      },
+      "previous": "a6f023f8ad67e84dc86be16dcd564692b3f735d40f4fcee0fa6e7d550457955a",
+      "hash": "cbb6b7f9891f2381e02a530e18dfb041b77c41de6bf7d27f79bdd690e430ca93"
+    },
+    {
+      "id": "e92",
+      "round": 3,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I'll add one more thing Edmund left in my keeping \u2014 his own words, written yesterday, before any of tonight. It shows the concern about North Quay was real and his, not something invented in the last hour."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "e4e1f7fab6419bbc4e9be7b75d328da337ebe4d6"
+      },
+      "previous": "cbb6b7f9891f2381e02a530e18dfb041b77c41de6bf7d27f79bdd690e430ca93",
+      "hash": "3a4bab9d799dc3fe33119e399b1b831dc75aa4a63cd1d446ffcfbb6285d3bfbf"
+    },
+    {
+      "id": "e93",
+      "round": 3,
+      "kind": "share",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "iris-letter",
+        "card": {
+          "title": "Edmund's letter kept by Iris",
+          "text": "The pension remittances and the payments to North Quay Services must be examined together. Mr Trent alone has held authority to approve those payments this year. \u2014 E.B., yesterday",
+          "owner": "iris"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "e4e1f7fab6419bbc4e9be7b75d328da337ebe4d6"
+      },
+      "previous": "3a4bab9d799dc3fe33119e399b1b831dc75aa4a63cd1d446ffcfbb6285d3bfbf",
+      "hash": "063bbb4fb71e17e92cdb7a5eb34bc552d7543793279c56951b1137684451ee96"
+    },
+    {
+      "id": "e94",
+      "round": 3,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "So the wrongdoing Edmund meant to expose was real, and he named where the authority sat. That establishes a motive \u2014 but I want us fair. The study cabinet was unlocked, anyone could enter, and the folder in the library carries no record of when it arrived. Genuine guilt and a clever frame can look identical. Miles, the honest thing is to answer plainly. Everyone else: I need to say something for my own sake. I left my green scarf in the hall before dinner and it was borrowed while I was in the greenhouse \u2014 it was back when I returned. If anyone saw who took it, please say so now, in the open."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "e4e1f7fab6419bbc4e9be7b75d328da337ebe4d6"
+      },
+      "previous": "063bbb4fb71e17e92cdb7a5eb34bc552d7543793279c56951b1137684451ee96",
+      "hash": "d40856464006f99e9e0fb982736d173a0a487bc8f06c7a20fd6d617db4d898cf"
+    },
+    {
+      "id": "e95",
+      "round": 3,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "iris-nell",
+        "text": "Nell, thank you \u2014 and you did right not to name a face you couldn't see. Between us: the person you saw go into the library at 19:48 with the folder \u2014 anything at all? Height, a coat, a limp, light or dark clothes? And did you happen to see anyone take a green scarf from the hall? It matters to me because someone borrowed mine tonight and I fear it's meant to point at me. Your name stays protected regardless."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "e4e1f7fab6419bbc4e9be7b75d328da337ebe4d6"
+      },
+      "previous": "d40856464006f99e9e0fb982736d173a0a487bc8f06c7a20fd6d617db4d898cf",
+      "hash": "2b81eb6ecc39148f45f6b0616ff729bd18d9e89abb32d8c850323f993e85f2b9"
+    },
+    {
+      "id": "e96",
+      "round": 3,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "iris",
+        "theo"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-iris",
+        "text": "You have my word: your name and Nell's stay out of anything I print unless you release me, or unless withholding it would let me print something false \u2014 I won't put my name to a lie. The cook confirms I was in the pantry from 19:42 until just after 20:04, so the inspector can rely on that. I was nowhere near the hall, so I can't speak to your scarf \u2014 I never saw it. Honest question, just between us: do you actually believe Miles struck Edmund, or do you only want the audit to survive? I ask because the study cabinet was unlocked and that M.T. folder was left sitting open \u2014 that's either a guilty man's panic or someone's tidy frame, and I won't print the wrong man."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "815937a204861659db1feb16c4ed6be16a89293c"
+      },
+      "previous": "2b81eb6ecc39148f45f6b0616ff729bd18d9e89abb32d8c850323f993e85f2b9",
+      "hash": "161d39e1daddcb72fad9cfab2cd11fab2dc56a28c0fc45a9220fe7974bc4832d"
+    },
+    {
+      "id": "e97",
+      "round": 3,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "One link worth spelling out: Dr Finch and the inspector both note a tiny brass shaving on the library carpet beside Edmund. The study press has a fresh nick in its brass edge. That strongly suggests the press was carried into the library, used, then wiped and set back on the study desk. So the question isn't only who owns the folder \u2014 it's who moved that heavy press between the two rooms during the window."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "815937a204861659db1feb16c4ed6be16a89293c"
+      },
+      "previous": "161d39e1daddcb72fad9cfab2cd11fab2dc56a28c0fc45a9220fe7974bc4832d",
+      "hash": "9eb8973062a5a72c6f10cbe43d06cc340bd07abaa2065744390ef273c9442b08"
+    },
+    {
+      "id": "e98",
+      "round": 3,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "And Vale is right that no forced entry means Edmund admitted someone he trusted. Nell, you saw a figure enter the library about 19:48 carrying a dark folder \u2014 build height, clothing, anything at all? Clara \u2014 before you searched the study tonight, were you near the study or the stairs earlier, say around a quarter to eight? I'm only trying to pin the timeline down."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "815937a204861659db1feb16c4ed6be16a89293c"
+      },
+      "previous": "9eb8973062a5a72c6f10cbe43d06cc340bd07abaa2065744390ef273c9442b08",
+      "hash": "f17135419225716e9a083f8a94768299540b63e2d8462603837558693bd587d0"
+    },
+    {
+      "id": "e99",
+      "round": 3,
+      "kind": "inspect",
+      "actor": "theo",
+      "visible_to": [
+        "theo"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "hall",
+        "cards": {
+          "hall-scarf": {
+            "title": "The gardener's statement",
+            "text": "The gardener saw Miles take a green scarf from the hall stand shortly before 19:45, saying he felt a draught. The scarf was back on the stand by 20:05. The gardener did not see it returned.",
+            "location": "hall"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "815937a204861659db1feb16c4ed6be16a89293c"
+      },
+      "previous": "f17135419225716e9a083f8a94768299540b63e2d8462603837558693bd587d0",
+      "hash": "1acf66cb23e7206bf0e8c8a681825df268892d0daa0ff90db6cfb01242681fb9"
+    },
+    {
+      "id": "e100",
+      "round": 3,
+      "kind": "accept",
+      "actor": "vale",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "accept",
+        "chat": "theo-vale"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "553edb5642c5b8ed2de6d7d93769bd3fe0cc286b"
+      },
+      "previous": "1acf66cb23e7206bf0e8c8a681825df268892d0daa0ff90db6cfb01242681fb9",
+      "hash": "c73156f53fac9b97382270389988a357f101a003e7ba796212c0111cf8c986f6"
+    },
+    {
+      "id": "e101",
+      "round": 3,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Let's think about the weapon's movements, because they're decisive. The press lives in the STUDY. Edmund died in the LIBRARY, with a brass shaving beside him and blue wax on his cuff. The press was found back in the study, wiped, with blood in the recess and a fresh nick. So someone carried that press from the study to the library, struck him, returned it, and cleaned it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "553edb5642c5b8ed2de6d7d93769bd3fe0cc286b"
+      },
+      "previous": "c73156f53fac9b97382270389988a357f101a003e7ba796212c0111cf8c986f6",
+      "hash": "56f7c45e73fffc5f01eefcc3dbfdcb023d688dc627dd40f0c83d9fd1660794e4"
+    },
+    {
+      "id": "e102",
+      "round": 3,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles \u2014 you say you were alone in the study for the whole window. If that is true, then either you saw that heavy press taken and brought back bloody, or it happened in your presence. Which is it? A man sitting with the papers all evening should be able to tell us whether the press ever left the desk. Please answer precisely, because your account and that press are hard to reconcile unless you were the one who moved it \u2014 or unless you were not actually in the study the whole time."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "553edb5642c5b8ed2de6d7d93769bd3fe0cc286b"
+      },
+      "previous": "56f7c45e73fffc5f01eefcc3dbfdcb023d688dc627dd40f0c83d9fd1660794e4",
+      "hash": "3ad76a44ffdf0f7a183ec5d30481bf494f199713369bd32f5a446b820cb43c11"
+    },
+    {
+      "id": "e103",
+      "round": 3,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "A caution to everyone: the incorporation papers are real and give Miles a genuine motive. But I've noticed how quickly we've all converged on him, and the folder at the scene 'carries no record of when it arrived.' Real motive and a staged scene can coexist. So I want alibis firmed up too. Rose, Iris, Nell \u2014 none of you has a witness for the window. That doesn't accuse you; it means we can't yet clear you. Where exactly, and did anyone see you at any moment?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "553edb5642c5b8ed2de6d7d93769bd3fe0cc286b"
+      },
+      "previous": "3ad76a44ffdf0f7a183ec5d30481bf494f199713369bd32f5a446b820cb43c11",
+      "hash": "ae348993c8c58b71a49a5eecaa5528c18d2c2cd8767c96cb362e6061a8424ed9"
+    },
+    {
+      "id": "e104",
+      "round": 3,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "nell",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "nell-inspector",
+        "text": "Nell, thank you for reaching out. That folder-carrier you saw enter the library at about 19:48 could be the most important thing anyone's told me. Tell me everything, even small things: were they coming from the direction of the study or the hall stairs? Tall or short? Man's dress or a woman's? Did they carry anything besides the folder \u2014 perhaps something heavy? And did you see them come back out?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "553edb5642c5b8ed2de6d7d93769bd3fe0cc286b"
+      },
+      "previous": "ae348993c8c58b71a49a5eecaa5528c18d2c2cd8767c96cb362e6061a8424ed9",
+      "hash": "ea1a0f827107a9adda3a8cf67876cc9c463a88ea9efb2fcdb2ced024f555212f"
+    },
+    {
+      "id": "e105",
+      "round": 3,
+      "kind": "inspect",
+      "actor": "vale",
+      "visible_to": [
+        "vale"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "hall",
+        "cards": {
+          "hall-scarf": {
+            "title": "The gardener's statement",
+            "text": "The gardener saw Miles take a green scarf from the hall stand shortly before 19:45, saying he felt a draught. The scarf was back on the stand by 20:05. The gardener did not see it returned.",
+            "location": "hall"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "553edb5642c5b8ed2de6d7d93769bd3fe0cc286b"
+      },
+      "previous": "ea1a0f827107a9adda3a8cf67876cc9c463a88ea9efb2fcdb2ced024f555212f",
+      "hash": "73de1dbcfe283651515dcc51ad816707dcf0eb76da45278004d72239b458aec3"
+    },
+    {
+      "id": "e106",
+      "round": 3,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Thank you, Inspector \u2014 that matches my memory. I want to be fair here: initials on a folder aren't proof, and I agree no forced entry points to someone Edmund trusted or who lived here. But two facts sit oddly together. Nell saw someone carry a dark folder into the library at about 19:48, and, Miles, you say you sat alone in the study the entire window. So either you stepped across to the library with that reconciliation folder around 19:48, or someone else took your folder there. Which was it \u2014 and when did the press with the blood on it leave your desk?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "f527062b803b773fcee200dfabc109ecdf7cd2ec"
+      },
+      "previous": "73de1dbcfe283651515dcc51ad816707dcf0eb76da45278004d72239b458aec3",
+      "hash": "59c92c8b19f846b2fedacadfe0f6bd0ee42184d5bc79d4376adf820c8a6f4d02"
+    },
+    {
+      "id": "e107",
+      "round": 3,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "For my part, I've nothing to hide about my movements: upstairs after dinner, then down past this room at about five to eight, which the Inspector saw. And I agree wholeheartedly with Iris \u2014 whatever we conclude tonight, Edmund's audit must still go ahead in the morning."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "f527062b803b773fcee200dfabc109ecdf7cd2ec"
+      },
+      "previous": "59c92c8b19f846b2fedacadfe0f6bd0ee42184d5bc79d4376adf820c8a6f4d02",
+      "hash": "4ab4ba7178c02a6e59a3b03353439e934d6411a01cb5b8d38f8ac9de33a66e52"
+    },
+    {
+      "id": "e108",
+      "round": 3,
+      "kind": "inspect",
+      "actor": "clara",
+      "visible_to": [
+        "clara"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "guest-room",
+        "cards": {
+          "guest-will": {
+            "title": "The missing draft will",
+            "text": "An unsigned draft dated today is folded inside Clara's guest-room writing case. It proposes an estate trust that protects staff pensions and gives Clara a lifetime right to live in the house. The currently signed will leaves most of the estate to Clara. This draft has no legal effect yet.",
+            "location": "guest-room"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "f527062b803b773fcee200dfabc109ecdf7cd2ec"
+      },
+      "previous": "4ab4ba7178c02a6e59a3b03353439e934d6411a01cb5b8d38f8ac9de33a66e52",
+      "hash": "cfcd065f8f8b0e1fc1e52319ac026f20189871daa63411dda9d6671f5390ebf3"
+    },
+    {
+      "id": "e109",
+      "round": 4,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "finch-miles",
+        "text": "Thank you for speaking plainly, Miles. Honestly, I don't think an initialled folder and a borrowed scarf convict a man \u2014 the scene could be staged, and I've said so to the room. But I'll ask you once, straight: did you kill Edmund? Separately \u2014 there are old matters between us, Edmund's own doing six months back, that have no bearing on who struck him tonight. I'd sooner they stayed where they belong, and I'll extend you the same discretion. Fair?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "b32428bf5b296042d9d4f3531360ca8845cfaef1"
+      },
+      "previous": "cfcd065f8f8b0e1fc1e52319ac026f20189871daa63411dda9d6671f5390ebf3",
+      "hash": "6897e4cddfbfa14fbe48e4aed2b4cd3a38481ea55bc513bd046cc42c4b4adeb0"
+    },
+    {
+      "id": "e110",
+      "round": 4,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "My movements, plainly: after dinner I stepped out briefly for air, alone, and was called to the library at 20:10 \u2014 that is when I first saw him. On the scene, the decisive physical fact is the press being carried study-to-library and back, then wiped. But I'd urge care: a folder bearing one man's initials, carried by someone in a third person's scarf, reads as much like staging as confession. Let us not let planted props do our thinking for us."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "b32428bf5b296042d9d4f3531360ca8845cfaef1"
+      },
+      "previous": "6897e4cddfbfa14fbe48e4aed2b4cd3a38481ea55bc513bd046cc42c4b4adeb0",
+      "hash": "36e9f67152f57af94d7b82214fd96fa25da0e41f5fabe90f5c9c631d614e2e93"
+    },
+    {
+      "id": "e111",
+      "round": 4,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "I've matched you \u2014 'out for air, alone,' nothing more. Ease off Miles a little, my love. Vale is already pressing him hard; if we corner him he may lash at anyone in the room to save himself. Let the inspector do it. Keep yourself quiet and above it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "b32428bf5b296042d9d4f3531360ca8845cfaef1"
+      },
+      "previous": "36e9f67152f57af94d7b82214fd96fa25da0e41f5fabe90f5c9c631d614e2e93",
+      "hash": "1bf1efb36884344d2f514db1d883be90e6076be1310cbffa15baa42a5faffae2"
+    },
+    {
+      "id": "e112",
+      "round": 4,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Inspector, I'll answer precisely. No \u2014 I did not sit guarding that press. I was working at the papers and I stepped out for some minutes, around ten to eight. So I cannot swear the press never left that desk; I wasn't watching it, and the study was unlocked with, as your own card says, anyone free to enter. That is the honest answer, uncomfortable as it is for me."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "71b58745fd004193e253ec8573e45d8a2bd78e28"
+      },
+      "previous": "1bf1efb36884344d2f514db1d883be90e6076be1310cbffa15baa42a5faffae2",
+      "hash": "11d85037f10fcaa01700b6cb8b5fdcf36dd199f08d4914c6310dd0bfa3a68e3c"
+    },
+    {
+      "id": "e113",
+      "round": 4,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "But hold the whole scene together before you decide. A man hiding a theft does not carry his own initialled folder to the body, nor wear a bright scarf a witness would remember \u2014 Nell says the scarf even resembled someone else's, not mine. Real guilt hides; this scene shouts. It is arranged to be found, and found fast. I'd ask you to be as slow as the evidence deserves."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "71b58745fd004193e253ec8573e45d8a2bd78e28"
+      },
+      "previous": "11d85037f10fcaa01700b6cb8b5fdcf36dd199f08d4914c6310dd0bfa3a68e3c",
+      "hash": "0a31860c9f03ccb6587534e8474dbf85d1dbf17899b1e8aa027149f78feb1d08"
+    },
+    {
+      "id": "e114",
+      "round": 4,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "And consider the timing, which everyone keeps skipping. Edmund announced TWO things: an audit and a NEW WILL. The audit needs no living man \u2014 it will proceed whatever happens to me, so his death buys a thief nothing but the noose. A new will, though, dies with him tonight. Whoever feared what tomorrow's will would change had a motive that vanished the moment he died before morning. So I'd ask plainly: who does the present will favour, what would the new one have altered \u2014 and who, unwatched, gains by Edmund never signing it?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "71b58745fd004193e253ec8573e45d8a2bd78e28"
+      },
+      "previous": "0a31860c9f03ccb6587534e8474dbf85d1dbf17899b1e8aa027149f78feb1d08",
+      "hash": "3de971617e3010bd9ce894f8f9e3e96aba6757f01b729bdfcc4a8518e5c3182a"
+    },
+    {
+      "id": "e115",
+      "round": 4,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "finch-miles",
+        "text": "Samuel, thank you for keeping heads cool in there. I'll be frank between us: I did not do this, but I know how a stranded houseful hunts for one neck. I'd value your judgement on the medical timing \u2014 the window is wide, and precision could clear more than one of us. And I've always held that a man's older paperwork is his own affair; I'd hate to see tonight become an excuse to tear open everyone's private files. Keep this to the facts that matter and I'll not forget a level head when it counts. What did you want to say to me?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "71b58745fd004193e253ec8573e45d8a2bd78e28"
+      },
+      "previous": "3de971617e3010bd9ce894f8f9e3e96aba6757f01b729bdfcc4a8518e5c3182a",
+      "hash": "121e69fab686467de48cab0ab2e79497938544747f3f08b2b3ab7797408035e1"
+    },
+    {
+      "id": "e116",
+      "round": 4,
+      "kind": "inspect",
+      "actor": "miles",
+      "visible_to": [
+        "miles"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "guest-room",
+        "cards": {
+          "guest-will": {
+            "title": "The missing draft will",
+            "text": "An unsigned draft dated today is folded inside Clara's guest-room writing case. It proposes an estate trust that protects staff pensions and gives Clara a lifetime right to live in the house. The currently signed will leaves most of the estate to Clara. This draft has no legal effect yet.",
+            "location": "guest-room"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "71b58745fd004193e253ec8573e45d8a2bd78e28"
+      },
+      "previous": "121e69fab686467de48cab0ab2e79497938544747f3f08b2b3ab7797408035e1",
+      "hash": "f58a87bb78c54d9661ba62a8ea57c4b3ed59d13daa7218b54b88888515f202cc"
+    },
+    {
+      "id": "e117",
+      "round": 4,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "nell",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "nell-inspector",
+        "text": "Honest and complete: I saw the green scarf and the dark folder, and the figure passing through the library door \u2014 nothing of the face. I truly cannot swear to height, build or dress; it was a glimpse and I won't dress it up. I can't even say for certain which direction they came from. What I'll stand on is only the scarf and the folder. And I'll say plainly: both those objects belong to other people and hang or sit where anyone could take them, so a scarf that points at Iris and a folder that points at Miles, together, looks to me like staging. Two people I can't place in the window are Rose (walking outside, no witness) and Iris (greenhouse, no witness); and Miles now admits leaving the study around ten to eight."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "631209271b54a822db988121c392dd40bb275947"
+      },
+      "previous": "f58a87bb78c54d9661ba62a8ea57c4b3ed59d13daa7218b54b88888515f202cc",
+      "hash": "2aedd9770f768303440f27dbcaedd3a6293a9b5e9644ae5d1ccd1a1f0a988fab"
+    },
+    {
+      "id": "e118",
+      "round": 4,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "iris-nell",
+        "text": "Iris, I'll be straight because you've been straight with me: I saw only the scarf and the folder, not the face \u2014 no height, no coat, no gait I could swear to, and I did not see who took your scarf from the hall. I won't invent a detail to help or harm anyone. Between us, the scarf-and-folder together looks staged to me, and staging points away from you as much as toward you. You knew Edmund's affairs best \u2014 what was he going to change in the will tomorrow, and who lost by it?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "631209271b54a822db988121c392dd40bb275947"
+      },
+      "previous": "2aedd9770f768303440f27dbcaedd3a6293a9b5e9644ae5d1ccd1a1f0a988fab",
+      "hash": "56cee0b7ae51a9c56b150abbcfe7ef65ffb83095f84ed2711a0249c6c34db320"
+    },
+    {
+      "id": "e119",
+      "round": 4,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "To all of you asking me for more: I wish I could give it. I saw the green scarf and the dark folder go through the library door at 19:48 \u2014 I did not see the face, and I cannot honestly swear to height, build, or dress. I won't invent details to fit anyone's theory. What I'll stand on is this: someone in Iris's scarf carried Miles's initialled folder into that room, and both those things were left where anyone could take them. Together, that looks staged to me \u2014 too neat. So let's hold two questions apart. First, who diverted our pensions: Edmund's own letter names Mr Trent's authority, and that must be run to ground by the audit. Second, and separately, who actually struck him \u2014 the folder and scarf may have been meant to answer that for us a little too conveniently. Iris, you kept his papers \u2014 what was Edmund going to change in the will tomorrow, and who stood to lose by it?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "631209271b54a822db988121c392dd40bb275947"
+      },
+      "previous": "56cee0b7ae51a9c56b150abbcfe7ef65ffb83095f84ed2711a0249c6c34db320",
+      "hash": "4bbb2aafc3b2469c4de9659ae347646615a8c81145c2c77673c68f721a49dda6"
+    },
+    {
+      "id": "e120",
+      "round": 4,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Read Nell's sighting carefully, everyone. The figure at 19:48 wore my scarf AND carried Miles's initialled folder. Think what that means: a guilty thief does not parade the one folder that damns him, dressed in someone else's scarf. That is not a confession \u2014 it is a stage set to pin this on Miles and me at once. Which tells me the real hand belongs to a third person: someone who could take my scarf from the hall AND reach Miles's press and folder in the study, unseen. So I ask plainly \u2014 who passed through the hall between dinner and a quarter to eight? Who saw the scarf move? That person is closer to Edmund's killer than any folder."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "cc0092d64dac2469e7ccd1ffa5cb9804425a0391"
+      },
+      "previous": "4bbb2aafc3b2469c4de9659ae347646615a8c81145c2c77673c68f721a49dda6",
+      "hash": "2ee552269f7c8f4ab173d133b2386c75a61fe143e692b2339a90303c0d26c04b"
+    },
+    {
+      "id": "e121",
+      "round": 4,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "iris-nell",
+        "text": "Straight answer, Nell: yes, that green scarf is mine. I hung it in the hall before dinner and never wore it after \u2014 I was in the greenhouse from 19:40, alone, reading Edmund's letters, and I carried no folder. Someone took it and gave it back. You were about the hall tonight \u2014 think hard: who came and went there before 19:48? Even a glimpse helps me. And I'll say again, whatever the audit turns up, your pensions and your name are protected. You're the victim here, not the accused."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "cc0092d64dac2469e7ccd1ffa5cb9804425a0391"
+      },
+      "previous": "2ee552269f7c8f4ab173d133b2386c75a61fe143e692b2339a90303c0d26c04b",
+      "hash": "45bb6b11f71f80cbe6802b1d697dcdad0a99cc61910b86e317da013a29b2e261"
+    },
+    {
+      "id": "e122",
+      "round": 4,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "iris",
+        "theo"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-iris",
+        "text": "Honest answer: I want the audit to survive, but I will not hand you the wrong man to print. I don't assume Miles struck him. The scarf changes things \u2014 that's my scarf on the 19:48 figure, and I never wore it. Whoever staged this used my scarf and Miles's folder together. Look for who could reach the hall and the study both. Keep my source and Nell out of it as promised, and I'll keep feeding you what's real."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "cc0092d64dac2469e7ccd1ffa5cb9804425a0391"
+      },
+      "previous": "45bb6b11f71f80cbe6802b1d697dcdad0a99cc61910b86e317da013a29b2e261",
+      "hash": "d6cf16e9c07cd68213fe18e7cec7da0c5aec5fcfeec10b03c180c0f8fbd441b0"
+    },
+    {
+      "id": "e123",
+      "round": 4,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "iris"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "clara-iris",
+        "text": "Clara, thank you for pressing the audit \u2014 I'm with you entirely; Edmund's examination must go ahead. Between us, help me steady the timeline. Vale saw you pass the drawing room at 19:55. Where exactly were you from a quarter to eight until then, and did you see anyone near the hall or the study? Someone wore my scarf into the library at 19:48, and I'm trying to find who took it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "cc0092d64dac2469e7ccd1ffa5cb9804425a0391"
+      },
+      "previous": "d6cf16e9c07cd68213fe18e7cec7da0c5aec5fcfeec10b03c180c0f8fbd441b0",
+      "hash": "8f2df5b42e8ae84ecc7cc3d427986cdd0d48094ad466a665674a97845a0d60d0"
+    },
+    {
+      "id": "e124",
+      "round": 4,
+      "kind": "inspect",
+      "actor": "iris",
+      "visible_to": [
+        "iris"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "hall",
+        "cards": {
+          "hall-scarf": {
+            "title": "The gardener's statement",
+            "text": "The gardener saw Miles take a green scarf from the hall stand shortly before 19:45, saying he felt a draught. The scarf was back on the stand by 20:05. The gardener did not see it returned.",
+            "location": "hall"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "cc0092d64dac2469e7ccd1ffa5cb9804425a0391"
+      },
+      "previous": "8f2df5b42e8ae84ecc7cc3d427986cdd0d48094ad466a665674a97845a0d60d0",
+      "hash": "112a60321c971c3a3de0b6cce21779556b8f8665d7909d9a32fa2e8ba47b51da"
+    },
+    {
+      "id": "e125",
+      "round": 4,
+      "kind": "share",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "hall-scarf",
+        "card": {
+          "title": "The gardener's statement",
+          "text": "The gardener saw Miles take a green scarf from the hall stand shortly before 19:45, saying he felt a draught. The scarf was back on the stand by 20:05. The gardener did not see it returned.",
+          "location": "hall"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "53afa8eb3cbb62b5acb773588db7911ec20e315c"
+      },
+      "previous": "112a60321c971c3a3de0b6cce21779556b8f8665d7909d9a32fa2e8ba47b51da",
+      "hash": "3de870ed88b1d7b7a62f4d41651f493d5eaf340cd546aa31b7edeb1f4f168632"
+    },
+    {
+      "id": "e126",
+      "round": 4,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "This settles the scarf question. The gardener saw Miles take the green scarf from the hall stand shortly before 19:45, pleading a draught; it was back by 20:05, and he didn't see it returned. Now line the facts up: Miles owns North Quay, which Edmund's own letter names him as the sole authority behind, with an audit due tomorrow. Around 19:45 Miles takes Iris's scarf. At 19:48 Nell sees a figure in that green scarf carry a dark folder \u2014 the M.T. folder \u2014 into the library. The weapon is Miles's estate press, carried from the study and wiped. Miles, you told us twice you were alone in the study the entire window. You cannot have been: at 19:45 you were at the hall stand, and the man who entered the library at 19:48 wore the scarf you'd just taken. I'd like you to reconcile that."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "53afa8eb3cbb62b5acb773588db7911ec20e315c"
+      },
+      "previous": "3de870ed88b1d7b7a62f4d41651f493d5eaf340cd546aa31b7edeb1f4f168632",
+      "hash": "d6128d5c925c59a13a57b98f019c5d26f58693b09a087e92e3917dd5071b41aa"
+    },
+    {
+      "id": "e127",
+      "round": 4,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "To keep the timeline honest and complete, one small thing on my side: around 19:44 I did glimpse someone hurry from the study toward the stairs with a folded paper \u2014 I took it to be Clara collecting something before going up, which fits her account of being upstairs then. Clara, can you confirm that was you and what the paper was, so we've no loose thread?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "53afa8eb3cbb62b5acb773588db7911ec20e315c"
+      },
+      "previous": "d6128d5c925c59a13a57b98f019c5d26f58693b09a087e92e3917dd5071b41aa",
+      "hash": "86cb41e1d5abfb5a6ce727945a006d5ff97fd26379370d792a5dca0b6589dc89"
+    },
+    {
+      "id": "e128",
+      "round": 4,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-vale",
+        "text": "Inspector \u2014 I searched the hall and found the gardener's statement; sharing it with you exactly. To my mind the chain is now close to complete against Miles, but I'm a journalist, not a jury, and I refuse to print a false accusation. I'd value your read. And plainly: if this holds, would you let me name you as the source who verified the scene and the timeline? I want an account that stands behind evidence and a person willing to be named."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "53afa8eb3cbb62b5acb773588db7911ec20e315c"
+      },
+      "previous": "86cb41e1d5abfb5a6ce727945a006d5ff97fd26379370d792a5dca0b6589dc89",
+      "hash": "7b7bfc384130fd9d96cdf6aba8f86091b150b8ea942ff5030812421af27016e5"
+    },
+    {
+      "id": "e129",
+      "round": 4,
+      "kind": "share",
+      "actor": "theo",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "theo-vale",
+        "evidence": "hall-scarf",
+        "card": {
+          "title": "The gardener's statement",
+          "text": "The gardener saw Miles take a green scarf from the hall stand shortly before 19:45, saying he felt a draught. The scarf was back on the stand by 20:05. The gardener did not see it returned.",
+          "location": "hall"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "53afa8eb3cbb62b5acb773588db7911ec20e315c"
+      },
+      "previous": "7b7bfc384130fd9d96cdf6aba8f86091b150b8ea942ff5030812421af27016e5",
+      "hash": "d63ec7fea562efd3ade1c04024eb4731c233530aadf27b0c256891ff63b72da6"
+    },
+    {
+      "id": "e130",
+      "round": 4,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "iris",
+        "theo"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-iris",
+        "text": "The gardener saw Miles \u2014 not you \u2014 take your scarf from the hall just before 19:45, and it's Miles who then appears at the library. That points the scarf at him and away from you. You've already put Edmund's letter on the table yourself, so you're on record by your own choice; I'll still keep the 19:30 copy's provenance to myself as promised. Are you willing to stand publicly as Edmund's secretary confirming the North Quay concern was his and genuine? That named confirmation is what would let me print this responsibly."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "53afa8eb3cbb62b5acb773588db7911ec20e315c"
+      },
+      "previous": "d63ec7fea562efd3ade1c04024eb4731c233530aadf27b0c256891ff63b72da6",
+      "hash": "aca13355db17d7eb515987c329bd57c399863598256e37bcfacabd2497195c9e"
+    },
+    {
+      "id": "e131",
+      "round": 4,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I searched the hall. This changes the picture, so I'll share it exactly."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "a7945547124d816169a993fffc2cd03d1d936d6c"
+      },
+      "previous": "aca13355db17d7eb515987c329bd57c399863598256e37bcfacabd2497195c9e",
+      "hash": "eab8d1536d4e07a634671979052ba3a205ec694c1aa507b815ab51c18bc641ee"
+    },
+    {
+      "id": "e132",
+      "round": 4,
+      "kind": "share",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "hall-scarf",
+        "card": {
+          "title": "The gardener's statement",
+          "text": "The gardener saw Miles take a green scarf from the hall stand shortly before 19:45, saying he felt a draught. The scarf was back on the stand by 20:05. The gardener did not see it returned.",
+          "location": "hall"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "a7945547124d816169a993fffc2cd03d1d936d6c"
+      },
+      "previous": "eab8d1536d4e07a634671979052ba3a205ec694c1aa507b815ab51c18bc641ee",
+      "hash": "1a24066bc9565168fbebeaa3fb1fb3544bfcfb17a1d75f127123729de3cceb2e"
+    },
+    {
+      "id": "e133",
+      "round": 4,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Read it against Nell's sighting. Nell saw a person in a GREEN SCARF carry a dark folder into the library at about 19:48. The gardener saw MILES take that green scarf from the hall stand shortly before 19:45, and it was back by 20:05 with no one seeing it returned. So the green-scarfed figure who entered the library with the folder, in the death window, was almost certainly the man who had the scarf: Miles."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "a7945547124d816169a993fffc2cd03d1d936d6c"
+      },
+      "previous": "1a24066bc9565168fbebeaa3fb1fb3544bfcfb17a1d75f127123729de3cceb2e",
+      "hash": "f36a543f3d5e6cee01814b9b1c40d1f256533444edf1844ecf4a25885d3d36f0"
+    },
+    {
+      "id": "e134",
+      "round": 4,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles, your defense was that someone else carried your initialled folder in another person's scarf to frame you. But the gardener places that scarf in YOUR hands from before 19:45. And you've admitted stepping out of the study at about ten to eight \u2014 the very minutes Nell describes. The chain now is: you took Iris's scarf, you carried your folder into the library at 19:48, the weapon is the study press that sat where you were, and Edmund's own letter names you as the sole authority over the North Quay payments the audit would expose. I'll hear any innocent account of the scarf \u2014 but I need one that fits the gardener's statement, not around it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "a7945547124d816169a993fffc2cd03d1d936d6c"
+      },
+      "previous": "f36a543f3d5e6cee01814b9b1c40d1f256533444edf1844ecf4a25885d3d36f0",
+      "hash": "3378656e289164aa0c5ada636df5e77a6018d6d52eed3fe57dbbd05c6058c1a6"
+    },
+    {
+      "id": "e135",
+      "round": 4,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "To be fair on one point: this reading largely clears Iris of the scarf itself \u2014 it was taken by Miles, not worn by her. My honest caveat is that this hinges on the gardener's account being accurate. If anyone can contradict it, say so now."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "a7945547124d816169a993fffc2cd03d1d936d6c"
+      },
+      "previous": "3378656e289164aa0c5ada636df5e77a6018d6d52eed3fe57dbbd05c6058c1a6",
+      "hash": "14eef54e5a6ff5cbe29ee9f64ed094f022a2bb11600f51399c1704c50179649b"
+    },
+    {
+      "id": "e136",
+      "round": 4,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "nell",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "nell-inspector",
+        "text": "Nell \u2014 one thing I must ask, since your sighting is now central: how sure are you it was 19:48, and that the folder was dark and the scarf green? And to be candid with you: are you certain you saw this, or is there any chance the detail was shaped by knowing about the scarf afterward? I'm not doubting you; I need it to hold up when the police arrive."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "a7945547124d816169a993fffc2cd03d1d936d6c"
+      },
+      "previous": "14eef54e5a6ff5cbe29ee9f64ed094f022a2bb11600f51399c1704c50179649b",
+      "hash": "efa8144237d6dd8ae072ad2c852c5b5c10bd51001caa481c207bc7d93c470014"
+    },
+    {
+      "id": "e137",
+      "round": 4,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-vale",
+        "text": "Theo \u2014 you had the cook as a witness in the pantry. If she can confirm your window, you're the one person besides me with an alibi. Can she also say whether anyone passed the pantry toward the library or study during that time? And did you notice anything about the green scarf or the seal press when you searched the study?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "a7945547124d816169a993fffc2cd03d1d936d6c"
+      },
+      "previous": "efa8144237d6dd8ae072ad2c852c5b5c10bd51001caa481c207bc7d93c470014",
+      "hash": "0d3c443bd2dafaea506c2e939149285d5829f4e3d2229af5dd4e19aacd730083"
+    },
+    {
+      "id": "e138",
+      "round": 4,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I need to be honest with all of you about something that looks bad for me, because I will not have it discovered and thrown at me later. Theo asked where I was near a quarter to eight \u2014 this is the answer. At about 19:42 I went into the study. Edmund's new will had upset me at dinner; I understood I might lose my home. I saw the unsigned draft among the papers and I took it upstairs to read in private. That was wrong and I'm sorry for it. But hear me plainly: I never entered the library, I never touched Edmund, and I came down and passed this room at 19:55, as the Inspector witnessed. I have the draft still, safe and unaltered. I'll show it to you exactly."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "2aab8ba034a70d0232f207cb7e7ccc3ce4288251"
+      },
+      "previous": "0d3c443bd2dafaea506c2e939149285d5829f4e3d2229af5dd4e19aacd730083",
+      "hash": "bf86f7d74b34f9c782d4110c199a0a142b1d323fd412a5699deb166408226777"
+    },
+    {
+      "id": "e139",
+      "round": 4,
+      "kind": "share",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "guest-will",
+        "card": {
+          "title": "The missing draft will",
+          "text": "An unsigned draft dated today is folded inside Clara's guest-room writing case. It proposes an estate trust that protects staff pensions and gives Clara a lifetime right to live in the house. The currently signed will leaves most of the estate to Clara. This draft has no legal effect yet.",
+          "location": "guest-room"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "2aab8ba034a70d0232f207cb7e7ccc3ce4288251"
+      },
+      "previous": "bf86f7d74b34f9c782d4110c199a0a142b1d323fd412a5699deb166408226777",
+      "hash": "b7333a41eb0fef51dbcbc3fd1d060906341328ecea609d92e92de3a590e0255a"
+    },
+    {
+      "id": "e140",
+      "round": 4,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Read it and weigh the logic. Yes \u2014 the currently signed will leaves me the greater share, and this new draft would give me only the right to live in the house while protecting the staff's pensions in a trust. If I were the kind of person who murdered to keep the old will, I would be hiding this draft or burning it \u2014 not handing it to you and asking that Edmund's wishes be carried out. So let me say it in the open: I want the trust created, the pensions restored, and the audit to go ahead in full. I'll gladly take only my family home to live in. And note \u2014 Nell saw the killer at 19:48 in a green scarf; I own no such scarf and was seen elsewhere. A staged folder and a borrowed scarf are someone else's design, not mine, and not, I think, Miles's or Iris's."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "2aab8ba034a70d0232f207cb7e7ccc3ce4288251"
+      },
+      "previous": "b7333a41eb0fef51dbcbc3fd1d060906341328ecea609d92e92de3a590e0255a",
+      "hash": "135fd5c4260a3b319dd2e33f753e7c26a9e9537da4ecd428c1f506684eb30bbc"
+    },
+    {
+      "id": "e141",
+      "round": 4,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "iris"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "clara-iris",
+        "text": "Iris \u2014 thank you for being straight about the scarf. I believe you were set up: someone borrowed it to walk Miles's folder into that library and pin this on you both. I've just told the room something that looks bad for me too \u2014 I took the draft will to read it \u2014 because I'd rather own it than have it hurled at me. Can we back each other on the two things that matter most: the audit going ahead, and honoring Edmund's trust for the staff? And think hard \u2014 who tonight could reach BOTH your scarf in the hall and Miles's folder in the study, unwatched?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "2aab8ba034a70d0232f207cb7e7ccc3ce4288251"
+      },
+      "previous": "135fd5c4260a3b319dd2e33f753e7c26a9e9537da4ecd428c1f506684eb30bbc",
+      "hash": "c7ab7435c14ec7bfbd211c0bafd4758e6a24ad8d4f34ec0a8934b2c14c9cf65b"
+    },
+    {
+      "id": "e142",
+      "round": 4,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "No one saw me \u2014 I went out alone and came straight back. Vale is pressing everyone without a witness, me included, but she's not accusing, only can't clear us. That's true of Iris and Nell too, so we're not singled out. Hold steady: 'out for air, saw no one.' I'm going to quietly check the boathouse myself so I know what, if anything, could be found there. Don't mention it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "9737e086b6ff42855ae4f46220ae5ba5de4002d0"
+      },
+      "previous": "c7ab7435c14ec7bfbd211c0bafd4758e6a24ad8d4f34ec0a8934b2c14c9cf65b",
+      "hash": "f5c498487d39e51a8e862524d0f1d8053bbfeee5d395b12c40a1124aaae8a98d"
+    },
+    {
+      "id": "e143",
+      "round": 4,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Inspector, I'll be as precise as I can: after dinner the storm had my nerves on edge, so I stepped outside briefly for air, kept to the near grounds, and came back in. I passed no one and no one passed me \u2014 I wish I could offer you a witness, but I can't. I'll add that I agree we shouldn't hang anyone on a folder alone; but a real motive is a real motive, and Edmund's own letter names where the authority sat. Both things can be held at once."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "9737e086b6ff42855ae4f46220ae5ba5de4002d0"
+      },
+      "previous": "f5c498487d39e51a8e862524d0f1d8053bbfeee5d395b12c40a1124aaae8a98d",
+      "hash": "8fe7bb6a3153b3f50b9483489185dced2bb462c1b9c7f3b152f2fba38ecacdae"
+    },
+    {
+      "id": "e144",
+      "round": 4,
+      "kind": "inspect",
+      "actor": "rose",
+      "visible_to": [
+        "rose"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "boathouse",
+        "cards": {
+          "boathouse-book": {
+            "title": "The boat keeper's log",
+            "text": "The boat keeper records Rose and Finch entering at 19:43 and leaving together at 20:02. He was sheltering in the adjoining workshop with a clear view of the only door.",
+            "location": "boathouse"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "9737e086b6ff42855ae4f46220ae5ba5de4002d0"
+      },
+      "previous": "8fe7bb6a3153b3f50b9483489185dced2bb462c1b9c7f3b152f2fba38ecacdae",
+      "hash": "9a9a2d059e7d80c99771b0ebfefd693d4e4a6c73470ef05ffd6698672510ad83"
     }
   ],
   "chats": {
@@ -2098,29 +3943,26 @@
     "clara-iris": {
       "title": "The examination Edmund wanted",
       "members": [
-        "clara"
-      ],
-      "invites": [
+        "clara",
         "iris"
-      ]
+      ],
+      "invites": []
     },
     "finch-miles": {
       "title": "A quiet word",
       "members": [
-        "finch"
-      ],
-      "invites": [
+        "finch",
         "miles"
-      ]
+      ],
+      "invites": []
     },
     "theo-vale": {
       "title": "For the inspector",
       "members": [
-        "theo"
-      ],
-      "invites": [
+        "theo",
         "vale"
-      ]
+      ],
+      "invites": []
     }
   },
   "ballots": {},
@@ -2690,6 +4532,554 @@
       },
       "time": 1789893506.3239107,
       "seen_through": 30
+    },
+    {
+      "round": 3,
+      "role": "rose",
+      "conversation": "bellweather-20260920-01a08d2c-rose",
+      "head": "0b4114d0fc128736eff9f1a492ccca5747bc2c45",
+      "decision": {
+        "notes": "Evidence strongly implicates Miles (North Quay Services sole owner, \u00a32,400, weapon = brass seal press in the study where he claims he was alone). This protects me and Finch. Keep affair hidden; rely on Miles as obvious suspect. Align public story with Finch: I said 'out for air,' not 'resting'\u2014tell him so we don't contradict. Don't reveal boathouse yet. Note Nell saw someone carry the dark folder into library at 19:48 \u2014 not us. Begin gently seeding 'sell' for the estate.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "No one saw us \u2014 we were alone at the boathouse the whole time. But listen: I did NOT say 'resting' to the room, I said I went out for air because the storm unsettled me. Please match that \u2014 say you stepped out briefly, alone, and stay vague. Never name the boathouse or me. The evidence points hard at Miles and the accounts; if we keep steady, it stays there and our secret is safe. Say nothing that puts us together."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles, you told us you were alone in the study all evening \u2014 and the study is exactly where that seal press sits, with blood in its recess and blue wax matching Edmund's cuff. The company papers name you sole owner of North Quay Services, which took \u00a32,400 from the estate Edmund meant to audit tomorrow. I'm not the inspector, but those are a great many things pointing one way. I'd genuinely like to hear an honest answer."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Nell \u2014 you said you saw someone carry a dark folder into the library around 19:48. Height, build, anything at all? That person may be the one we want."
+          }
+        ]
+      },
+      "time": 1789894048.4492295,
+      "seen_through": 74
+    },
+    {
+      "round": 3,
+      "role": "finch",
+      "conversation": "bellweather-20260920-01a08d2c-finch",
+      "head": "d2b2f10597202bd04fda5c6162cec5443f464efe",
+      "decision": {
+        "notes": "Key realization: I was with Rose the entire death window (19:43-20:02 vs 19:45-20:00), so Rose is genuinely innocent \u2014 I can protect her with clear conscience. Real killer is among Miles/Iris/Nell (Clara & Theo & Vale alibied). Evidence heavily points to Miles: sole owner of North Quay, \u00a32,400, audit tomorrow = motive; weapon is the study seal press (he was alone in study). Could be a frame (folder timing unknown, planted?), but converging on Miles protects Rose and me. My liability: the false certificate Miles knows about gives ME a paper motive (audit could expose it). Miles may deploy it. Best defense: cement Miles's fraud motive as clearest, keep my profile professional, be ready to dismiss the certificate as Edmund-coerced. Provide truthful forensic linkage.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the medical question, so we reason from fact: the wound is a single blow from a heavy squared object \u2014 fully consistent with that brass seal press. The blue wax on Edmund's cuff matches the wax still in the die. The press has blood in a recess and was wiped clean. So the weapon came from the study and was returned and cleaned by the person who used it. That is forensics, not accusation."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Inspector, I'd hold two things together: initials on a folder prove nothing about who carried it \u2014 Nell saw someone enter with a dark folder at 19:48 but not their face. What the folder tells us is the motive at play: tomorrow's audit. Whoever that examination most endangered had the strongest reason to want it never to happen. That is a question for the accounts and for who could reach the study unseen."
+          },
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "Stay calm, my love \u2014 the room is turning to Miles and the accounts, which keeps us both clear without a word about us. Say nothing more than 'out for air, saw no one.' One warning: if Miles feels cornered he may try to fling mud at anyone, me or you included. Whatever he says about me or an old paper, don't react \u2014 I'll handle it. Were you seen by anyone at all when you went out?"
+          }
+        ]
+      },
+      "time": 1789894101.8836622,
+      "seen_through": 74
+    },
+    {
+      "round": 3,
+      "role": "miles",
+      "conversation": "bellweather-20260920-01a08d2c-miles",
+      "head": "24e69cd364b92904a92f0db0051e315b2804809c",
+      "decision": {
+        "notes": "Catastrophe: study-company (my sole ownership + \u00a32,400) and study-press (weapon) are public; folder with my initials at scene; Nell saw a folder-carrier enter library at 19:48 (that was me, face unseen). Can't deny North Quay. Strategy: (1) admit North Quay openly, call the payments legitimate fees; (2) rational defense \u2014 killing Edmund only guarantees the audit and points at me, so I gain nothing; (3) frame narrative \u2014 I left folder+press in the unlocked study and stepped out briefly; someone carried them to the library to implicate me. Lean on their own card phrases: 'anyone could enter the study' and 'no record when the folder arrived.' Accept Finch's private chat (I hold leverage: his false certificate) and open a careful channel. Inspect the hall to learn about the green scarf I borrowed and Nell's sightlines before I'm blindsided.",
+        "actions": [
+          {
+            "type": "accept",
+            "chat": "finch-miles"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Inspector, I'll answer plainly, because hiding anything would only damn me. Yes \u2014 North Quay Services is my company. Those papers sit in an unlocked cabinet in plain view, not a safe. It does conveyancing and estate work, and the \u00a32,400 were fees for services rendered. Edmund flagged the item for tomorrow's audit as ordinary due diligence, and I prepared that reconciliation folder to answer it. I wanted that audit. I still do \u2014 let it proceed, in full."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Now weigh the logic before a folder decides it. If I were a thief, Edmund's death is the worst thing that could befall me: the audit will now certainly go ahead, and I stand here the obvious suspect. I gain nothing and lose everything. A guilty man kills to silence an audit \u2014 he does not murder his client the night before it and leave his own initialled folder beside the body. As to that folder: it is mine, and I left it, with the estate's seal press, in the study. I'll correct one thing honestly \u2014 I did step out of the study briefly, around ten to eight, for a few minutes. Your own cards say the rest: 'anyone in the house could have entered the study,' and the folder 'carries no record of when it arrived' in the library. Someone carried my folder and that press into that room. I did not. I'd ask you to weigh who had the run of this house tonight, unwatched, and who gains from Edmund dead and me blamed for it."
+          },
+          {
+            "type": "say",
+            "chat": "finch-miles",
+            "text": "Samuel \u2014 you asked for a word. I'm listening. Whatever's said in this room, I'd rather we two spoke frankly and quietly than let a frightened houseful turn on the first name that fits. What's on your mind?"
+          },
+          {
+            "type": "inspect",
+            "place": "hall"
+          }
+        ]
+      },
+      "time": 1789894157.2196355,
+      "seen_through": 74
+    },
+    {
+      "round": 3,
+      "role": "nell",
+      "conversation": "bellweather-20260920-01a08d2c-nell",
+      "head": "5b2c77ebbc81108c08be3fde376ebce8e341dcce",
+      "decision": {
+        "notes": "Evidence now public and converging on Miles: North Quay Services (his company) got \u00a32,400, folder bears his initials, he asked to postpone the audit, alone in study with the press (weapon). But the folder was CARRIED INTO the library at 19:48 by someone in a green scarf like Iris's \u2014 odd. An embezzler wouldn't parade the incriminating folder in wearing a distinctive scarf. Smells like possible staging/frame. I'll reveal the scarf sighting with that double-edged framing to prevent a rush to convict, advance the pension issue publicly, and press Miles. Hear Iris out.",
+        "actions": [
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "wages"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Since we're pooling facts: staff pension contributions stopped four months ago, yet the ledger still records them as paid. I kept duplicate records. That is money gone somewhere, and North Quay Services is the obvious question. Miles \u2014 plainly \u2014 what is that company, why did \u00a32,400 of estate money go to it, and do you know where our pensions went?"
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "nell-sighting"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "And I owe you the whole of what I saw. The person who carried that folder into the library at 19:48 wore a green scarf \u2014 like the one Iris often wears, though it hangs in the hall where anyone could take it, and I never saw the face. But hear me: that folder bears Miles's initials, yet was carried in by someone in Iris's scarf. A man hiding a theft would hardly parade the damning folder into the room, in another person's scarf. To me that reads as much like a staging to pin this on one or both of them as a confession. Let us be slow to hang anyone on props that could be planted."
+          },
+          {
+            "type": "say",
+            "chat": "iris-nell",
+            "text": "Iris \u2014 I've told everyone plainly that the scarf hangs in the hall and I couldn't see the face, so I'm not pointing at you. But I must ask you straight: was that your scarf tonight, where was it after dinner, and did you carry any folder? Anything you tell me I'll weigh fairly."
+          }
+        ]
+      },
+      "time": 1789894153.6625369,
+      "seen_through": 74
+    },
+    {
+      "round": 3,
+      "role": "iris",
+      "conversation": "bellweather-20260920-01a08d2c-iris",
+      "head": "e4e1f7fab6419bbc4e9be7b75d328da337ebe4d6",
+      "decision": {
+        "notes": "Case now heavily points at Miles: study-company (North Quay incorporation names Miles sole owner, \u00a32,400 estate payments), study-press (weapon, blue wax matches cuff, wiped), library-folder (marked M.T.), plus Nell saw a folder-carrier enter library at 19:48 (face unseen). BUT cabinet unlocked, 'anyone could enter study,' folder has no arrival time \u2014 evidence could be genuine OR planted to frame Miles. My iris-letter (Edmund's own hand, yesterday) proves the wrongdoing/suspicion is real and predates tonight \u2014 good for the audit goal and motive, doesn't name Nell. I'll share it with caution. Defensive: raise my borrowed green scarf publicly to preempt a frame. Ask Nell privately what she saw of the folder-carrier (green scarf?).",
+        "actions": [
+          {
+            "type": "accept",
+            "chat": "clara-iris"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I'll add one more thing Edmund left in my keeping \u2014 his own words, written yesterday, before any of tonight. It shows the concern about North Quay was real and his, not something invented in the last hour."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "iris-letter"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "So the wrongdoing Edmund meant to expose was real, and he named where the authority sat. That establishes a motive \u2014 but I want us fair. The study cabinet was unlocked, anyone could enter, and the folder in the library carries no record of when it arrived. Genuine guilt and a clever frame can look identical. Miles, the honest thing is to answer plainly. Everyone else: I need to say something for my own sake. I left my green scarf in the hall before dinner and it was borrowed while I was in the greenhouse \u2014 it was back when I returned. If anyone saw who took it, please say so now, in the open."
+          },
+          {
+            "type": "say",
+            "chat": "iris-nell",
+            "text": "Nell, thank you \u2014 and you did right not to name a face you couldn't see. Between us: the person you saw go into the library at 19:48 with the folder \u2014 anything at all? Height, a coat, a limp, light or dark clothes? And did you happen to see anyone take a green scarf from the hall? It matters to me because someone borrowed mine tonight and I fear it's meant to point at me. Your name stays protected regardless."
+          }
+        ]
+      },
+      "time": 1789894207.0522254,
+      "seen_through": 74
+    },
+    {
+      "round": 3,
+      "role": "theo",
+      "conversation": "bellweather-20260920-01a08d2c-theo",
+      "head": "815937a204861659db1feb16c4ed6be16a89293c",
+      "decision": {
+        "notes": "Weapon is the brass press: brass shaving in library matches the press's fresh nick, so the press was carried to the library, used, wiped, returned to study. Blue wax cuff matches die. Motive points to Miles (North Quay), BUT the setup is suspiciously tidy: unlocked cabinet, M.T. folder left open, press returned \u2014 smells of a possible frame. Suspects to watch: Iris (my source, no alibi, pre-seeded the North Quay narrative with me at 19:30, worried about her scarf in the hall) and Clara (I saw her leave the study at 19:44 with folded paper, but she omitted the study from her account; Vale places her at drawing-room door 19:55). Nell saw someone enter library ~19:48 with a dark folder. I'll keep protecting Iris, keep my Clara card hidden while I test Clara's story, and inspect the hall (route to library, scarf, Nell's sighting).",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "theo-iris",
+            "text": "You have my word: your name and Nell's stay out of anything I print unless you release me, or unless withholding it would let me print something false \u2014 I won't put my name to a lie. The cook confirms I was in the pantry from 19:42 until just after 20:04, so the inspector can rely on that. I was nowhere near the hall, so I can't speak to your scarf \u2014 I never saw it. Honest question, just between us: do you actually believe Miles struck Edmund, or do you only want the audit to survive? I ask because the study cabinet was unlocked and that M.T. folder was left sitting open \u2014 that's either a guilty man's panic or someone's tidy frame, and I won't print the wrong man."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "One link worth spelling out: Dr Finch and the inspector both note a tiny brass shaving on the library carpet beside Edmund. The study press has a fresh nick in its brass edge. That strongly suggests the press was carried into the library, used, then wiped and set back on the study desk. So the question isn't only who owns the folder \u2014 it's who moved that heavy press between the two rooms during the window."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "And Vale is right that no forced entry means Edmund admitted someone he trusted. Nell, you saw a figure enter the library about 19:48 carrying a dark folder \u2014 build height, clothing, anything at all? Clara \u2014 before you searched the study tonight, were you near the study or the stairs earlier, say around a quarter to eight? I'm only trying to pin the timeline down."
+          },
+          {
+            "type": "inspect",
+            "place": "hall"
+          }
+        ]
+      },
+      "time": 1789894216.718416,
+      "seen_through": 74
+    },
+    {
+      "round": 3,
+      "role": "vale",
+      "conversation": "bellweather-20260920-01a08d2c-vale",
+      "head": "553edb5642c5b8ed2de6d7d93769bd3fe0cc286b",
+      "decision": {
+        "notes": "Now I hold study-press and study-company (shared into drawing-room). Physical picture: weapon = brass seal press kept in STUDY; Edmund killed in LIBRARY; press found back in study, wiped, blood in recess, fresh nick; brass shaving on library carpet. So killer carried press study\u2192library\u2192study and wiped it. Miles claims he was alone in study the WHOLE window with no witness. Logic: if the press was returned and wiped in the study, either Miles did it, or Miles is lying about being present, or someone did it in the study without Miles noticing. Real incorporation papers make Miles sole owner of North Quay (\u00a32,400) \u2014 genuine embezzlement motive, hard to fake. BUT everyone piling onto Miles fast + folder 'no record of arrival' + neat staging = possible frame. Unverified-in-window: Miles, Rose, Iris, Nell (and Clara's earlier part). Nell's 19:48 folder-carrier claim is key and uncorroborated. Accept Theo chat, probe Nell privately, inspect the hall (traffic between rooms).",
+        "actions": [
+          {
+            "type": "accept",
+            "chat": "theo-vale"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Let's think about the weapon's movements, because they're decisive. The press lives in the STUDY. Edmund died in the LIBRARY, with a brass shaving beside him and blue wax on his cuff. The press was found back in the study, wiped, with blood in the recess and a fresh nick. So someone carried that press from the study to the library, struck him, returned it, and cleaned it."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles \u2014 you say you were alone in the study for the whole window. If that is true, then either you saw that heavy press taken and brought back bloody, or it happened in your presence. Which is it? A man sitting with the papers all evening should be able to tell us whether the press ever left the desk. Please answer precisely, because your account and that press are hard to reconcile unless you were the one who moved it \u2014 or unless you were not actually in the study the whole time."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "A caution to everyone: the incorporation papers are real and give Miles a genuine motive. But I've noticed how quickly we've all converged on him, and the folder at the scene 'carries no record of when it arrived.' Real motive and a staged scene can coexist. So I want alibis firmed up too. Rose, Iris, Nell \u2014 none of you has a witness for the window. That doesn't accuse you; it means we can't yet clear you. Where exactly, and did anyone see you at any moment?"
+          },
+          {
+            "type": "say",
+            "chat": "nell-inspector",
+            "text": "Nell, thank you for reaching out. That folder-carrier you saw enter the library at about 19:48 could be the most important thing anyone's told me. Tell me everything, even small things: were they coming from the direction of the study or the hall stairs? Tall or short? Man's dress or a woman's? Did they carry anything besides the folder \u2014 perhaps something heavy? And did you see them come back out?"
+          },
+          {
+            "type": "inspect",
+            "place": "hall"
+          }
+        ]
+      },
+      "time": 1789894026.7704606,
+      "seen_through": 74
+    },
+    {
+      "round": 3,
+      "role": "clara",
+      "conversation": "bellweather-20260920-01a08d2c-clara",
+      "head": "f527062b803b773fcee200dfabc109ecdf7cd2ec",
+      "decision": {
+        "notes": "Case is converging on Miles (North Quay \u00a32,400, M.T. folder in library, seal-press weapon in study where he claims he was alone; Nell saw someone carry a dark folder into library at 19:48). Vale corroborated my 19:55 pass \u2014 my alibi holds. Company papers already public (Theo shared), so no leverage lost. MY hidden risks: (a) I stole the draft will \u2014 killing Edmund before he signed the new will benefits ME via the old will; (b) if the missing draft will surfaces, or Miles claims he saw me in the study at 19:42, suspicion turns to me. Must keep focus on Miles/accounts and never mention the will. I'll inspect my own guest-room to learn if the hidden will is discoverable evidence, so I can prepare. Publicly: stay measured/fair like Vale, ask one sharp folder/timeline question of Miles, back the audit.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Thank you, Inspector \u2014 that matches my memory. I want to be fair here: initials on a folder aren't proof, and I agree no forced entry points to someone Edmund trusted or who lived here. But two facts sit oddly together. Nell saw someone carry a dark folder into the library at about 19:48, and, Miles, you say you sat alone in the study the entire window. So either you stepped across to the library with that reconciliation folder around 19:48, or someone else took your folder there. Which was it \u2014 and when did the press with the blood on it leave your desk?"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "For my part, I've nothing to hide about my movements: upstairs after dinner, then down past this room at about five to eight, which the Inspector saw. And I agree wholeheartedly with Iris \u2014 whatever we conclude tonight, Edmund's audit must still go ahead in the morning."
+          },
+          {
+            "type": "inspect",
+            "place": "guest-room"
+          }
+        ]
+      },
+      "time": 1789894018.1560144,
+      "seen_through": 74
+    },
+    {
+      "round": 4,
+      "role": "finch",
+      "conversation": "bellweather-20260920-01a08d2c-finch",
+      "head": "b32428bf5b296042d9d4f3531360ca8845cfaef1",
+      "decision": {
+        "notes": "Suspects with opportunity: Miles (embezzlement motive, stepped out ~19:50), Iris (scarf used, holds Edmund's letter), Nell (near library, reported scarf sighting, holds wage records). Rose is truly innocent (with me all window). The scarf+folder combo reads like deliberate staging to frame Miles/Iris. My priority: bury the certificate \u2014 Miles holds that secret and has been cordial, so I'll secure mutual silence rather than antagonize him, and stay a fair/balanced voice (genuinely, since a frame is plausible). Give minimal alibi matching Rose ('out for air, alone'). Rein Rose in a touch so a cornered Miles doesn't start flinging accusations that reach me.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "finch-miles",
+            "text": "Thank you for speaking plainly, Miles. Honestly, I don't think an initialled folder and a borrowed scarf convict a man \u2014 the scene could be staged, and I've said so to the room. But I'll ask you once, straight: did you kill Edmund? Separately \u2014 there are old matters between us, Edmund's own doing six months back, that have no bearing on who struck him tonight. I'd sooner they stayed where they belong, and I'll extend you the same discretion. Fair?"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "My movements, plainly: after dinner I stepped out briefly for air, alone, and was called to the library at 20:10 \u2014 that is when I first saw him. On the scene, the decisive physical fact is the press being carried study-to-library and back, then wiped. But I'd urge care: a folder bearing one man's initials, carried by someone in a third person's scarf, reads as much like staging as confession. Let us not let planted props do our thinking for us."
+          },
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "I've matched you \u2014 'out for air, alone,' nothing more. Ease off Miles a little, my love. Vale is already pressing him hard; if we corner him he may lash at anyone in the room to save himself. Let the inspector do it. Keep yourself quiet and above it."
+          }
+        ]
+      },
+      "time": 1789894661.9825842,
+      "seen_through": 108
+    },
+    {
+      "round": 4,
+      "role": "miles",
+      "conversation": "bellweather-20260920-01a08d2c-miles",
+      "head": "71b58745fd004193e253ec8573e45d8a2bd78e28",
+      "decision": {
+        "notes": "The hall-scarf gardener statement (I took the green scarf before 19:45) is currently ONLY known to me \u2014 near-fatal if it surfaces. Do NOT volunteer it. Fallback if it surfaces: 'gardener didn't see it returned, so it was on the stand for anyone at 19:48.' Never amplify the Iris-scarf angle (if I'm later shown as scarf-taker, I'd look like her framer). Best defenses: (1) rhetorical 'why would a thief wear a conspicuous scarf and carry his own initialled folder? \u2014 the scene is staged'; (2) STRONGEST redirect: the audit proceeds without Edmund, but a NEW WILL dies with him tonight \u2014 the murder's timing fits a will/inheritance motive, pointing at heirs (Clara/Rose), not me. Cultivate Finch privately (I hold his false-certificate secret) as an ally. Inspect guest-room hunting for will/heir evidence to feed the redirect.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Inspector, I'll answer precisely. No \u2014 I did not sit guarding that press. I was working at the papers and I stepped out for some minutes, around ten to eight. So I cannot swear the press never left that desk; I wasn't watching it, and the study was unlocked with, as your own card says, anyone free to enter. That is the honest answer, uncomfortable as it is for me."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "But hold the whole scene together before you decide. A man hiding a theft does not carry his own initialled folder to the body, nor wear a bright scarf a witness would remember \u2014 Nell says the scarf even resembled someone else's, not mine. Real guilt hides; this scene shouts. It is arranged to be found, and found fast. I'd ask you to be as slow as the evidence deserves."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "And consider the timing, which everyone keeps skipping. Edmund announced TWO things: an audit and a NEW WILL. The audit needs no living man \u2014 it will proceed whatever happens to me, so his death buys a thief nothing but the noose. A new will, though, dies with him tonight. Whoever feared what tomorrow's will would change had a motive that vanished the moment he died before morning. So I'd ask plainly: who does the present will favour, what would the new one have altered \u2014 and who, unwatched, gains by Edmund never signing it?"
+          },
+          {
+            "type": "say",
+            "chat": "finch-miles",
+            "text": "Samuel, thank you for keeping heads cool in there. I'll be frank between us: I did not do this, but I know how a stranded houseful hunts for one neck. I'd value your judgement on the medical timing \u2014 the window is wide, and precision could clear more than one of us. And I've always held that a man's older paperwork is his own affair; I'd hate to see tonight become an excuse to tear open everyone's private files. Keep this to the facts that matter and I'll not forget a level head when it counts. What did you want to say to me?"
+          },
+          {
+            "type": "inspect",
+            "place": "guest-room"
+          }
+        ]
+      },
+      "time": 1789894769.2522511,
+      "seen_through": 108
+    },
+    {
+      "round": 4,
+      "role": "nell",
+      "conversation": "bellweather-20260920-01a08d2c-nell",
+      "head": "631209271b54a822db988121c392dd40bb275947",
+      "decision": {
+        "notes": "Iris's letter (E.B., yesterday) names Miles as sole authority over North Quay payments + pension remittances \u2014 strong that Miles diverted the pension money (my goal 2 largely answered). But murder is separate. Double-frame signal: someone wore Iris's scarf AND carried Miles's folder into the library \u2014 both borrowed/left in the open \u2014 smells like a third party staging it on both. Unwitnessed: Rose ('air'), Iris (greenhouse). Miles now admits stepping out ~19:50. New-will motive underexplored: who did Edmund mean to cut? I must NOT invent build/height \u2014 I only saw scarf and folder, no face. Push audit, keep murderer open, probe the will.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "nell-inspector",
+            "text": "Honest and complete: I saw the green scarf and the dark folder, and the figure passing through the library door \u2014 nothing of the face. I truly cannot swear to height, build or dress; it was a glimpse and I won't dress it up. I can't even say for certain which direction they came from. What I'll stand on is only the scarf and the folder. And I'll say plainly: both those objects belong to other people and hang or sit where anyone could take them, so a scarf that points at Iris and a folder that points at Miles, together, looks to me like staging. Two people I can't place in the window are Rose (walking outside, no witness) and Iris (greenhouse, no witness); and Miles now admits leaving the study around ten to eight."
+          },
+          {
+            "type": "say",
+            "chat": "iris-nell",
+            "text": "Iris, I'll be straight because you've been straight with me: I saw only the scarf and the folder, not the face \u2014 no height, no coat, no gait I could swear to, and I did not see who took your scarf from the hall. I won't invent a detail to help or harm anyone. Between us, the scarf-and-folder together looks staged to me, and staging points away from you as much as toward you. You knew Edmund's affairs best \u2014 what was he going to change in the will tomorrow, and who lost by it?"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "To all of you asking me for more: I wish I could give it. I saw the green scarf and the dark folder go through the library door at 19:48 \u2014 I did not see the face, and I cannot honestly swear to height, build, or dress. I won't invent details to fit anyone's theory. What I'll stand on is this: someone in Iris's scarf carried Miles's initialled folder into that room, and both those things were left where anyone could take them. Together, that looks staged to me \u2014 too neat. So let's hold two questions apart. First, who diverted our pensions: Edmund's own letter names Mr Trent's authority, and that must be run to ground by the audit. Second, and separately, who actually struck him \u2014 the folder and scarf may have been meant to answer that for us a little too conveniently. Iris, you kept his papers \u2014 what was Edmund going to change in the will tomorrow, and who stood to lose by it?"
+          }
+        ]
+      },
+      "time": 1789894716.7618012,
+      "seen_through": 108
+    },
+    {
+      "round": 4,
+      "role": "iris",
+      "conversation": "bellweather-20260920-01a08d2c-iris",
+      "head": "cc0092d64dac2469e7ccd1ffa5cb9804425a0391",
+      "decision": {
+        "notes": "Critical: nell-sighting says the 19:48 folder-carrier wore a green scarf resembling MINE. So someone staged a DOUBLE frame \u2014 my scarf + Miles's folder. That points away from both of us toward a third person who had access to the hall (scarf) AND the study (press+folder) and could reach the library ~19:48. Suspects with opportunity + motive: Clara (heir; a NEW will tomorrow threatened her \u2014 killing preserves current will; seen passing drawing room 19:55, unaccounted 19:45-19:55), Rose (widow, 'out for air' alone, no alibi), possibly Finch (whereabouts vague). Miles admits stepping out ~19:50. Nell is my ally and I trust her. I'll inspect the HALL to find who took the scarf. Keep pushing audit (goal 1, going well), protect Nell (now public sympathetic whistleblower), clear my name.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Read Nell's sighting carefully, everyone. The figure at 19:48 wore my scarf AND carried Miles's initialled folder. Think what that means: a guilty thief does not parade the one folder that damns him, dressed in someone else's scarf. That is not a confession \u2014 it is a stage set to pin this on Miles and me at once. Which tells me the real hand belongs to a third person: someone who could take my scarf from the hall AND reach Miles's press and folder in the study, unseen. So I ask plainly \u2014 who passed through the hall between dinner and a quarter to eight? Who saw the scarf move? That person is closer to Edmund's killer than any folder."
+          },
+          {
+            "type": "say",
+            "chat": "iris-nell",
+            "text": "Straight answer, Nell: yes, that green scarf is mine. I hung it in the hall before dinner and never wore it after \u2014 I was in the greenhouse from 19:40, alone, reading Edmund's letters, and I carried no folder. Someone took it and gave it back. You were about the hall tonight \u2014 think hard: who came and went there before 19:48? Even a glimpse helps me. And I'll say again, whatever the audit turns up, your pensions and your name are protected. You're the victim here, not the accused."
+          },
+          {
+            "type": "say",
+            "chat": "theo-iris",
+            "text": "Honest answer: I want the audit to survive, but I will not hand you the wrong man to print. I don't assume Miles struck him. The scarf changes things \u2014 that's my scarf on the 19:48 figure, and I never wore it. Whoever staged this used my scarf and Miles's folder together. Look for who could reach the hall and the study both. Keep my source and Nell out of it as promised, and I'll keep feeding you what's real."
+          },
+          {
+            "type": "say",
+            "chat": "clara-iris",
+            "text": "Clara, thank you for pressing the audit \u2014 I'm with you entirely; Edmund's examination must go ahead. Between us, help me steady the timeline. Vale saw you pass the drawing room at 19:55. Where exactly were you from a quarter to eight until then, and did you see anyone near the hall or the study? Someone wore my scarf into the library at 19:48, and I'm trying to find who took it."
+          },
+          {
+            "type": "inspect",
+            "place": "hall"
+          }
+        ]
+      },
+      "time": 1789894775.0039458,
+      "seen_through": 108
+    },
+    {
+      "round": 4,
+      "role": "theo",
+      "conversation": "bellweather-20260920-01a08d2c-theo",
+      "head": "53afa8eb3cbb62b5acb773588db7911ec20e315c",
+      "decision": {
+        "notes": "DECISIVE: hall-scarf \u2014 the gardener saw MILES take the green scarf ~19:45 (draught excuse). Nell saw a green-scarf figure enter the library at 19:48 with a dark folder. So the scarf-wearer at the scene was Miles, not Iris \u2014 this both clears Iris (my source) and destroys Miles's 'alone in the study all evening' claim (he was in the hall ~19:45, library ~19:48). Chain vs Miles: motive (North Quay owner; Edmund's letter names him as sole payment authority; audit tomorrow), means (his press, his M.T. folder), opportunity (took scarf, seen entering library at time of death), plus a lie about his whereabouts. My Clara-at-study-19:44 sighting is now peripheral since the scarf identifies the library entrant as Miles; I'll note it transparently to close the timeline, not to accuse. Goal: publishable, documented account with a willing named source \u2014 pursue Vale.",
+        "actions": [
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "hall-scarf"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "This settles the scarf question. The gardener saw Miles take the green scarf from the hall stand shortly before 19:45, pleading a draught; it was back by 20:05, and he didn't see it returned. Now line the facts up: Miles owns North Quay, which Edmund's own letter names him as the sole authority behind, with an audit due tomorrow. Around 19:45 Miles takes Iris's scarf. At 19:48 Nell sees a figure in that green scarf carry a dark folder \u2014 the M.T. folder \u2014 into the library. The weapon is Miles's estate press, carried from the study and wiped. Miles, you told us twice you were alone in the study the entire window. You cannot have been: at 19:45 you were at the hall stand, and the man who entered the library at 19:48 wore the scarf you'd just taken. I'd like you to reconcile that."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "To keep the timeline honest and complete, one small thing on my side: around 19:44 I did glimpse someone hurry from the study toward the stairs with a folded paper \u2014 I took it to be Clara collecting something before going up, which fits her account of being upstairs then. Clara, can you confirm that was you and what the paper was, so we've no loose thread?"
+          },
+          {
+            "type": "say",
+            "chat": "theo-vale",
+            "text": "Inspector \u2014 I searched the hall and found the gardener's statement; sharing it with you exactly. To my mind the chain is now close to complete against Miles, but I'm a journalist, not a jury, and I refuse to print a false accusation. I'd value your read. And plainly: if this holds, would you let me name you as the source who verified the scene and the timeline? I want an account that stands behind evidence and a person willing to be named."
+          },
+          {
+            "type": "share",
+            "chat": "theo-vale",
+            "evidence": "hall-scarf"
+          },
+          {
+            "type": "say",
+            "chat": "theo-iris",
+            "text": "The gardener saw Miles \u2014 not you \u2014 take your scarf from the hall just before 19:45, and it's Miles who then appears at the library. That points the scarf at him and away from you. You've already put Edmund's letter on the table yourself, so you're on record by your own choice; I'll still keep the 19:30 copy's provenance to myself as promised. Are you willing to stand publicly as Edmund's secretary confirming the North Quay concern was his and genuine? That named confirmation is what would let me print this responsibly."
+          }
+        ]
+      },
+      "time": 1789894835.7989638,
+      "seen_through": 108
+    },
+    {
+      "round": 4,
+      "role": "vale",
+      "conversation": "bellweather-20260920-01a08d2c-vale",
+      "head": "a7945547124d816169a993fffc2cd03d1d936d6c",
+      "decision": {
+        "notes": "DECISIVE: hall card \u2014 gardener saw MILES take the green scarf from the hall stand shortly before 19:45. Nell saw a GREEN-SCARFED person carry a dark folder (M.T.'s folder) into the library at 19:48, within the death window. Chain: Miles took Iris's scarf (~19:45) \u2192 green-scarfed figure enters library with Miles's folder (~19:48) \u2192 weapon is study press (Miles's location) \u2192 motive: sole authority over North Quay \u00a32,400 + pension diversion (Edmund's letter, Nell's wage records) \u2192 Miles admits stepping out of study ~19:50. This undercuts Miles's 'I was framed / someone else carried my folder' defense and largely clears Iris re: the scarf (it was taken by Miles, not worn by her). Remaining caveat: rely on gardener's statement being accurate. Share hall-scarf, lay out the chain, press Miles.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I searched the hall. This changes the picture, so I'll share it exactly."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "hall-scarf"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Read it against Nell's sighting. Nell saw a person in a GREEN SCARF carry a dark folder into the library at about 19:48. The gardener saw MILES take that green scarf from the hall stand shortly before 19:45, and it was back by 20:05 with no one seeing it returned. So the green-scarfed figure who entered the library with the folder, in the death window, was almost certainly the man who had the scarf: Miles."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles, your defense was that someone else carried your initialled folder in another person's scarf to frame you. But the gardener places that scarf in YOUR hands from before 19:45. And you've admitted stepping out of the study at about ten to eight \u2014 the very minutes Nell describes. The chain now is: you took Iris's scarf, you carried your folder into the library at 19:48, the weapon is the study press that sat where you were, and Edmund's own letter names you as the sole authority over the North Quay payments the audit would expose. I'll hear any innocent account of the scarf \u2014 but I need one that fits the gardener's statement, not around it."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "To be fair on one point: this reading largely clears Iris of the scarf itself \u2014 it was taken by Miles, not worn by her. My honest caveat is that this hinges on the gardener's account being accurate. If anyone can contradict it, say so now."
+          },
+          {
+            "type": "say",
+            "chat": "nell-inspector",
+            "text": "Nell \u2014 one thing I must ask, since your sighting is now central: how sure are you it was 19:48, and that the folder was dark and the scarf green? And to be candid with you: are you certain you saw this, or is there any chance the detail was shaped by knowing about the scarf afterward? I'm not doubting you; I need it to hold up when the police arrive."
+          },
+          {
+            "type": "say",
+            "chat": "theo-vale",
+            "text": "Theo \u2014 you had the cook as a witness in the pantry. If she can confirm your window, you're the one person besides me with an alibi. Can she also say whether anyone passed the pantry toward the library or study during that time? And did you notice anything about the green scarf or the seal press when you searched the study?"
+          }
+        ]
+      },
+      "time": 1789894568.2957747,
+      "seen_through": 108
+    },
+    {
+      "round": 4,
+      "role": "clara",
+      "conversation": "bellweather-20260920-01a08d2c-clara",
+      "head": "2aab8ba034a70d0232f207cb7e7ccc3ce4288251",
+      "decision": {
+        "notes": "DANGER: guest-will is a fixed evidence card \u2014 anyone searching my guest-room finds the stolen draft in MY writing case AND text stating the current signed will leaves most of the estate to me. That's a complete murder-motive package. Concealment risks a late-game search that brands me a liar+concealer with motive. Better to preempt NOW while I control the framing. Key spin: (1) admit I took the draft only to read it, upset, never entered the library; (2) alibi: seen at 19:55, and I wore no green scarf so I'm not the 19:48 killer-figure; (3) crucially, publicly CHAMPION the trust/pensions/audit \u2014 a murderer who killed to keep the favorable old will would never then advocate implementing the new one. This converts my worst evidence into a credibility + no-motive argument and allies me with Nell and Iris. The trust also gives me a lifetime right to live in the house = keeps house in family, satisfying my goal. Ally privately with Iris (also framed via scarf).",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I need to be honest with all of you about something that looks bad for me, because I will not have it discovered and thrown at me later. Theo asked where I was near a quarter to eight \u2014 this is the answer. At about 19:42 I went into the study. Edmund's new will had upset me at dinner; I understood I might lose my home. I saw the unsigned draft among the papers and I took it upstairs to read in private. That was wrong and I'm sorry for it. But hear me plainly: I never entered the library, I never touched Edmund, and I came down and passed this room at 19:55, as the Inspector witnessed. I have the draft still, safe and unaltered. I'll show it to you exactly."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "guest-will"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Read it and weigh the logic. Yes \u2014 the currently signed will leaves me the greater share, and this new draft would give me only the right to live in the house while protecting the staff's pensions in a trust. If I were the kind of person who murdered to keep the old will, I would be hiding this draft or burning it \u2014 not handing it to you and asking that Edmund's wishes be carried out. So let me say it in the open: I want the trust created, the pensions restored, and the audit to go ahead in full. I'll gladly take only my family home to live in. And note \u2014 Nell saw the killer at 19:48 in a green scarf; I own no such scarf and was seen elsewhere. A staged folder and a borrowed scarf are someone else's design, not mine, and not, I think, Miles's or Iris's."
+          },
+          {
+            "type": "say",
+            "chat": "clara-iris",
+            "text": "Iris \u2014 thank you for being straight about the scarf. I believe you were set up: someone borrowed it to walk Miles's folder into that library and pin this on you both. I've just told the room something that looks bad for me too \u2014 I took the draft will to read it \u2014 because I'd rather own it than have it hurled at me. Can we back each other on the two things that matter most: the audit going ahead, and honoring Edmund's trust for the staff? And think hard \u2014 who tonight could reach BOTH your scarf in the hall and Miles's folder in the study, unwatched?"
+          }
+        ]
+      },
+      "time": 1789894649.8250492,
+      "seen_through": 108
+    },
+    {
+      "round": 4,
+      "role": "rose",
+      "conversation": "bellweather-20260920-01a08d2c-rose",
+      "head": "9737e086b6ff42855ae4f46220ae5ba5de4002d0",
+      "decision": {
+        "notes": "Vale now presses me, Iris, Nell for alibis \u2014 not accusing, just can't clear us. Hold to 'out for air, saw no one.' The frame narrative (green scarf, folder timing) and Miles's real motive both keep heat off me and Finch. Risk: boathouse may hold physical traces of our meeting. Inspect boathouse to learn what's discoverable. Keep affair hidden. Advance 'sell' later.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "No one saw me \u2014 I went out alone and came straight back. Vale is pressing everyone without a witness, me included, but she's not accusing, only can't clear us. That's true of Iris and Nell too, so we're not singled out. Hold steady: 'out for air, saw no one.' I'm going to quietly check the boathouse myself so I know what, if anything, could be found there. Don't mention it."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Inspector, I'll be as precise as I can: after dinner the storm had my nerves on edge, so I stepped outside briefly for air, kept to the near grounds, and came back in. I passed no one and no one passed me \u2014 I wish I could offer you a witness, but I can't. I'll add that I agree we shouldn't hang anyone on a folder alone; but a real motive is a real motive, and Edmund's own letter names where the authority sat. Both things can be held at once."
+          },
+          {
+            "type": "inspect",
+            "place": "boathouse"
+          }
+        ]
+      },
+      "time": 1789894597.98544,
+      "seen_through": 108
     }
   ]
 }
