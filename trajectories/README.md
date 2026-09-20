@@ -80,7 +80,21 @@ npm run build
 
 The committed worker bundle contains the pinned Git, diff, and Buffer dependencies; the page loads no third-party scripts. Sources are in `browser/`. `build.mjs` also fixes the pinned Git library’s assumption that every remote advertises a default branch; the tests include a remote without one. CI rebuilds the bundle and checks it matches the committed output.
 
-`python3 trajectories/publish_objects.py` converts the verified captured objects to the published loose-object layout. It does not invent or rewrite any Git object.
+`python3 trajectories/publish_objects.py` publishes the verified captured objects as loose objects and as standard Git packs at `packs/<conversation-head>.pack`, with matching `.idx` files. The reader tries this optional packed download first, then falls back to normal object reads. It verifies the pack and index checksums and every object it uses; a corrupt pack is an error, not a reason to silently switch sources. No parsed conversation JSON is used on this path.
+
+The reader hydrates independent snapshots and transcripts concurrently, with at most eight object reads at once. Events are still assembled in commit order. Pack downloads are limited to 128 MiB and indexes to 8 MiB; the existing object and memory limits also apply.
+
+### Where people publish runs
+
+The viewer and the run archive can live in different repositories. A viewer link needs the remote address and an immutable conversation hash; it does not require that the run belong to the viewer's maintainers.
+
+For native CAOS/Git hosting, keep the conversation head and all referenced child conversations, source commits and request objects available. A plain push of one conversation branch does not necessarily retain them: Git does not follow gitlinks or hashes embedded in event JSON. Use a publisher that retains the full inspection object set.
+
+For static hosting, export a run and use `publish_objects.py` to publish its objects and packs. Serve the resulting directory over HTTPS with CORS enabled. A GitHub Pages publishing workflow can do this after a push to a run branch. The workflow is a publishing step; the viewer still reads and verifies Git objects in the browser.
+
+A separate shared archive can accept branches such as `runs/<owner>/<run-id>` from trusted contributors. Other users can publish to their own remotes or forks. Shared links should pin the conversation hash rather than depend on a branch staying unchanged.
+
+GitHub's ordinary clone endpoint still needs a CORS relay for browser access. Publishing packs on Pages is an alternative that needs no Git relay. Moving the viewer into its own repository alone does not change that restriction.
 
 ## Generate new runs
 

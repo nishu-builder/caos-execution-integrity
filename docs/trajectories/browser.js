@@ -491,7 +491,7 @@ function showRun(loaded, fromURL) {
 }
 function browserRead(options, version) {
   return new Promise((resolve, reject) => {
-    const worker = new Worker("remote-worker.js?v=browser-2");
+    const worker = new Worker("remote-worker.js?v=browser-3");
     activeWorker = worker;
     rejectWorker = reject;
     worker.onmessage = ({ data: message }) => {

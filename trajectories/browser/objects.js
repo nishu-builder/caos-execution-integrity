@@ -132,7 +132,11 @@ function remoteURL(value) {
 }
 async function readLimited(response, limit = MAX_OBJECT) {
   if (Number(response.headers.get("content-length")) > limit)
-    throw Error("Object exceeds the 32 MiB inspection limit.");
+    throw Error(
+      "Download exceeds the " +
+        Math.round(limit / 1024 / 1024) +
+        " MiB inspection limit.",
+    );
   const reader = response.body.getReader(),
     parts = [];
   let length = 0;
@@ -142,7 +146,7 @@ async function readLimited(response, limit = MAX_OBJECT) {
       if (done) break;
       length += value.length;
       if (length > limit)
-        throw Error("Object exceeds the inspection size limit.");
+        throw Error("Download exceeds the inspection size limit.");
       parts.push(value);
     }
   } catch (e) {
@@ -172,6 +176,11 @@ export class Objects {
     this.fs = new MemoryFS();
     this.gitCache = {};
     this.gitReady = null;
+    this.inflight = new Map();
+    this.packObjects = null;
+    this.activeReads = 0;
+    this.readQueue = [];
+    this.gitFetch = Promise.resolve();
   }
   async response(path) {
     let response;
@@ -218,6 +227,16 @@ export class Objects {
     });
   }
   async fetchRaw(oid) {
+    if (this.packObjects?.has(oid)) {
+      const object = await this.readGit(oid);
+      const header = utf8.encode(
+        object.type + " " + object.object.length + "\0",
+      );
+      const raw = new Uint8Array(header.length + object.object.length);
+      raw.set(header);
+      raw.set(object.object, header.length);
+      return raw;
+    }
     if (this.kind === "server")
       return readLimited(await this.response("/object/" + oid));
     if (this.kind === "loose") {
@@ -230,49 +249,165 @@ export class Objects {
         ),
       );
     }
-    await this.initGit();
-    let object;
-    try {
-      object = await this.readGit(oid);
-    } catch {
-      this.progress("Fetching Git objects…");
+    return this.serialGit(async () => {
+      await this.initGit();
+      let object;
       try {
-        await git.fetch({
-          fs: this.fs,
-          http,
-          dir: "/run",
-          url: this.source,
-          corsProxy: this.proxy,
-          ref: oid,
-          singleBranch: true,
-          tags: false,
-          cache: this.gitCache,
-          onAuth: () =>
-            this.token
-              ? { username: "x-access-token", password: this.token }
-              : { cancel: true },
-          onProgress: (e) =>
-            this.progress(
-              `${e.phase}: ${e.loaded}${e.total ? " / " + e.total : ""}`,
-            ),
-        });
         object = await this.readGit(oid);
-      } catch (e) {
-        if (e.message?.includes("memory limit")) throw e;
-        throw Error(
-          "Git fetch failed. Check access, that the remote permits fetching this hash, and that it allows browser requests (CORS). Otherwise use an explicit Git CORS relay or a static Git object URL.",
-        );
+      } catch {
+        this.progress("Fetching Git objects…");
+        try {
+          await git.fetch({
+            fs: this.fs,
+            http,
+            dir: "/run",
+            url: this.source,
+            corsProxy: this.proxy,
+            ref: oid,
+            singleBranch: true,
+            tags: false,
+            cache: this.gitCache,
+            onAuth: () =>
+              this.token
+                ? { username: "x-access-token", password: this.token }
+                : { cancel: true },
+            onProgress: (e) =>
+              this.progress(
+                `${e.phase}: ${e.loaded}${e.total ? " / " + e.total : ""}`,
+              ),
+          });
+          object = await this.readGit(oid);
+        } catch (e) {
+          if (e.message?.includes("memory limit")) throw e;
+          throw Error(
+            "Git fetch failed. Check access, that the remote permits fetching this hash, and that it allows browser requests (CORS). Otherwise use an explicit Git CORS relay or a static Git object URL.",
+          );
+        }
       }
+      if (object.object.length > MAX_OBJECT)
+        throw Error("Object exceeds the 32 MiB inspection limit.");
+      const header = utf8.encode(`${object.type} ${object.object.length}\0`),
+        raw = new Uint8Array(header.length + object.object.length);
+      raw.set(header);
+      raw.set(object.object, header.length);
+      return raw;
+    });
+  }
+  serialGit(action) {
+    const next = this.gitFetch.catch(() => {}).then(action);
+    this.gitFetch = next;
+    return next;
+  }
+  async loadPack(head) {
+    let response;
+    try {
+      response = await this.response("/packs/" + head + ".pack");
+    } catch {
+      return false;
+    } // Optional extension; normal Git/CAOS paths still work.
+    const indexPromise = this.response("/packs/" + head + ".idx")
+      .catch(() => null)
+      .then((r) => (r ? readLimited(r, 8 * 1024 * 1024) : null))
+      .then(
+        (value) => ({ value }),
+        (error) => ({ error }),
+      );
+    const raw = await readLimited(response, 128 * 1024 * 1024);
+    if (bytesText(raw.subarray(0, 4)) !== "PACK")
+      throw Error("Invalid Git pack header.");
+    const view = new DataView(raw.buffer, raw.byteOffset, raw.byteLength);
+    if (
+      raw.length < 32 ||
+      ![2, 3].includes(view.getUint32(4)) ||
+      view.getUint32(8) > 20000
+    )
+      throw Error("Invalid or oversized Git pack.");
+    if (
+      hex(
+        new Uint8Array(
+          await crypto.subtle.digest("SHA-1", raw.subarray(0, -20)),
+        ),
+      ) !== hex(raw.subarray(-20))
+    )
+      throw Error("Git pack hash mismatch.");
+    this.progress("Reading packed Git objects…");
+    await this.initGit();
+    const filepath =
+      ".git/objects/pack/pack-" + hex(raw.subarray(-20)) + ".pack";
+    await this.fs.writeFile("/run/" + filepath, raw);
+    const indexResult = await indexPromise;
+    if (indexResult.error) throw indexResult.error;
+    const index = indexResult.value;
+    if (index) {
+      const idx = new DataView(
+        index.buffer,
+        index.byteOffset,
+        index.byteLength,
+      );
+      if (
+        index.length < 1072 ||
+        idx.getUint32(0) !== 0xff744f63 ||
+        idx.getUint32(4) !== 2
+      )
+        throw Error("Invalid Git pack index.");
+      const count = idx.getUint32(1028);
+      if (count !== view.getUint32(8) || index.length < 1072 + count * 28)
+        throw Error("Invalid Git pack index length.");
+      if (
+        hex(
+          new Uint8Array(
+            await crypto.subtle.digest("SHA-1", index.subarray(0, -20)),
+          ),
+        ) !== hex(index.subarray(-20)) ||
+        hex(index.subarray(-40, -20)) !== hex(raw.subarray(-20))
+      )
+        throw Error("Git pack index hash mismatch.");
+      await this.fs.writeFile(
+        "/run/" + filepath.replace(/\.pack$/, ".idx"),
+        index,
+      );
+      this.packObjects = new Set(
+        Array.from({ length: count }, (_, i) =>
+          hex(index.subarray(1032 + i * 20, 1052 + i * 20)),
+        ),
+      );
+    } else {
+      const result = await git.indexPack({
+        fs: this.fs,
+        dir: "/run",
+        filepath,
+        cache: this.gitCache,
+      });
+      this.packObjects = new Set(result.oids);
     }
-    if (object.object.length > MAX_OBJECT)
-      throw Error("Object exceeds the 32 MiB inspection limit.");
-    const header = utf8.encode(`${object.type} ${object.object.length}\0`),
-      raw = new Uint8Array(header.length + object.object.length);
-    raw.set(header);
-    raw.set(object.object, header.length);
-    return raw;
+    if (!this.packObjects.has(head))
+      throw Error("Git pack does not contain the requested conversation.");
+    return true;
   }
   async get(oid) {
+    if (this.cache.has(oid)) return this.cache.get(oid);
+    if (this.inflight.has(oid)) return this.inflight.get(oid);
+    const pending = this.readBounded(oid);
+    this.inflight.set(oid, pending);
+    try {
+      return await pending;
+    } finally {
+      this.inflight.delete(oid);
+    }
+  }
+  async readBounded(oid) {
+    if (this.activeReads >= 8)
+      await new Promise((resolve) => this.readQueue.push(resolve));
+    else this.activeReads++;
+    try {
+      return await this.readVerified(oid);
+    } finally {
+      const next = this.readQueue.shift();
+      if (next) next();
+      else this.activeReads--;
+    }
+  }
+  async readVerified(oid) {
     if (!oidPattern.test(oid))
       throw Error("Invalid Git object hash: " + String(oid));
     if (this.cache.has(oid)) return this.cache.get(oid);
@@ -361,6 +496,18 @@ export class Objects {
 }
 
 export async function openObjects(options) {
+  // Explicit Git uses its own smart-HTTP pack exchange. Static/CAOS publishers
+  // may provide a pack for a conversation to avoid hundreds of round trips.
+  if (options.kind !== "remote") {
+    const packed = new Objects({
+      ...options,
+      kind: options.kind === "auto" ? "loose" : options.kind,
+    });
+    if (await packed.loadPack(options.head)) {
+      await packed.get(options.head);
+      return packed;
+    }
+  }
   if (options.kind !== "auto") return new Objects(options);
   const order = [
     ...new Set(

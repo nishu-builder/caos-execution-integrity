@@ -1,6 +1,11 @@
 import { createTwoFilesPatch } from "diff";
 import { bytesText } from "./objects.js";
 const record = () => Object.create(null);
+async function batches(items, fn) {
+  // Bound both fan-out and object reads; avoid creating thousands of promises.
+  for (let i = 0; i < items.length; i += 8)
+    await Promise.all(items.slice(i, i + 8).map(fn));
+}
 
 export class Exporter {
   constructor(objects) {
@@ -10,6 +15,8 @@ export class Exporter {
     this.requests = record();
     this.conversations = record();
     this.source_commits = record();
+    this.snapshotWork = new Map();
+    this.transcripts = new Map();
   }
   async blob(oid) {
     if (!this.blobs[oid]) {
@@ -25,13 +32,18 @@ export class Exporter {
     return this.blobs[oid];
   }
   async snapshot(tree) {
+    if (!this.snapshotWork.has(tree))
+      this.snapshotWork.set(tree, this.readSnapshot(tree));
+    return this.snapshotWork.get(tree);
+  }
+  async readSnapshot(tree) {
     if (this.snapshots[tree]) return this.snapshots[tree];
     const files = record(),
       sources = record();
     const walk = async (oid, prefix = "", depth = 0) => {
       if (depth > 32) throw Error("Excessive tree nesting.");
-      for (const e of await this.o.tree(oid)) {
-        if (!prefix && e.name === ".caos") continue;
+      await batches(await this.o.tree(oid), async (e) => {
+        if (!prefix && e.name === ".caos") return;
         const path = prefix + e.name;
         if (e.mode === "40000") await walk(e.oid, path + "/", depth + 1);
         else if (e.mode === "160000") {
@@ -48,20 +60,29 @@ export class Exporter {
           await this.blob(e.oid);
           files[path] = { oid: e.oid, mode: e.mode };
         }
-      }
+      });
     };
     await walk(tree);
     return (this.snapshots[tree] = { files, sources });
   }
   async transcript(tree) {
+    if (!this.transcripts.has(tree))
+      this.transcripts.set(tree, this.readTranscript(tree));
+    return this.transcripts.get(tree);
+  }
+  async readTranscript(tree) {
     const root = await this.o.at(tree, ".caos/transcript");
     if (!root) return [];
     const entries = (await this.o.tree(root))
       .filter((e) => e.mode !== "40000")
       .sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
-    const values = [];
-    for (const e of entries)
-      values.push(JSON.parse((await this.blob(e.oid)).text));
+    const values = new Array(entries.length);
+    await batches(
+      entries.map((e, i) => ({ e, i })),
+      async ({ e, i }) => {
+        values[i] = JSON.parse((await this.blob(e.oid)).text);
+      },
+    );
     return values;
   }
   async payload(tree, path, payloads) {
@@ -161,6 +182,11 @@ export class Exporter {
       current = commit.parents[0];
     }
     chain.reverse();
+    // Independent snapshots and transcript trees can be hydrated together.
+    // Event assembly below stays ordered so tool payloads retain their meaning.
+    await batches(chain, async (c) => {
+      await Promise.all([this.snapshot(c.tree), this.transcript(c.tree)]);
+    });
     const rootTree = chain.at(-1).tree,
       titleOid = await this.o.at(rootTree, ".caos/title");
     const result = {

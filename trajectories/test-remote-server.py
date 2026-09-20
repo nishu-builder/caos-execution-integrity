@@ -48,6 +48,16 @@ with tempfile.TemporaryDirectory(prefix='browser-remote-test-') as tmp:
     try:
      with urllib.request.urlopen(req,timeout=60) as r:return self.answer(r.status,r.read(),r.headers.get('Content-Type','application/octet-stream'))
     except urllib.error.HTTPError as e:return self.answer(e.code,e.read())
+   if any(path.startswith(prefix+'/packs/') for prefix in ['/bad-pack','/bad-index','/pack-no-index']):
+    name=path.rsplit('/',1)[1]
+    oid,_,ext=name.partition('.')
+    if len(oid)!=40 or any(c not in '0123456789abcdef' for c in oid) or ext not in ['pack','idx']:return self.answer(404,b'')
+    target=ROOT/'docs/trajectories/git/packs'/name
+    if path.startswith('/pack-no-index/') and ext=='idx':return self.answer(404,b'')
+    if not target.is_file():return self.answer(404,b'')
+    raw=bytearray(target.read_bytes())
+    if (path.startswith('/bad-pack/') and ext=='pack') or (path.startswith('/bad-index/') and ext=='idx'):raw[-1]^=1
+    return self.answer(200,raw)
    if any(path.startswith(prefix+'/object/') for prefix in ['/caos','/blocked','/corrupt']):
     oid=path.rsplit('/',1)[1];target=ROOT/'docs/trajectories/data/objects'/oid
     if len(oid)!=40 or any(c not in '0123456789abcdef' for c in oid) or not target.is_file():return self.answer(404,b'Not found')

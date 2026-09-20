@@ -28,7 +28,7 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
       return page.evaluate(
         async ({ kind, source, head, expected }) => {
           const result = await new Promise((resolve, reject) => {
-            const w = new Worker("remote-worker.js?v=browser-2");
+            const w = new Worker("remote-worker.js?v=browser-3");
             w.onmessage = ({ data }) => {
               if (data.type === "result") {
                 w.terminate();
@@ -44,7 +44,7 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
           });
           if (
             kind === "auto" &&
-            result.kind !== (source.includes("/loose") ? "loose" : "server")
+            result.kind !== (source.includes("/caos") ? "server" : "loose")
           )
             throw Error("Incorrect connection detection: " + result.kind);
           const recorded = await (
@@ -100,6 +100,21 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
         "cleanup",
         "60da0990f42ccb58bbe0bc67c591bb42b0d74012",
       ),
+    );
+    requests.length = 0;
+    console.log(
+      "Packed Git parity:",
+      await checkWorker("auto", new URL("git", base).href),
+    );
+    assert.equal(requests.filter((u) => u.endsWith(".pack")).length, 1);
+    assert.equal(requests.filter((u) => u.endsWith(".idx")).length, 1);
+    assert.ok(
+      !requests.some((u) => u.includes("/objects/") || u.includes("/object/")),
+      "packed loading fell back to individual objects",
+    );
+    console.log(
+      "Unindexed pack parity:",
+      await checkWorker("loose", remote + "/pack-no-index"),
     );
     if (process.env.TEST_LIVE_GIT)
       console.log(
@@ -183,6 +198,8 @@ const head = "845c4cd46019a73064cbe3c9d4927a668046d315";
     for (const [path, match] of [
       ["blocked", /CORS/],
       ["corrupt", /hash mismatch/],
+      ["bad-pack", /pack hash mismatch/],
+      ["bad-index", /index hash mismatch/],
     ]) {
       await page.goto(
         base + "?" + new URLSearchParams({ remote: remote + "/" + path, head }),
