@@ -1,0 +1,44 @@
+{
+  "examples": [
+    {
+      "id": "bellweather-vale",
+      "title": "Inspector Ada Vale",
+      "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162"
+    },
+    {
+      "id": "bellweather-clara",
+      "title": "Clara Bellweather",
+      "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7"
+    },
+    {
+      "id": "bellweather-rose",
+      "title": "Rose Bellweather",
+      "head": "94aab252ea70fe69af2f4431a86717ada107bde0"
+    },
+    {
+      "id": "bellweather-finch",
+      "title": "Dr Samuel Finch",
+      "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3"
+    },
+    {
+      "id": "bellweather-miles",
+      "title": "Miles Trent",
+      "head": "f4ec4675af6ea7c148450cf12aed490f0a98250d"
+    },
+    {
+      "id": "bellweather-nell",
+      "title": "Nell Ward",
+      "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+    },
+    {
+      "id": "bellweather-iris",
+      "title": "Iris Shaw",
+      "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5"
+    },
+    {
+      "id": "bellweather-theo",
+      "title": "Theo Marsh",
+      "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d"
+    }
+  ]
+}

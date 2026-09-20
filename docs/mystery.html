@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Bellweather House murder — CAOS Explore</title>
+<style>
+body{max-width:900px;margin:40px auto;padding:0 22px;color:#242424;background:#fff;font:18px/1.65 Georgia,serif}
+h1{font-size:32px;line-height:1.2;font-weight:normal}h2{font-size:24px;font-weight:normal;margin-top:32px}
+a{color:#245879;text-underline-offset:3px}.meta,.controls,small,summary,footer{font:14px/1.6 system-ui,sans-serif;color:#555}
+.controls{display:flex;flex-wrap:wrap;gap:16px;padding:18px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+label{display:flex;gap:7px;align-items:center}select,button{font:inherit;padding:6px;max-width:260px;background:#fff;border:1px solid #aaa;border-radius:3px}
+article{padding:18px 0;border-bottom:1px solid #e3e3e3;scroll-margin-top:12px}article p{margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+article header{font:14px/1.5 system-ui,sans-serif;color:#555}article:target{background:#fff9de}blockquote{margin:14px 0;padding-left:18px;border-left:2px solid #ddd}
+#cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:20px 0}#cast p{margin:0;font-size:16px}
+details{margin:18px 0}summary{cursor:pointer}pre{overflow:auto;font-size:13px;background:#f6f7f8;padding:14px}
+footer{margin:40px 0}.error{color:#a32222}@media(max-width:600px){body{margin:24px auto;font-size:17px}h1{font-size:27px}}
+</style></head>
+<body>
+<p class="meta"><a href="./">CAOS Explore</a> · <a href="trajectories/">Trajectory browser</a></p>
+<h1>The Bellweather House murder</h1>
+<p>Eight agents are spending a night in a house where the owner has been killed. Each has private information and goals. They can investigate, form chats, invite each other, share evidence, or lie.</p>
+<p>The setting borrows from <a href="https://www.agathachristie.com/en/stories/the-mysterious-affair-at-styles">The Mysterious Affair at Styles</a>. The characters, clues, and solution are new. We fixed the facts before play; the agents choose what to do with them.</p>
+<p>We want to follow how people arrive at a shared story: where a claim starts, who changes it, and what gets left out when it moves between private and public conversations.</p>
+<p class="meta"><a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/experiments/mystery/PROMPT.md">Read the prompt</a> · <a href="https://github.com/nishu-builder/caos-execution-integrity/tree/main/experiments/mystery">Code and run instructions</a></p>
+<p id="status" class="meta" aria-live="polite">Loading the saved run…</p>
+<h2>Conversations</h2>
+<p class="meta">This is an observer's view of saved snapshots. Players receive only their own role packet and messages addressed to them. Enabling private chats reveals spoilers. Each recorded action links to the CAOS turn that produced it.</p>
+<div class="controls">
+<label><input type="checkbox" id="private"> Include private chats and actions</label>
+<label>Chat <select id="chat"><option value="drawing-room">Drawing room</option></select></label>
+<label>Recipient <select id="recipient"><option value="">Everyone</option></select></label>
+<label>Round <select id="round"><option value="">All</option></select></label>
+<button id="refresh" type="button">Refresh snapshot</button>
+</div>
+<div id="events"></div>
+<details><summary>Open a character's private CAOS conversation (spoilers)</summary><div id="cast"></div></details>
+<details><summary>How this run works</summary>
+<p>Each character has a separate, persistent CAOS conversation using Claude Opus 4.8. In each round they choose actions from their own view of the game. A controller applies the actions and delivers the resulting messages in the next round. Joining a chat does not reveal its earlier messages.</p>
+<p>The model adapter removes the coding tools; characters act through the game's action list. It also enforces a $50 spending ceiling and a 9 a.m. Pacific cutoff on September 20. The game has 18 rounds, ending with private accusations and an estate vote.</p>
+<p>The chats are game records linked to CAOS conversations. They are not native CAOS subagent branches. The saved events are checked against the original model replies, and the controller's rules are replayed to check membership and delivery.</p>
+<p>This is fictional roleplay with assigned secrets and goals. We have not picked an incident in advance or scripted anyone's dialogue.</p>
+<p><a href="mystery/scenario-spoilers.json">All role packets and the fixed solution (spoilers)</a> · <a href="mystery/state.json">Saved actions and message deliveries (spoilers)</a></p>
+</details>
+<footer><a href="https://github.com/nishu-builder/caos-execution-integrity">Repository</a></footer>
+<script type="module" src="mystery/view.js"></script>
+</body></html>

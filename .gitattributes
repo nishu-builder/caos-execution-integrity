@@ -1,3 +1,5 @@
 
 docs/trajectories/git/objects/** binary
 docs/trajectories/git/packs/** binary
+docs/mystery/git/objects/** binary
+docs/mystery/git/packs/** binary

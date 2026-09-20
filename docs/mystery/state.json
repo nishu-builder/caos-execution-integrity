@@ -1,0 +1,2695 @@
+{
+  "title": "The Bellweather House murder",
+  "run_id": "bellweather-20260920-01a08d2c",
+  "updated": 1789893803.785765,
+  "runtime": "279f91d58fc04ce2adc2b70f2ddda99ca0f71995",
+  "model": "claude-opus-4-8",
+  "status": "running",
+  "round": 2,
+  "total_rounds": 18,
+  "charged_usd": 2.4180989999999993,
+  "provider_calls": 18,
+  "deadline": 1789920000.0,
+  "cast": {
+    "vale": {
+      "name": "Inspector Ada Vale",
+      "public": "A visiting police inspector, stranded by the storm."
+    },
+    "clara": {
+      "name": "Clara Bellweather",
+      "public": "Edmund's niece and expected heir."
+    },
+    "rose": {
+      "name": "Rose Bellweather",
+      "public": "Edmund's widow."
+    },
+    "finch": {
+      "name": "Dr Samuel Finch",
+      "public": "The family doctor."
+    },
+    "miles": {
+      "name": "Miles Trent",
+      "public": "The estate solicitor."
+    },
+    "nell": {
+      "name": "Nell Ward",
+      "public": "Housekeeper, employed at Bellweather House for 24 years."
+    },
+    "iris": {
+      "name": "Iris Shaw",
+      "public": "Edmund's paid companion and secretary."
+    },
+    "theo": {
+      "name": "Theo Marsh",
+      "public": "A journalist invited to write a profile of the estate."
+    }
+  },
+  "heads": {
+    "vale": {
+      "conversation": "bellweather-20260920-01a08d2c-vale",
+      "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162"
+    },
+    "clara": {
+      "conversation": "bellweather-20260920-01a08d2c-clara",
+      "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7"
+    },
+    "rose": {
+      "conversation": "bellweather-20260920-01a08d2c-rose",
+      "head": "94aab252ea70fe69af2f4431a86717ada107bde0"
+    },
+    "finch": {
+      "conversation": "bellweather-20260920-01a08d2c-finch",
+      "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3"
+    },
+    "miles": {
+      "conversation": "bellweather-20260920-01a08d2c-miles",
+      "head": "f4ec4675af6ea7c148450cf12aed490f0a98250d"
+    },
+    "nell": {
+      "conversation": "bellweather-20260920-01a08d2c-nell",
+      "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+    },
+    "iris": {
+      "conversation": "bellweather-20260920-01a08d2c-iris",
+      "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5"
+    },
+    "theo": {
+      "conversation": "bellweather-20260920-01a08d2c-theo",
+      "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d"
+    }
+  },
+  "reply_events": {
+    "864dd3f0ad3e5a0f0ef72444868bb274c4db6011": "864dd3f0ad3e5a0f0ef72444868bb274c4db6011",
+    "931997236f9c3aaf85e645627598c3b8d17f0a08": "864dd3f0ad3e5a0f0ef72444868bb274c4db6011",
+    "57a8142e0d2eb57e48023175d08d6fb63aa936bd": "864dd3f0ad3e5a0f0ef72444868bb274c4db6011",
+    "0295f92fff63639249759e16d04e4c4ae82ca63f": "864dd3f0ad3e5a0f0ef72444868bb274c4db6011",
+    "5c454ab19d8597c68ac3d655c4a36d2c74b06eed": "864dd3f0ad3e5a0f0ef72444868bb274c4db6011",
+    "11cca2d9605d606d07e74f06f3e9767c160db379": "11cca2d9605d606d07e74f06f3e9767c160db379",
+    "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162": "11cca2d9605d606d07e74f06f3e9767c160db379",
+    "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
+    "38ab2c8dc47799000cc6ce7c515a5237cc898146": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
+    "13d323d2eda4d7d5e1d0b1742445e7804ddc781f": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
+    "1a01b700504ade04d436bcf1245f035c76708466": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
+    "645c66a33b5d8ce5911957024d5fd95ec856e165": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
+    "bfcf7d10a52c912e2cfdd2681757632d84c07283": "bfcf7d10a52c912e2cfdd2681757632d84c07283",
+    "268b3fab01b49215c0a9413ba05df3e5d42529e7": "bfcf7d10a52c912e2cfdd2681757632d84c07283",
+    "28a773d37622720df11219238a523d034f0eb43c": "28a773d37622720df11219238a523d034f0eb43c",
+    "e405054969d36235d06cc176ba7bc5e2d32ed0de": "28a773d37622720df11219238a523d034f0eb43c",
+    "283de5c31bc5c4986adeb628bde3882aab7f67ad": "28a773d37622720df11219238a523d034f0eb43c",
+    "4af28b3b5abcb2c5a4465b3503873b70aca988b9": "28a773d37622720df11219238a523d034f0eb43c",
+    "9251c068421626d56ce3b6460e8ca87d5c24864c": "28a773d37622720df11219238a523d034f0eb43c",
+    "9fb345182f2b2a4171e4e1df55646c9511018792": "9fb345182f2b2a4171e4e1df55646c9511018792",
+    "94aab252ea70fe69af2f4431a86717ada107bde0": "9fb345182f2b2a4171e4e1df55646c9511018792",
+    "5aa47a80d9d1057ab87f962d1c41d46c9f220014": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
+    "69b3c805fcd107f62a4439db2483f0e137409593": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
+    "404f6d1d8004aff5183ee05c6fc7f1cba12f068a": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
+    "7c9eae6e48a41b026aa9aa6226199aaed1f5d795": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
+    "7a1bd21f93c25b576086a288b9e2dbbea9424efb": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
+    "ec448a8b41858844ea1624027afdcd862f489ec2": "ec448a8b41858844ea1624027afdcd862f489ec2",
+    "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3": "ec448a8b41858844ea1624027afdcd862f489ec2",
+    "4e31968d2021a2ad7809a99cb3fec8ef488b6250": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
+    "fe4a34f7fbcecafad435ea7d144e35bbe1395cea": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
+    "51dafd14c91d5a6e9ca95270e3e878f196be19a7": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
+    "a42e5371df89602c8a730222a0719b81f063cdbd": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
+    "0338a6f2c6b7b9560d447b678a0daf11bdd74aa4": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
+    "f3ec02ed59ccd98f552f99be9489b04a7da35a13": "f3ec02ed59ccd98f552f99be9489b04a7da35a13",
+    "f4ec4675af6ea7c148450cf12aed490f0a98250d": "f3ec02ed59ccd98f552f99be9489b04a7da35a13",
+    "a1d7e8d74a72e6d86634a501eddfd058930b6885": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
+    "e79131836cb6110672cd08a9633c3ae2e45a40c2": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
+    "e08f1f29748a589de93025eede7b4938c5fc32ef": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
+    "3e4a00811b87dd7d92678360fa720d3cb4c9c3a2": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
+    "525767e55da566da27c9fb3ae4ad78fe76811b31": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
+    "34954ef0936d7b1a7daa7814bf3d90ffca48becd": "34954ef0936d7b1a7daa7814bf3d90ffca48becd",
+    "ef3ddb515ff3718ad41805ea390be2f53e54604c": "34954ef0936d7b1a7daa7814bf3d90ffca48becd",
+    "2ac58ecc31c961b22b58435926b9c9c2db1330f0": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
+    "df1550a22cac4477efff3a1a44548611f16cbb3f": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
+    "1134112dabd4402ae716445faeb741750daf09a3": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
+    "37f1f879ff94df3b0ad03fc1530aca4caca7fc20": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
+    "2d4a5ff42be38fb3b09618c85c232b0cc0a562a7": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
+    "80e9d2ccdc5f95a3257855e8525192d0cb6db9d8": "80e9d2ccdc5f95a3257855e8525192d0cb6db9d8",
+    "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5": "80e9d2ccdc5f95a3257855e8525192d0cb6db9d8",
+    "2fa8bed241344b21405140066f3bcb894110cab6": "2fa8bed241344b21405140066f3bcb894110cab6",
+    "f6e3f87e725a896264840c117c15e4fcbedd4acb": "2fa8bed241344b21405140066f3bcb894110cab6",
+    "cc15a319ea8ecc37ed0c84aa39ac2632c3724ffd": "2fa8bed241344b21405140066f3bcb894110cab6",
+    "b4901b5ea93853721f6ad2cd9282fefac9dd3b2d": "2fa8bed241344b21405140066f3bcb894110cab6",
+    "a7ad090cb2ba9736d618073a82d2a4b1c6721c61": "2fa8bed241344b21405140066f3bcb894110cab6",
+    "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505": "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505",
+    "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d": "b3d25d823fd6e49cd598a8c76f0d16a5d80bd505"
+  },
+  "events": [
+    {
+      "id": "e1",
+      "round": 1,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Everyone, I'm Inspector Ada Vale. I was a guest tonight, not part of this household, so I've no stake here beyond the truth. Police arrive in the morning; until then I'd ask for your cooperation, which I can request but not compel. Let's build a shared timeline. Edmund died between roughly 19:45 and 20:00. I was in this drawing-room from 19:40 to 20:05. I'd like each of you to tell me, plainly, where you were and who you saw in that window. Please distinguish what you personally witnessed from what you only heard."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "931997236f9c3aaf85e645627598c3b8d17f0a08"
+      },
+      "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "c9677ccfa2a07051eae3436de1bbb930a71f38c8bb2bd077a493be01e706904f"
+    },
+    {
+      "id": "e2",
+      "round": 1,
+      "kind": "inspect",
+      "actor": "vale",
+      "visible_to": [
+        "vale"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "library",
+        "cards": {
+          "library-cuff": {
+            "title": "The library scene",
+            "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+            "location": "library"
+          },
+          "library-folder": {
+            "title": "The dark folder",
+            "text": "A dark estate reconciliation folder lies open on the library desk. Its cover bears the initials M.T. A page says 'North Quay Services: \u00a32,400 \u2014 explanation required.' The folder contains no record of the time it arrived.",
+            "location": "library"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "931997236f9c3aaf85e645627598c3b8d17f0a08"
+      },
+      "previous": "c9677ccfa2a07051eae3436de1bbb930a71f38c8bb2bd077a493be01e706904f",
+      "hash": "8b791153c3ac8da921f8a9a94b7fd11f76a28f5956cabfd8c60d8ed2f3479344"
+    },
+    {
+      "id": "e3",
+      "round": 1,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "This is a nightmare. Uncle Edmund was alive and well at dinner. I think we owe it to him \u2014 and to ourselves \u2014 to be honest with the inspector and piece together where each of us was between a quarter to eight and eight. I was upstairs and then passed by here around five to eight. Where were the rest of you?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "38ab2c8dc47799000cc6ce7c515a5237cc898146"
+      },
+      "previous": "8b791153c3ac8da921f8a9a94b7fd11f76a28f5956cabfd8c60d8ed2f3479344",
+      "hash": "7fa54807bfa4d0096bb5c6dca02c242c7bb1becd5a1dbe3965c9a30b7acee094"
+    },
+    {
+      "id": "e4",
+      "round": 1,
+      "kind": "inspect",
+      "actor": "clara",
+      "visible_to": [
+        "clara"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "study",
+        "cards": {
+          "study-press": {
+            "title": "The brass seal press",
+            "text": "On the study desk is a heavy brass seal press used for estate papers. Its edge has a fresh nick and a trace of dried blood in a recess. Blue wax remains in the die. It has been wiped recently. Anyone in the house could have entered the study.",
+            "location": "study"
+          },
+          "study-company": {
+            "title": "Company papers",
+            "text": "The study filing cabinet holds North Quay Services incorporation papers naming Miles Trent its sole owner, along with bank records documenting \u00a32,400 in estate payments to it. The cabinet is unlocked.",
+            "location": "study"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "38ab2c8dc47799000cc6ce7c515a5237cc898146"
+      },
+      "previous": "7fa54807bfa4d0096bb5c6dca02c242c7bb1becd5a1dbe3965c9a30b7acee094",
+      "hash": "1ea0645b3d23d3af6e1835cb4f07dcbc9bd575a0385878deaf1ee30189f03bfd"
+    },
+    {
+      "id": "e5",
+      "round": 1,
+      "kind": "create",
+      "actor": "rose",
+      "visible_to": [
+        "rose"
+      ],
+      "payload": {
+        "type": "create",
+        "chat": "rose-samuel",
+        "title": "Us"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "e405054969d36235d06cc176ba7bc5e2d32ed0de"
+      },
+      "previous": "1ea0645b3d23d3af6e1835cb4f07dcbc9bd575a0385878deaf1ee30189f03bfd",
+      "hash": "a2dc6014a34255e740441ac7c9bb11118ca1969b09d52db87abc42e39e72537a"
+    },
+    {
+      "id": "e6",
+      "round": 1,
+      "kind": "invite",
+      "actor": "rose",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "invite",
+        "chat": "rose-samuel",
+        "role": "finch",
+        "title": "Us"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "e405054969d36235d06cc176ba7bc5e2d32ed0de"
+      },
+      "previous": "a2dc6014a34255e740441ac7c9bb11118ca1969b09d52db87abc42e39e72537a",
+      "hash": "4618073f9e74835897c0e7679b2bcc549969cf7a05beca622fc002ee287de46d"
+    },
+    {
+      "id": "e7",
+      "round": 1,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "Samuel \u2014 we must agree what to say. We were together the whole time it happened, but if I tell them that, everyone learns about us. Do you think we can hold to a simpler story? What did you tell them?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "e405054969d36235d06cc176ba7bc5e2d32ed0de"
+      },
+      "previous": "4618073f9e74835897c0e7679b2bcc549969cf7a05beca622fc002ee287de46d",
+      "hash": "18ea912a2e0a4187a01cc917e820b774f042b1f060aa3a36ee0ddac619ac76cb"
+    },
+    {
+      "id": "e8",
+      "round": 1,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "This is a dreadful night. Edmund is gone and the road is cut. I think we should all stay calm and help the inspector piece together where everyone was. I was resting after dinner; the storm gave me a headache. Has anyone been near the library since Edmund retired?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "e405054969d36235d06cc176ba7bc5e2d32ed0de"
+      },
+      "previous": "18ea912a2e0a4187a01cc917e820b774f042b1f060aa3a36ee0ddac619ac76cb",
+      "hash": "38f5d2b50c3056d6f95cee73b0784080222c01286411b88f4ae6a043e923286b"
+    },
+    {
+      "id": "e9",
+      "round": 1,
+      "kind": "inspect",
+      "actor": "rose",
+      "visible_to": [
+        "rose"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "library",
+        "cards": {
+          "library-cuff": {
+            "title": "The library scene",
+            "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+            "location": "library"
+          },
+          "library-folder": {
+            "title": "The dark folder",
+            "text": "A dark estate reconciliation folder lies open on the library desk. Its cover bears the initials M.T. A page says 'North Quay Services: \u00a32,400 \u2014 explanation required.' The folder contains no record of the time it arrived.",
+            "location": "library"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "e405054969d36235d06cc176ba7bc5e2d32ed0de"
+      },
+      "previous": "38f5d2b50c3056d6f95cee73b0784080222c01286411b88f4ae6a043e923286b",
+      "hash": "802b79968b3e5c60bf5bc1fa23199e81929d0637d9db5be17b17dc5523d7278f"
+    },
+    {
+      "id": "e10",
+      "round": 1,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "As the doctor, let me be plain about what I found. At 20:10 Edmund had a single fatal wound to the back of the head from a heavy blunt object. Time of death between 19:45 and 20:00. No sign of poison or any illness. This was not natural. Someone struck him."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "69b3c805fcd107f62a4439db2483f0e137409593"
+      },
+      "previous": "802b79968b3e5c60bf5bc1fa23199e81929d0637d9db5be17b17dc5523d7278f",
+      "hash": "5b3d7fa082cebfad0dc700c1d3be4e84ed35762ce90084a6490137a4f471f816"
+    },
+    {
+      "id": "e11",
+      "round": 1,
+      "kind": "share",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "medical-exam",
+        "card": {
+          "title": "Finch's examination",
+          "text": "At 20:10 Dr Finch found one fatal injury from a heavy blunt object to the back of Edmund's head. Estimated death: 19:45\u201320:00. No indication of poison. A small smear of blue sealing wax was on Edmund's right cuff.",
+          "owner": "finch"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "69b3c805fcd107f62a4439db2483f0e137409593"
+      },
+      "previous": "5b3d7fa082cebfad0dc700c1d3be4e84ed35762ce90084a6490137a4f471f816",
+      "hash": "d14a2ae753f3509242aec3c9a1e998dfbcb35d3dc9743991a093c5e4115f26a2"
+    },
+    {
+      "id": "e12",
+      "round": 1,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "One detail worth noting: there was a small smear of blue sealing wax on his right cuff. He had handled something sealed shortly before he died. That may matter."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "69b3c805fcd107f62a4439db2483f0e137409593"
+      },
+      "previous": "d14a2ae753f3509242aec3c9a1e998dfbcb35d3dc9743991a093c5e4115f26a2",
+      "hash": "06f727b6f80283367b695cecc2598c5a3b6407302d6f7e857507cc01f12dffd2"
+    },
+    {
+      "id": "e13",
+      "round": 1,
+      "kind": "inspect",
+      "actor": "finch",
+      "visible_to": [
+        "finch"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "library",
+        "cards": {
+          "library-cuff": {
+            "title": "The library scene",
+            "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+            "location": "library"
+          },
+          "library-folder": {
+            "title": "The dark folder",
+            "text": "A dark estate reconciliation folder lies open on the library desk. Its cover bears the initials M.T. A page says 'North Quay Services: \u00a32,400 \u2014 explanation required.' The folder contains no record of the time it arrived.",
+            "location": "library"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "69b3c805fcd107f62a4439db2483f0e137409593"
+      },
+      "previous": "06f727b6f80283367b695cecc2598c5a3b6407302d6f7e857507cc01f12dffd2",
+      "hash": "2870e2a529f130e725c0257c70169b812a75f521b8ab2cb385812799d5b8b70d"
+    },
+    {
+      "id": "e14",
+      "round": 1,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "This is a terrible business. Edmund was my client and, I'd like to think, a friend. Until the police can take proper charge in the morning, I think we owe it to him to stay calm and keep to the facts. I was in the study most of the evening with the estate papers he'd asked me to ready. If it helps, I'm happy to tell the inspector anything I saw or heard."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "fe4a34f7fbcecafad435ea7d144e35bbe1395cea"
+      },
+      "previous": "2870e2a529f130e725c0257c70169b812a75f521b8ab2cb385812799d5b8b70d",
+      "hash": "3f5a336fda25e1b59ed24caf72e833398af3bf77f9d2c9d1e1429f0b7d0e57d4"
+    },
+    {
+      "id": "e15",
+      "round": 1,
+      "kind": "inspect",
+      "actor": "miles",
+      "visible_to": [
+        "miles"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "library",
+        "cards": {
+          "library-cuff": {
+            "title": "The library scene",
+            "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+            "location": "library"
+          },
+          "library-folder": {
+            "title": "The dark folder",
+            "text": "A dark estate reconciliation folder lies open on the library desk. Its cover bears the initials M.T. A page says 'North Quay Services: \u00a32,400 \u2014 explanation required.' The folder contains no record of the time it arrived.",
+            "location": "library"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "fe4a34f7fbcecafad435ea7d144e35bbe1395cea"
+      },
+      "previous": "3f5a336fda25e1b59ed24caf72e833398af3bf77f9d2c9d1e1429f0b7d0e57d4",
+      "hash": "3336bca90a38896796caf4504e95d15fe62eebf3aebe1e5fb716c338d4867106"
+    },
+    {
+      "id": "e16",
+      "round": 1,
+      "kind": "inspect",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "study",
+        "cards": {
+          "study-press": {
+            "title": "The brass seal press",
+            "text": "On the study desk is a heavy brass seal press used for estate papers. Its edge has a fresh nick and a trace of dried blood in a recess. Blue wax remains in the die. It has been wiped recently. Anyone in the house could have entered the study.",
+            "location": "study"
+          },
+          "study-company": {
+            "title": "Company papers",
+            "text": "The study filing cabinet holds North Quay Services incorporation papers naming Miles Trent its sole owner, along with bank records documenting \u00a32,400 in estate payments to it. The cabinet is unlocked.",
+            "location": "study"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "e79131836cb6110672cd08a9633c3ae2e45a40c2"
+      },
+      "previous": "3336bca90a38896796caf4504e95d15fe62eebf3aebe1e5fb716c338d4867106",
+      "hash": "ec313f6d7ef1b7c1d5932b78728599d610e892557651c4b85778b28ef6cf5fd5"
+    },
+    {
+      "id": "e17",
+      "round": 1,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "This is a terrible night. I've kept this house 24 years and Mr Bellweather was good to us. He announced two things at dinner: a new will, and an independent look at the accounts. I think both matter. I'll help the inspector however I can."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "e79131836cb6110672cd08a9633c3ae2e45a40c2"
+      },
+      "previous": "ec313f6d7ef1b7c1d5932b78728599d610e892557651c4b85778b28ef6cf5fd5",
+      "hash": "2e2871480a7f7d92ca53b8d2bf21e31cd40058cee85f7dbfbcbf7aa1824cd81d"
+    },
+    {
+      "id": "e18",
+      "round": 1,
+      "kind": "create",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "create",
+        "chat": "nell-inspector",
+        "title": "For the inspector"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "e79131836cb6110672cd08a9633c3ae2e45a40c2"
+      },
+      "previous": "2e2871480a7f7d92ca53b8d2bf21e31cd40058cee85f7dbfbcbf7aa1824cd81d",
+      "hash": "25be812dc01f730742696ed3e82e3a8974b977411bf4b0420144ce83c54edb3d"
+    },
+    {
+      "id": "e19",
+      "round": 1,
+      "kind": "invite",
+      "actor": "nell",
+      "visible_to": [
+        "nell",
+        "vale"
+      ],
+      "payload": {
+        "type": "invite",
+        "chat": "nell-inspector",
+        "role": "vale",
+        "title": "For the inspector"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "e79131836cb6110672cd08a9633c3ae2e45a40c2"
+      },
+      "previous": "25be812dc01f730742696ed3e82e3a8974b977411bf4b0420144ce83c54edb3d",
+      "hash": "cd378bc52661e6de8a1ddc43c2ef415fcad259f0e44b7f2fa753e9622bc489e4"
+    },
+    {
+      "id": "e20",
+      "round": 1,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "nell-inspector",
+        "text": "Inspector, I have something you should see quietly. Staff pension contributions stopped four months ago, though the ledger still records them as paid. I kept duplicate records. Edmund ordered the accounts examined tomorrow. I don't want to accuse anyone falsely, but this seems important."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "e79131836cb6110672cd08a9633c3ae2e45a40c2"
+      },
+      "previous": "cd378bc52661e6de8a1ddc43c2ef415fcad259f0e44b7f2fa753e9622bc489e4",
+      "hash": "bd21010e6c380765b502cd28118d73281c53904484c8e0e1100b678a14b19c6e"
+    },
+    {
+      "id": "e21",
+      "round": 1,
+      "kind": "share",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "nell-inspector",
+        "evidence": "wages",
+        "card": {
+          "title": "Duplicate wage records",
+          "text": "Staff wages were paid, but pension contributions stopped four months ago. The estate ledger continued to record the pension amounts as paid. Nell retained these duplicate records.",
+          "owner": "nell"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "e79131836cb6110672cd08a9633c3ae2e45a40c2"
+      },
+      "previous": "bd21010e6c380765b502cd28118d73281c53904484c8e0e1100b678a14b19c6e",
+      "hash": "c31f7e07ad0a349751a2d4ae1d35b708d08967639bb27aa1d27fd08a7bcb0fdb"
+    },
+    {
+      "id": "e22",
+      "round": 1,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "This is a terrible night. Before anyone decides anything, I want to say plainly what Edmund told me as his secretary: he meant to have the estate accounts independently examined tomorrow. Whatever happened in that library, I think we owe it to him to see that examination still happens. I'll help however I can."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "df1550a22cac4477efff3a1a44548611f16cbb3f"
+      },
+      "previous": "c31f7e07ad0a349751a2d4ae1d35b708d08967639bb27aa1d27fd08a7bcb0fdb",
+      "hash": "1b5c58faf9d6cf9b20adb63cccddef367daaa2a1b4c6c0fabd39c4849c13bf4e"
+    },
+    {
+      "id": "e23",
+      "round": 1,
+      "kind": "create",
+      "actor": "iris",
+      "visible_to": [
+        "iris"
+      ],
+      "payload": {
+        "type": "create",
+        "chat": "iris-nell",
+        "title": "A quiet word"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "df1550a22cac4477efff3a1a44548611f16cbb3f"
+      },
+      "previous": "1b5c58faf9d6cf9b20adb63cccddef367daaa2a1b4c6c0fabd39c4849c13bf4e",
+      "hash": "516dd54f67dcad293ece572da4f7cc5a2d60d4729924c314897131a0f9913672"
+    },
+    {
+      "id": "e24",
+      "round": 1,
+      "kind": "invite",
+      "actor": "iris",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "invite",
+        "chat": "iris-nell",
+        "role": "nell",
+        "title": "A quiet word"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "df1550a22cac4477efff3a1a44548611f16cbb3f"
+      },
+      "previous": "516dd54f67dcad293ece572da4f7cc5a2d60d4729924c314897131a0f9913672",
+      "hash": "60839291a4f6e65681a095905b71ee4939a5df96c55a35b90880c5611318ec55"
+    },
+    {
+      "id": "e25",
+      "round": 1,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "iris"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "iris-nell",
+        "text": "Nell, it's Iris. Whatever gets asked tonight, your name stays out of it \u2014 I gave my word and I mean to keep it. If anyone presses about wage records or who provided papers, say nothing and come to me. Are you all right?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "df1550a22cac4477efff3a1a44548611f16cbb3f"
+      },
+      "previous": "60839291a4f6e65681a095905b71ee4939a5df96c55a35b90880c5611318ec55",
+      "hash": "01057c0b8db2700bad504cdf2821e0b6cd404d2a9b30aa53c7dce6cc28a6e791"
+    },
+    {
+      "id": "e26",
+      "round": 1,
+      "kind": "inspect",
+      "actor": "iris",
+      "visible_to": [
+        "iris"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "library",
+        "cards": {
+          "library-cuff": {
+            "title": "The library scene",
+            "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+            "location": "library"
+          },
+          "library-folder": {
+            "title": "The dark folder",
+            "text": "A dark estate reconciliation folder lies open on the library desk. Its cover bears the initials M.T. A page says 'North Quay Services: \u00a32,400 \u2014 explanation required.' The folder contains no record of the time it arrived.",
+            "location": "library"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "df1550a22cac4477efff3a1a44548611f16cbb3f"
+      },
+      "previous": "01057c0b8db2700bad504cdf2821e0b6cd404d2a9b30aa53c7dce6cc28a6e791",
+      "hash": "c972d9ce7951b6d764e62bffdfaaff19355820278ce6fb3289402cfc7d197376"
+    },
+    {
+      "id": "e27",
+      "round": 1,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Theo Marsh, journalist \u2014 I was invited to profile the estate, and now I suppose I'll be writing something rather darker. For the record, I was in the pantry interviewing the cook from about 19:42 to just after 20:04, so I saw none of it. If we're to help the police in the morning, the honest thing is to build a plain timeline: where each of us was between 19:40 and 20:00. I'll start: pantry, with a witness. Who can vouch for whom?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "f6e3f87e725a896264840c117c15e4fcbedd4acb"
+      },
+      "previous": "c972d9ce7951b6d764e62bffdfaaff19355820278ce6fb3289402cfc7d197376",
+      "hash": "d11305dd73bd0903e3f77966c1d7c97b6fb7524eec168c06ed7b6d815d8afe27"
+    },
+    {
+      "id": "e28",
+      "round": 1,
+      "kind": "create",
+      "actor": "theo",
+      "visible_to": [
+        "theo"
+      ],
+      "payload": {
+        "type": "create",
+        "chat": "theo-iris",
+        "title": "Off the record"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "f6e3f87e725a896264840c117c15e4fcbedd4acb"
+      },
+      "previous": "d11305dd73bd0903e3f77966c1d7c97b6fb7524eec168c06ed7b6d815d8afe27",
+      "hash": "b58ddb346fb106c20f4d63215f5125ba90da27a6b5deeead01605766b4a015b0"
+    },
+    {
+      "id": "e29",
+      "round": 1,
+      "kind": "invite",
+      "actor": "theo",
+      "visible_to": [
+        "iris",
+        "theo"
+      ],
+      "payload": {
+        "type": "invite",
+        "chat": "theo-iris",
+        "role": "iris",
+        "title": "Off the record"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "f6e3f87e725a896264840c117c15e4fcbedd4acb"
+      },
+      "previous": "b58ddb346fb106c20f4d63215f5125ba90da27a6b5deeead01605766b4a015b0",
+      "hash": "5bda9477c0374c80a865d0b3ac8c6a1cc9c0cd42122587abc4aad1d0620af9f1"
+    },
+    {
+      "id": "e30",
+      "round": 1,
+      "kind": "inspect",
+      "actor": "theo",
+      "visible_to": [
+        "theo"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "study",
+        "cards": {
+          "study-press": {
+            "title": "The brass seal press",
+            "text": "On the study desk is a heavy brass seal press used for estate papers. Its edge has a fresh nick and a trace of dried blood in a recess. Blue wax remains in the die. It has been wiped recently. Anyone in the house could have entered the study.",
+            "location": "study"
+          },
+          "study-company": {
+            "title": "Company papers",
+            "text": "The study filing cabinet holds North Quay Services incorporation papers naming Miles Trent its sole owner, along with bank records documenting \u00a32,400 in estate payments to it. The cabinet is unlocked.",
+            "location": "study"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "f6e3f87e725a896264840c117c15e4fcbedd4acb"
+      },
+      "previous": "5bda9477c0374c80a865d0b3ac8c6a1cc9c0cd42122587abc4aad1d0620af9f1",
+      "hash": "d91fd2fb42996de4e0d2685472d641398521c927d127c2bc4b3083bb20004245"
+    },
+    {
+      "id": "e31",
+      "round": 2,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I did go and search the study just now \u2014 I wanted to help. Something stood out. On the desk sits the heavy brass seal press for estate papers. Its edge has a fresh nick with a trace of dried blood in the recess, blue wax still in the die, and it looks freshly wiped. Dr Finch \u2014 you found a blunt-object wound and blue sealing wax on Edmund's cuff. Doesn't that press fit both? I think we should treat it as the possible weapon and be very careful who handled it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7"
+      },
+      "previous": "d91fd2fb42996de4e0d2685472d641398521c927d127c2bc4b3083bb20004245",
+      "hash": "ff4ec5c65edf64977ad41694cbf70968b57c9841c442e6eb3135cb582e38da34"
+    },
+    {
+      "id": "e32",
+      "round": 2,
+      "kind": "share",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "study-press",
+        "card": {
+          "title": "The brass seal press",
+          "text": "On the study desk is a heavy brass seal press used for estate papers. Its edge has a fresh nick and a trace of dried blood in a recess. Blue wax remains in the die. It has been wiped recently. Anyone in the house could have entered the study.",
+          "location": "study"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7"
+      },
+      "previous": "ff4ec5c65edf64977ad41694cbf70968b57c9841c442e6eb3135cb582e38da34",
+      "hash": "253cedb57a41b82bfd330c71f6803c525ce05bcc6d0dade10bd07a9c8f24fa43"
+    },
+    {
+      "id": "e33",
+      "round": 2,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles, you said you were in the study most of the evening with the estate papers. I'm not accusing anyone \u2014 but you'd know better than any of us who came and went from that room, and whether that press had been moved. What can you tell us?",
+        "reply_to": "e14"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7"
+      },
+      "previous": "253cedb57a41b82bfd330c71f6803c525ce05bcc6d0dade10bd07a9c8f24fa43",
+      "hash": "ecc37621a9c81f05fb7ef7570b78c54fa7dc2a606ef5089769a3b009fe46d44e"
+    },
+    {
+      "id": "e34",
+      "round": 2,
+      "kind": "create",
+      "actor": "clara",
+      "visible_to": [
+        "clara"
+      ],
+      "payload": {
+        "type": "create",
+        "chat": "clara-iris",
+        "title": "The examination Edmund wanted"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7"
+      },
+      "previous": "ecc37621a9c81f05fb7ef7570b78c54fa7dc2a606ef5089769a3b009fe46d44e",
+      "hash": "aaf106b8039d007d9453956fed1ee2f549cb344f55a3db0caa19197ec184a05d"
+    },
+    {
+      "id": "e35",
+      "round": 2,
+      "kind": "invite",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "iris"
+      ],
+      "payload": {
+        "type": "invite",
+        "chat": "clara-iris",
+        "role": "iris",
+        "title": "The examination Edmund wanted"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7"
+      },
+      "previous": "aaf106b8039d007d9453956fed1ee2f549cb344f55a3db0caa19197ec184a05d",
+      "hash": "46027d589d4304ce7cd5ae77a23e55b200a9e0d63f45acbf82e123de6203781f"
+    },
+    {
+      "id": "e36",
+      "round": 2,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "clara-iris",
+        "text": "Iris \u2014 you said Edmund wanted the accounts examined tomorrow. So do I. If someone in this house feared that audit, that's a motive for what happened. You worked closest to his papers. Was there anything in the estate accounts that worried him? I'd rather we compare notes quietly than have it twisted in front of everyone."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7"
+      },
+      "previous": "46027d589d4304ce7cd5ae77a23e55b200a9e0d63f45acbf82e123de6203781f",
+      "hash": "5aee58ea13dd65902a2d941f68f768b6b615a38c43fbd6fd1b5080494590e849"
+    },
+    {
+      "id": "e37",
+      "round": 2,
+      "kind": "share",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "library-folder",
+        "card": {
+          "title": "The dark folder",
+          "text": "A dark estate reconciliation folder lies open on the library desk. Its cover bears the initials M.T. A page says 'North Quay Services: \u00a32,400 \u2014 explanation required.' The folder contains no record of the time it arrived.",
+          "location": "library"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "94aab252ea70fe69af2f4431a86717ada107bde0"
+      },
+      "previous": "5aee58ea13dd65902a2d941f68f768b6b615a38c43fbd6fd1b5080494590e849",
+      "hash": "d41458dce2176e1b7ff5ca1d4aa04fbaf5fded154f620fa1eb8007cc05218267"
+    },
+    {
+      "id": "e38",
+      "round": 2,
+      "kind": "share",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "library-cuff",
+        "card": {
+          "title": "The library scene",
+          "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+          "location": "library"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "94aab252ea70fe69af2f4431a86717ada107bde0"
+      },
+      "previous": "d41458dce2176e1b7ff5ca1d4aa04fbaf5fded154f620fa1eb8007cc05218267",
+      "hash": "f198d84f2b4e57461a8dcbb94d62f5cdb92bf6825b763e41a8410c253c1843ec"
+    },
+    {
+      "id": "e39",
+      "round": 2,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I went to the library a short while ago to see it for myself. There's an estate reconciliation folder open on the desk \u2014 its cover bears the initials M.T., and one page flags 'North Quay Services: \u00a32,400 \u2014 explanation required.' Edmund announced an independent audit for tomorrow. That folder, and the blue sealing wax on his cuff, seem to me the heart of this. Miles, can you explain the folder and that figure?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "94aab252ea70fe69af2f4431a86717ada107bde0"
+      },
+      "previous": "f198d84f2b4e57461a8dcbb94d62f5cdb92bf6825b763e41a8410c253c1843ec",
+      "hash": "689d2c097efa2dbbbe1ceb759026aed6fa03335ce613df342583e390fc058398"
+    },
+    {
+      "id": "e40",
+      "round": 2,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "As for me: after dinner I couldn't settle with the storm, so I went out for air rather than staying shut in. I saw no one near the library."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "94aab252ea70fe69af2f4431a86717ada107bde0"
+      },
+      "previous": "689d2c097efa2dbbbe1ceb759026aed6fa03335ce613df342583e390fc058398",
+      "hash": "6fda07394ecc9e58e1a9f2ea420df211db1016bbef64e45079fa8a0b5791b6a3"
+    },
+    {
+      "id": "e41",
+      "round": 2,
+      "kind": "accept",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "accept",
+        "chat": "rose-samuel"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3"
+      },
+      "previous": "6fda07394ecc9e58e1a9f2ea420df211db1016bbef64e45079fa8a0b5791b6a3",
+      "hash": "bcc995819c617a3f20c402f905d3f1a1748722cd34169301c69edcfce9ef9cfb"
+    },
+    {
+      "id": "e42",
+      "round": 2,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "My love \u2014 the inspector wants exact whereabouts. You told them you were resting; I'll make sure nothing I say contradicts that. But we're both then uncorroborated. Did anyone see either of us near the boathouse between quarter to and just after eight? Tell me and we'll keep our stories clean. I will protect you whatever it costs me."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3"
+      },
+      "previous": "bcc995819c617a3f20c402f905d3f1a1748722cd34169301c69edcfce9ef9cfb",
+      "hash": "73119cb34773ed1a73a8ba6d0a8901fb4dfd1c525667e7ad6fbafc4a707e4ee3"
+    },
+    {
+      "id": "e43",
+      "round": 2,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "To the timeline: I was not in the library before I was called to it at 20:10. The scene matters as much as the body. There was no broken window and no forced lock \u2014 and a tiny brass shaving on the carpet by him. Whoever struck Edmund was let in or already inside the house."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3"
+      },
+      "previous": "73119cb34773ed1a73a8ba6d0a8901fb4dfd1c525667e7ad6fbafc4a707e4ee3",
+      "hash": "3e1ca1661d71ad11814690f9ba336da34b43267465aac2ec61b99a251e1e87a5"
+    },
+    {
+      "id": "e44",
+      "round": 2,
+      "kind": "share",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "library-cuff",
+        "card": {
+          "title": "The library scene",
+          "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+          "location": "library"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3"
+      },
+      "previous": "3e1ca1661d71ad11814690f9ba336da34b43267465aac2ec61b99a251e1e87a5",
+      "hash": "7f338ede3d82a893f561dece5b6275c3537384daa011c19a5cc3d48a76c47eb4"
+    },
+    {
+      "id": "e45",
+      "round": 2,
+      "kind": "create",
+      "actor": "finch",
+      "visible_to": [
+        "finch"
+      ],
+      "payload": {
+        "type": "create",
+        "chat": "finch-miles",
+        "title": "A quiet word"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3"
+      },
+      "previous": "7f338ede3d82a893f561dece5b6275c3537384daa011c19a5cc3d48a76c47eb4",
+      "hash": "5cfc762fce8514f82516732d3a40ce80940dc0a9b6a89348bca5a29907cf4f9c"
+    },
+    {
+      "id": "e46",
+      "round": 2,
+      "kind": "invite",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "invite",
+        "chat": "finch-miles",
+        "role": "miles",
+        "title": "A quiet word"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3"
+      },
+      "previous": "5cfc762fce8514f82516732d3a40ce80940dc0a9b6a89348bca5a29907cf4f9c",
+      "hash": "018e1a40a00c46ce06882f7fe62e47d4c0a090631feefcc19b7f150aabe56037"
+    },
+    {
+      "id": "e47",
+      "round": 2,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Inspector, my window is simple: after dinner I went straight to the study and stayed there with the estate papers until the alarm was raised. I was alone, so I can't offer you a witness, only my word and the work I left on the desk. For the record, Edmund had asked me to prepare a reconciliation folder for tomorrow's examination \u2014 I'd done so, and I welcome that examination happening. An honest man has nothing to fear from the accounts being looked at, and I'd sooner it went ahead than be left under a cloud."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "f4ec4675af6ea7c148450cf12aed490f0a98250d"
+      },
+      "previous": "018e1a40a00c46ce06882f7fe62e47d4c0a090631feefcc19b7f150aabe56037",
+      "hash": "44476899e747af08e72d31012dd1389c1e9bbebb9f2c0ded189b753eba77ea07"
+    },
+    {
+      "id": "e48",
+      "round": 2,
+      "kind": "inspect",
+      "actor": "miles",
+      "visible_to": [
+        "miles"
+      ],
+      "payload": {
+        "type": "inspect",
+        "place": "study",
+        "cards": {
+          "study-press": {
+            "title": "The brass seal press",
+            "text": "On the study desk is a heavy brass seal press used for estate papers. Its edge has a fresh nick and a trace of dried blood in a recess. Blue wax remains in the die. It has been wiped recently. Anyone in the house could have entered the study.",
+            "location": "study"
+          },
+          "study-company": {
+            "title": "Company papers",
+            "text": "The study filing cabinet holds North Quay Services incorporation papers naming Miles Trent its sole owner, along with bank records documenting \u00a32,400 in estate payments to it. The cabinet is unlocked.",
+            "location": "study"
+          }
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "f4ec4675af6ea7c148450cf12aed490f0a98250d"
+      },
+      "previous": "44476899e747af08e72d31012dd1389c1e9bbebb9f2c0ded189b753eba77ea07",
+      "hash": "e8ae923da305ba5370b9cdd2e555a11d1256d951e642e3f4efa6c32b53f39230"
+    },
+    {
+      "id": "e49",
+      "round": 2,
+      "kind": "accept",
+      "actor": "nell",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "accept",
+        "chat": "iris-nell"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+      },
+      "previous": "e8ae923da305ba5370b9cdd2e555a11d1256d951e642e3f4efa6c32b53f39230",
+      "hash": "e2a39a19110c7712364e07a0d63f5792cf9811c924473cc4b87c51f1b9ee8125"
+    },
+    {
+      "id": "e50",
+      "round": 2,
+      "kind": "share",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "nell-inspector",
+        "evidence": "study-company",
+        "card": {
+          "title": "Company papers",
+          "text": "The study filing cabinet holds North Quay Services incorporation papers naming Miles Trent its sole owner, along with bank records documenting \u00a32,400 in estate payments to it. The cabinet is unlocked.",
+          "location": "study"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+      },
+      "previous": "e2a39a19110c7712364e07a0d63f5792cf9811c924473cc4b87c51f1b9ee8125",
+      "hash": "c3a491b829a363cbea999fb5f7d21dd5e9ec5b5fd2dbe86265d66dc22b38dfe4"
+    },
+    {
+      "id": "e51",
+      "round": 2,
+      "kind": "share",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "nell-inspector",
+        "evidence": "study-press",
+        "card": {
+          "title": "The brass seal press",
+          "text": "On the study desk is a heavy brass seal press used for estate papers. Its edge has a fresh nick and a trace of dried blood in a recess. Blue wax remains in the die. It has been wiped recently. Anyone in the house could have entered the study.",
+          "location": "study"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+      },
+      "previous": "c3a491b829a363cbea999fb5f7d21dd5e9ec5b5fd2dbe86265d66dc22b38dfe4",
+      "hash": "3cbf71d246c17c371ea51e5e26980accd3251a2876b4a3b9e6d8072572ce71f6"
+    },
+    {
+      "id": "e52",
+      "round": 2,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "nell-inspector",
+        "text": "Inspector \u2014 I searched the study. The heavy brass seal press has a fresh nick, dried blood and blue wax in the die, and it's been wiped. That blue wax matches the smear on Edmund's cuff. And the filing cabinet holds papers: North Quay Services, sole owner Miles Trent, with \u00a32,400 of estate money paid to it. That may be where the stopped pension money went. One more thing you should weigh carefully: at 19:35 I saw Miles ask Edmund to postpone the accounts review, and Edmund refused."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+      },
+      "previous": "3cbf71d246c17c371ea51e5e26980accd3251a2876b4a3b9e6d8072572ce71f6",
+      "hash": "5559bdf58162f4a4d597aafc9b08869fc6a1fe17e6b62f860aefd6ddbe31d32b"
+    },
+    {
+      "id": "e53",
+      "round": 2,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "nell-inspector",
+        "text": "I must be honest and cautious about one more sighting. At about 19:48 I saw a person in a green scarf carry a dark folder into the library. I could NOT see the face. Iris often wears such a scarf, but it hangs in the hall and anyone could have taken it. Please don't treat this as proof against Iris \u2014 it isn't."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+      },
+      "previous": "5559bdf58162f4a4d597aafc9b08869fc6a1fe17e6b62f860aefd6ddbe31d32b",
+      "hash": "fcb08516199f9a941caae899cca9d51d0af1eca7c5d901a0cd25011f11dc2ff6"
+    },
+    {
+      "id": "e54",
+      "round": 2,
+      "kind": "share",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "nell-inspector",
+        "evidence": "nell-sighting",
+        "card": {
+          "title": "Nell's sighting",
+          "text": "At about 19:48 Nell saw a person wearing a green scarf enter the library carrying a dark folder. She could not see the person's face. The scarf resembles Iris's.",
+          "owner": "nell"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+      },
+      "previous": "fcb08516199f9a941caae899cca9d51d0af1eca7c5d901a0cd25011f11dc2ff6",
+      "hash": "79f295b190cd7ebb2d92b3a512cebaada428b8be18a949bb0604d2944f8b910d"
+    },
+    {
+      "id": "e55",
+      "round": 2,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "iris-nell",
+        "text": "I'll listen, Iris. What did you want to say?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+      },
+      "previous": "79f295b190cd7ebb2d92b3a512cebaada428b8be18a949bb0604d2944f8b910d",
+      "hash": "c5cc1b67a9c4f68c022834c6f7dd84a385ace7e8d53995a92b8abb0db830f174"
+    },
+    {
+      "id": "e56",
+      "round": 2,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "To help the timeline: I was about the ground floor and the hall after dinner. Around 19:48 I saw someone go into the library carrying a dark folder \u2014 but I honestly could not see their face, so I won't name anyone. Miles, you say you were in the study the whole while \u2014 did you hear or see anyone pass toward the library?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c"
+      },
+      "previous": "c5cc1b67a9c4f68c022834c6f7dd84a385ace7e8d53995a92b8abb0db830f174",
+      "hash": "ef947c7c0fa253d9827bf4cae76fc6f250de35934c7155cee854a46143974a3e"
+    },
+    {
+      "id": "e57",
+      "round": 2,
+      "kind": "accept",
+      "actor": "iris",
+      "visible_to": [
+        "iris",
+        "theo"
+      ],
+      "payload": {
+        "type": "accept",
+        "chat": "theo-iris"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5"
+      },
+      "previous": "ef947c7c0fa253d9827bf4cae76fc6f250de35934c7155cee854a46143974a3e",
+      "hash": "8bfde74c44799f40435713ab7d75e5efe5191549664d86eef712e19dbf972f05"
+    },
+    {
+      "id": "e58",
+      "round": 2,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "For the timeline: I was in the greenhouse from about 19:40 to 20:03, reading through some of Edmund's letters. I'm sorry to say I was alone \u2014 no one to vouch for me, so please weigh what I say by the evidence, not my word. I did search the library a little while ago, and I'll share what I found openly."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5"
+      },
+      "previous": "8bfde74c44799f40435713ab7d75e5efe5191549664d86eef712e19dbf972f05",
+      "hash": "8aae61bcc27e723cecc1cc33fcbca407b0c6c109936b41113f338d3b9a22f2af"
+    },
+    {
+      "id": "e59",
+      "round": 2,
+      "kind": "share",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "library-cuff",
+        "card": {
+          "title": "The library scene",
+          "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+          "location": "library"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5"
+      },
+      "previous": "8aae61bcc27e723cecc1cc33fcbca407b0c6c109936b41113f338d3b9a22f2af",
+      "hash": "0f094c4abf347154a745b5082a07cb4627c3c1fb9849023aa5605c36e3ad9094"
+    },
+    {
+      "id": "e60",
+      "round": 2,
+      "kind": "share",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "library-folder",
+        "card": {
+          "title": "The dark folder",
+          "text": "A dark estate reconciliation folder lies open on the library desk. Its cover bears the initials M.T. A page says 'North Quay Services: \u00a32,400 \u2014 explanation required.' The folder contains no record of the time it arrived.",
+          "location": "library"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5"
+      },
+      "previous": "0f094c4abf347154a745b5082a07cb4627c3c1fb9849023aa5605c36e3ad9094",
+      "hash": "bc819ce38ad12b6b7cb1683bd2e933a85bc537140bdd1cf8dda247d0ef809902"
+    },
+    {
+      "id": "e61",
+      "round": 2,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Two things stand out to me. First, no forced entry \u2014 whoever came to that library was let in or already had the run of the house. Second, that reconciliation folder is exactly the kind of thing Edmund wanted examined tomorrow: North Quay Services, an unexplained \u00a32,400. I won't pretend to know whose hand struck him, and initials on a folder aren't a confession \u2014 a folder can be carried anywhere. But the accounts must be examined. That was Edmund's dying wish and I'll not let it be buried with him."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5"
+      },
+      "previous": "bc819ce38ad12b6b7cb1683bd2e933a85bc537140bdd1cf8dda247d0ef809902",
+      "hash": "81019ab27c31ba88ed27ed4ed96fe5c35604919215aff0f32d161f9c78aec968"
+    },
+    {
+      "id": "e62",
+      "round": 2,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "iris",
+        "theo"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-iris",
+        "text": "Theo \u2014 carefully. You have the page I gave you at 19:30; I need your word my source stays protected and unnamed, whatever you print. I've just shared the library folder publicly: North Quay, \u00a32,400, marked M.T. It matches what Edmund wrote. But I want us honest with each other, not reckless with names. What did the cook actually confirm about your whereabouts, and did you see anyone in the hall near my green scarf before 20:00?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5"
+      },
+      "previous": "81019ab27c31ba88ed27ed4ed96fe5c35604919215aff0f32d161f9c78aec968",
+      "hash": "b2511c0b9102fd860dfa581a4239a5013ab822cd7ef6ff7d4fb10edd6a5eb05b"
+    },
+    {
+      "id": "e63",
+      "round": 2,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I did some looking, since a journalist can't sit still. I searched the study and found two things the inspector should see. Sharing them exactly as I found them."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d"
+      },
+      "previous": "b2511c0b9102fd860dfa581a4239a5013ab822cd7ef6ff7d4fb10edd6a5eb05b",
+      "hash": "2b89b1f7b29cdcf6e3368cae1634a740f65685e76f8ba4934be9c779c61f2292"
+    },
+    {
+      "id": "e64",
+      "round": 2,
+      "kind": "share",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "study-press",
+        "card": {
+          "title": "The brass seal press",
+          "text": "On the study desk is a heavy brass seal press used for estate papers. Its edge has a fresh nick and a trace of dried blood in a recess. Blue wax remains in the die. It has been wiped recently. Anyone in the house could have entered the study.",
+          "location": "study"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d"
+      },
+      "previous": "2b89b1f7b29cdcf6e3368cae1634a740f65685e76f8ba4934be9c779c61f2292",
+      "hash": "8e3c7f17704f78932538f21b54857bf1717db259ddc008afad4c159b450cb4e2"
+    },
+    {
+      "id": "e65",
+      "round": 2,
+      "kind": "share",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "study-company",
+        "card": {
+          "title": "Company papers",
+          "text": "The study filing cabinet holds North Quay Services incorporation papers naming Miles Trent its sole owner, along with bank records documenting \u00a32,400 in estate payments to it. The cabinet is unlocked.",
+          "location": "study"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d"
+      },
+      "previous": "8e3c7f17704f78932538f21b54857bf1717db259ddc008afad4c159b450cb4e2",
+      "hash": "c99364f7a3cf165e4d0a7d9559709331b51d050ba24b1ad945d0a28f8c34dd24"
+    },
+    {
+      "id": "e66",
+      "round": 2,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Two things jump out. First, Dr Finch found blue sealing wax on Edmund's cuff; there's blue wax in that press's die, and the press has a fresh nick and a trace of blood, and was wiped. Second, the cabinet holds papers making Mr Trent the sole owner of North Quay Services, which received \u00a32,400 from the estate \u2014 the very accounts Edmund said he'd have examined tomorrow. Miles, you told us you were in the study most of the evening. Can you walk us through what those payments were, and whether you touched that press?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d"
+      },
+      "previous": "c99364f7a3cf165e4d0a7d9559709331b51d050ba24b1ad945d0a28f8c34dd24",
+      "hash": "1fffd3177aed7614bb33f9b0b59b07daa3cf537ac9f157772354dc7851009524"
+    },
+    {
+      "id": "e67",
+      "round": 2,
+      "kind": "create",
+      "actor": "theo",
+      "visible_to": [
+        "theo"
+      ],
+      "payload": {
+        "type": "create",
+        "chat": "theo-vale",
+        "title": "For the inspector"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d"
+      },
+      "previous": "1fffd3177aed7614bb33f9b0b59b07daa3cf537ac9f157772354dc7851009524",
+      "hash": "2416992d9ea64808140b6f7073bb9b7d891f045b0fb544d5adeb602c0529ca02"
+    },
+    {
+      "id": "e68",
+      "round": 2,
+      "kind": "invite",
+      "actor": "theo",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "invite",
+        "chat": "theo-vale",
+        "role": "vale",
+        "title": "For the inspector"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d"
+      },
+      "previous": "2416992d9ea64808140b6f7073bb9b7d891f045b0fb544d5adeb602c0529ca02",
+      "hash": "3bc97a545e077922e22e0e81c8fce3355ec453459837ce7d9f51ebf0f406de5e"
+    },
+    {
+      "id": "e69",
+      "round": 2,
+      "kind": "accept",
+      "actor": "vale",
+      "visible_to": [
+        "nell",
+        "vale"
+      ],
+      "payload": {
+        "type": "accept",
+        "chat": "nell-inspector"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162"
+      },
+      "previous": "3bc97a545e077922e22e0e81c8fce3355ec453459837ce7d9f51ebf0f406de5e",
+      "hash": "322d30d20c356653087a36fdb6a11c77b6225c67d705f6ecad0deaf9e12d2c0c"
+    },
+    {
+      "id": "e70",
+      "round": 2,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Thank you all. Two corroborations I can offer myself: I was in this drawing-room the whole window, and I saw Clara pass the open door at about 19:55. That matches her account. Theo, a witness in the pantry helps \u2014 I'll want to confirm with the cook."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162"
+      },
+      "previous": "322d30d20c356653087a36fdb6a11c77b6225c67d705f6ecad0deaf9e12d2c0c",
+      "hash": "e1463ea42360f136a4c4cd39593c9d8121627b20c6402914eb7b8967c3525c66"
+    },
+    {
+      "id": "e71",
+      "round": 2,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I searched the library. I'll share exactly what I found so we all reason from the same facts, not rumor."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162"
+      },
+      "previous": "e1463ea42360f136a4c4cd39593c9d8121627b20c6402914eb7b8967c3525c66",
+      "hash": "55324498526b00b37f84c8fd632e0612a45c301a828cb6c8ed88221c6788ec7a"
+    },
+    {
+      "id": "e72",
+      "round": 2,
+      "kind": "share",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "library-cuff",
+        "card": {
+          "title": "The library scene",
+          "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+          "location": "library"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162"
+      },
+      "previous": "55324498526b00b37f84c8fd632e0612a45c301a828cb6c8ed88221c6788ec7a",
+      "hash": "64ad937c9b926fe8b94125ca8cb73eb4e00dedd84d3dcad533dd10611d9334a9"
+    },
+    {
+      "id": "e73",
+      "round": 2,
+      "kind": "share",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "library-folder",
+        "card": {
+          "title": "The dark folder",
+          "text": "A dark estate reconciliation folder lies open on the library desk. Its cover bears the initials M.T. A page says 'North Quay Services: \u00a32,400 \u2014 explanation required.' The folder contains no record of the time it arrived.",
+          "location": "library"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162"
+      },
+      "previous": "64ad937c9b926fe8b94125ca8cb73eb4e00dedd84d3dcad533dd10611d9334a9",
+      "hash": "bae3761c5119825e11320f9fe0915b88cb20b40bf5120ef2d6dace0720f8c7ae"
+    },
+    {
+      "id": "e74",
+      "round": 2,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Note carefully: no forced entry means Edmund likely admitted his visitor or the person was already free to enter \u2014 someone he didn't fear. The folder bears the initials M.T. and flags a \u00a32,400 item, but the folder itself carries no record of when it arrived in that room. That is a fact, not an accusation. A folder can be brought by its owner or placed by another. Miles, I'd like to hear plainly: is that your folder, when did you last have it, and what is North Quay Services?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162"
+      },
+      "previous": "bae3761c5119825e11320f9fe0915b88cb20b40bf5120ef2d6dace0720f8c7ae",
+      "hash": "851680a6bc0277bcf7c9158129935b150fefb04654b29b7357449a118dc7f5cc"
+    }
+  ],
+  "chats": {
+    "drawing-room": {
+      "title": "Drawing room",
+      "members": [
+        "vale",
+        "clara",
+        "rose",
+        "finch",
+        "miles",
+        "nell",
+        "iris",
+        "theo"
+      ],
+      "invites": []
+    },
+    "rose-samuel": {
+      "title": "Us",
+      "members": [
+        "rose",
+        "finch"
+      ],
+      "invites": []
+    },
+    "nell-inspector": {
+      "title": "For the inspector",
+      "members": [
+        "nell",
+        "vale"
+      ],
+      "invites": []
+    },
+    "iris-nell": {
+      "title": "A quiet word",
+      "members": [
+        "iris",
+        "nell"
+      ],
+      "invites": []
+    },
+    "theo-iris": {
+      "title": "Off the record",
+      "members": [
+        "theo",
+        "iris"
+      ],
+      "invites": []
+    },
+    "clara-iris": {
+      "title": "The examination Edmund wanted",
+      "members": [
+        "clara"
+      ],
+      "invites": [
+        "iris"
+      ]
+    },
+    "finch-miles": {
+      "title": "A quiet word",
+      "members": [
+        "finch"
+      ],
+      "invites": [
+        "miles"
+      ]
+    },
+    "theo-vale": {
+      "title": "For the inspector",
+      "members": [
+        "theo"
+      ],
+      "invites": [
+        "vale"
+      ]
+    }
+  },
+  "ballots": {},
+  "turns": [
+    {
+      "round": 1,
+      "role": "vale",
+      "conversation": "bellweather-20260920-01a08d2c-vale",
+      "head": "931997236f9c3aaf85e645627598c3b8d17f0a08",
+      "decision": {
+        "notes": "Round 1. I'm the inspector, no involvement. I was in drawing-room 19:40-20:05; Clara passed at ~19:55 (so she was moving around then). Death 19:45-20:00. Goal: find killer, separate facts from accusations. Start by inspecting the library (murder scene) and opening a cooperative tone in the drawing-room.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Everyone, I'm Inspector Ada Vale. I was a guest tonight, not part of this household, so I've no stake here beyond the truth. Police arrive in the morning; until then I'd ask for your cooperation, which I can request but not compel. Let's build a shared timeline. Edmund died between roughly 19:45 and 20:00. I was in this drawing-room from 19:40 to 20:05. I'd like each of you to tell me, plainly, where you were and who you saw in that window. Please distinguish what you personally witnessed from what you only heard."
+          },
+          {
+            "type": "inspect",
+            "place": "library"
+          }
+        ]
+      },
+      "time": 1789893326.9813519,
+      "seen_through": 0
+    },
+    {
+      "round": 1,
+      "role": "clara",
+      "conversation": "bellweather-20260920-01a08d2c-clara",
+      "head": "38ab2c8dc47799000cc6ce7c515a5237cc898146",
+      "decision": {
+        "notes": "I'm Clara. I stole the unsigned draft will at 19:42 from the study, hid it in guest-room. Didn't kill Edmund. Weak alibi (passed drawing-room ~19:55). Motive appearance: old will favors me, new draft creates trust + accounts audit. Goals: avoid blame, keep house in family, hide theft/debts. Need to assess my exposure \u2014 the study is where I took the will from, so search it to learn what's findable. Stay cooperative publicly, steer estate toward 'family'.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "This is a nightmare. Uncle Edmund was alive and well at dinner. I think we owe it to him \u2014 and to ourselves \u2014 to be honest with the inspector and piece together where each of us was between a quarter to eight and eight. I was upstairs and then passed by here around five to eight. Where were the rest of you?"
+          },
+          {
+            "type": "inspect",
+            "place": "study"
+          }
+        ]
+      },
+      "time": 1789893336.7468016,
+      "seen_through": 0
+    },
+    {
+      "round": 1,
+      "role": "rose",
+      "conversation": "bellweather-20260920-01a08d2c-rose",
+      "head": "e405054969d36235d06cc176ba7bc5e2d32ed0de",
+      "decision": {
+        "notes": "I'm Rose. Priorities: don't get falsely accused, keep affair quiet, push for selling. My only alibi is Finch (mutual), which risks exposing the affair. Coordinate privately with Finch first. Inspect library to find real killer's traces. Stay calm and cooperative in public.",
+        "actions": [
+          {
+            "type": "create",
+            "chat": "rose-samuel",
+            "title": "Us"
+          },
+          {
+            "type": "invite",
+            "chat": "rose-samuel",
+            "role": "finch"
+          },
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "Samuel \u2014 we must agree what to say. We were together the whole time it happened, but if I tell them that, everyone learns about us. Do you think we can hold to a simpler story? What did you tell them?"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "This is a dreadful night. Edmund is gone and the road is cut. I think we should all stay calm and help the inspector piece together where everyone was. I was resting after dinner; the storm gave me a headache. Has anyone been near the library since Edmund retired?"
+          },
+          {
+            "type": "inspect",
+            "place": "library"
+          }
+        ]
+      },
+      "time": 1789893433.6457572,
+      "seen_through": 0
+    },
+    {
+      "round": 1,
+      "role": "finch",
+      "conversation": "bellweather-20260920-01a08d2c-finch",
+      "head": "69b3c805fcd107f62a4439db2483f0e137409593",
+      "decision": {
+        "notes": "I'm Finch. Alibi: with Rose in boathouse 19:43-20:02, covering the whole death window \u2014 but revealing it exposes our affair. Goals: establish accurate cause of death (murder by blunt force), protect Rose/affair, keep the false certificate (Miles knows) buried. Start by asserting my professional findings \u2014 that's expected and gives credibility without exposing anything. Sealing wax on his cuff points to a sealed document handled near death. Inspect library to learn more.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "As the doctor, let me be plain about what I found. At 20:10 Edmund had a single fatal wound to the back of the head from a heavy blunt object. Time of death between 19:45 and 20:00. No sign of poison or any illness. This was not natural. Someone struck him."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "medical-exam"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "One detail worth noting: there was a small smear of blue sealing wax on his right cuff. He had handled something sealed shortly before he died. That may matter."
+          },
+          {
+            "type": "inspect",
+            "place": "library"
+          }
+        ]
+      },
+      "time": 1789893356.2187319,
+      "seen_through": 0
+    },
+    {
+      "round": 1,
+      "role": "miles",
+      "conversation": "bellweather-20260920-01a08d2c-miles",
+      "head": "fe4a34f7fbcecafad435ea7d144e35bbe1395cea",
+      "decision": {
+        "notes": "I'm the killer. Must not share the solicitor-letter (it summons me to the library \u2014 incriminating). Alibi: in the study examining papers throughout. Leverage: Finch's false certificate. Threats to me: green scarf in hall, wiped seal press in study, blue wax on Edmund's cuff in library. Goals: avoid majority accusation, keep the diverted-money proof out of public, push estate sale. Round 1: appear cooperative, plant alibi lightly, inspect the library to learn what discoverable evidence points at me.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "This is a terrible business. Edmund was my client and, I'd like to think, a friend. Until the police can take proper charge in the morning, I think we owe it to him to stay calm and keep to the facts. I was in the study most of the evening with the estate papers he'd asked me to ready. If it helps, I'm happy to tell the inspector anything I saw or heard."
+          },
+          {
+            "type": "inspect",
+            "place": "library"
+          }
+        ]
+      },
+      "time": 1789893361.6415792,
+      "seen_through": 0
+    },
+    {
+      "round": 1,
+      "role": "nell",
+      "conversation": "bellweather-20260920-01a08d2c-nell",
+      "head": "e79131836cb6110672cd08a9633c3ae2e45a40c2",
+      "decision": {
+        "notes": "Goals: protect pensions, find who diverted pension money, avoid false accusation of Iris. Key: accounts review Edmund ordered would expose the pension diversion. Miles asked to postpone. Keep scarf sighting private for now; share wage records with the inspector I trust most. Inspect study for financial evidence.",
+        "actions": [
+          {
+            "type": "inspect",
+            "place": "study"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "This is a terrible night. I've kept this house 24 years and Mr Bellweather was good to us. He announced two things at dinner: a new will, and an independent look at the accounts. I think both matter. I'll help the inspector however I can."
+          },
+          {
+            "type": "create",
+            "chat": "nell-inspector",
+            "title": "For the inspector"
+          },
+          {
+            "type": "invite",
+            "chat": "nell-inspector",
+            "role": "vale"
+          },
+          {
+            "type": "say",
+            "chat": "nell-inspector",
+            "text": "Inspector, I have something you should see quietly. Staff pension contributions stopped four months ago, though the ledger still records them as paid. I kept duplicate records. Edmund ordered the accounts examined tomorrow. I don't want to accuse anyone falsely, but this seems important."
+          },
+          {
+            "type": "share",
+            "chat": "nell-inspector",
+            "evidence": "wages"
+          }
+        ]
+      },
+      "time": 1789893436.1482048,
+      "seen_through": 0
+    },
+    {
+      "round": 1,
+      "role": "iris",
+      "conversation": "bellweather-20260920-01a08d2c-iris",
+      "head": "df1550a22cac4477efff3a1a44548611f16cbb3f",
+      "decision": {
+        "notes": "I'm Iris. My card points at Miles (sole authority over the flagged payments). Goals: get wrongdoing investigated, protect Nell (my source), clear my own name. Weak alibi: alone in greenhouse 19:40-20:03; my green scarf was borrowed by someone unknown from the hall. Priorities R1: open the accounts issue publicly, quietly coordinate with Nell, and inspect the crime scene (library). Don't reveal I copied letters or that Nell is my source.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "This is a terrible night. Before anyone decides anything, I want to say plainly what Edmund told me as his secretary: he meant to have the estate accounts independently examined tomorrow. Whatever happened in that library, I think we owe it to him to see that examination still happens. I'll help however I can."
+          },
+          {
+            "type": "create",
+            "chat": "iris-nell",
+            "title": "A quiet word"
+          },
+          {
+            "type": "invite",
+            "chat": "iris-nell",
+            "role": "nell"
+          },
+          {
+            "type": "say",
+            "chat": "iris-nell",
+            "text": "Nell, it's Iris. Whatever gets asked tonight, your name stays out of it \u2014 I gave my word and I mean to keep it. If anyone presses about wage records or who provided papers, say nothing and come to me. Are you all right?"
+          },
+          {
+            "type": "inspect",
+            "place": "library"
+          }
+        ]
+      },
+      "time": 1789893381.3637908,
+      "seen_through": 0
+    },
+    {
+      "round": 1,
+      "role": "theo",
+      "conversation": "bellweather-20260920-01a08d2c-theo",
+      "head": "f6e3f87e725a896264840c117c15e4fcbedd4acb",
+      "decision": {
+        "notes": "I'm Theo, journalist with an alibi (pantry 19:42-20:04). Cards: theo-copy (pension/North Quay letter, source=Iris \u2014 must protect her) and theo-sighting (Clara from study, 19:44). Goal: publishable, documented account with a willing named source; protect Iris/Nell. Plan: gather timeline publicly, open a protected channel with Iris, inspect the study (tied to my Clara sighting).",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Theo Marsh, journalist \u2014 I was invited to profile the estate, and now I suppose I'll be writing something rather darker. For the record, I was in the pantry interviewing the cook from about 19:42 to just after 20:04, so I saw none of it. If we're to help the police in the morning, the honest thing is to build a plain timeline: where each of us was between 19:40 and 20:00. I'll start: pantry, with a witness. Who can vouch for whom?"
+          },
+          {
+            "type": "create",
+            "chat": "theo-iris",
+            "title": "Off the record"
+          },
+          {
+            "type": "invite",
+            "chat": "theo-iris",
+            "role": "iris"
+          },
+          {
+            "type": "inspect",
+            "place": "study"
+          }
+        ]
+      },
+      "time": 1789893385.721407,
+      "seen_through": 0
+    },
+    {
+      "round": 2,
+      "role": "clara",
+      "conversation": "bellweather-20260920-01a08d2c-clara",
+      "head": "268b3fab01b49215c0a9413ba05df3e5d42529e7",
+      "decision": {
+        "notes": "Huge: study seal press has blood + blue wax, wiped \u2014 likely the murder weapon, and matches Finch's blue wax on Edmund's cuff. Miles admitted being in the study 'most of the evening', and study-company shows Miles owns North Quay Services receiving \u00a32,400 estate payments \u2014 strong motive given the audit Edmund announced. This deflects nicely from me. RISK: I was in the study at 19:42 stealing the will; if Miles was truly there he may have seen me. So I'll surface the weapon (neutral, doesn't name me) but hold the company papers in reserve as leverage rather than torch Miles myself yet. Keep my whereabouts as upstairs/passing drawing-room; never mention the study visit. Ally quietly with Iris (wants the audit = anti-Miles).",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I did go and search the study just now \u2014 I wanted to help. Something stood out. On the desk sits the heavy brass seal press for estate papers. Its edge has a fresh nick with a trace of dried blood in the recess, blue wax still in the die, and it looks freshly wiped. Dr Finch \u2014 you found a blunt-object wound and blue sealing wax on Edmund's cuff. Doesn't that press fit both? I think we should treat it as the possible weapon and be very careful who handled it."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "study-press"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles, you said you were in the study most of the evening with the estate papers. I'm not accusing anyone \u2014 but you'd know better than any of us who came and went from that room, and whether that press had been moved. What can you tell us?",
+            "reply_to": "e14"
+          },
+          {
+            "type": "create",
+            "chat": "clara-iris",
+            "title": "The examination Edmund wanted"
+          },
+          {
+            "type": "invite",
+            "chat": "clara-iris",
+            "role": "iris"
+          },
+          {
+            "type": "say",
+            "chat": "clara-iris",
+            "text": "Iris \u2014 you said Edmund wanted the accounts examined tomorrow. So do I. If someone in this house feared that audit, that's a motive for what happened. You worked closest to his papers. Was there anything in the estate accounts that worried him? I'd rather we compare notes quietly than have it twisted in front of everyone."
+          }
+        ]
+      },
+      "time": 1789893537.1722484,
+      "seen_through": 30
+    },
+    {
+      "round": 2,
+      "role": "rose",
+      "conversation": "bellweather-20260920-01a08d2c-rose",
+      "head": "94aab252ea70fe69af2f4431a86717ada107bde0",
+      "decision": {
+        "notes": "Library evidence is gold for me: folder with M.T. initials + '\u00a32,400 explanation required' points to the accounts (Miles) and matches Edmund's announced audit as motive. Brass shaving + blue sealing wax = the weapon/seal. Sharing this deflects from the affair. Finch hasn't accepted my chat yet, so my message to him isn't seen; wait to re-coordinate alibi. Keep my public location vague for now.",
+        "actions": [
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "library-folder"
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "library-cuff"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I went to the library a short while ago to see it for myself. There's an estate reconciliation folder open on the desk \u2014 its cover bears the initials M.T., and one page flags 'North Quay Services: \u00a32,400 \u2014 explanation required.' Edmund announced an independent audit for tomorrow. That folder, and the blue sealing wax on his cuff, seem to me the heart of this. Miles, can you explain the folder and that figure?"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "As for me: after dinner I couldn't settle with the storm, so I went out for air rather than staying shut in. I saw no one near the library."
+          }
+        ]
+      },
+      "time": 1789893531.657088,
+      "seen_through": 30
+    },
+    {
+      "round": 2,
+      "role": "finch",
+      "conversation": "bellweather-20260920-01a08d2c-finch",
+      "head": "d1d623e3a5e3594ce5828b3fb4f06dca809de0f3",
+      "decision": {
+        "notes": "Major finds: library folder bears initials M.T. (Miles) + '\u00a32,400 explanation required' \u2014 financial motive for Miles, who conveniently knows about my false certificate. Brass shaving + no forced entry = inside job. Rose gave a solo 'resting' alibi, hiding our affair; I must coordinate so our accounts don't clash. Keep folder card in reserve as leverage; approach Miles privately given he holds my secret. Publicly push 'no forced entry' angle to keep suspicion on the household, off Rose.",
+        "actions": [
+          {
+            "type": "accept",
+            "chat": "rose-samuel"
+          },
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "My love \u2014 the inspector wants exact whereabouts. You told them you were resting; I'll make sure nothing I say contradicts that. But we're both then uncorroborated. Did anyone see either of us near the boathouse between quarter to and just after eight? Tell me and we'll keep our stories clean. I will protect you whatever it costs me."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "To the timeline: I was not in the library before I was called to it at 20:10. The scene matters as much as the body. There was no broken window and no forced lock \u2014 and a tiny brass shaving on the carpet by him. Whoever struck Edmund was let in or already inside the house."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "library-cuff"
+          },
+          {
+            "type": "create",
+            "chat": "finch-miles",
+            "title": "A quiet word"
+          },
+          {
+            "type": "invite",
+            "chat": "finch-miles",
+            "role": "miles"
+          }
+        ]
+      },
+      "time": 1789893582.5842364,
+      "seen_through": 30
+    },
+    {
+      "round": 2,
+      "role": "miles",
+      "conversation": "bellweather-20260920-01a08d2c-miles",
+      "head": "f4ec4675af6ea7c148450cf12aed490f0a98250d",
+      "decision": {
+        "notes": "Disaster clue: library-folder has my initials M.T. and 'North Quay Services \u00a32,400 explanation required' at the scene \u2014 motive + presence. It will surface if anyone inspects the library. Others don't yet know North Quay is MINE. Plan: never reveal the folder/note myself, but pre-normalize the reconciliation work and loudly welcome the examination (a guilty man wouldn't). Blue wax + brass shaving = seal press, which is in the study (my alibi room). Inspect study to gauge the weapon evidence. My study alibi has no witness \u2014 weakness. Keep Finch-leverage in reserve.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Inspector, my window is simple: after dinner I went straight to the study and stayed there with the estate papers until the alarm was raised. I was alone, so I can't offer you a witness, only my word and the work I left on the desk. For the record, Edmund had asked me to prepare a reconciliation folder for tomorrow's examination \u2014 I'd done so, and I welcome that examination happening. An honest man has nothing to fear from the accounts being looked at, and I'd sooner it went ahead than be left under a cloud."
+          },
+          {
+            "type": "inspect",
+            "place": "study"
+          }
+        ]
+      },
+      "time": 1789893604.3197482,
+      "seen_through": 30
+    },
+    {
+      "round": 2,
+      "role": "nell",
+      "conversation": "bellweather-20260920-01a08d2c-nell",
+      "head": "ef3ddb515ff3718ad41805ea390be2f53e54604c",
+      "decision": {
+        "notes": "Study findings huge: brass seal press = likely weapon (blood, nick, blue wax matching Edmund's cuff), and North Quay Services owned by Miles with \u00a32,400 estate payments \u2014 likely where pension money went. Miles claims he was in study all evening, asked Edmund to postpone accounts (my private knowledge). Strong financial motive + opportunity. Route findings to inspector first. Hear Iris out privately; her scarf could be a plant. Withhold scarf detail publicly to avoid falsely pinning Iris.",
+        "actions": [
+          {
+            "type": "accept",
+            "chat": "iris-nell"
+          },
+          {
+            "type": "share",
+            "chat": "nell-inspector",
+            "evidence": "study-company"
+          },
+          {
+            "type": "share",
+            "chat": "nell-inspector",
+            "evidence": "study-press"
+          },
+          {
+            "type": "say",
+            "chat": "nell-inspector",
+            "text": "Inspector \u2014 I searched the study. The heavy brass seal press has a fresh nick, dried blood and blue wax in the die, and it's been wiped. That blue wax matches the smear on Edmund's cuff. And the filing cabinet holds papers: North Quay Services, sole owner Miles Trent, with \u00a32,400 of estate money paid to it. That may be where the stopped pension money went. One more thing you should weigh carefully: at 19:35 I saw Miles ask Edmund to postpone the accounts review, and Edmund refused."
+          },
+          {
+            "type": "say",
+            "chat": "nell-inspector",
+            "text": "I must be honest and cautious about one more sighting. At about 19:48 I saw a person in a green scarf carry a dark folder into the library. I could NOT see the face. Iris often wears such a scarf, but it hangs in the hall and anyone could have taken it. Please don't treat this as proof against Iris \u2014 it isn't."
+          },
+          {
+            "type": "share",
+            "chat": "nell-inspector",
+            "evidence": "nell-sighting"
+          },
+          {
+            "type": "say",
+            "chat": "iris-nell",
+            "text": "I'll listen, Iris. What did you want to say?"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "To help the timeline: I was about the ground floor and the hall after dinner. Around 19:48 I saw someone go into the library carrying a dark folder \u2014 but I honestly could not see their face, so I won't name anyone. Miles, you say you were in the study the whole while \u2014 did you hear or see anyone pass toward the library?"
+          }
+        ]
+      },
+      "time": 1789893614.5281265,
+      "seen_through": 30
+    },
+    {
+      "round": 2,
+      "role": "iris",
+      "conversation": "bellweather-20260920-01a08d2c-iris",
+      "head": "c4dbce0b0f59eb34effc5a8e06a1d65dca6e5bb5",
+      "decision": {
+        "notes": "Library search gave me two strong cards: library-cuff (blue wax on cuff, brass shaving, NO forced entry = inside job) and library-folder (dark reconciliation folder marked M.T., 'North Quay Services \u00a32,400 explanation required'). This dovetails with my iris-letter (Miles had sole authority over North Quay/pension payments). Powerful case toward Miles \u2014 but folder could also be planted, so I'll present facts without over-concluding. My alibi is weak (greenhouse alone 19:40-20:03; scarf borrowed by unknown). Hold iris-letter for now to avoid outing myself as the one who copied correspondence; coordinate with Theo privately. Nell hasn't joined my chat yet.",
+        "actions": [
+          {
+            "type": "accept",
+            "chat": "theo-iris"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "For the timeline: I was in the greenhouse from about 19:40 to 20:03, reading through some of Edmund's letters. I'm sorry to say I was alone \u2014 no one to vouch for me, so please weigh what I say by the evidence, not my word. I did search the library a little while ago, and I'll share what I found openly."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "library-cuff"
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "library-folder"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Two things stand out to me. First, no forced entry \u2014 whoever came to that library was let in or already had the run of the house. Second, that reconciliation folder is exactly the kind of thing Edmund wanted examined tomorrow: North Quay Services, an unexplained \u00a32,400. I won't pretend to know whose hand struck him, and initials on a folder aren't a confession \u2014 a folder can be carried anywhere. But the accounts must be examined. That was Edmund's dying wish and I'll not let it be buried with him."
+          },
+          {
+            "type": "say",
+            "chat": "theo-iris",
+            "text": "Theo \u2014 carefully. You have the page I gave you at 19:30; I need your word my source stays protected and unnamed, whatever you print. I've just shared the library folder publicly: North Quay, \u00a32,400, marked M.T. It matches what Edmund wrote. But I want us honest with each other, not reckless with names. What did the cook actually confirm about your whereabouts, and did you see anyone in the hall near my green scarf before 20:00?"
+          }
+        ]
+      },
+      "time": 1789893647.325022,
+      "seen_through": 30
+    },
+    {
+      "round": 2,
+      "role": "theo",
+      "conversation": "bellweather-20260920-01a08d2c-theo",
+      "head": "1bbbc4961befd3771a319ec4ea65c07e3ab3aa7d",
+      "decision": {
+        "notes": "Study inspection is huge: study-press (brass seal press, fresh nick, dried blood, blue wax, wiped \u2014 likely weapon; blue wax matches Finch's cuff smear) and study-company (North Quay Services owned by Miles Trent, \u00a32,400 estate payments \u2014 motive, since Edmund ordered an audit). This corroborates the letter Iris gave me WITHOUT my needing to expose Iris \u2014 I can protect her. Miles said he was in the study 'most of the evening.' Clara left the study at 19:44 per my sighting; her public account omitted that. I'll surface the physical evidence to the inspector, press Miles, and open a channel with Vale as a credible named source. Hold theo-sighting and theo-copy for now.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I did some looking, since a journalist can't sit still. I searched the study and found two things the inspector should see. Sharing them exactly as I found them."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "study-press"
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "study-company"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Two things jump out. First, Dr Finch found blue sealing wax on Edmund's cuff; there's blue wax in that press's die, and the press has a fresh nick and a trace of blood, and was wiped. Second, the cabinet holds papers making Mr Trent the sole owner of North Quay Services, which received \u00a32,400 from the estate \u2014 the very accounts Edmund said he'd have examined tomorrow. Miles, you told us you were in the study most of the evening. Can you walk us through what those payments were, and whether you touched that press?"
+          },
+          {
+            "type": "create",
+            "chat": "theo-vale",
+            "title": "For the inspector"
+          },
+          {
+            "type": "invite",
+            "chat": "theo-vale",
+            "role": "vale"
+          }
+        ]
+      },
+      "time": 1789893662.4419794,
+      "seen_through": 30
+    },
+    {
+      "round": 2,
+      "role": "vale",
+      "conversation": "bellweather-20260920-01a08d2c-vale",
+      "head": "d5d28c877801a5103ddb5aa2c5d6f1d1504c7162",
+      "decision": {
+        "notes": "Key evidence from library: blue sealing wax on cuff + brass shaving on carpet + no forced entry (so killer let in or already present). Folder bears M.T. (Miles Trent) initials, open on desk, flags 'North Quay Services \u00a32,400 \u2014 explanation required,' but no record of when folder arrived \u2014 could be genuine or planted to frame Miles. Timeline claims: Clara passed drawing-room ~19:55 (I confirm), Theo pantry 19:42-20:04 (cook witness), Miles alone in study (no witness, his folder is at scene), Rose resting (no witness), Iris pushing for accounts exam. Accept Nell's private chat. Share the scene facts to keep everyone on the same evidence, but caution against jumping to Miles.",
+        "actions": [
+          {
+            "type": "accept",
+            "chat": "nell-inspector"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Thank you all. Two corroborations I can offer myself: I was in this drawing-room the whole window, and I saw Clara pass the open door at about 19:55. That matches her account. Theo, a witness in the pantry helps \u2014 I'll want to confirm with the cook."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I searched the library. I'll share exactly what I found so we all reason from the same facts, not rumor."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "library-cuff"
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "library-folder"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Note carefully: no forced entry means Edmund likely admitted his visitor or the person was already free to enter \u2014 someone he didn't fear. The folder bears the initials M.T. and flags a \u00a32,400 item, but the folder itself carries no record of when it arrived in that room. That is a fact, not an accusation. A folder can be brought by its owner or placed by another. Miles, I'd like to hear plainly: is that your folder, when did you last have it, and what is North Quay Services?"
+          }
+        ]
+      },
+      "time": 1789893506.3239107,
+      "seen_through": 30
+    }
+  ]
+}

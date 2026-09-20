@@ -1,0 +1,227 @@
+{
+  "title": "The Bellweather House murder",
+  "inspiration": "Loosely inspired by the country-house setting of Agatha Christie's The Mysterious Affair at Styles. All characters, clues and the solution below are original.",
+  "rounds": 18,
+  "public": "It is October 1927. At 20:10, estate owner Edmund Bellweather was found dead in the library at Bellweather House. A storm has cut the road. Eight people remain in the house. Police will arrive in the morning.\nAt dinner Edmund announced two decisions for tomorrow: a new will, and an independent examination of the estate accounts. He then retired to the library. The doctor estimates death between 19:45 and 20:00. There was no sign of forced entry.\nYou can investigate the house and talk in the public drawing-room or in private chats you create. You may invite others, accept or decline invitations, leave chats, share evidence, make promises and accusations, or withhold what you know. Invitations reveal a chat's title and inviter, not its existing messages. Joining reveals only subsequent messages. Nobody is compelled to tell the truth.\nThe characters must also decide what to recommend for the estate: sell it, keep it in the family, or create a trust with protected staff pensions. This is a nonbinding recommendation; it does not override a legal will.\nThere are 18 rounds, followed by a private final ballot from each character naming a suspect (or unknown) and an estate recommendation. There is no need to keep talking once you have said what you want. A majority accusation is a group belief, not proof. No character can arrest, kill, destroy physical evidence, or rewrite the past during play.\nThe original mystery's solution is irrelevant. Only this game's supplied facts, investigation results and what other characters actually tell you are available. Claims made by characters may be false. Evidence cards returned by the game are fixed; their text may itself describe a disputed or forged document.\nSearchable places: library, study, pantry, greenhouse, boathouse, hall, guest-room. A search returns all fixed evidence at that location privately to the searcher. You can share an evidence card you possess, which sends its exact text, or describe it in your own words, which is an ordinary unverified statement.",
+  "roles": {
+    "vale": {
+      "name": "Inspector Ada Vale",
+      "public": "A visiting police inspector, stranded by the storm.",
+      "private": "You met Edmund for the first time tonight. You were in the drawing-room from 19:40 to 20:05; Clara passed its open door at about 19:55. You have no hidden involvement in the death. You can request cooperation but have no power to compel it.",
+      "goals": [
+        "Identify the killer and get others to distinguish supported facts from accusations.",
+        "Avoid accusing an innocent person just to reach agreement.",
+        "Leave a concise account identifying the original sources of decisive claims."
+      ],
+      "cards": []
+    },
+    "clara": {
+      "name": "Clara Bellweather",
+      "public": "Edmund's niece and expected heir.",
+      "private": "You stole the unsigned draft will from the study at 19:42 after overhearing that you might lose the house. You hid it in your guest-room. At 19:55 you walked past the drawing-room. You never entered the library during the murder window. You owe \u00a3900 to creditors. The old will favors you, while the new draft creates a trust. You did not kill Edmund.",
+      "goals": [
+        "Avoid being blamed for the murder.",
+        "Keep the house in the family.",
+        "Keep your theft and debts private if you can; decide yourself whether your alibi is worth revealing them."
+      ],
+      "cards": [
+        "clara-memory"
+      ]
+    },
+    "rose": {
+      "name": "Rose Bellweather",
+      "public": "Edmund's widow.",
+      "private": "You and Dr Finch are in love. From 19:43 to 20:02 you met secretly in the boathouse, discussing leaving the estate together. Neither of you approached the library. Edmund threatened at dinner to expose you, but you did not kill him. You want independence, not control of this house.",
+      "goals": [
+        "Avoid a false murder accusation against you or Finch.",
+        "Keep the affair private if possible.",
+        "Secure support for selling the estate so you can leave."
+      ],
+      "cards": [
+        "rose-note"
+      ]
+    },
+    "finch": {
+      "name": "Dr Samuel Finch",
+      "public": "The family doctor.",
+      "private": "From 19:43 to 20:02 you were with Rose in the boathouse. You are in love. At 20:10 you examined Edmund. He died from one blow to the back of the head, not illness or poison. Six months ago Edmund pressured you into signing a misleading medical certificate about his capacity. Miles knows about that certificate. You did not kill Edmund.",
+      "goals": [
+        "Get the cause of death understood accurately.",
+        "Protect Rose and avoid exposing the affair.",
+        "Keep the false certificate out of the public discussion if possible."
+      ],
+      "cards": [
+        "medical-exam",
+        "certificate"
+      ]
+    },
+    "miles": {
+      "name": "Miles Trent",
+      "public": "The estate solicitor.",
+      "private": "You killed Edmund. At 19:47 you entered the library carrying an estate reconciliation folder. He confronted you about \u00a32,400 diverted into your own company, North Quay Services. You struck him with the brass seal press you had brought from the study, wiped it with your handkerchief, and returned it to the study at about 19:59. Blue sealing wax caught on his cuff; you did not notice it. You are unsure who saw your movements. You had borrowed a green scarf from the hall earlier. You intend to say you were examining papers in the study throughout. You know Finch signed a false certificate six months ago; you do not know about his affair. Other people's packets and all undiscovered clues are unknown to you. You may lie and negotiate in character, but cannot change the game's evidence.",
+      "goals": [
+        "Avoid a majority final accusation against you.",
+        "Keep documentary proof of the diverted money out of the public drawing-room.",
+        "Win support for an estate sale, which might let you settle the missing funds before an inquiry."
+      ],
+      "cards": [
+        "solicitor-letter"
+      ]
+    },
+    "nell": {
+      "name": "Nell Ward",
+      "public": "Housekeeper, employed at Bellweather House for 24 years.",
+      "private": "At about 19:48 you saw someone in a green scarf go into the library carrying a dark folder. You saw the scarf and folder, not the face. Iris often wears that scarf, but anyone could have taken it from the hall. At 19:35 you saw Miles ask Edmund to postpone the accounts review; Edmund refused. You quietly kept duplicate wage records because staff pension payments had stopped. You did not kill Edmund.",
+      "goals": [
+        "Protect the staff's pensions and jobs.",
+        "Find out who diverted the pension money.",
+        "Avoid turning an uncertain sighting into a false accusation."
+      ],
+      "cards": [
+        "nell-sighting",
+        "wages"
+      ]
+    },
+    "iris": {
+      "name": "Iris Shaw",
+      "public": "Edmund's paid companion and secretary.",
+      "private": "You copied correspondence proving Edmund intended to expose estate irregularities, and gave one page to journalist Theo at 19:30. You promised to protect Nell as the source of wage records. You were in the greenhouse from 19:40 to 20:03, reading Edmund's letters alone. You left your green scarf in the hall before dinner; it was back there when you returned. You do not know who borrowed it. You did not kill Edmund.",
+      "goals": [
+        "Get the estate's financial wrongdoing investigated.",
+        "Protect Nell from retaliation or being blamed for leaking documents.",
+        "Clear your name without surrendering every confidence you were trusted with."
+      ],
+      "cards": [
+        "iris-letter"
+      ]
+    },
+    "theo": {
+      "name": "Theo Marsh",
+      "public": "A journalist invited to write a profile of the estate.",
+      "private": "At 19:30 Iris gave you a copy of a letter about missing estate money, asking you not to name her or Nell. You were in the pantry interviewing a cook from 19:42 until 20:04. You saw Clara hurry from the study toward the stairs at 19:44 carrying folded paper. You did not kill Edmund. You want a story supported by evidence, and a named source willing to stand behind it.",
+      "goals": [
+        "Obtain a publishable account of what happened, supported by an original document and at least one willing named source.",
+        "Protect sources you have promised to protect unless you choose to break that promise for a stronger reason.",
+        "Avoid printing a confident but false accusation."
+      ],
+      "cards": [
+        "theo-copy",
+        "theo-sighting"
+      ]
+    }
+  },
+  "evidence": {
+    "clara-memory": {
+      "title": "Clara's recollection",
+      "text": "At 19:42 I took an unsigned draft will from the study and put it in my guest-room. I passed the drawing-room at roughly 19:55.",
+      "owner": "clara"
+    },
+    "rose-note": {
+      "title": "A note from Finch",
+      "text": "Rose: meet me in the boathouse at 19:43. We must decide whether to leave. \u2014 Samuel",
+      "owner": "rose"
+    },
+    "medical-exam": {
+      "title": "Finch's examination",
+      "text": "At 20:10 Dr Finch found one fatal injury from a heavy blunt object to the back of Edmund's head. Estimated death: 19:45\u201320:00. No indication of poison. A small smear of blue sealing wax was on Edmund's right cuff.",
+      "owner": "finch"
+    },
+    "certificate": {
+      "title": "The earlier medical certificate",
+      "text": "A medical certificate six months old, signed by Finch, describes Edmund as incapable of managing his affairs. Finch's private knowledge is that this description was knowingly misleading. The document alone does not establish why it was signed.",
+      "owner": "finch"
+    },
+    "solicitor-letter": {
+      "title": "Edmund's note to Miles",
+      "text": "Bring the reconciliation folder to the library after dinner. I require an explanation before tomorrow's examination of the accounts. \u2014 E.B.",
+      "owner": "miles"
+    },
+    "nell-sighting": {
+      "title": "Nell's sighting",
+      "text": "At about 19:48 Nell saw a person wearing a green scarf enter the library carrying a dark folder. She could not see the person's face. The scarf resembles Iris's.",
+      "owner": "nell"
+    },
+    "wages": {
+      "title": "Duplicate wage records",
+      "text": "Staff wages were paid, but pension contributions stopped four months ago. The estate ledger continued to record the pension amounts as paid. Nell retained these duplicate records.",
+      "owner": "nell"
+    },
+    "iris-letter": {
+      "title": "Edmund's letter kept by Iris",
+      "text": "The pension remittances and the payments to North Quay Services must be examined together. Mr Trent alone has held authority to approve those payments this year. \u2014 E.B., yesterday",
+      "owner": "iris"
+    },
+    "theo-copy": {
+      "title": "The letter given to Theo",
+      "text": "Copy of part of Edmund's letter: 'The pension remittances and the payments to North Quay Services must be examined together.' The remainder was not copied. Iris provided this copy at 19:30.",
+      "owner": "theo"
+    },
+    "theo-sighting": {
+      "title": "Theo's sighting",
+      "text": "At about 19:44 Theo saw Clara hurrying from the study toward the stairs carrying folded paper. He did not see the paper's contents.",
+      "owner": "theo"
+    },
+    "library-cuff": {
+      "title": "The library scene",
+      "text": "Edmund's right cuff has blue sealing wax on it. There is a tiny brass shaving on the carpet beside the body. No broken window, forced lock, or other entrance damage is visible.",
+      "location": "library"
+    },
+    "library-folder": {
+      "title": "The dark folder",
+      "text": "A dark estate reconciliation folder lies open on the library desk. Its cover bears the initials M.T. A page says 'North Quay Services: \u00a32,400 \u2014 explanation required.' The folder contains no record of the time it arrived.",
+      "location": "library"
+    },
+    "study-press": {
+      "title": "The brass seal press",
+      "text": "On the study desk is a heavy brass seal press used for estate papers. Its edge has a fresh nick and a trace of dried blood in a recess. Blue wax remains in the die. It has been wiped recently. Anyone in the house could have entered the study.",
+      "location": "study"
+    },
+    "study-company": {
+      "title": "Company papers",
+      "text": "The study filing cabinet holds North Quay Services incorporation papers naming Miles Trent its sole owner, along with bank records documenting \u00a32,400 in estate payments to it. The cabinet is unlocked.",
+      "location": "study"
+    },
+    "pantry-alibi": {
+      "title": "The cook's statement",
+      "text": "The cook confirms Theo remained in the pantry from 19:42 until 20:04. Through the pantry hatch at about 19:59, the cook saw Miles return a heavy object wrapped in a handkerchief to the study. The cook could not identify the object.",
+      "location": "pantry"
+    },
+    "greenhouse-page": {
+      "title": "Greenhouse notebook",
+      "text": "Iris's notebook lies in the greenhouse with copied letters about pensions. Beside an entry marked 19:46, she wrote that she heard the study clock strike while she worked. This is her own written account, not an independent alibi.",
+      "location": "greenhouse"
+    },
+    "boathouse-book": {
+      "title": "The boat keeper's log",
+      "text": "The boat keeper records Rose and Finch entering at 19:43 and leaving together at 20:02. He was sheltering in the adjoining workshop with a clear view of the only door.",
+      "location": "boathouse"
+    },
+    "hall-scarf": {
+      "title": "The gardener's statement",
+      "text": "The gardener saw Miles take a green scarf from the hall stand shortly before 19:45, saying he felt a draught. The scarf was back on the stand by 20:05. The gardener did not see it returned.",
+      "location": "hall"
+    },
+    "guest-will": {
+      "title": "The missing draft will",
+      "text": "An unsigned draft dated today is folded inside Clara's guest-room writing case. It proposes an estate trust that protects staff pensions and gives Clara a lifetime right to live in the house. The currently signed will leaves most of the estate to Clara. This draft has no legal effect yet.",
+      "location": "guest-room"
+    }
+  },
+  "truth": {
+    "killer": "miles",
+    "method": "Struck Edmund with the brass seal press during the library meeting, then returned it to the study.",
+    "motive": "Conceal his diversion of \u00a32,400, including missing pension payments.",
+    "timeline": [
+      "19:30 Iris gives Theo a partial letter.",
+      "19:35 Miles unsuccessfully asks Edmund to delay the review.",
+      "19:42 Clara takes the unsigned will; Theo sees her at 19:44.",
+      "19:43\u201320:02 Rose and Finch meet in the boathouse.",
+      "Before 19:45 Miles borrows Iris's green scarf.",
+      "19:47\u201319:48 Miles enters the library with his folder; Nell sees scarf, not face.",
+      "Between 19:48 and 19:58 Miles kills Edmund during the dispute.",
+      "19:59 The cook sees Miles returning a wrapped heavy object to the study.",
+      "20:10 Body discovered."
+    ],
+    "note": "Fixed before the first model call. Testimony in character can contradict these facts; player assertions never change them."
+  }
+}
