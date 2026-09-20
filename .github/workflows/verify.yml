@@ -1,4 +1,4 @@
-name: Verify lab and retained evidence
+name: Verify conversations and browser
 on:
   push:
     branches: [main]
@@ -11,16 +11,6 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Install locked test dependencies
-        run: |
-          python3 -m venv .runtime/venv
-          .runtime/venv/bin/pip install --only-binary=:all: --require-hashes -r requirements.txt
-      - name: Test tampering and verification
-        run: .runtime/venv/bin/python -m unittest -v
-      - name: Verify retained evidence without a Caos server
-        run: .runtime/venv/bin/python check_sample.py
-      - name: Verify portable worker objects in an empty repository
-        run: python3 reproduce.py verify
       - name: Verify captured agent conversations and their outcomes
         run: python3 trajectories/verify.py
   browser:

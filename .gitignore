@@ -1,4 +1,3 @@
-.runtime/
 runs/
 __pycache__/
 trajectories/node_modules/

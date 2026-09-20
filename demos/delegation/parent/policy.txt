@@ -1,2 +1,0 @@
-review=required
-version=1

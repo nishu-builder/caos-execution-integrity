@@ -27,9 +27,9 @@ python3 trajectories/verify.py
 
 The verifier checks object hashes, commit links, snapshots, diffs, child conversation heads, and request entries against the retained Git objects. It also executes the final discount tests and checks the cleanup example's resulting files.
 
-The JSON files under `docs/trajectories/data/` are browser indexes. `objects/` contains the original Git object bytes, including their Git headers. The exporter checks every fetched object's hash before retaining it. This preserves what the harness recorded; it does not establish that a runner executed honestly.
+The JSON files under `docs/trajectories/data/` are reference exports used by the verifier and tests; the browser reads Git objects directly. `objects/` contains the original Git object bytes, including their Git headers. The exporter checks every fetched object's hash before retaining it. This preserves what the harness recorded; it does not establish that a runner executed honestly.
 
-This is an **inspection export**. It includes conversation records, workspace snapshots, and recorded request arguments, but not complete worker image closures. It cannot by itself restart the captured agents. The older [worker reproduction package](../REPRODUCE.md) is separate.
+This is an **inspection export**. It includes conversation records, workspace snapshots, and recorded request arguments, but not complete worker image closures. It cannot by itself restart the captured agents.
 
 ## Open another run directly in the browser
 
