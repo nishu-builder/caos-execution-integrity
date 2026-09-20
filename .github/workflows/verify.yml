@@ -13,6 +13,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - name: Verify captured agent conversations and their outcomes
         run: python3 trajectories/verify.py
+      - name: Check METR study outcomes against the saved evidence
+        run: |
+          python3 experiments/metr/verify.py --output /tmp/metr-results.json
+          diff -u experiments/metr/results.json /tmp/metr-results.json
   browser:
     runs-on: ubuntu-24.04
     timeout-minutes: 10

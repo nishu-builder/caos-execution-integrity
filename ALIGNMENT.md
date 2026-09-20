@@ -74,4 +74,4 @@ Preserving the surrounding environment could also help with agents that behave d
 
 Investigators can inspect runs, rerun individual computations, or branch to test counterfactual scenarios. Secrets are supplied at execution rather than stored in the argtree, so a reviewer runs under their own keys and pays for their own compute and model calls. Auditing someone's run doesn't require being trusted with their access or funded by them.
 
-[Explore two recorded multiagent runs in the trajectory browser](https://nishu-builder.github.io/caos-execution-integrity/trajectories/): follow child conversations, inspect file changes, and read the compute requests.
+[Explore recorded agent runs in the trajectory browser](https://nishu-builder.github.io/caos-execution-integrity/trajectories/): follow child conversations, inspect file changes, and read the compute requests.

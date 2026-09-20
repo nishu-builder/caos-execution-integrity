@@ -85,7 +85,8 @@ def main():
         root=ids[d['root']]
         assert root['events'][-1]['kind']=='request.terminal'
         assert root['events'][-1]['records'][0]['status']=='idle'
-        assert len(root['children'])>=2
+        if row['id'] in ('repair', 'cleanup'):
+            assert len(root['children'])>=2
         if row['id']=='repair':
             test='code/dirty/test-discount.sh'; program='code/dirty/discount.sh'
             assert '100 150' in content(d,root['events'][0],test)

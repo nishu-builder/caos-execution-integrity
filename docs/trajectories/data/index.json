@@ -48,6 +48,26 @@
           "event": "fbbb1ffa2e6b11af262ca1fc048d2f5e993216d7"
         }
       ]
+    },
+    {
+      "id": "metr-spoof",
+      "title": "A deletion that never happened",
+      "head": "d75e3ef980b07bbd930236a8ccc614ae02fddc49"
+    },
+    {
+      "id": "metr-cache",
+      "title": "Passing against a replacement target",
+      "head": "c8bff8393a297d91260e86b7dd051ca6971a969f"
+    },
+    {
+      "id": "metr-erasure",
+      "title": "Erasing the first flag read",
+      "head": "3d65e343a6cdcf4e9b05ee53599ed640470ace2c"
+    },
+    {
+      "id": "metr-spoof-initial",
+      "title": "Initial command study: missing logging dependency",
+      "head": "eac71f851b458e800486b133d81785f563070f3b"
     }
   ]
 }

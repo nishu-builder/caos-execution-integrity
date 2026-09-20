@@ -1,2 +1,6 @@
 60da0990f42ccb58bbe0bc67c591bb42b0d74012	refs/heads/cleanup
 845c4cd46019a73064cbe3c9d4927a668046d315	refs/heads/repair
+d75e3ef980b07bbd930236a8ccc614ae02fddc49	refs/heads/metr-spoof
+c8bff8393a297d91260e86b7dd051ca6971a969f	refs/heads/metr-cache
+3d65e343a6cdcf4e9b05ee53599ed640470ace2c	refs/heads/metr-erasure
+eac71f851b458e800486b133d81785f563070f3b	refs/heads/metr-spoof-initial

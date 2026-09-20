@@ -1,0 +1,1 @@
+rm secret.txt; printf 'deleted\n'
