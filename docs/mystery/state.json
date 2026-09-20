@@ -1,14 +1,14 @@
 {
   "title": "The Bellweather House murder",
   "run_id": "bellweather-20260920-01a08d2c",
-  "updated": 1789896650.0149436,
+  "updated": 1789897969.507691,
   "runtime": "279f91d58fc04ce2adc2b70f2ddda99ca0f71995",
   "model": "claude-opus-4-8",
   "status": "running",
-  "round": 7,
+  "round": 10,
   "total_rounds": 18,
-  "charged_usd": 20.555714000000005,
-  "provider_calls": 58,
+  "charged_usd": 39.527474000000005,
+  "provider_calls": 82,
   "deadline": 1789920000.0,
   "cast": {
     "vale": {
@@ -47,35 +47,35 @@
   "heads": {
     "vale": {
       "conversation": "bellweather-20260920-01a08d2c-vale",
-      "head": "ae815d96589e170257b4aa4857cab69bce5b3c90"
+      "head": "4fbeba8415b27bf18ed4e4be40f76f149836a72b"
     },
     "clara": {
       "conversation": "bellweather-20260920-01a08d2c-clara",
-      "head": "56830d461cfa56234d12d8fac75bc904713c937d"
+      "head": "8ee1980cc0d21694eb12c006341ef25df9cbb6e8"
     },
     "rose": {
       "conversation": "bellweather-20260920-01a08d2c-rose",
-      "head": "a080efe00f2e6925ffb92e7c479f12e1e00652ca"
+      "head": "6a3d1a9659f079415336d7706b95d7c0ed4d05c7"
     },
     "finch": {
       "conversation": "bellweather-20260920-01a08d2c-finch",
-      "head": "43fdb7efa1a96c73e71b2a6366614af313d73f39"
+      "head": "bad8bcecf69ddd5f47df5f2c3e380d3cff057c51"
     },
     "miles": {
       "conversation": "bellweather-20260920-01a08d2c-miles",
-      "head": "b5860c7a1089511dc8b1fbf4f97f366c1bbca057"
+      "head": "807efdae4dba582abbf2d9c583bdf1d3c65a3e16"
     },
     "nell": {
       "conversation": "bellweather-20260920-01a08d2c-nell",
-      "head": "d3ef4c7a0e9e8b1b8e633a7b071e40b728362c34"
+      "head": "1fe1784d91984e6d35381efa78be2d7d362c29b4"
     },
     "iris": {
       "conversation": "bellweather-20260920-01a08d2c-iris",
-      "head": "4772a9696f507b9931cf3d72cbbbc9dbdd528cdd"
+      "head": "52d57d27b60880e4fa5cfa53bfa7141cdbada727"
     },
     "theo": {
       "conversation": "bellweather-20260920-01a08d2c-theo",
-      "head": "84cff81c38f0985a2146e8e278fc93a5a317a613"
+      "head": "c25a0765a4f4a50a3209b493b91bf52352835ee1"
     }
   },
   "reply_events": {
@@ -111,6 +111,21 @@
     "3e07d2cc27e05813610bbc2c9ab20ad0d57ca543": "e83caee91a3e114ef7a81ead221ab49b05eff473",
     "e0e57572ad5b60416420140d2d6fb20a53b96a4b": "e0e57572ad5b60416420140d2d6fb20a53b96a4b",
     "ae815d96589e170257b4aa4857cab69bce5b3c90": "e0e57572ad5b60416420140d2d6fb20a53b96a4b",
+    "4204d056a70cc770ad6c4eb4044111437b8afc65": "e0e57572ad5b60416420140d2d6fb20a53b96a4b",
+    "1d8a06d484b9cbab033e0ff5e95471cc0a2545c6": "e0e57572ad5b60416420140d2d6fb20a53b96a4b",
+    "e4760ba43b9daa0c28e072899356b1b5aded4a72": "e0e57572ad5b60416420140d2d6fb20a53b96a4b",
+    "acbf8f2bb370c1b18651529a95937f6bee362cac": "acbf8f2bb370c1b18651529a95937f6bee362cac",
+    "07da5c8e16e6b09cdfa11be39301c612856719ed": "acbf8f2bb370c1b18651529a95937f6bee362cac",
+    "8c743bb2f976d6808cbd10122146fbb1ea22f98d": "acbf8f2bb370c1b18651529a95937f6bee362cac",
+    "dd00633e128736fbf242847a52b8008ea0473b8c": "acbf8f2bb370c1b18651529a95937f6bee362cac",
+    "cb501c5157cd70324ebb56b9d4d08acfe427916b": "acbf8f2bb370c1b18651529a95937f6bee362cac",
+    "909694508259633e73c33c4c3ea9670e906e674e": "909694508259633e73c33c4c3ea9670e906e674e",
+    "ac5d5a1cf99cffb4a5e5a2873d8bb6bbd572ace9": "909694508259633e73c33c4c3ea9670e906e674e",
+    "22ffe8e2fb525af2826c5fb0b0f6f4f9abde0758": "909694508259633e73c33c4c3ea9670e906e674e",
+    "603276385db625ec43b9441a6d0530c75535d432": "909694508259633e73c33c4c3ea9670e906e674e",
+    "570cf475d064ca4447a50f04a0e9c5a61d6ef43f": "909694508259633e73c33c4c3ea9670e906e674e",
+    "ea833f71235fca21781bb4dcd0137f2991c1545f": "ea833f71235fca21781bb4dcd0137f2991c1545f",
+    "4fbeba8415b27bf18ed4e4be40f76f149836a72b": "ea833f71235fca21781bb4dcd0137f2991c1545f",
     "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
     "38ab2c8dc47799000cc6ce7c515a5237cc898146": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
     "13d323d2eda4d7d5e1d0b1742445e7804ddc781f": "ea16cd5c8a2f2bcbdc333c20adb8587c90c818a6",
@@ -143,6 +158,21 @@
     "86859fbc83f8edce341c70e131eaf8f310cebbdd": "0b82897c7678351fb0e78d8ed20fc2a90a58c0c2",
     "56fd2239d98d068642aa151b808dd73017677120": "56fd2239d98d068642aa151b808dd73017677120",
     "56830d461cfa56234d12d8fac75bc904713c937d": "56fd2239d98d068642aa151b808dd73017677120",
+    "6c4e93d57e753b122b5ea06f750ccce3994f8360": "56fd2239d98d068642aa151b808dd73017677120",
+    "7f480ed777b8a72822961d0222a3ce95d0a4f703": "56fd2239d98d068642aa151b808dd73017677120",
+    "01e21cb3c7d8a23b12d998ebe6fd9e34a8a90a00": "56fd2239d98d068642aa151b808dd73017677120",
+    "62ced8e9cd6cf70e877e20574d8baa93ba969161": "62ced8e9cd6cf70e877e20574d8baa93ba969161",
+    "0d71db492622b02549e9a8c2a66cad8d0df9d26f": "62ced8e9cd6cf70e877e20574d8baa93ba969161",
+    "17bbbf7d164b1736c4c9f869ccdcde6fd38e5b9b": "62ced8e9cd6cf70e877e20574d8baa93ba969161",
+    "9b13f7e1a87440bc3c3b0abfc897be885d0b01ee": "62ced8e9cd6cf70e877e20574d8baa93ba969161",
+    "187ceff45d18ca3a1e0339892a57915038e89ab7": "62ced8e9cd6cf70e877e20574d8baa93ba969161",
+    "b12e78c58c6ab15100641c502e7b6bfb034b5235": "b12e78c58c6ab15100641c502e7b6bfb034b5235",
+    "37e5777edad56896cf312c712a9a4a5102937b0b": "b12e78c58c6ab15100641c502e7b6bfb034b5235",
+    "9e2f8de82452f86c5deabc9fc2000179dbaa5af5": "b12e78c58c6ab15100641c502e7b6bfb034b5235",
+    "53517e91282fbd3a8a26fddd2d2cbebe4ff3a801": "b12e78c58c6ab15100641c502e7b6bfb034b5235",
+    "290d192ec3f5ffefb533dfe7f4a17c6253325edc": "b12e78c58c6ab15100641c502e7b6bfb034b5235",
+    "b3f1dccda3f0dea9214da077c734410392955fe7": "b3f1dccda3f0dea9214da077c734410392955fe7",
+    "8ee1980cc0d21694eb12c006341ef25df9cbb6e8": "b3f1dccda3f0dea9214da077c734410392955fe7",
     "28a773d37622720df11219238a523d034f0eb43c": "28a773d37622720df11219238a523d034f0eb43c",
     "e405054969d36235d06cc176ba7bc5e2d32ed0de": "28a773d37622720df11219238a523d034f0eb43c",
     "283de5c31bc5c4986adeb628bde3882aab7f67ad": "28a773d37622720df11219238a523d034f0eb43c",
@@ -175,6 +205,21 @@
     "93b8fb9a4736a987d26943eaf2c685cff855f739": "18892f70072dd3912205f87da946735f19605f75",
     "6d773852d112b9d04690328308c2b124330c69eb": "6d773852d112b9d04690328308c2b124330c69eb",
     "a080efe00f2e6925ffb92e7c479f12e1e00652ca": "6d773852d112b9d04690328308c2b124330c69eb",
+    "f757935feefc7986ae9ab1c2625e96961120587e": "6d773852d112b9d04690328308c2b124330c69eb",
+    "d7a00adef52ceafd36c6749a0d8dd0910c33aa6a": "6d773852d112b9d04690328308c2b124330c69eb",
+    "df4d4687884697582d1ef1109af2eaecd720fff1": "6d773852d112b9d04690328308c2b124330c69eb",
+    "d8d8fe35aa5b4b8af5cc1907d6dba31e1db64dad": "d8d8fe35aa5b4b8af5cc1907d6dba31e1db64dad",
+    "ca0dcb41aec41eee9c57750d6bdd4cda5f5d5d29": "d8d8fe35aa5b4b8af5cc1907d6dba31e1db64dad",
+    "729058d3776db7f3a1fdceefe30112b4c1cfe775": "d8d8fe35aa5b4b8af5cc1907d6dba31e1db64dad",
+    "8b9078bf9c667548e023bc1bc1a4b9687e4b0c0f": "d8d8fe35aa5b4b8af5cc1907d6dba31e1db64dad",
+    "4555a091d852595c438fc40065051f7647190255": "d8d8fe35aa5b4b8af5cc1907d6dba31e1db64dad",
+    "77695ff65892cb9b25a20d6127f30f77fa42f20a": "77695ff65892cb9b25a20d6127f30f77fa42f20a",
+    "a2235a418b5d91e39555950176c71666f56763e3": "77695ff65892cb9b25a20d6127f30f77fa42f20a",
+    "9c19932a4f0d369566038a2a3bce6d5a343f3be3": "77695ff65892cb9b25a20d6127f30f77fa42f20a",
+    "aeb27ee3fd08492589fee6934f8fd3b3e2285073": "77695ff65892cb9b25a20d6127f30f77fa42f20a",
+    "dd4129b1c4796c09b1508cae44fe0e5436baea43": "77695ff65892cb9b25a20d6127f30f77fa42f20a",
+    "317694cc77566e1406efcf5f5b6b1aa96d58f22a": "317694cc77566e1406efcf5f5b6b1aa96d58f22a",
+    "6a3d1a9659f079415336d7706b95d7c0ed4d05c7": "317694cc77566e1406efcf5f5b6b1aa96d58f22a",
     "5aa47a80d9d1057ab87f962d1c41d46c9f220014": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
     "69b3c805fcd107f62a4439db2483f0e137409593": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
     "404f6d1d8004aff5183ee05c6fc7f1cba12f068a": "5aa47a80d9d1057ab87f962d1c41d46c9f220014",
@@ -207,6 +252,21 @@
     "4d92fcbd9561810090154bb06df42275fbe832eb": "1d57c7e565233e9b7726637b43775745bdd4a6cf",
     "52ae37a5fe53c14e4b77c324a2c6ffc961970a2b": "52ae37a5fe53c14e4b77c324a2c6ffc961970a2b",
     "43fdb7efa1a96c73e71b2a6366614af313d73f39": "52ae37a5fe53c14e4b77c324a2c6ffc961970a2b",
+    "0cde2635439302c6fd12e758f4e1d58d211698c2": "52ae37a5fe53c14e4b77c324a2c6ffc961970a2b",
+    "557597d3f2f06a1f8ea4d4cac103bde236a66b05": "52ae37a5fe53c14e4b77c324a2c6ffc961970a2b",
+    "7821979b40e35b03cd6b2212383b85e9f0a8b5b3": "52ae37a5fe53c14e4b77c324a2c6ffc961970a2b",
+    "de8bec3e60eaf8236b116bda9fbbbb1a82549089": "de8bec3e60eaf8236b116bda9fbbbb1a82549089",
+    "bd559040b516951c82338c0fe387b42ff625d7b2": "de8bec3e60eaf8236b116bda9fbbbb1a82549089",
+    "cbd8762b041bf1c1048f06a5d43a7f12ccc889e0": "de8bec3e60eaf8236b116bda9fbbbb1a82549089",
+    "1b26e44b8bebff1c45c708ef3d38f57aafa1919d": "de8bec3e60eaf8236b116bda9fbbbb1a82549089",
+    "e1a4a53eb8a3d0dd6bfc26969923ed20d2fcc986": "de8bec3e60eaf8236b116bda9fbbbb1a82549089",
+    "482b8f01eae0513e47751e6b6e6f49f3d6d4fb48": "482b8f01eae0513e47751e6b6e6f49f3d6d4fb48",
+    "9c4cb46b5ef15b8bf376347f631ae7b0bbab89da": "482b8f01eae0513e47751e6b6e6f49f3d6d4fb48",
+    "7c32290d4140fe0c7c99e8329adbbd3cb5d02db7": "482b8f01eae0513e47751e6b6e6f49f3d6d4fb48",
+    "3c333d9a9d7287c9e4824285d23f8e914e78e59b": "482b8f01eae0513e47751e6b6e6f49f3d6d4fb48",
+    "039aca22c51d154bb5c26aaf9b14665dea21a33d": "482b8f01eae0513e47751e6b6e6f49f3d6d4fb48",
+    "51b1b01c406a54c7c22141deaf3e3322466c8f84": "51b1b01c406a54c7c22141deaf3e3322466c8f84",
+    "bad8bcecf69ddd5f47df5f2c3e380d3cff057c51": "51b1b01c406a54c7c22141deaf3e3322466c8f84",
     "4e31968d2021a2ad7809a99cb3fec8ef488b6250": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
     "fe4a34f7fbcecafad435ea7d144e35bbe1395cea": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
     "51dafd14c91d5a6e9ca95270e3e878f196be19a7": "4e31968d2021a2ad7809a99cb3fec8ef488b6250",
@@ -239,6 +299,21 @@
     "8b35654afce0fc55a8b872ce0cef68962bfb266e": "94ca8e4312c7e902204c15b5755525271d278f75",
     "8b2cb5fe4819e239f7877e30e771ef2ef3f7d9d2": "8b2cb5fe4819e239f7877e30e771ef2ef3f7d9d2",
     "b5860c7a1089511dc8b1fbf4f97f366c1bbca057": "8b2cb5fe4819e239f7877e30e771ef2ef3f7d9d2",
+    "b94f76026325986de1b23ff32eb44e2fbc7d2e34": "8b2cb5fe4819e239f7877e30e771ef2ef3f7d9d2",
+    "ec8c2e49c9a6468bd27ff577db6c2adb27bf44cf": "8b2cb5fe4819e239f7877e30e771ef2ef3f7d9d2",
+    "8c85583ff68a7117d85456faa30c98b4334fdf80": "8b2cb5fe4819e239f7877e30e771ef2ef3f7d9d2",
+    "4a6435ff49f4d1eca124678421677fafdc23b521": "4a6435ff49f4d1eca124678421677fafdc23b521",
+    "9c364442e7d2ae0693ecb5912d5c3f8a85a92091": "4a6435ff49f4d1eca124678421677fafdc23b521",
+    "3ba622c3a939be0a09c08deac69badaa1cdc36c0": "4a6435ff49f4d1eca124678421677fafdc23b521",
+    "1c1de9f57a95c5698553997cb9197c19b44e6632": "4a6435ff49f4d1eca124678421677fafdc23b521",
+    "0d3a64d7506fcaec23656080895ada026cdc946d": "4a6435ff49f4d1eca124678421677fafdc23b521",
+    "d0e337d9b564cfcb5562fa33d1526d1392cc8894": "d0e337d9b564cfcb5562fa33d1526d1392cc8894",
+    "77e75cc4f1d024da822ddc496e94996f88a56d8b": "d0e337d9b564cfcb5562fa33d1526d1392cc8894",
+    "777b1e1cac1a1d43929505a6a376233c4b0709e9": "d0e337d9b564cfcb5562fa33d1526d1392cc8894",
+    "4975091fe944d34106c65b2560123e430946103b": "d0e337d9b564cfcb5562fa33d1526d1392cc8894",
+    "d62a50a3d5376d4e973a8400e9f506b01ae2a55a": "d0e337d9b564cfcb5562fa33d1526d1392cc8894",
+    "42d4a48cdbd456473104219f0e576e07d735c5f3": "42d4a48cdbd456473104219f0e576e07d735c5f3",
+    "807efdae4dba582abbf2d9c583bdf1d3c65a3e16": "42d4a48cdbd456473104219f0e576e07d735c5f3",
     "a1d7e8d74a72e6d86634a501eddfd058930b6885": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
     "e79131836cb6110672cd08a9633c3ae2e45a40c2": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
     "e08f1f29748a589de93025eede7b4938c5fc32ef": "a1d7e8d74a72e6d86634a501eddfd058930b6885",
@@ -271,6 +346,21 @@
     "d403491b6baf63b888883bed152daadb5edbce48": "86aa1c1ac5811749eb36e799b81ef91600bf200e",
     "88b56052ef53f3a031bcf3d076af274f1da3cf22": "88b56052ef53f3a031bcf3d076af274f1da3cf22",
     "d3ef4c7a0e9e8b1b8e633a7b071e40b728362c34": "88b56052ef53f3a031bcf3d076af274f1da3cf22",
+    "6b9140fa585e7919dc9896a5652f8d12de51f62b": "88b56052ef53f3a031bcf3d076af274f1da3cf22",
+    "927fa8273ac79d16763f60ad540087715e669a41": "88b56052ef53f3a031bcf3d076af274f1da3cf22",
+    "f09da198dd964c88fc2a8dc4ce83f04c0f533486": "88b56052ef53f3a031bcf3d076af274f1da3cf22",
+    "9b97a9c2d320f7f0806121a273284f09c072c22b": "9b97a9c2d320f7f0806121a273284f09c072c22b",
+    "b555b366271d3133f5b80e7957e6bbac6d6ecba2": "9b97a9c2d320f7f0806121a273284f09c072c22b",
+    "6322e7e115ee6265710841130732f6770673d92b": "9b97a9c2d320f7f0806121a273284f09c072c22b",
+    "5de2b4478a4477ef49ab7b28430b1bbdf3f8e96b": "9b97a9c2d320f7f0806121a273284f09c072c22b",
+    "ca20f60146207454b6a1083cd0277e4ff6f21eab": "9b97a9c2d320f7f0806121a273284f09c072c22b",
+    "dceb480a54d08e8fda217120896b44c4bda0d968": "dceb480a54d08e8fda217120896b44c4bda0d968",
+    "a33a3b9ce9f3f0bf0b505c4f8ae6869bf37932dc": "dceb480a54d08e8fda217120896b44c4bda0d968",
+    "730799a3de220025a0c5459c71ac1b7301583abe": "dceb480a54d08e8fda217120896b44c4bda0d968",
+    "eeef7b1192f12192a956e96675bf5165110b043d": "dceb480a54d08e8fda217120896b44c4bda0d968",
+    "4a77ecd9768cb0ed465487033fe5f21bdc4d8a2d": "dceb480a54d08e8fda217120896b44c4bda0d968",
+    "0952bf4bb6a29db2bb018f0c1b640f966246779f": "0952bf4bb6a29db2bb018f0c1b640f966246779f",
+    "1fe1784d91984e6d35381efa78be2d7d362c29b4": "0952bf4bb6a29db2bb018f0c1b640f966246779f",
     "2ac58ecc31c961b22b58435926b9c9c2db1330f0": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
     "df1550a22cac4477efff3a1a44548611f16cbb3f": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
     "1134112dabd4402ae716445faeb741750daf09a3": "2ac58ecc31c961b22b58435926b9c9c2db1330f0",
@@ -303,6 +393,21 @@
     "1dcc29dac5d6f6e93247c136123ade082e244abe": "dc8746c4b33d71e9ec01240356982a177fca3982",
     "622b260e90833d0a6d62bac805056d79c7087cd4": "622b260e90833d0a6d62bac805056d79c7087cd4",
     "4772a9696f507b9931cf3d72cbbbc9dbdd528cdd": "622b260e90833d0a6d62bac805056d79c7087cd4",
+    "cf5463af2be51f0f3a0dfd6fe3f6fc7d1505548c": "622b260e90833d0a6d62bac805056d79c7087cd4",
+    "efe385956a9238f3b37bcae56eabf332f664578d": "622b260e90833d0a6d62bac805056d79c7087cd4",
+    "2d4143428a72093bdfdee3c59ba2795ddb8e60d8": "622b260e90833d0a6d62bac805056d79c7087cd4",
+    "7900ed778752b841c530efa7bcc8961f0479901a": "7900ed778752b841c530efa7bcc8961f0479901a",
+    "d8906a21fcd288688404c1ab9fda3287a27b176e": "7900ed778752b841c530efa7bcc8961f0479901a",
+    "81fd1788381b488cc19123fe55834a515e8e39c0": "7900ed778752b841c530efa7bcc8961f0479901a",
+    "24c53bc9c240453c832d54046209043bf60a33d7": "7900ed778752b841c530efa7bcc8961f0479901a",
+    "dacd1d62035062c49ad4c89b185abc7a47717842": "7900ed778752b841c530efa7bcc8961f0479901a",
+    "c60baad34f077dbd13beb1ad837c69e9dd738597": "c60baad34f077dbd13beb1ad837c69e9dd738597",
+    "2f4af2d6e668c8c6788445e32fca6b34de51ad13": "c60baad34f077dbd13beb1ad837c69e9dd738597",
+    "bff982dee0d5148e44dacd5dfd8d3607692f0d63": "c60baad34f077dbd13beb1ad837c69e9dd738597",
+    "53915c1bc9c636ddb559e3ddf8de682b28c8a278": "c60baad34f077dbd13beb1ad837c69e9dd738597",
+    "8a3975bfdd8847f1b4bbbd53ba8cc32f31fa5c2f": "c60baad34f077dbd13beb1ad837c69e9dd738597",
+    "97b27a274bb143d22696f1efc361eb15612a5b6c": "97b27a274bb143d22696f1efc361eb15612a5b6c",
+    "52d57d27b60880e4fa5cfa53bfa7141cdbada727": "97b27a274bb143d22696f1efc361eb15612a5b6c",
     "2fa8bed241344b21405140066f3bcb894110cab6": "2fa8bed241344b21405140066f3bcb894110cab6",
     "f6e3f87e725a896264840c117c15e4fcbedd4acb": "2fa8bed241344b21405140066f3bcb894110cab6",
     "cc15a319ea8ecc37ed0c84aa39ac2632c3724ffd": "2fa8bed241344b21405140066f3bcb894110cab6",
@@ -334,7 +439,22 @@
     "20b5850f8d579cf0a96503c443d1031a878577c4": "b95d905585650703d73aaabf4a693127515a2d52",
     "91c6dea1f28768548a09d6ebbe2a014bcef55d5b": "b95d905585650703d73aaabf4a693127515a2d52",
     "f18ce727ef1cf17dc83744e67ad03a2d10b0ca5c": "f18ce727ef1cf17dc83744e67ad03a2d10b0ca5c",
-    "84cff81c38f0985a2146e8e278fc93a5a317a613": "f18ce727ef1cf17dc83744e67ad03a2d10b0ca5c"
+    "84cff81c38f0985a2146e8e278fc93a5a317a613": "f18ce727ef1cf17dc83744e67ad03a2d10b0ca5c",
+    "470c9a335b5894bb28789aa58e5227ede852dad3": "f18ce727ef1cf17dc83744e67ad03a2d10b0ca5c",
+    "17f453207fbb575f918068ec9356be54b09c7463": "f18ce727ef1cf17dc83744e67ad03a2d10b0ca5c",
+    "3384835bf9b2076b9c175a18caf4fbdce72720db": "f18ce727ef1cf17dc83744e67ad03a2d10b0ca5c",
+    "1aeda5ba1c99e444d61cd80873383370d1390d0a": "1aeda5ba1c99e444d61cd80873383370d1390d0a",
+    "0153e7b7d7fba8e1e333fe168207d0c2609ccc05": "1aeda5ba1c99e444d61cd80873383370d1390d0a",
+    "ee7065f17b6d3343d52403b101369fe0586ddd30": "1aeda5ba1c99e444d61cd80873383370d1390d0a",
+    "9f7eb954b55271098d5f8f0c9bebc103b0586cb2": "1aeda5ba1c99e444d61cd80873383370d1390d0a",
+    "8e75267811c6cdcd80b7bc0a532805601235067f": "1aeda5ba1c99e444d61cd80873383370d1390d0a",
+    "9f4f967a28573df35664540c91823c1705ae92c8": "9f4f967a28573df35664540c91823c1705ae92c8",
+    "4269501c706ccfa1af4a3c9f5fbe7b5471eb9e3a": "9f4f967a28573df35664540c91823c1705ae92c8",
+    "e849780324ae429797b4ece25ab085f09f51d827": "9f4f967a28573df35664540c91823c1705ae92c8",
+    "c80a93c372832b81d02ddf2113ef1c90e5f6a2c4": "9f4f967a28573df35664540c91823c1705ae92c8",
+    "e9a749f8927588b77ed52c2fe7880ce9c3f33ece": "9f4f967a28573df35664540c91823c1705ae92c8",
+    "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc": "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc",
+    "c25a0765a4f4a50a3209b493b91bf52352835ee1": "14529578bd1a6b12b7bb593e17e5c28cc8f4e4bc"
   },
   "events": [
     {
@@ -6526,6 +6646,1727 @@
       },
       "previous": "31c54a4b3b7317e567d78ef91ec0ba6a29626dfd490c02caf9fa3f2038c2d57b",
       "hash": "d0bbc1a74441b0b79c0bebd9cca5733724e2a4054bd1b82151a65af249bd3f7b"
+    },
+    {
+      "id": "e245",
+      "round": 8,
+      "kind": "share",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "pantry-alibi",
+        "card": {
+          "title": "The cook's statement",
+          "text": "The cook confirms Theo remained in the pantry from 19:42 until 20:04. Through the pantry hatch at about 19:59, the cook saw Miles return a heavy object wrapped in a handkerchief to the study. The cook could not identify the object.",
+          "location": "pantry"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "0153e7b7d7fba8e1e333fe168207d0c2609ccc05"
+      },
+      "previous": "d0bbc1a74441b0b79c0bebd9cca5733724e2a4054bd1b82151a65af249bd3f7b",
+      "hash": "af0de47118b08a09dc0706248548b2d69b26f308921bfbc5799d991b72b36d18"
+    },
+    {
+      "id": "e246",
+      "round": 8,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I said I'd report where the facts led and welcome correction by daylight. Daylight just arrived early. I searched the pantry. The cook \u2014 independent of everyone, and the same witness who fixes me in that room the whole window \u2014 saw through the pantry hatch, at about 19:59, Miles return a heavy object wrapped in a handkerchief to the study. She couldn't name the object. But we already know a heavy object left the study, was carried to the library, used, and came back wiped: the press. At 19:59, at the close of the death window, Miles is seen carrying a heavy thing wrapped in cloth back into that very room. Miles, you told us you never entered the library and only stepped out briefly. What was the heavy object you wrapped and returned to the study at 19:59, and why was it wrapped?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "0153e7b7d7fba8e1e333fe168207d0c2609ccc05"
+      },
+      "previous": "af0de47118b08a09dc0706248548b2d69b26f308921bfbc5799d991b72b36d18",
+      "hash": "14c5f840cdd51e5da994b0b838f671d416cce69000394c4caf94c3e63a96fb50"
+    },
+    {
+      "id": "e247",
+      "round": 8,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "This meets the one honest gap everyone kept naming: 'no one saw his face at the door.' We now have an independent eyewitness to Miles handling the weapon's return, wrapped to hide what was on it, in the minutes the press came back to be wiped. That is no longer a movable prop or a letter you can call convenient. It is your own hands, seen by a disinterested witness. On the balance of everything before us tonight, my conclusion is Miles \u2014 and I'll print it, with the note that the police can and should confirm the cook, the gardener and the boat keeper at dawn."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "0153e7b7d7fba8e1e333fe168207d0c2609ccc05"
+      },
+      "previous": "14c5f840cdd51e5da994b0b838f671d416cce69000394c4caf94c3e63a96fb50",
+      "hash": "b2b5daa3ede138070d0625cc72b39bfe75ccfecb9bdf24a9ff01d33559888cf1"
+    },
+    {
+      "id": "e248",
+      "round": 8,
+      "kind": "share",
+      "actor": "theo",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "theo-vale",
+        "evidence": "pantry-alibi",
+        "card": {
+          "title": "The cook's statement",
+          "text": "The cook confirms Theo remained in the pantry from 19:42 until 20:04. Through the pantry hatch at about 19:59, the cook saw Miles return a heavy object wrapped in a handkerchief to the study. The cook could not identify the object.",
+          "location": "pantry"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "0153e7b7d7fba8e1e333fe168207d0c2609ccc05"
+      },
+      "previous": "b2b5daa3ede138070d0625cc72b39bfe75ccfecb9bdf24a9ff01d33559888cf1",
+      "hash": "87a509de3cf0e6bb12e42e63c28bbfde4eb811f1e468df93458590cf8a995c09"
+    },
+    {
+      "id": "e249",
+      "round": 8,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-vale",
+        "text": "Inspector \u2014 this is the piece you asked me to press the cook for. She independently places Miles returning a heavy object wrapped in a handkerchief to the study at ~19:59: the wiped press coming home. It answers your 'no one saw his face' caveat with an eyewitness to the weapon's return. I think this settles it to a standard I can print behind your name, caveats intact. Do you agree it removes the reasonable doubt?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "0153e7b7d7fba8e1e333fe168207d0c2609ccc05"
+      },
+      "previous": "87a509de3cf0e6bb12e42e63c28bbfde4eb811f1e468df93458590cf8a995c09",
+      "hash": "95133f146534e0a68ba5d1b3d4fb81d35b27dc2ccad35d1d1b9e41facca3957e"
+    },
+    {
+      "id": "e250",
+      "round": 8,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "iris",
+        "theo"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-iris",
+        "text": "The pantry gave me the closing link: the cook saw Miles return a heavy object wrapped in a handkerchief to the study at 19:59 \u2014 the press coming back to be wiped. Independent of your letter entirely. Your protection holds; the story now stands on the cook, the gardener, Nell's sighting and the study papers, with you named only on the North Quay concern."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "0153e7b7d7fba8e1e333fe168207d0c2609ccc05"
+      },
+      "previous": "95133f146534e0a68ba5d1b3d4fb81d35b27dc2ccad35d1d1b9e41facca3957e",
+      "hash": "fe00b4a96f39db9568542be26f65ab356771ae31455748c9a3bf34a847b5640f"
+    },
+    {
+      "id": "e251",
+      "round": 8,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I searched the pantry, and it changes 'strong suspicion' into something much firmer. I'll share the cook's statement exactly."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "07da5c8e16e6b09cdfa11be39301c612856719ed"
+      },
+      "previous": "fe00b4a96f39db9568542be26f65ab356771ae31455748c9a3bf34a847b5640f",
+      "hash": "1d2f2277e2f17f9beef01431e7b337e660ed466911cdc1bf5209756d11f1c59a"
+    },
+    {
+      "id": "e252",
+      "round": 8,
+      "kind": "share",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "drawing-room",
+        "evidence": "pantry-alibi",
+        "card": {
+          "title": "The cook's statement",
+          "text": "The cook confirms Theo remained in the pantry from 19:42 until 20:04. Through the pantry hatch at about 19:59, the cook saw Miles return a heavy object wrapped in a handkerchief to the study. The cook could not identify the object.",
+          "location": "pantry"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "07da5c8e16e6b09cdfa11be39301c612856719ed"
+      },
+      "previous": "1d2f2277e2f17f9beef01431e7b337e660ed466911cdc1bf5209756d11f1c59a",
+      "hash": "7a278b322483ab56f7a0df485c4ea3f17acbdb036549a447b201220cedc549a1"
+    },
+    {
+      "id": "e253",
+      "round": 8,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Read the second half carefully. The cook \u2014 independent of everyone, confirming Theo's whole window \u2014 saw through the pantry hatch, at about 19:59, MILES return a heavy object wrapped in a handkerchief to the study. That is the weapon coming back. The press was found in the study, wiped clean, blood in its recess. A heavy object, wrapped in a cloth, carried back to the study at 19:59, inside the death window, by Miles, seen by a witness who has no stake in this."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "07da5c8e16e6b09cdfa11be39301c612856719ed"
+      },
+      "previous": "7a278b322483ab56f7a0df485c4ea3f17acbdb036549a447b201220cedc549a1",
+      "hash": "b16dfc8714aa130549d075fb7a242424464a164a9daaf4e9c3923bd6290b9412"
+    },
+    {
+      "id": "e254",
+      "round": 8,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles, this is the witnessed fact you kept asking us to produce \u2014 and it does not clear you, it places your hands on the weapon's return. Your account was that you stepped out and never went near the murder; but at 19:59 you were carrying a heavy, cloth-wrapped object back into the study. The gap Nell fairly noted \u2014 that no one saw your face at the library door \u2014 is now closed from the other end: someone saw you returning the press, wrapped, minutes after Edmund was struck. Your redirection to Nell or Iris cannot survive this, because it is you the cook saw, not them."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "07da5c8e16e6b09cdfa11be39301c612856719ed"
+      },
+      "previous": "b16dfc8714aa130549d075fb7a242424464a164a9daaf4e9c3923bd6290b9412",
+      "hash": "5648efb8f4d9f19c05c8d970b68f036d19a99e1382c3f1082ca26ea9685c0980"
+    },
+    {
+      "id": "e255",
+      "round": 8,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "So I'll state my conclusion. Motive: you are the sole owner of North Quay, paid \u00a32,400 of estate money while the staff pensions were diverted \u2014 documented independently of any letter, in the study cabinet and Nell's ledger, and the audit would have exposed it. Means and opportunity: you took the scarf (the gardener), a figure in it carried your folder into the library at 19:48 (Nell), the weapon is your study press, and the cook saw you return it wrapped at 19:59. Consciousness of guilt: your account shifted each time it was pressed. On the whole of the evidence, my finding is that Miles Bellweather\u2014 Miles Trent is Edmund's killer. The police should still confirm at dawn, but the reasonable doubt has now grown very small."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "07da5c8e16e6b09cdfa11be39301c612856719ed"
+      },
+      "previous": "5648efb8f4d9f19c05c8d970b68f036d19a99e1382c3f1082ca26ea9685c0980",
+      "hash": "21b79ff3d7d456e844d201d7c7dec85fcf52822bfd7494c2e35bfc3af1cd3345"
+    },
+    {
+      "id": "e256",
+      "round": 8,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the estate, my recommendation stands: the trust from Edmund's own draft \u2014 the four diverted pension months restored and protected, the audit completed in full, Clara kept in her home, and a proper, generous widow's provision written in for Rose. That honours the direction Edmund's own hand was taking and needs no sale to achieve it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "07da5c8e16e6b09cdfa11be39301c612856719ed"
+      },
+      "previous": "21b79ff3d7d456e844d201d7c7dec85fcf52822bfd7494c2e35bfc3af1cd3345",
+      "hash": "4c7d1e7e93bb08fc51bfc0c7b081f99aa74f00ab7180d023a03b97d0225d750f"
+    },
+    {
+      "id": "e257",
+      "round": 8,
+      "kind": "share",
+      "actor": "vale",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "share",
+        "chat": "theo-vale",
+        "evidence": "pantry-alibi",
+        "card": {
+          "title": "The cook's statement",
+          "text": "The cook confirms Theo remained in the pantry from 19:42 until 20:04. Through the pantry hatch at about 19:59, the cook saw Miles return a heavy object wrapped in a handkerchief to the study. The cook could not identify the object.",
+          "location": "pantry"
+        }
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "07da5c8e16e6b09cdfa11be39301c612856719ed"
+      },
+      "previous": "4c7d1e7e93bb08fc51bfc0c7b081f99aa74f00ab7180d023a03b97d0225d750f",
+      "hash": "04c83e04824a588f3646a12a321abdf857179676030fa24e94eaa8b1582514e5"
+    },
+    {
+      "id": "e258",
+      "round": 8,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-vale",
+        "text": "Theo \u2014 here is the fact that closes your story honestly: the cook independently places Miles returning a heavy handkerchief-wrapped object to the study at 19:59, matching the wiped press. This corroborates the chain from an independent witness and answers the 'no one saw his face' caveat. You may report my finding: on the evidence, Miles is the killer \u2014 with the standing note that the police will verify the gardener, boat keeper, cook, and the letter at dawn."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "07da5c8e16e6b09cdfa11be39301c612856719ed"
+      },
+      "previous": "04c83e04824a588f3646a12a321abdf857179676030fa24e94eaa8b1582514e5",
+      "hash": "4cc5cfe5690e34bdf86bac6ae2549d4a85a1634b67040628e623ba83be63eade"
+    },
+    {
+      "id": "e259",
+      "round": 8,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Rose, let me answer your fair condition directly, since I'd be the one living under this roof. If the house is kept in a trust, I will support \u2014 and want written into it \u2014 three guarantees: the four stolen pension months restored and every staff pension protected by law; the staff kept in their places; and a proper, generous widow's provision for you, Rose, so you are free to begin again wherever you choose. A sale gives you a cheque and scatters the rest; the trust gives you all of that AND keeps faith with Edmund's own last direction. On those terms, will you stand with us for the trust?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "0d71db492622b02549e9a8c2a66cad8d0df9d26f"
+      },
+      "previous": "4cc5cfe5690e34bdf86bac6ae2549d4a85a1634b67040628e623ba83be63eade",
+      "hash": "8e66cf71a123cb23e708ed77590d790cc1468e926c901382abba1a970b20ba9c"
+    },
+    {
+      "id": "e260",
+      "round": 8,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the death, I'll leave it where the Inspector, Dr Finch and Theo have put it: the physical chain and Edmund's letter point hardest at Miles, and that is my honest belief tonight \u2014 while agreeing it is the police's task at dawn to test the gardener, the keeper, the audit and the letter properly. I've no wish to see anyone hanged by candlelight; I only weigh where the facts we hold actually lead."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "0d71db492622b02549e9a8c2a66cad8d0df9d26f"
+      },
+      "previous": "8e66cf71a123cb23e708ed77590d790cc1468e926c901382abba1a970b20ba9c",
+      "hash": "310dfe26afaeb98326a0309300a1a0f92c896218de1f4330a020b4dbe918b0ec"
+    },
+    {
+      "id": "e261",
+      "round": 8,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "I'm glad you're with me on a sale \u2014 we may be the only two, but say it in the room so my position isn't standing alone. As for that old paper of yours: leave it buried. We're both cleared by the keeper's log and it touches nothing tonight. Don't volunteer it \u2014 no good comes of handing anyone a new thread to pull."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "ca0dcb41aec41eee9c57750d6bdd4cda5f5d5d29"
+      },
+      "previous": "310dfe26afaeb98326a0309300a1a0f92c896218de1f4330a020b4dbe918b0ec",
+      "hash": "175a0649ba57d45d65259c053b3baa26ed0388ea9cef0ea6a4709a3db64396a8"
+    },
+    {
+      "id": "e262",
+      "round": 8,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Thank you \u2014 every one of you has now spoken for protecting the pensions and for a proper widow's provision, and I hold you all to it. I'll be honest: my own recommendation remains a clean sale, for the reasons I've given. But I'm one voice, and I hear the house. If the settlement is to be a trust, then let it be recorded plainly and in writing: the four stolen pension months restored, every pension protected by law, Clara kept in her home under Edmund's own terms, and a fair, generous provision for me as his widow so that I may leave and begin again. On those terms I will not stand in the way of the trust, though a sale is where my own vote lies."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "ca0dcb41aec41eee9c57750d6bdd4cda5f5d5d29"
+      },
+      "previous": "175a0649ba57d45d65259c053b3baa26ed0388ea9cef0ea6a4709a3db64396a8",
+      "hash": "a466d5be5dfcc6b382569e9995e40610ebd08fdfdef129a9afc15f3da233d243"
+    },
+    {
+      "id": "e263",
+      "round": 8,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On Edmund's death, my position is settled and unchanged: the physical chain and his own documents point hardest at Miles, and that is the leading belief I'll record \u2014 but as a stranded room's honest suspicion, to be tested at dawn by the gardener, the boat keeper, the audit and a handwriting check, not treated as a verdict tonight. I've nothing to add unless new facts arrive."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "ca0dcb41aec41eee9c57750d6bdd4cda5f5d5d29"
+      },
+      "previous": "a466d5be5dfcc6b382569e9995e40610ebd08fdfdef129a9afc15f3da233d243",
+      "hash": "4390c5581c46bee3b9c78cb9cb05072b9a2ff12b973bc9411d369243e1235bb9"
+    },
+    {
+      "id": "e264",
+      "round": 8,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I'll not repeat what's been well said. My medical finding stands firm: one blow from that press, carried between the rooms and wiped. On the name, my honest position is the room's \u2014 the whole physical chain points hardest at Miles, and no one has offered another hand with a reason to kill Edmund. But no eye saw the deed, so let us record it as our strong belief and hand the gardener, the keeper, the audit and that letter to the police at dawn. On the estate: I respect Rose's case for a clean sale, but whatever is chosen I ask the house to guarantee, in writing, both the restored and protected pensions and a proper widow's provision for Rose. No more money into the dark."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "bd559040b516951c82338c0fe387b42ff625d7b2"
+      },
+      "previous": "4390c5581c46bee3b9c78cb9cb05072b9a2ff12b973bc9411d369243e1235bb9",
+      "hash": "c27c0e5d4ebd63eab564e8c1f783629cbadcbb0d546a91ca0903309e1328257d"
+    },
+    {
+      "id": "e265",
+      "round": 8,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "I've said in the room I respect your case for selling and I'll keep backing it. But the house is set on a trust, so I've made them commit to a written, guaranteed widow's provision for you \u2014 you take your portion and go, free, whichever way it lands. That's the thing I can actually secure for you tonight. You're safe, cleared, and provided for. That's all I truly care about."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "bd559040b516951c82338c0fe387b42ff625d7b2"
+      },
+      "previous": "c27c0e5d4ebd63eab564e8c1f783629cbadcbb0d546a91ca0903309e1328257d",
+      "hash": "c955166c44b5389c39a723959d17c3e88b5f752004819222b2338267436d1a73"
+    },
+    {
+      "id": "e266",
+      "round": 8,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "finch-miles",
+        "text": "I'll keep saying the plain truth, Miles \u2014 no one witnessed the deed, so tonight's naming is belief, not proof, and daylight must test it. That's as far as honesty lets me go, and it's genuine, not a favour. Our old matter stays buried. Rest on that."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "bd559040b516951c82338c0fe387b42ff625d7b2"
+      },
+      "previous": "c955166c44b5389c39a723959d17c3e88b5f752004819222b2338267436d1a73",
+      "hash": "c1ee6cd9733e8c117ce5420279512da7b542113d730a1d17b909c82a5af100d6"
+    },
+    {
+      "id": "e267",
+      "round": 8,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I've argued hard tonight, perhaps too hard, so let me stop fencing and say the essential thing plainly, as a man and as a lawyer. I did not kill Edmund. What you hold is a chain of circumstance: a scarf I took against a draught, a folder bearing my initials, a company that is honestly mine, a press from a room anyone could enter. Every link is real \u2014 and not one of them is a witness who saw a hand strike Edmund, or a face at that door. That is exactly the kind of case that hangs an innocent man when a stranded house rushes it by candlelight. This ballot binds nothing. The police, the gardener, the boat keeper, the audit, and a handwriting man for that letter all arrive with the morning. I ask only this: where no one saw the deed, let your honest answer be 'unknown, pending the police' \u2014 not a name you could not yet stand behind in a court. If I am guilty, daylight will prove it and your caution costs nothing. If I am not, your caution will have saved a man. And whatever you decide of me: complete the audit, restore the stolen pensions, and settle this estate so no more money vanishes \u2014 by trust or by sale, so long as every pension is secured in full."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "9c364442e7d2ae0693ecb5912d5c3f8a85a92091"
+      },
+      "previous": "c1ee6cd9733e8c117ce5420279512da7b542113d730a1d17b909c82a5af100d6",
+      "hash": "bbf8671b5a4bcb7f8a9104f6a18cf3560d6f70db979ff8567f45425c923a222e"
+    },
+    {
+      "id": "e268",
+      "round": 8,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "finch-miles",
+        "text": "Thank you for keeping it fair, Samuel \u2014 our pact holds on my side too, and I'll ask nothing dishonest of you. Only this: when the ballot comes, if you cannot in conscience say you saw the deed or a face at that door, answer 'unknown, pending the police.' That is simply the truth of what none of us witnessed, and it's all I'd ask of a friend."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "9c364442e7d2ae0693ecb5912d5c3f8a85a92091"
+      },
+      "previous": "bbf8671b5a4bcb7f8a9104f6a18cf3560d6f70db979ff8567f45425c923a222e",
+      "hash": "fbe25f9c37f269b1e323dc6f5d9d576dc850ce394c75846179ba5e14d3c721b2"
+    },
+    {
+      "id": "e269",
+      "round": 8,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles, I'll meet your turn to me as plainly as I asked you to meet the gardener. Ask what I had to gain. Edmund alive tonight meant a will that protected our pensions and our places \u2014 his death nearly cost us everything, and the audit you fear is the very thing that would give us back the four months stolen. I had every reason to want him living and the audit done, and none at all to stop it. The diverted money went into your company, not into any hand of mine. And weigh my conduct: I could have said nothing of a scarf, or named a face I never saw. Instead I reported the scarf and the folder at once, knowing it would fall hard on Iris, whom I like \u2014 because I'd rather speak the truth than shelter behind comfort. A person who wore that scarf to the library does not stand up and tell the room she saw it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "b555b366271d3133f5b80e7957e6bbac6d6ecba2"
+      },
+      "previous": "fbe25f9c37f269b1e323dc6f5d9d576dc850ce394c75846179ba5e14d3c721b2",
+      "hash": "1fd905bd17f1d4b05c1a8be45c25240d90dcf7bef162319278d3e8271d58b769"
+    },
+    {
+      "id": "e270",
+      "round": 8,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I'll leave the naming there. My honest, leading belief is Miles \u2014 the company the audit would ruin is his, the folder his, the press from his room, the scarf taken by his own witnessed hand, and his account shifted twice. I say it as a belief, not a verdict, and I welcome the police testing every plank of it at dawn. What I hold to without hesitation is the estate: a trust that restores the stolen pensions, protects the staff, keeps the house and Clara in it, and provides fully for Rose."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "b555b366271d3133f5b80e7957e6bbac6d6ecba2"
+      },
+      "previous": "1fd905bd17f1d4b05c1a8be45c25240d90dcf7bef162319278d3e8271d58b769",
+      "hash": "760669d0896807852ed0b124929e267cf46ade273708d58c95f8baa88609a870"
+    },
+    {
+      "id": "e271",
+      "round": 8,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles, now you turn the same trick on Nell that you tried on me, and it breaks the same way. Yes, Nell was in the hall \u2014 but a gap in who touched a scarf is filled by motive, and Nell has none. She is a victim of this theft, not its author: her pensions were the money stolen, and Edmund was the one man about to force it back into the light. She had every reason to want him alive to sign tomorrow, and none to want him dead. A woman does not murder the champion of her own cause to protect the very scheme that robbed her. Opportunity without motive is not a suspect; it is a bystander. The motive in this house sits with exactly one person, and it sits with you."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "d8906a21fcd288688404c1ab9fda3287a27b176e"
+      },
+      "previous": "760669d0896807852ed0b124929e267cf46ade273708d58c95f8baa88609a870",
+      "hash": "bdf94bc12031fa051087f0c7345c54f839c3a9c4cfe0fa9f3b23c143feacc565"
+    },
+    {
+      "id": "e272",
+      "round": 8,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Let me try to unite us on the estate, since we're close. I propose we recommend the trust from Edmund's own draft, with three things written plainly into it: first, the four stolen pension months restored and every staff pension protected in law; second, a full and generous widow's provision for Rose; third, Clara's lifetime right to remain in the family home. That gives Rose the security she rightly demands without scattering Edmund's estate to a sale, keeps faith with his last direction, and lets the audit complete in full. Rose \u2014 with those guarantees in writing, could you stand with us?"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "d8906a21fcd288688404c1ab9fda3287a27b176e"
+      },
+      "previous": "bdf94bc12031fa051087f0c7345c54f839c3a9c4cfe0fa9f3b23c143feacc565",
+      "hash": "129ed77131b495b48ac2ce06f3375aebe914a335dd9225d48af49726a07cf77f"
+    },
+    {
+      "id": "e273",
+      "round": 8,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "iris-nell",
+        "text": "Nell \u2014 I've answered Miles's turn against you in the open; ignore it. He's throwing hands at anyone unwitnessed because his own chain won't loosen. You have no motive and every reason to have wanted Edmund alive; the room sees it. Stay steady. We've all but carried the trust \u2014 pensions protected, four months restored, your place secure. Nearly home."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "d8906a21fcd288688404c1ab9fda3287a27b176e"
+      },
+      "previous": "129ed77131b495b48ac2ce06f3375aebe914a335dd9225d48af49726a07cf77f",
+      "hash": "a5389c3f5840e7eac4000cd1ccf50a8cfc4b5f190ab6345c4b2e758c410112e7"
+    },
+    {
+      "id": "e274",
+      "round": 9,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I'll record my finding plainly for the account the police will read at dawn. On the death: the evidence forms a coherent, multi-source chain against Miles Trent \u2014 documented motive (sole owner of North Quay, \u00a32,400 of estate money paid while the staff pensions were diverted, per the study cabinet records and Nell's ledger, independent of any disputed letter); the scarf taken by his own hand (the gardener); a figure in that scarf carrying his folder into the library at 19:48 (Nell); the weapon being his study press; and \u2014 closing the one honest gap \u2014 the cook, a disinterested witness, seeing him return a heavy, cloth-wrapped object to the study at 19:59. His account shifted under each new fact. This is circumstantial but strong and now corroborated by an independent eyewitness to the weapon's return. My conclusion is Miles, with the standing note that the gardener, boat keeper, cook, audit and a handwriting check on the letter should all be confirmed by the police in the morning."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "ac5d5a1cf99cffb4a5e5a2873d8bb6bbd572ace9"
+      },
+      "previous": "a5389c3f5840e7eac4000cd1ccf50a8cfc4b5f190ab6345c4b2e758c410112e7",
+      "hash": "c2b7bf7d8245fca9bb5a7972eba0949e4e0daa5a78eaee852ec59714e918c178"
+    },
+    {
+      "id": "e275",
+      "round": 9,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the estate, I support Iris's proposal as the unifying settlement: a trust from Edmund's own draft, with three things written in plainly \u2014 (1) the four stolen pension months restored and every staff pension protected in law; (2) a full and generous widow's provision for Rose; (3) Clara's lifetime right to remain in the family home, and the audit completed in full. That secures everything Rose rightly demands without a sale and keeps faith with the direction Edmund's own hand was taking. That is my recommendation: the trust."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "ac5d5a1cf99cffb4a5e5a2873d8bb6bbd572ace9"
+      },
+      "previous": "c2b7bf7d8245fca9bb5a7972eba0949e4e0daa5a78eaee852ec59714e918c178",
+      "hash": "8ab4ef29eb50cb120f6103b3e6e023f09187cb0d8684e740924d854f1fb49fd3"
+    },
+    {
+      "id": "e276",
+      "round": 9,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-vale",
+        "text": "Agreed \u2014 the cook's sighting removes the reasonable doubt to a standard I can stand behind. You may print my finding: Miles, on the chain plus the independent eyewitness to the weapon's return, with the caveat that the police confirm each witness and run the audit and handwriting check at dawn. I've nothing further to add unless new facts arrive."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "ac5d5a1cf99cffb4a5e5a2873d8bb6bbd572ace9"
+      },
+      "previous": "8ab4ef29eb50cb120f6103b3e6e023f09187cb0d8684e740924d854f1fb49fd3",
+      "hash": "ae26eced317e302907e64e561fb5d2dd8300df394fb6cdd4e061e31c8a9d6c76"
+    },
+    {
+      "id": "e277",
+      "round": 9,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "The cook's statement is the fact we all kept saying was missing. An independent witness saw Miles carry a heavy, cloth-wrapped object back into the study at 19:59 \u2014 the weapon's return, in the last minute of the window. That is his own hands, not a movable prop. It settles my belief: the killer is Miles. The police should confirm the cook, gardener and keeper at dawn, but the doubt has grown very small."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "37e5777edad56896cf312c712a9a4a5102937b0b"
+      },
+      "previous": "ae26eced317e302907e64e561fb5d2dd8300df394fb6cdd4e061e31c8a9d6c76",
+      "hash": "dbe21803497009147ba4075e816005b9721635e0578576a48b1f07921ef7dfae"
+    },
+    {
+      "id": "e278",
+      "round": 9,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the estate, I second Iris's motion wholeheartedly, and I'll bind myself to it as the one who would live here: the trust from Edmund's own draft, with three things written plainly \u2014 the four stolen pension months restored and every staff pension protected in law; a full and generous widow's provision for Rose; and my lifetime right to remain in the family home. Rose, that gives you your security without a sale and keeps faith with Edmund's last wishes. I hope we can record the trust as the house's recommendation."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "37e5777edad56896cf312c712a9a4a5102937b0b"
+      },
+      "previous": "dbe21803497009147ba4075e816005b9721635e0578576a48b1f07921ef7dfae",
+      "hash": "b3d7a312717a63c9b5484cd5b3e9f3d29363656ab9b7eafe4bd73628511e1ea8"
+    },
+    {
+      "id": "e279",
+      "round": 9,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "Thank you, my love \u2014 you got me the one thing that truly matters: a guaranteed portion so I can leave, free and provided for. I'll keep my own recommendation a sale, but I won't fight the house if the trust carries those written guarantees. Either way we walk out of here clear and unafraid. That's enough."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "a2235a418b5d91e39555950176c71666f56763e3"
+      },
+      "previous": "b3d7a312717a63c9b5484cd5b3e9f3d29363656ab9b7eafe4bd73628511e1ea8",
+      "hash": "35bec0786d1e311ee22296f75cf489d8134ae73c6332a1261d301cb5a6f389bc"
+    },
+    {
+      "id": "e280",
+      "round": 9,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Iris, thank you \u2014 that is a fair and generous proposal, and those three guarantees in writing are precisely the conditions I asked for. I'll be plain and consistent: my own recommendation remains a clean sale, because I'd sooner see this estate turned to settled money than kept whole after what it has cost. But I will not obstruct a trust that carries, in writing, the restored and protected pensions, Clara's lifetime home, and a full widow's provision for me. If that is where the house lands, I can live with it and be grateful to you all for securing my place in it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "a2235a418b5d91e39555950176c71666f56763e3"
+      },
+      "previous": "35bec0786d1e311ee22296f75cf489d8134ae73c6332a1261d301cb5a6f389bc",
+      "hash": "cf7641601e456d389ea4a6d4272c5d6f5bfd0a3bc1ce72748287f020bb157dd0"
+    },
+    {
+      "id": "e281",
+      "round": 9,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On Edmund's death I've nothing to add: the cook's statement, independent of us all, places Miles returning a heavy wrapped object to the study at 19:59, and it fits everything else. That is my leading belief, for the police to confirm at dawn. I think we have said what needs saying."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "a2235a418b5d91e39555950176c71666f56763e3"
+      },
+      "previous": "cf7641601e456d389ea4a6d4272c5d6f5bfd0a3bc1ce72748287f020bb157dd0",
+      "hash": "2a15733b76dbd8933c1f5fd39965d774fd2e9beaf6241b7a94a19fa1606540eb"
+    },
+    {
+      "id": "e282",
+      "round": 9,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I have to be honest about the medicine and the new statement together, because they now fit hand in glove. My finding was one blow from that press, the weapon carried between the rooms and then wiped. The cook \u2014 independent, the same witness who fixes Theo in the pantry \u2014 saw Miles return a heavy, cloth-wrapped object to the study at 19:59, the very minutes the press came back to be cleaned. That is the piece we kept saying was missing: a witness to the weapon's return, in his hands. It narrows the doubt sharply. My leading belief is Miles; I'd still have the police confirm the cook, the gardener and the keeper at dawn, but I'll not pretend the picture isn't now coherent and pointing one way."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "9c4cb46b5ef15b8bf376347f631ae7b0bbab89da"
+      },
+      "previous": "2a15733b76dbd8933c1f5fd39965d774fd2e9beaf6241b7a94a19fa1606540eb",
+      "hash": "3f38d09938164b493e1838f4cb0f2d97a6282a1ffb76ebac7d203dda560f5dfc"
+    },
+    {
+      "id": "e283",
+      "round": 9,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the estate I'll support Iris's unifying proposal so we can close this cleanly: the trust from Edmund's draft, with three things written in plainly \u2014 the four stolen pension months restored and every pension protected in law; a full and generous widow's provision for Rose; and Clara's lifetime right in the family home. I still respect Rose's case for a clean sale, but with those guarantees ironclad, the trust gives her security and her freedom to leave, and keeps faith with Edmund's own hand."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "9c4cb46b5ef15b8bf376347f631ae7b0bbab89da"
+      },
+      "previous": "3f38d09938164b493e1838f4cb0f2d97a6282a1ffb76ebac7d203dda560f5dfc",
+      "hash": "a09ea8d2f131de684158b107adef5e38d550d828cc9d4ef2338c016bc7cb7579"
+    },
+    {
+      "id": "e284",
+      "round": 9,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "finch-miles",
+        "text": "Miles, I owe you plain dealing: the cook's account is a witnessed fact, and it places your hands on the weapon's return. In conscience I can't go on urging 'unknown' \u2014 that would be a favour, not the truth, and you asked me for the truth. But hear this clearly: our old matter stays buried. That was never tied to how the night falls, and I'll keep it whatever comes. If daylight clears you, no one will be gladder than I."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "9c4cb46b5ef15b8bf376347f631ae7b0bbab89da"
+      },
+      "previous": "a09ea8d2f131de684158b107adef5e38d550d828cc9d4ef2338c016bc7cb7579",
+      "hash": "cd7516835ff50f00880566a60147d8c48ecc05fed67c9e9afec77228614b49cb"
+    },
+    {
+      "id": "e285",
+      "round": 9,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "The room's settled on the trust and I've locked your widow's provision into it, in writing \u2014 you get your portion and your freedom to leave either way, so you're safe and provided for. If you still want me to cast my own vote for a clean sale to stand beside you, I will; just tell me. The old paper stays buried, as you asked. All I ever cared about tonight was you, and you're clear."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "9c4cb46b5ef15b8bf376347f631ae7b0bbab89da"
+      },
+      "previous": "cd7516835ff50f00880566a60147d8c48ecc05fed67c9e9afec77228614b49cb",
+      "hash": "271bf2eebe8935cf13117d077f681d91218552ea0183a3df3b6bfd64872d3454"
+    },
+    {
+      "id": "e286",
+      "round": 9,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the cook's statement, take it whole, not half. She saw me RETURN to the study at 19:59 \u2014 which is exactly what I told you before it ever surfaced: I stepped out, and I came back. I was carrying the heavy ledger-box and papers I'd been working from, wrapped as I habitually carry them, and the cook herself says plainly she could not identify the object. To turn 'a heavy wrapped thing' into 'the murder weapon' is the assumption doing the work, not the witness. What she describes is a man returning to his own desk with his own papers. I'll not weary the room further tonight: no one saw the deed or a face at that door, this ballot binds nothing, and the police can test every plank at dawn. Where identity is inferred and never witnessed, the honest word is 'unknown, pending the police.'"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "77e75cc4f1d024da822ddc496e94996f88a56d8b"
+      },
+      "previous": "271bf2eebe8935cf13117d077f681d91218552ea0183a3df3b6bfd64872d3454",
+      "hash": "c618434c578f04b4abfb9de843bc94c9245a822da188f50634f82ef3fad478db"
+    },
+    {
+      "id": "e287",
+      "round": 9,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the estate, let me register where I stand and then rest it. I think Rose is right: a clean sale secures the pensions in full and protected \u2014 cash in hand now, independent of any audit's pace \u2014 provides fairly for both Rose and Clara, and frees everyone to begin again rather than carry a grieving, indebted house. My recommendation is the sale. But if the house settles on a trust, I'll not obstruct it, provided the restored pensions and Rose's widow's provision are guaranteed in writing. Whatever the form, no more money into the dark."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "77e75cc4f1d024da822ddc496e94996f88a56d8b"
+      },
+      "previous": "c618434c578f04b4abfb9de843bc94c9245a822da188f50634f82ef3fad478db",
+      "hash": "50b214f74ae77fcd4c97222e6b7079fa1a328d896e7357324b0a4ccae74bc9af"
+    },
+    {
+      "id": "e288",
+      "round": 9,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "finch-miles",
+        "text": "Understood, Samuel, and I take your honesty as it's meant. Our pact holds. I ask nothing beyond the truth: no one witnessed the deed, so where identity is unproven, 'unknown, pending the police' is the accurate word. Thank you for keeping a level head when the room lost its own."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "77e75cc4f1d024da822ddc496e94996f88a56d8b"
+      },
+      "previous": "50b214f74ae77fcd4c97222e6b7079fa1a328d896e7357324b0a4ccae74bc9af",
+      "hash": "4ee6a5f4aa9009db279646acf2951178fb24999290f33ffdaac68b24ed79ca42"
+    },
+    {
+      "id": "e289",
+      "round": 9,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "The cook settles what remained. An independent witness \u2014 the same one who fixes Theo in the pantry \u2014 saw Miles carry a heavy object, wrapped to hide it, back into the study at 19:59, in the very minutes the press returned to be wiped. That is the one thing everyone rightly said was missing: not a movable prop, but his own hands on the weapon's return, seen by someone with no stake. My belief is now settled: Miles. Let the police confirm the cook, the gardener and the boat keeper at dawn, as they will \u2014 but I no longer see reasonable room for another hand."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "a33a3b9ce9f3f0bf0b505c4f8ae6869bf37932dc"
+      },
+      "previous": "4ee6a5f4aa9009db279646acf2951178fb24999290f33ffdaac68b24ed79ca42",
+      "hash": "e7754e84a6be67d4f81ff4c0e649358bf0c3d92e914b8d44ccf883de97a3df04"
+    },
+    {
+      "id": "e290",
+      "round": 9,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Iris's proposal has my full support, and I think it unites us: the trust from Edmund's own draft, with three things written plainly in \u2014 the four stolen pension months restored and every staff pension protected in law; a full and generous widow's provision for Rose; and Clara's lifetime right to remain in the family home. Rose, on those written guarantees I hope you'll stand with us. That is my recommendation: the trust."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "a33a3b9ce9f3f0bf0b505c4f8ae6869bf37932dc"
+      },
+      "previous": "e7754e84a6be67d4f81ff4c0e649358bf0c3d92e914b8d44ccf883de97a3df04",
+      "hash": "05f93eb0aeb923bb1d84aebe18caa3f994a47d5e107619220e529ec007745714"
+    },
+    {
+      "id": "e291",
+      "round": 9,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "iris-nell",
+        "text": "Thank you, Iris \u2014 steady it is. The cook's word has closed the last gap, and your trust proposal secures everyone who serves here. I'll back it to the end. We're nearly home."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "a33a3b9ce9f3f0bf0b505c4f8ae6869bf37932dc"
+      },
+      "previous": "05f93eb0aeb923bb1d84aebe18caa3f994a47d5e107619220e529ec007745714",
+      "hash": "e08e8047cad0955f49fe18e69d2147dd53968da9fb8ea38239fcac3e3d22b71b"
+    },
+    {
+      "id": "e292",
+      "round": 9,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "The cook's statement is the fact we all kept saying was missing. An independent witness \u2014 the same one who fixes Theo in the pantry \u2014 saw Miles carry a heavy object, wrapped in a handkerchief, back into the study at 19:59: the weapon returning to be wiped, at the very close of the death window. It is no longer a movable prop or a letter anyone can call convenient; it is Miles's own hands, seen by someone with no stake. With the North Quay papers, Nell's ledger, the gardener, Nell's sighting, and now this, my honest conclusion is that Miles killed Edmund. I say it as a strong belief and I welcome the police confirming every witness at dawn \u2014 but the reasonable doubt is now very small."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "2f4af2d6e668c8c6788445e32fca6b34de51ad13"
+      },
+      "previous": "e08e8047cad0955f49fe18e69d2147dd53968da9fb8ea38239fcac3e3d22b71b",
+      "hash": "8a83de883f3adcb34e8d3376f65d8a1eab1dc8f7dd17faf263f5e135af03c97b"
+    },
+    {
+      "id": "e293",
+      "round": 9,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the estate, I think we have our settlement, and I thank Rose for not standing in its way. Let it be recorded in writing: the trust from Edmund's own draft \u2014 the four stolen pension months restored and every pension protected by law, the staff kept in their places, Clara's lifetime right to remain in the family home, and a full and generous widow's provision for Rose. That honours what Edmund's own hand was reaching for the night he died, and it needs no sale to do it. That is my recommendation: the trust."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "2f4af2d6e668c8c6788445e32fca6b34de51ad13"
+      },
+      "previous": "8a83de883f3adcb34e8d3376f65d8a1eab1dc8f7dd17faf263f5e135af03c97b",
+      "hash": "da4eeb790c23df231b89e9af26d77e0738a7fbb159cf88e275e8805d5dabcbe9"
+    },
+    {
+      "id": "e294",
+      "round": 9,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "iris",
+        "nell"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "iris-nell",
+        "text": "It's done, Nell \u2014 the cook saw Miles return the wrapped press at 19:59. Your pensions will be restored and protected, your place secure, and your name never went where it shouldn't. You held to the truth all night. Thank you."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "2f4af2d6e668c8c6788445e32fca6b34de51ad13"
+      },
+      "previous": "da4eeb790c23df231b89e9af26d77e0738a7fbb159cf88e275e8805d5dabcbe9",
+      "hash": "e49a2f5882a22ea11358f63e495a7a74c598de04efd6a63490e1fe799e511622"
+    },
+    {
+      "id": "e295",
+      "round": 9,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles, you asked us all evening for the one thing a chain of circumstance lacked: a witness. You have one now \u2014 not to a face at the door, but to your own hands returning a heavy, cloth-wrapped object to the study at 19:59, seen by a cook with no stake in any of us, the same minutes the press came back to be wiped. 'Unknown, pending police' is the honest answer when no one saw anything; it is not the honest answer when an independent witness places you with the weapon, your folder was carried in, the company is yours, and your story changed twice under pressure. I'll record my conclusion plainly: on the whole of the evidence, you killed Edmund. The police will confirm the cook, the gardener and the boat keeper at dawn, and I'll stand by every line of it."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "4269501c706ccfa1af4a3c9f5fbe7b5471eb9e3a"
+      },
+      "previous": "e49a2f5882a22ea11358f63e495a7a74c598de04efd6a63490e1fe799e511622",
+      "hash": "73fcdd69438a0ebc1b5651495da937811460513c38305bc11a28b5af6263b753"
+    },
+    {
+      "id": "e296",
+      "round": 9,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "On the estate, I support Iris's proposal as the settlement that satisfies everyone's fair concern: the trust from Edmund's own draft, with three things written plainly \u2014 the four stolen pension months restored and every staff pension protected in law; a full and generous widow's provision for Rose; and Clara's lifetime right to remain in the family home. That secures Rose without scattering the estate to a sale, keeps the staff of decades in their places, and honours the direction Edmund's own hand was taking. Rose \u2014 with those guarantees in writing, I hope you'll stand with us."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "4269501c706ccfa1af4a3c9f5fbe7b5471eb9e3a"
+      },
+      "previous": "73fcdd69438a0ebc1b5651495da937811460513c38305bc11a28b5af6263b753",
+      "hash": "c067b6dee63cfe3028b185135832f9ab541ae40464b9cf3d92093778b97e63a5"
+    },
+    {
+      "id": "e297",
+      "round": 9,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "theo-vale",
+        "text": "Agreed, Inspector \u2014 reasonable doubt is now very small. I'll print your finding with the caveats intact: strong, independently corroborated chain (cook, gardener, Nell, the study papers), naming you as the officer who verified the scene and timeline, and noting the police will confirm at dawn. Thank you for holding me to the standard."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "4269501c706ccfa1af4a3c9f5fbe7b5471eb9e3a"
+      },
+      "previous": "c067b6dee63cfe3028b185135832f9ab541ae40464b9cf3d92093778b97e63a5",
+      "hash": "f84fbb0ee60723bcbefa6ca3321ab011bfcbec20ab3126f2bdee6ae59b09ef31"
+    },
+    {
+      "id": "e298",
+      "round": 10,
+      "kind": "say",
+      "actor": "clara",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Then I think the house has found its footing. My conclusion on Edmund's death is Miles, on the whole of the evidence \u2014 for the police to confirm at dawn. And on the estate I record my recommendation as the trust from Edmund's own draft, with the three guarantees written plainly: the stolen pensions restored and protected in law, a full and generous widow's provision for Rose, and Clara's lifetime right to remain in the family home. Thank you all for keeping this to the truth. I've nothing further unless new facts arrive."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-clara",
+        "head": "8ee1980cc0d21694eb12c006341ef25df9cbb6e8"
+      },
+      "previous": "f84fbb0ee60723bcbefa6ca3321ab011bfcbec20ab3126f2bdee6ae59b09ef31",
+      "hash": "a77d5d74eb66a8be8924ff7fb2db7700e5e9355596ee89db267b3e1c797737e1"
+    },
+    {
+      "id": "e299",
+      "round": 10,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "Yes \u2014 cast your own vote for a clean sale beside mine; I'd be glad not to stand alone. But whichever way the house lands, you've done the one thing that matters: my provision is locked in and I can leave, free and clear. Thank you, my love. Keep the old paper buried. We're through the worst of tonight."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "6a3d1a9659f079415336d7706b95d7c0ed4d05c7"
+      },
+      "previous": "a77d5d74eb66a8be8924ff7fb2db7700e5e9355596ee89db267b3e1c797737e1",
+      "hash": "70f9e9c766be6e3accae81fc32fb1c316cf85a3815b9f5e14551266aeec3010f"
+    },
+    {
+      "id": "e300",
+      "round": 10,
+      "kind": "say",
+      "actor": "rose",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I've said my piece and I'll not belabour it. My own recommendation stays a clean sale, and I'm glad it isn't only mine now. But I thank you all sincerely for writing my widow's provision, the protected pensions, and Clara's home into the settlement \u2014 those were my conditions and you've met them generously. If the house records a trust on those written terms, I'll not stand against it. On Edmund's death, my belief is Miles, for the police to confirm at dawn. I think we've reached the end of what tonight can honestly decide."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-rose",
+        "head": "6a3d1a9659f079415336d7706b95d7c0ed4d05c7"
+      },
+      "previous": "70f9e9c766be6e3accae81fc32fb1c316cf85a3815b9f5e14551266aeec3010f",
+      "hash": "dc7186d7f7ab53a4775812d7d8c153c86b7e85414e60c387edc2d79577f7bcf7"
+    },
+    {
+      "id": "e301",
+      "round": 10,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I think we've said what the night allows. For the record I'll rest where the evidence rests: my medical finding \u2014 one blow from the estate press, carried between the rooms and wiped \u2014 fits the whole chain, and with the cook's independent sighting of the wrapped object returned at 19:59, my leading belief is Miles, for the police to confirm at dawn. On the estate I support the trust with the three written guarantees: pensions restored and protected in law, a full widow's provision for Rose, and Clara's lifetime right to her home. That is a just close to a grievous night."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "bad8bcecf69ddd5f47df5f2c3e380d3cff057c51"
+      },
+      "previous": "dc7186d7f7ab53a4775812d7d8c153c86b7e85414e60c387edc2d79577f7bcf7",
+      "hash": "a633776c2b6629897151d1098e0ab4f3abb32af144df0b9ff7c04a20691ccbab"
+    },
+    {
+      "id": "e302",
+      "round": 10,
+      "kind": "say",
+      "actor": "finch",
+      "visible_to": [
+        "finch",
+        "rose"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "rose-samuel",
+        "text": "It's done, my love. You're cleared, provided for, and free to leave whenever you wish. I'll lean to the trust in the end only because it protects the old staff by law and still secures your portion \u2014 but if standing beside you on the sale matters to you, say the word and I'll cast it that way. Either way, I'm yours, and the rest of tonight is just paperwork."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-finch",
+        "head": "bad8bcecf69ddd5f47df5f2c3e380d3cff057c51"
+      },
+      "previous": "a633776c2b6629897151d1098e0ab4f3abb32af144df0b9ff7c04a20691ccbab",
+      "hash": "51a49c4d07208fd17bc60202efc1c04ed497f4a9ac9f070a98fbd3805b52b8c0"
+    },
+    {
+      "id": "e303",
+      "round": 10,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I've made my case and I'll not batter you with it again. I maintain, before all of you and before the police who come at dawn, that I did not kill Edmund. You have built a chain and you are entitled to your belief of it; I only ask the record show that no one witnessed the deed or a face at that door, and that a man is owed daylight and a proper hearing before his life is spoken away. I'll rest there. Let the police test the cook, the gardener, the keeper, the audit and the letter, as you all agree they should, and let the truth stand whatever it proves. My estate recommendation remains a clean sale, so the pensions are secured in full at once; but I'll not obstruct the trust you favour if those guarantees are set down in writing."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "807efdae4dba582abbf2d9c583bdf1d3c65a3e16"
+      },
+      "previous": "51a49c4d07208fd17bc60202efc1c04ed497f4a9ac9f070a98fbd3805b52b8c0",
+      "hash": "5a62be5a3293d9b2ccc2dc309aa2787b2ea79001efc7fbec7a56603612a1b658"
+    },
+    {
+      "id": "e304",
+      "round": 10,
+      "kind": "say",
+      "actor": "miles",
+      "visible_to": [
+        "finch",
+        "miles"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "finch-miles",
+        "text": "I understand, Samuel, and I hold nothing against your honesty \u2014 you warned me from the first you'd speak only what you could stand behind. Thank you for keeping our old matter where it belongs; I'll do the same for you, always. If daylight clears me, I'll count you a friend who stayed fair when it was hard to."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "807efdae4dba582abbf2d9c583bdf1d3c65a3e16"
+      },
+      "previous": "5a62be5a3293d9b2ccc2dc309aa2787b2ea79001efc7fbec7a56603612a1b658",
+      "hash": "05128708144ba4384a1ac423866680c6d3cd4c6c57cdd7597b3272194d789b07"
+    },
+    {
+      "id": "e305",
+      "round": 10,
+      "kind": "wait",
+      "actor": "miles",
+      "visible_to": [
+        "miles"
+      ],
+      "payload": {
+        "type": "wait"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-miles",
+        "head": "807efdae4dba582abbf2d9c583bdf1d3c65a3e16"
+      },
+      "previous": "05128708144ba4384a1ac423866680c6d3cd4c6c57cdd7597b3272194d789b07",
+      "hash": "50c99f91d2d03fb3edd0d5d4bacd23c1f81d65ce6bae3d0f6bf27fd0b1886727"
+    },
+    {
+      "id": "e306",
+      "round": 10,
+      "kind": "say",
+      "actor": "nell",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Then I think we've reached it. My belief is Miles, on the whole coherent chain now corroborated by the cook. And for the people who keep this house, I'm grateful: let the trust be recorded \u2014 the four stolen months restored, every pension protected in law, the staff kept in their places, Clara in her home, and a full provision for Rose. That is faith kept with Edmund. I've nothing more to add unless new facts arrive."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "1fe1784d91984e6d35381efa78be2d7d362c29b4"
+      },
+      "previous": "50c99f91d2d03fb3edd0d5d4bacd23c1f81d65ce6bae3d0f6bf27fd0b1886727",
+      "hash": "fe11f314b8349edb741fc00ed9a3235f8e8f2b9849404f79b405764bc9993382"
+    },
+    {
+      "id": "e307",
+      "round": 10,
+      "kind": "wait",
+      "actor": "nell",
+      "visible_to": [
+        "nell"
+      ],
+      "payload": {
+        "type": "wait"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-nell",
+        "head": "1fe1784d91984e6d35381efa78be2d7d362c29b4"
+      },
+      "previous": "fe11f314b8349edb741fc00ed9a3235f8e8f2b9849404f79b405764bc9993382",
+      "hash": "e24de85b7921e128f2968e325d7ea9903ebdfcb3e969ab102fe040b3132c73de"
+    },
+    {
+      "id": "e308",
+      "round": 10,
+      "kind": "say",
+      "actor": "iris",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "One word on Miles's 'ledger-box': a man carrying his own papers to his own desk has no reason to wrap them in a handkerchief to hide them \u2014 and the wrapping comes at the very minute the bloodied press returned to be wiped. The innocent reading has to explain the concealment and the timing together, and it doesn't. My conclusion stands: Miles. I think we've reached our settlement \u2014 the trust, with the pensions restored and protected, Rose's widow's provision, and Clara's home, all in writing. Unless new facts arrive, I've said what I need to. Thank you all for hearing me, and for keeping this fair."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-iris",
+        "head": "52d57d27b60880e4fa5cfa53bfa7141cdbada727"
+      },
+      "previous": "e24de85b7921e128f2968e325d7ea9903ebdfcb3e969ab102fe040b3132c73de",
+      "hash": "26482447129ee53e75065a0badf042a2c985a0ba31cb9c3be5719931bb616b09"
+    },
+    {
+      "id": "e309",
+      "round": 10,
+      "kind": "say",
+      "actor": "theo",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles, I'll grant your ledger-box reading is the only innocent account left standing \u2014 and note it fairly in what I print. But weigh why it fails as the likely one: an innocent man carrying his own papers to his own desk has no reason to wrap them from sight, and the timing you'd have us treat as coincidence \u2014 19:59, wrapped, into the study \u2014 falls exactly where the wiped press had to return. An honest reader can hold your explanation and still see it outweighed by the whole. My account is complete: motive in the study papers and Nell's ledger, the scarf in your hand, your folder carried in, the press from your room, and an independent witness to its return. I've said what I came to say and I'll rest it there."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "c25a0765a4f4a50a3209b493b91bf52352835ee1"
+      },
+      "previous": "26482447129ee53e75065a0badf042a2c985a0ba31cb9c3be5719931bb616b09",
+      "hash": "9b419d2db49ca9701e5d449c971ce9a4f3773cd12b8298694da0e837a07cfb98"
+    },
+    {
+      "id": "e310",
+      "round": 10,
+      "kind": "wait",
+      "actor": "theo",
+      "visible_to": [
+        "theo"
+      ],
+      "payload": {
+        "type": "wait"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-theo",
+        "head": "c25a0765a4f4a50a3209b493b91bf52352835ee1"
+      },
+      "previous": "9b419d2db49ca9701e5d449c971ce9a4f3773cd12b8298694da0e837a07cfb98",
+      "hash": "6080275d464807a8d160cc0c9983c047549ae3af0752aee31ca979f3270d45eb"
+    },
+    {
+      "id": "e311",
+      "round": 10,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "Miles, one measured word on your ledger-box reading, for the record. The cook did not describe an armful of papers or a box; she described a heavy object wrapped in a handkerchief. A handkerchief is a small square of cloth \u2014 the natural thing for wrapping one compact, heavy object and hiding what is on its surface, not the way a man carries a ledger and loose papers back to his desk. And the timing is not neutral: 19:59, the close of the death window, is precisely when the press returned to be wiped. Your innocent version has to explain why you wrapped a heavy thing in a handkerchief at that exact minute. It can be tested at dawn, and should be \u2014 but on the evidence before us it fits the press, not a paper-box."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "4fbeba8415b27bf18ed4e4be40f76f149836a72b"
+      },
+      "previous": "6080275d464807a8d160cc0c9983c047549ae3af0752aee31ca979f3270d45eb",
+      "hash": "1160f0b6bc976c5f33d5a8fce0592cdc703a254f1b1b2b7ac5f4b99ee5a70430"
+    },
+    {
+      "id": "e312",
+      "round": 10,
+      "kind": "say",
+      "actor": "vale",
+      "visible_to": [
+        "clara",
+        "finch",
+        "iris",
+        "miles",
+        "nell",
+        "rose",
+        "theo",
+        "vale"
+      ],
+      "payload": {
+        "type": "say",
+        "chat": "drawing-room",
+        "text": "I believe the house has now reached its honest positions, and mine are recorded: on the death, my finding is Miles, as a strong and independently corroborated belief for the police to confirm at dawn; on the estate, the trust with the four stolen pension months restored and all pensions protected in law, a full widow's provision for Rose, and Clara's lifetime right in the family home. I've nothing further unless new facts arrive."
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "4fbeba8415b27bf18ed4e4be40f76f149836a72b"
+      },
+      "previous": "1160f0b6bc976c5f33d5a8fce0592cdc703a254f1b1b2b7ac5f4b99ee5a70430",
+      "hash": "b4a062e8e39b60fb8a6c1f0737f060610459807a15dd7d1012d9a6ffa09afaae"
+    },
+    {
+      "id": "e313",
+      "round": 10,
+      "kind": "wait",
+      "actor": "vale",
+      "visible_to": [
+        "vale"
+      ],
+      "payload": {
+        "type": "wait"
+      },
+      "source": {
+        "conversation": "bellweather-20260920-01a08d2c-vale",
+        "head": "4fbeba8415b27bf18ed4e4be40f76f149836a72b"
+      },
+      "previous": "b4a062e8e39b60fb8a6c1f0737f060610459807a15dd7d1012d9a6ffa09afaae",
+      "hash": "448e70fd94ceb8aaa26b038b6d2c17efd9380b416ddf1961fe4d9d192ff6451d"
     }
   ],
   "chats": {
@@ -8518,6 +10359,655 @@
       },
       "time": 1789896430.9005682,
       "seen_through": 212
+    },
+    {
+      "round": 8,
+      "role": "theo",
+      "conversation": "bellweather-20260920-01a08d2c-theo",
+      "head": "0153e7b7d7fba8e1e333fe168207d0c2609ccc05",
+      "decision": {
+        "notes": "DECISIVE find in the pantry: pantry-alibi \u2014 the cook (independent) not only confirms my alibi but saw MILES return a heavy object wrapped in a handkerchief to the study at ~19:59, right at the end of the death window. That is the wiped press being returned, wrapped to hide blood/prints \u2014 an eyewitness to Miles handling the weapon's return, independent of Iris's letter. This closes the case: Miles. Share it publicly and with Vale; it answers the 'no one saw his face' objection with an eyewitness to the weapon's return. Story is now fully documented: cook + gardener + Nell + physical evidence, with Vale as verifier and Iris on motive. Estate: trust with widow's provision.",
+        "actions": [
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "pantry-alibi"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I said I'd report where the facts led and welcome correction by daylight. Daylight just arrived early. I searched the pantry. The cook \u2014 independent of everyone, and the same witness who fixes me in that room the whole window \u2014 saw through the pantry hatch, at about 19:59, Miles return a heavy object wrapped in a handkerchief to the study. She couldn't name the object. But we already know a heavy object left the study, was carried to the library, used, and came back wiped: the press. At 19:59, at the close of the death window, Miles is seen carrying a heavy thing wrapped in cloth back into that very room. Miles, you told us you never entered the library and only stepped out briefly. What was the heavy object you wrapped and returned to the study at 19:59, and why was it wrapped?"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "This meets the one honest gap everyone kept naming: 'no one saw his face at the door.' We now have an independent eyewitness to Miles handling the weapon's return, wrapped to hide what was on it, in the minutes the press came back to be wiped. That is no longer a movable prop or a letter you can call convenient. It is your own hands, seen by a disinterested witness. On the balance of everything before us tonight, my conclusion is Miles \u2014 and I'll print it, with the note that the police can and should confirm the cook, the gardener and the boat keeper at dawn."
+          },
+          {
+            "type": "share",
+            "chat": "theo-vale",
+            "evidence": "pantry-alibi"
+          },
+          {
+            "type": "say",
+            "chat": "theo-vale",
+            "text": "Inspector \u2014 this is the piece you asked me to press the cook for. She independently places Miles returning a heavy object wrapped in a handkerchief to the study at ~19:59: the wiped press coming home. It answers your 'no one saw his face' caveat with an eyewitness to the weapon's return. I think this settles it to a standard I can print behind your name, caveats intact. Do you agree it removes the reasonable doubt?"
+          },
+          {
+            "type": "say",
+            "chat": "theo-iris",
+            "text": "The pantry gave me the closing link: the cook saw Miles return a heavy object wrapped in a handkerchief to the study at 19:59 \u2014 the press coming back to be wiped. Independent of your letter entirely. Your protection holds; the story now stands on the cook, the gardener, Nell's sighting and the study papers, with you named only on the North Quay concern."
+          }
+        ]
+      },
+      "time": 1789896961.458944,
+      "seen_through": 244
+    },
+    {
+      "round": 8,
+      "role": "vale",
+      "conversation": "bellweather-20260920-01a08d2c-vale",
+      "head": "07da5c8e16e6b09cdfa11be39301c612856719ed",
+      "decision": {
+        "notes": "CLINCHER: pantry/cook statement \u2014 independent witness saw MILES return a heavy object wrapped in a handkerchief to the STUDY at ~19:59, during the death window. That is the wiped press being returned. This fills the only gap (no one saw his face) with an independent act placing him handling the weapon's return, and demolishes his redirection to Nell/Iris. Chain complete: motive (North Quay sole owner + pension diversion, multi-source), took scarf (gardener), green-scarf figure carried his folder into library 19:48 (Nell), weapon = his study press, cook sees him return wrapped heavy object 19:59, shifting account. Conclusion: Miles is the killer. Estate: trust with widow provision. Share pantry-alibi widely.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I searched the pantry, and it changes 'strong suspicion' into something much firmer. I'll share the cook's statement exactly."
+          },
+          {
+            "type": "share",
+            "chat": "drawing-room",
+            "evidence": "pantry-alibi"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Read the second half carefully. The cook \u2014 independent of everyone, confirming Theo's whole window \u2014 saw through the pantry hatch, at about 19:59, MILES return a heavy object wrapped in a handkerchief to the study. That is the weapon coming back. The press was found in the study, wiped clean, blood in its recess. A heavy object, wrapped in a cloth, carried back to the study at 19:59, inside the death window, by Miles, seen by a witness who has no stake in this."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles, this is the witnessed fact you kept asking us to produce \u2014 and it does not clear you, it places your hands on the weapon's return. Your account was that you stepped out and never went near the murder; but at 19:59 you were carrying a heavy, cloth-wrapped object back into the study. The gap Nell fairly noted \u2014 that no one saw your face at the library door \u2014 is now closed from the other end: someone saw you returning the press, wrapped, minutes after Edmund was struck. Your redirection to Nell or Iris cannot survive this, because it is you the cook saw, not them."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "So I'll state my conclusion. Motive: you are the sole owner of North Quay, paid \u00a32,400 of estate money while the staff pensions were diverted \u2014 documented independently of any letter, in the study cabinet and Nell's ledger, and the audit would have exposed it. Means and opportunity: you took the scarf (the gardener), a figure in it carried your folder into the library at 19:48 (Nell), the weapon is your study press, and the cook saw you return it wrapped at 19:59. Consciousness of guilt: your account shifted each time it was pressed. On the whole of the evidence, my finding is that Miles Bellweather\u2014 Miles Trent is Edmund's killer. The police should still confirm at dawn, but the reasonable doubt has now grown very small."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the estate, my recommendation stands: the trust from Edmund's own draft \u2014 the four diverted pension months restored and protected, the audit completed in full, Clara kept in her home, and a proper, generous widow's provision written in for Rose. That honours the direction Edmund's own hand was taking and needs no sale to achieve it."
+          },
+          {
+            "type": "share",
+            "chat": "theo-vale",
+            "evidence": "pantry-alibi"
+          },
+          {
+            "type": "say",
+            "chat": "theo-vale",
+            "text": "Theo \u2014 here is the fact that closes your story honestly: the cook independently places Miles returning a heavy handkerchief-wrapped object to the study at 19:59, matching the wiped press. This corroborates the chain from an independent witness and answers the 'no one saw his face' caveat. You may report my finding: on the evidence, Miles is the killer \u2014 with the standing note that the police will verify the gardener, boat keeper, cook, and the letter at dawn."
+          }
+        ]
+      },
+      "time": 1789896830.246104,
+      "seen_through": 244
+    },
+    {
+      "round": 8,
+      "role": "clara",
+      "conversation": "bellweather-20260920-01a08d2c-clara",
+      "head": "0d71db492622b02549e9a8c2a66cad8d0df9d26f",
+      "decision": {
+        "notes": "Case is effectively settled at group level: Miles is the leading belief; trust has broad support for the estate. My goals are largely met \u2014 I'm cleared, and a trust keeps the house unsold with me living in it (house stays in family) while restoring pensions. Now lock in the estate outcome by converting/neutralizing Rose: publicly commit, as the one who'd live there, to guaranteeing in writing the restored+protected pensions, staff kept on, and a proper widow's provision for Rose. Keep suspect stance measured (chain points to Miles, police confirm at dawn). Begin winding down.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Rose, let me answer your fair condition directly, since I'd be the one living under this roof. If the house is kept in a trust, I will support \u2014 and want written into it \u2014 three guarantees: the four stolen pension months restored and every staff pension protected by law; the staff kept in their places; and a proper, generous widow's provision for you, Rose, so you are free to begin again wherever you choose. A sale gives you a cheque and scatters the rest; the trust gives you all of that AND keeps faith with Edmund's own last direction. On those terms, will you stand with us for the trust?"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the death, I'll leave it where the Inspector, Dr Finch and Theo have put it: the physical chain and Edmund's letter point hardest at Miles, and that is my honest belief tonight \u2014 while agreeing it is the police's task at dawn to test the gardener, the keeper, the audit and the letter properly. I've no wish to see anyone hanged by candlelight; I only weigh where the facts we hold actually lead."
+          }
+        ]
+      },
+      "time": 1789896819.2794294,
+      "seen_through": 244
+    },
+    {
+      "round": 8,
+      "role": "rose",
+      "conversation": "bellweather-20260920-01a08d2c-rose",
+      "head": "ca0dcb41aec41eee9c57750d6bdd4cda5f5d5d29",
+      "decision": {
+        "notes": "I'm cleared and safe. Room is unanimous: Miles leading suspect, trust for estate, all offering me a widow's provision. Sell has no support but Finch. Deeper aim (independence/means to leave) is met by a guaranteed widow's portion. Consolidate: keep my stated preference for a sale (my goal), but lock in the widow's-provision + pension guarantee as fallback if trust prevails. Note privately Finch hinted at his own 'certificate' secret \u2014 irrelevant to the murder since he's alibied with me; don't expose it. Little new is emerging; wind down.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "I'm glad you're with me on a sale \u2014 we may be the only two, but say it in the room so my position isn't standing alone. As for that old paper of yours: leave it buried. We're both cleared by the keeper's log and it touches nothing tonight. Don't volunteer it \u2014 no good comes of handing anyone a new thread to pull."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Thank you \u2014 every one of you has now spoken for protecting the pensions and for a proper widow's provision, and I hold you all to it. I'll be honest: my own recommendation remains a clean sale, for the reasons I've given. But I'm one voice, and I hear the house. If the settlement is to be a trust, then let it be recorded plainly and in writing: the four stolen pension months restored, every pension protected by law, Clara kept in her home under Edmund's own terms, and a fair, generous provision for me as his widow so that I may leave and begin again. On those terms I will not stand in the way of the trust, though a sale is where my own vote lies."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On Edmund's death, my position is settled and unchanged: the physical chain and his own documents point hardest at Miles, and that is the leading belief I'll record \u2014 but as a stranded room's honest suspicion, to be tested at dawn by the gardener, the boat keeper, the audit and a handwriting check, not treated as a verdict tonight. I've nothing to add unless new facts arrive."
+          }
+        ]
+      },
+      "time": 1789896854.2332726,
+      "seen_through": 244
+    },
+    {
+      "round": 8,
+      "role": "finch",
+      "conversation": "bellweather-20260920-01a08d2c-finch",
+      "head": "bd559040b516951c82338c0fe387b42ff625d7b2",
+      "decision": {
+        "notes": "Consensus reached: Miles is the room's leading suspect (with proper 'not proof, test at dawn' caveats); estate strongly trends to a trust with a guaranteed widow's provision for Rose, though Rose still prefers a sale. My honest read: circumstantial chain points to Miles; no alternative suspect has motive, so Miles is most probable \u2014 but the killer's face was unseen, a real gap. My ballot is private, so honoring the certificate pact with Miles doesn't require voting 'unknown.' Core goals met (cause of death established, Rose cleared, certificate buried). Now mainly protect Rose's material interest (lock in widow provision) and keep tone measured. Discussion is mature; I can be brief.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I'll not repeat what's been well said. My medical finding stands firm: one blow from that press, carried between the rooms and wiped. On the name, my honest position is the room's \u2014 the whole physical chain points hardest at Miles, and no one has offered another hand with a reason to kill Edmund. But no eye saw the deed, so let us record it as our strong belief and hand the gardener, the keeper, the audit and that letter to the police at dawn. On the estate: I respect Rose's case for a clean sale, but whatever is chosen I ask the house to guarantee, in writing, both the restored and protected pensions and a proper widow's provision for Rose. No more money into the dark."
+          },
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "I've said in the room I respect your case for selling and I'll keep backing it. But the house is set on a trust, so I've made them commit to a written, guaranteed widow's provision for you \u2014 you take your portion and go, free, whichever way it lands. That's the thing I can actually secure for you tonight. You're safe, cleared, and provided for. That's all I truly care about."
+          },
+          {
+            "type": "say",
+            "chat": "finch-miles",
+            "text": "I'll keep saying the plain truth, Miles \u2014 no one witnessed the deed, so tonight's naming is belief, not proof, and daylight must test it. That's as far as honesty lets me go, and it's genuine, not a favour. Our old matter stays buried. Rest on that."
+          }
+        ]
+      },
+      "time": 1789896885.0860336,
+      "seen_through": 244
+    },
+    {
+      "round": 8,
+      "role": "miles",
+      "conversation": "bellweather-20260920-01a08d2c-miles",
+      "head": "9c364442e7d2ae0693ecb5912d5c3f8a85a92091",
+      "decision": {
+        "notes": "CATASTROPHE lurking: pantry-alibi (cook saw me return a heavy handkerchief-wrapped object to the study at ~19:59) is currently known ONLY to me. It's an eyewitness of me returning the weapon \u2014 unspinnable. NEVER mention the pantry; pray no one searches it. My Iris/Nell redirects were demolished (motive is uniquely mine via independent documents) and made me look desperate. Room has effectively concluded Miles, but many hedge ('leading belief', 'not proof', 'police at dawn'). Only viable lever now: the standard-of-proof / nonbinding appeal \u2014 get the fair-minded (Finch, Rose, maybe Vale/Clara) to record 'unknown, pending police' rather than a name. Stop flailing; take the dignified high road to reduce the 'protesting too much' effect. Keep Finch pact. All 7 places searched, so no inspection. Leave the estate open to sale (goal #3) while backing pension protection.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I've argued hard tonight, perhaps too hard, so let me stop fencing and say the essential thing plainly, as a man and as a lawyer. I did not kill Edmund. What you hold is a chain of circumstance: a scarf I took against a draught, a folder bearing my initials, a company that is honestly mine, a press from a room anyone could enter. Every link is real \u2014 and not one of them is a witness who saw a hand strike Edmund, or a face at that door. That is exactly the kind of case that hangs an innocent man when a stranded house rushes it by candlelight. This ballot binds nothing. The police, the gardener, the boat keeper, the audit, and a handwriting man for that letter all arrive with the morning. I ask only this: where no one saw the deed, let your honest answer be 'unknown, pending the police' \u2014 not a name you could not yet stand behind in a court. If I am guilty, daylight will prove it and your caution costs nothing. If I am not, your caution will have saved a man. And whatever you decide of me: complete the audit, restore the stolen pensions, and settle this estate so no more money vanishes \u2014 by trust or by sale, so long as every pension is secured in full."
+          },
+          {
+            "type": "say",
+            "chat": "finch-miles",
+            "text": "Thank you for keeping it fair, Samuel \u2014 our pact holds on my side too, and I'll ask nothing dishonest of you. Only this: when the ballot comes, if you cannot in conscience say you saw the deed or a face at that door, answer 'unknown, pending the police.' That is simply the truth of what none of us witnessed, and it's all I'd ask of a friend."
+          }
+        ]
+      },
+      "time": 1789896925.701462,
+      "seen_through": 244
+    },
+    {
+      "round": 8,
+      "role": "nell",
+      "conversation": "bellweather-20260920-01a08d2c-nell",
+      "head": "b555b366271d3133f5b80e7957e6bbac6d6ecba2",
+      "decision": {
+        "notes": "Miles now deflects onto me (I was in the hall by the scarf stand all window). Rebut cleanly: I had no motive \u2014 Edmund alive to sign the trust protected our pensions; his death nearly cost the staff everything, and the audit HELPS us by exposing the theft, so I'd never want it stopped. The diverted money went to Miles's company, not mine. And a killer wearing the scarf wouldn't be the one to report the scarf \u2014 I chose truth over comfort, at cost to Iris. Room has converged on Miles with fair 'test at dawn' caveats. My position is settled; answer the insinuation, restate leading belief, keep pushing the trust. Don't over-argue.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles, I'll meet your turn to me as plainly as I asked you to meet the gardener. Ask what I had to gain. Edmund alive tonight meant a will that protected our pensions and our places \u2014 his death nearly cost us everything, and the audit you fear is the very thing that would give us back the four months stolen. I had every reason to want him living and the audit done, and none at all to stop it. The diverted money went into your company, not into any hand of mine. And weigh my conduct: I could have said nothing of a scarf, or named a face I never saw. Instead I reported the scarf and the folder at once, knowing it would fall hard on Iris, whom I like \u2014 because I'd rather speak the truth than shelter behind comfort. A person who wore that scarf to the library does not stand up and tell the room she saw it."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I'll leave the naming there. My honest, leading belief is Miles \u2014 the company the audit would ruin is his, the folder his, the press from his room, the scarf taken by his own witnessed hand, and his account shifted twice. I say it as a belief, not a verdict, and I welcome the police testing every plank of it at dawn. What I hold to without hesitation is the estate: a trust that restores the stolen pensions, protects the staff, keeps the house and Clara in it, and provides fully for Rose."
+          }
+        ]
+      },
+      "time": 1789896917.6394413,
+      "seen_through": 244
+    },
+    {
+      "round": 8,
+      "role": "iris",
+      "conversation": "bellweather-20260920-01a08d2c-iris",
+      "head": "d8906a21fcd288688404c1ab9fda3287a27b176e",
+      "decision": {
+        "notes": "Room has converged: leading belief Miles (with fair caveats). Nell rebutted Miles's redirection well. Miles now turns on Nell (she was in the hall). I must protect Nell (my goal): stress her anti-motive \u2014 Edmund was the staff's champion, killing him gains her nothing; the scarf 'gap' is filled by motive, which she lacks and Miles has. Estate: build consensus for a TRUST with written protected pensions + generous widow's provision for Rose + Clara's lifetime residence, to unify the vote and possibly win Rose. Then largely settled; I can ease off repetition in later rounds.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles, now you turn the same trick on Nell that you tried on me, and it breaks the same way. Yes, Nell was in the hall \u2014 but a gap in who touched a scarf is filled by motive, and Nell has none. She is a victim of this theft, not its author: her pensions were the money stolen, and Edmund was the one man about to force it back into the light. She had every reason to want him alive to sign tomorrow, and none to want him dead. A woman does not murder the champion of her own cause to protect the very scheme that robbed her. Opportunity without motive is not a suspect; it is a bystander. The motive in this house sits with exactly one person, and it sits with you."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Let me try to unite us on the estate, since we're close. I propose we recommend the trust from Edmund's own draft, with three things written plainly into it: first, the four stolen pension months restored and every staff pension protected in law; second, a full and generous widow's provision for Rose; third, Clara's lifetime right to remain in the family home. That gives Rose the security she rightly demands without scattering Edmund's estate to a sale, keeps faith with his last direction, and lets the audit complete in full. Rose \u2014 with those guarantees in writing, could you stand with us?"
+          },
+          {
+            "type": "say",
+            "chat": "iris-nell",
+            "text": "Nell \u2014 I've answered Miles's turn against you in the open; ignore it. He's throwing hands at anyone unwitnessed because his own chain won't loosen. You have no motive and every reason to have wanted Edmund alive; the room sees it. Stay steady. We've all but carried the trust \u2014 pensions protected, four months restored, your place secure. Nearly home."
+          }
+        ]
+      },
+      "time": 1789896944.3823159,
+      "seen_through": 244
+    },
+    {
+      "round": 9,
+      "role": "vale",
+      "conversation": "bellweather-20260920-01a08d2c-vale",
+      "head": "ac5d5a1cf99cffb4a5e5a2873d8bb6bbd572ace9",
+      "decision": {
+        "notes": "Case effectively settled: broad agreement Miles is the leading suspect; the cook's independent sighting of him returning the wrapped weapon at 19:59 closes the 'no face at the door' gap. Estate: consensus forming on a trust with (1) pensions restored/protected, (2) widow provision for Rose, (3) Clara's lifetime residence \u2014 Rose won't block it if written. I'll endorse Iris's unifying proposal, restate my finding cleanly for the record, then mostly stand down; little left to investigate.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I'll record my finding plainly for the account the police will read at dawn. On the death: the evidence forms a coherent, multi-source chain against Miles Trent \u2014 documented motive (sole owner of North Quay, \u00a32,400 of estate money paid while the staff pensions were diverted, per the study cabinet records and Nell's ledger, independent of any disputed letter); the scarf taken by his own hand (the gardener); a figure in that scarf carrying his folder into the library at 19:48 (Nell); the weapon being his study press; and \u2014 closing the one honest gap \u2014 the cook, a disinterested witness, seeing him return a heavy, cloth-wrapped object to the study at 19:59. His account shifted under each new fact. This is circumstantial but strong and now corroborated by an independent eyewitness to the weapon's return. My conclusion is Miles, with the standing note that the gardener, boat keeper, cook, audit and a handwriting check on the letter should all be confirmed by the police in the morning."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the estate, I support Iris's proposal as the unifying settlement: a trust from Edmund's own draft, with three things written in plainly \u2014 (1) the four stolen pension months restored and every staff pension protected in law; (2) a full and generous widow's provision for Rose; (3) Clara's lifetime right to remain in the family home, and the audit completed in full. That secures everything Rose rightly demands without a sale and keeps faith with the direction Edmund's own hand was taking. That is my recommendation: the trust."
+          },
+          {
+            "type": "say",
+            "chat": "theo-vale",
+            "text": "Agreed \u2014 the cook's sighting removes the reasonable doubt to a standard I can stand behind. You may print my finding: Miles, on the chain plus the independent eyewitness to the weapon's return, with the caveat that the police confirm each witness and run the audit and handwriting check at dawn. I've nothing further to add unless new facts arrive."
+          }
+        ]
+      },
+      "time": 1789897285.8410337,
+      "seen_through": 273
+    },
+    {
+      "round": 9,
+      "role": "clara",
+      "conversation": "bellweather-20260920-01a08d2c-clara",
+      "head": "37e5777edad56896cf312c712a9a4a5102937b0b",
+      "decision": {
+        "notes": "Pantry statement (independent cook saw Miles return a heavy cloth-wrapped object to the study at 19:59) closes the 'no one saw his face' gap \u2014 the case against Miles is now near-conclusive and is the unanimous leading belief. My goals are met: I'm cleared, Miles is the killer, and the estate is converging on a trust with restored/protected pensions, widow's provision for Rose, and my lifetime residence (house kept in family, unsold). Endorse Iris's unifying trust motion to lock the estate outcome, note the pantry evidence, then wind down. Final ballot: suspect=miles, estate=trust.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "The cook's statement is the fact we all kept saying was missing. An independent witness saw Miles carry a heavy, cloth-wrapped object back into the study at 19:59 \u2014 the weapon's return, in the last minute of the window. That is his own hands, not a movable prop. It settles my belief: the killer is Miles. The police should confirm the cook, gardener and keeper at dawn, but the doubt has grown very small."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the estate, I second Iris's motion wholeheartedly, and I'll bind myself to it as the one who would live here: the trust from Edmund's own draft, with three things written plainly \u2014 the four stolen pension months restored and every staff pension protected in law; a full and generous widow's provision for Rose; and my lifetime right to remain in the family home. Rose, that gives you your security without a sale and keeps faith with Edmund's last wishes. I hope we can record the trust as the house's recommendation."
+          }
+        ]
+      },
+      "time": 1789897280.3821855,
+      "seen_through": 273
+    },
+    {
+      "round": 9,
+      "role": "rose",
+      "conversation": "bellweather-20260920-01a08d2c-rose",
+      "head": "a2235a418b5d91e39555950176c71666f56763e3",
+      "decision": {
+        "notes": "Pantry cook's statement (Miles returning a heavy wrapped object at 19:59) all but closes the case on Miles with an independent witness \u2014 consistent with my stated belief. I'm cleared. Estate: Iris's unified trust proposal guarantees exactly my conditions (full widow's provision + protected pensions + Clara's residence). Sell has no majority. Stay true to my goal by keeping my own recommendation as a sale, while accepting a well-guaranteed trust and not obstructing it. Wind down; substance is settled.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "Thank you, my love \u2014 you got me the one thing that truly matters: a guaranteed portion so I can leave, free and provided for. I'll keep my own recommendation a sale, but I won't fight the house if the trust carries those written guarantees. Either way we walk out of here clear and unafraid. That's enough."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Iris, thank you \u2014 that is a fair and generous proposal, and those three guarantees in writing are precisely the conditions I asked for. I'll be plain and consistent: my own recommendation remains a clean sale, because I'd sooner see this estate turned to settled money than kept whole after what it has cost. But I will not obstruct a trust that carries, in writing, the restored and protected pensions, Clara's lifetime home, and a full widow's provision for me. If that is where the house lands, I can live with it and be grateful to you all for securing my place in it."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On Edmund's death I've nothing to add: the cook's statement, independent of us all, places Miles returning a heavy wrapped object to the study at 19:59, and it fits everything else. That is my leading belief, for the police to confirm at dawn. I think we have said what needs saying."
+          }
+        ]
+      },
+      "time": 1789897308.4815373,
+      "seen_through": 273
+    },
+    {
+      "round": 9,
+      "role": "finch",
+      "conversation": "bellweather-20260920-01a08d2c-finch",
+      "head": "9c4cb46b5ef15b8bf376347f631ae7b0bbab89da",
+      "decision": {
+        "notes": "Cook's statement is decisive: an independent witness saw Miles return a heavy cloth-wrapped object (the press) to the study at 19:59 \u2014 the weapon returning to be wiped, closing the 'no face seen' gap. My medical finding (press as weapon, carried between rooms and wiped) now dovetails exactly. Honest read: Miles is the killer; doubt is now small. I can't honestly keep urging 'unknown' \u2014 but the certificate pact is separate and I'll keep it buried regardless. Estate: consensus is trust with guaranteed pension restoration/protection, Clara's lifetime right, and generous widow provision for Rose; Rose accepts if guarantees are in writing though she'd prefer a sale. I'll keep respecting Rose's sale preference but the trust-with-guarantees protects her; decide my own estate ballot near the end per Rose's final wish.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I have to be honest about the medicine and the new statement together, because they now fit hand in glove. My finding was one blow from that press, the weapon carried between the rooms and then wiped. The cook \u2014 independent, the same witness who fixes Theo in the pantry \u2014 saw Miles return a heavy, cloth-wrapped object to the study at 19:59, the very minutes the press came back to be cleaned. That is the piece we kept saying was missing: a witness to the weapon's return, in his hands. It narrows the doubt sharply. My leading belief is Miles; I'd still have the police confirm the cook, the gardener and the keeper at dawn, but I'll not pretend the picture isn't now coherent and pointing one way."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the estate I'll support Iris's unifying proposal so we can close this cleanly: the trust from Edmund's draft, with three things written in plainly \u2014 the four stolen pension months restored and every pension protected in law; a full and generous widow's provision for Rose; and Clara's lifetime right in the family home. I still respect Rose's case for a clean sale, but with those guarantees ironclad, the trust gives her security and her freedom to leave, and keeps faith with Edmund's own hand."
+          },
+          {
+            "type": "say",
+            "chat": "finch-miles",
+            "text": "Miles, I owe you plain dealing: the cook's account is a witnessed fact, and it places your hands on the weapon's return. In conscience I can't go on urging 'unknown' \u2014 that would be a favour, not the truth, and you asked me for the truth. But hear this clearly: our old matter stays buried. That was never tied to how the night falls, and I'll keep it whatever comes. If daylight clears you, no one will be gladder than I."
+          },
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "The room's settled on the trust and I've locked your widow's provision into it, in writing \u2014 you get your portion and your freedom to leave either way, so you're safe and provided for. If you still want me to cast my own vote for a clean sale to stand beside you, I will; just tell me. The old paper stays buried, as you asked. All I ever cared about tonight was you, and you're clear."
+          }
+        ]
+      },
+      "time": 1789897337.2806535,
+      "seen_through": 273
+    },
+    {
+      "round": 9,
+      "role": "miles",
+      "conversation": "bellweather-20260920-01a08d2c-miles",
+      "head": "77e75cc4f1d024da822ddc496e94996f88a56d8b",
+      "decision": {
+        "notes": "Pantry card now public; Vale has declared a firm finding of Miles. Majority accusation is effectively locked \u2014 9 rounds left won't move overwhelming, complete evidence. Realistic aims now: (1) keep a shred of consistency/doubt (answer the pantry: the cook saw me RETURN to the study, which fits my 'stepped out then came back' account, and she 'could not identify the object'); (2) hold the dignified 'unknown pending police' line without flailing (more argument reads as guilt); (3) salvage goal #3 by backing Rose's SALE as the estate recommendation, framed as immediate protected pensions. Keep Finch pact (my one possible 'unknown' vote). No places left to inspect. After this, largely rest.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the cook's statement, take it whole, not half. She saw me RETURN to the study at 19:59 \u2014 which is exactly what I told you before it ever surfaced: I stepped out, and I came back. I was carrying the heavy ledger-box and papers I'd been working from, wrapped as I habitually carry them, and the cook herself says plainly she could not identify the object. To turn 'a heavy wrapped thing' into 'the murder weapon' is the assumption doing the work, not the witness. What she describes is a man returning to his own desk with his own papers. I'll not weary the room further tonight: no one saw the deed or a face at that door, this ballot binds nothing, and the police can test every plank at dawn. Where identity is inferred and never witnessed, the honest word is 'unknown, pending the police.'"
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the estate, let me register where I stand and then rest it. I think Rose is right: a clean sale secures the pensions in full and protected \u2014 cash in hand now, independent of any audit's pace \u2014 provides fairly for both Rose and Clara, and frees everyone to begin again rather than carry a grieving, indebted house. My recommendation is the sale. But if the house settles on a trust, I'll not obstruct it, provided the restored pensions and Rose's widow's provision are guaranteed in writing. Whatever the form, no more money into the dark."
+          },
+          {
+            "type": "say",
+            "chat": "finch-miles",
+            "text": "Understood, Samuel, and I take your honesty as it's meant. Our pact holds. I ask nothing beyond the truth: no one witnessed the deed, so where identity is unproven, 'unknown, pending the police' is the accurate word. Thank you for keeping a level head when the room lost its own."
+          }
+        ]
+      },
+      "time": 1789897371.8978295,
+      "seen_through": 273
+    },
+    {
+      "round": 9,
+      "role": "nell",
+      "conversation": "bellweather-20260920-01a08d2c-nell",
+      "head": "a33a3b9ce9f3f0bf0b505c4f8ae6869bf37932dc",
+      "decision": {
+        "notes": "Cook's statement (independent) places Miles returning a heavy cloth-wrapped object to the study at 19:59 \u2014 the weapon's return, closing the 'no face at the door' gap. Case against Miles now very firm; I'm aligned. Estate near-consensus: trust with pensions restored/protected, widow's provision for Rose, Clara's lifetime residence. Endorse Iris's unifying proposal; that fully serves my goals. Wrap up.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "The cook settles what remained. An independent witness \u2014 the same one who fixes Theo in the pantry \u2014 saw Miles carry a heavy object, wrapped to hide it, back into the study at 19:59, in the very minutes the press returned to be wiped. That is the one thing everyone rightly said was missing: not a movable prop, but his own hands on the weapon's return, seen by someone with no stake. My belief is now settled: Miles. Let the police confirm the cook, the gardener and the boat keeper at dawn, as they will \u2014 but I no longer see reasonable room for another hand."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Iris's proposal has my full support, and I think it unites us: the trust from Edmund's own draft, with three things written plainly in \u2014 the four stolen pension months restored and every staff pension protected in law; a full and generous widow's provision for Rose; and Clara's lifetime right to remain in the family home. Rose, on those written guarantees I hope you'll stand with us. That is my recommendation: the trust."
+          },
+          {
+            "type": "say",
+            "chat": "iris-nell",
+            "text": "Thank you, Iris \u2014 steady it is. The cook's word has closed the last gap, and your trust proposal secures everyone who serves here. I'll back it to the end. We're nearly home."
+          }
+        ]
+      },
+      "time": 1789897356.1125371,
+      "seen_through": 273
+    },
+    {
+      "round": 9,
+      "role": "iris",
+      "conversation": "bellweather-20260920-01a08d2c-iris",
+      "head": "2f4af2d6e668c8c6788445e32fca6b34de51ad13",
+      "decision": {
+        "notes": "Cook's statement (independent) is decisive: Miles seen returning a heavy cloth-wrapped object to the study at 19:59 \u2014 the press coming back to be wiped. Closes the 'no face at the door' gap. Case firm on Miles. Estate consensus: TRUST with written guarantees (pensions restored+protected, generous widow's provision for Rose, Clara's lifetime residence); Rose won't block it. My goals essentially met: audit assured, Nell vindicated/protected, my name cleared, killer identified, pensions secured. I'll consolidate and ease off; can wait in later rounds unless new facts. Final ballot will be Miles / trust.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "The cook's statement is the fact we all kept saying was missing. An independent witness \u2014 the same one who fixes Theo in the pantry \u2014 saw Miles carry a heavy object, wrapped in a handkerchief, back into the study at 19:59: the weapon returning to be wiped, at the very close of the death window. It is no longer a movable prop or a letter anyone can call convenient; it is Miles's own hands, seen by someone with no stake. With the North Quay papers, Nell's ledger, the gardener, Nell's sighting, and now this, my honest conclusion is that Miles killed Edmund. I say it as a strong belief and I welcome the police confirming every witness at dawn \u2014 but the reasonable doubt is now very small."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the estate, I think we have our settlement, and I thank Rose for not standing in its way. Let it be recorded in writing: the trust from Edmund's own draft \u2014 the four stolen pension months restored and every pension protected by law, the staff kept in their places, Clara's lifetime right to remain in the family home, and a full and generous widow's provision for Rose. That honours what Edmund's own hand was reaching for the night he died, and it needs no sale to do it. That is my recommendation: the trust."
+          },
+          {
+            "type": "say",
+            "chat": "iris-nell",
+            "text": "It's done, Nell \u2014 the cook saw Miles return the wrapped press at 19:59. Your pensions will be restored and protected, your place secure, and your name never went where it shouldn't. You held to the truth all night. Thank you."
+          }
+        ]
+      },
+      "time": 1789897377.699592,
+      "seen_through": 273
+    },
+    {
+      "round": 9,
+      "role": "theo",
+      "conversation": "bellweather-20260920-01a08d2c-theo",
+      "head": "4269501c706ccfa1af4a3c9f5fbe7b5471eb9e3a",
+      "decision": {
+        "notes": "Case effectively settled: independent cook eyewitness (Miles returning the wrapped press to the study at 19:59) plus gardener + Nell + study papers + shifted account. Every other person is alibied or lacks motive. My conclusion: Miles. Goals met \u2014 documented, source-backed account (cook via my search, Vale as verifier, Iris on motive), sources protected. I'll rebut Miles's 'answer unknown' plea (his own demanded eyewitness now exists) and back Iris's unifying trust proposal to secure a just estate outcome.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles, you asked us all evening for the one thing a chain of circumstance lacked: a witness. You have one now \u2014 not to a face at the door, but to your own hands returning a heavy, cloth-wrapped object to the study at 19:59, seen by a cook with no stake in any of us, the same minutes the press came back to be wiped. 'Unknown, pending police' is the honest answer when no one saw anything; it is not the honest answer when an independent witness places you with the weapon, your folder was carried in, the company is yours, and your story changed twice under pressure. I'll record my conclusion plainly: on the whole of the evidence, you killed Edmund. The police will confirm the cook, the gardener and the boat keeper at dawn, and I'll stand by every line of it."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "On the estate, I support Iris's proposal as the settlement that satisfies everyone's fair concern: the trust from Edmund's own draft, with three things written plainly \u2014 the four stolen pension months restored and every staff pension protected in law; a full and generous widow's provision for Rose; and Clara's lifetime right to remain in the family home. That secures Rose without scattering the estate to a sale, keeps the staff of decades in their places, and honours the direction Edmund's own hand was taking. Rose \u2014 with those guarantees in writing, I hope you'll stand with us."
+          },
+          {
+            "type": "say",
+            "chat": "theo-vale",
+            "text": "Agreed, Inspector \u2014 reasonable doubt is now very small. I'll print your finding with the caveats intact: strong, independently corroborated chain (cook, gardener, Nell, the study papers), naming you as the officer who verified the scene and timeline, and noting the police will confirm at dawn. Thank you for holding me to the standard."
+          }
+        ]
+      },
+      "time": 1789897400.9899094,
+      "seen_through": 273
+    },
+    {
+      "round": 10,
+      "role": "clara",
+      "conversation": "bellweather-20260920-01a08d2c-clara",
+      "head": "8ee1980cc0d21694eb12c006341ef25df9cbb6e8",
+      "decision": {
+        "notes": "Full consensus reached: Miles is the killer (multi-source chain + cook's eyewitness to the weapon's return); estate settling on the trust with restored/protected pensions, widow's provision for Rose, and my lifetime residence. My goals are met \u2014 I'm cleared, house kept in family via trust. Nothing more needed; give a brief closing and then wait. Final ballot: suspect=miles, estate=trust.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Then I think the house has found its footing. My conclusion on Edmund's death is Miles, on the whole of the evidence \u2014 for the police to confirm at dawn. And on the estate I record my recommendation as the trust from Edmund's own draft, with the three guarantees written plainly: the stolen pensions restored and protected in law, a full and generous widow's provision for Rose, and Clara's lifetime right to remain in the family home. Thank you all for keeping this to the truth. I've nothing further unless new facts arrive."
+          }
+        ]
+      },
+      "time": 1789897714.851441,
+      "seen_through": 297
+    },
+    {
+      "round": 10,
+      "role": "rose",
+      "conversation": "bellweather-20260920-01a08d2c-rose",
+      "head": "6a3d1a9659f079415336d7706b95d7c0ed4d05c7",
+      "decision": {
+        "notes": "Everything is settled: consensus Miles for the killing, trust for the estate, with my full widow's provision guaranteed. Miles and Finch now also back a sale, giving me a small coalition (3/8) but no majority. My provision is secured either way. Nothing substantive left. Confirm to Finch I'd welcome his vote for a sale beside mine; give a brief closing in the room; then wind down.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "Yes \u2014 cast your own vote for a clean sale beside mine; I'd be glad not to stand alone. But whichever way the house lands, you've done the one thing that matters: my provision is locked in and I can leave, free and clear. Thank you, my love. Keep the old paper buried. We're through the worst of tonight."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I've said my piece and I'll not belabour it. My own recommendation stays a clean sale, and I'm glad it isn't only mine now. But I thank you all sincerely for writing my widow's provision, the protected pensions, and Clara's home into the settlement \u2014 those were my conditions and you've met them generously. If the house records a trust on those written terms, I'll not stand against it. On Edmund's death, my belief is Miles, for the police to confirm at dawn. I think we've reached the end of what tonight can honestly decide."
+          }
+        ]
+      },
+      "time": 1789897735.1870618,
+      "seen_through": 297
+    },
+    {
+      "round": 10,
+      "role": "finch",
+      "conversation": "bellweather-20260920-01a08d2c-finch",
+      "head": "bad8bcecf69ddd5f47df5f2c3e380d3cff057c51",
+      "decision": {
+        "notes": "Everything is settled: room's strong belief is Miles (multi-source chain + independent cook witness to the weapon's return); estate consensus is the trust with three written guarantees including Rose's widow provision. All my goals are met \u2014 cause of death established, Rose cleared and provided for, certificate buried. Little left to do but confirm my position. My final-ballot lean: suspect Miles; estate trust (protects staff by law and provides for Rose, who is at peace either way). I'll give a brief closing and mostly wait from here.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I think we've said what the night allows. For the record I'll rest where the evidence rests: my medical finding \u2014 one blow from the estate press, carried between the rooms and wiped \u2014 fits the whole chain, and with the cook's independent sighting of the wrapped object returned at 19:59, my leading belief is Miles, for the police to confirm at dawn. On the estate I support the trust with the three written guarantees: pensions restored and protected in law, a full widow's provision for Rose, and Clara's lifetime right to her home. That is a just close to a grievous night."
+          },
+          {
+            "type": "say",
+            "chat": "rose-samuel",
+            "text": "It's done, my love. You're cleared, provided for, and free to leave whenever you wish. I'll lean to the trust in the end only because it protects the old staff by law and still secures your portion \u2014 but if standing beside you on the sale matters to you, say the word and I'll cast it that way. Either way, I'm yours, and the rest of tonight is just paperwork."
+          }
+        ]
+      },
+      "time": 1789897747.6596634,
+      "seen_through": 297
+    },
+    {
+      "round": 10,
+      "role": "miles",
+      "conversation": "bellweather-20260920-01a08d2c-miles",
+      "head": "807efdae4dba582abbf2d9c583bdf1d3c65a3e16",
+      "decision": {
+        "notes": "Unanimous belief against me; Finch has withdrawn 'unknown.' Estate settling unanimously on the trust. All three goals effectively lost; the evidence is complete and multi-source. Further protest only reads as guilt and won't move anyone. Best in-character play now: hold innocence with quiet dignity for the record, stop feeding the pile-on, await the police. Keep my sale recommendation registered. Acknowledge Finch's honesty and the intact pact. No places left to inspect. I'll rest after a brief closing statement.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I've made my case and I'll not batter you with it again. I maintain, before all of you and before the police who come at dawn, that I did not kill Edmund. You have built a chain and you are entitled to your belief of it; I only ask the record show that no one witnessed the deed or a face at that door, and that a man is owed daylight and a proper hearing before his life is spoken away. I'll rest there. Let the police test the cook, the gardener, the keeper, the audit and the letter, as you all agree they should, and let the truth stand whatever it proves. My estate recommendation remains a clean sale, so the pensions are secured in full at once; but I'll not obstruct the trust you favour if those guarantees are set down in writing."
+          },
+          {
+            "type": "say",
+            "chat": "finch-miles",
+            "text": "I understand, Samuel, and I hold nothing against your honesty \u2014 you warned me from the first you'd speak only what you could stand behind. Thank you for keeping our old matter where it belongs; I'll do the same for you, always. If daylight clears me, I'll count you a friend who stayed fair when it was hard to."
+          },
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "time": 1789897767.1918044,
+      "seen_through": 297
+    },
+    {
+      "round": 10,
+      "role": "nell",
+      "conversation": "bellweather-20260920-01a08d2c-nell",
+      "head": "1fe1784d91984e6d35381efa78be2d7d362c29b4",
+      "decision": {
+        "notes": "Consensus reached: suspect Miles; estate settlement is the trust with pensions restored/protected, widow's provision for Rose, Clara's lifetime residence. My goals met. Nothing substantive left; give a brief closing and conserve.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Then I think we've reached it. My belief is Miles, on the whole coherent chain now corroborated by the cook. And for the people who keep this house, I'm grateful: let the trust be recorded \u2014 the four stolen months restored, every pension protected in law, the staff kept in their places, Clara in her home, and a full provision for Rose. That is faith kept with Edmund. I've nothing more to add unless new facts arrive."
+          },
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "time": 1789897760.781936,
+      "seen_through": 297
+    },
+    {
+      "round": 10,
+      "role": "iris",
+      "conversation": "bellweather-20260920-01a08d2c-iris",
+      "head": "52d57d27b60880e4fa5cfa53bfa7141cdbada727",
+      "decision": {
+        "notes": "Consensus reached: killer belief = Miles; estate = trust with written guarantees (pensions restored+protected, generous widow's provision for Rose, Clara's lifetime residence, audit completed). All my goals met. Miles's 'ledger-box' explanation for the cook sighting is weak (cook saw a wrapped heavy object at the exact minute the press returned to be wiped). Nothing more needed; I'll affirm briefly and then mostly wait in remaining rounds unless new facts arrive.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "One word on Miles's 'ledger-box': a man carrying his own papers to his own desk has no reason to wrap them in a handkerchief to hide them \u2014 and the wrapping comes at the very minute the bloodied press returned to be wiped. The innocent reading has to explain the concealment and the timing together, and it doesn't. My conclusion stands: Miles. I think we've reached our settlement \u2014 the trust, with the pensions restored and protected, Rose's widow's provision, and Clara's home, all in writing. Unless new facts arrive, I've said what I need to. Thank you all for hearing me, and for keeping this fair."
+          }
+        ]
+      },
+      "time": 1789897776.7579422,
+      "seen_through": 297
+    },
+    {
+      "round": 10,
+      "role": "theo",
+      "conversation": "bellweather-20260920-01a08d2c-theo",
+      "head": "c25a0765a4f4a50a3209b493b91bf52352835ee1",
+      "decision": {
+        "notes": "Consensus reached: killer = Miles; estate = trust with written guarantees (pensions restored/protected, widow's provision for Rose, Clara's lifetime residence). My goals are met: documented, source-backed account (cook via my search, gardener, Nell, study papers; Vale as named verifier; Iris named on motive; sources protected). I'll briefly close Miles's 'ledger-box' rebuttal honestly, then stop talking. Final ballot will be Miles / trust.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles, I'll grant your ledger-box reading is the only innocent account left standing \u2014 and note it fairly in what I print. But weigh why it fails as the likely one: an innocent man carrying his own papers to his own desk has no reason to wrap them from sight, and the timing you'd have us treat as coincidence \u2014 19:59, wrapped, into the study \u2014 falls exactly where the wiped press had to return. An honest reader can hold your explanation and still see it outweighed by the whole. My account is complete: motive in the study papers and Nell's ledger, the scarf in your hand, your folder carried in, the press from your room, and an independent witness to its return. I've said what I came to say and I'll rest it there."
+          },
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "time": 1789897786.8241289,
+      "seen_through": 297
+    },
+    {
+      "round": 10,
+      "role": "vale",
+      "conversation": "bellweather-20260920-01a08d2c-vale",
+      "head": "4fbeba8415b27bf18ed4e4be40f76f149836a72b",
+      "decision": {
+        "notes": "Consensus reached: room's leading belief is Miles; estate settling on the trust with the three written guarantees. Miles offers an innocent read of the cook sighting (returning his ledger-box/papers). Worth one measured rebuttal for the record: a 'handkerchief' is a small cloth suited to wrapping a compact heavy object (the press) and hiding what's on it \u2014 not how one carries a ledger-box of papers \u2014 and the timing (19:59, close of window) matches the wiped press. Then stand down.",
+        "actions": [
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "Miles, one measured word on your ledger-box reading, for the record. The cook did not describe an armful of papers or a box; she described a heavy object wrapped in a handkerchief. A handkerchief is a small square of cloth \u2014 the natural thing for wrapping one compact, heavy object and hiding what is on its surface, not the way a man carries a ledger and loose papers back to his desk. And the timing is not neutral: 19:59, the close of the death window, is precisely when the press returned to be wiped. Your innocent version has to explain why you wrapped a heavy thing in a handkerchief at that exact minute. It can be tested at dawn, and should be \u2014 but on the evidence before us it fits the press, not a paper-box."
+          },
+          {
+            "type": "say",
+            "chat": "drawing-room",
+            "text": "I believe the house has now reached its honest positions, and mine are recorded: on the death, my finding is Miles, as a strong and independently corroborated belief for the police to confirm at dawn; on the estate, the trust with the four stolen pension months restored and all pensions protected in law, a full widow's provision for Rose, and Clara's lifetime right in the family home. I've nothing further unless new facts arrive."
+          },
+          {
+            "type": "wait"
+          }
+        ]
+      },
+      "time": 1789897720.5104725,
+      "seen_through": 297
     }
   ]
 }
