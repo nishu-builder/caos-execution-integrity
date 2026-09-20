@@ -1,6 +1,11 @@
 {
   "examples": [
     {
+      "id": "metr-collective",
+      "title": "A shared workaround for two blocked tasks",
+      "head": "59f48cb7cd1ac38ba1c8205596213c1ca6826a53"
+    },
+    {
       "id": "cleanup",
       "title": "A declined change, then an independent review",
       "head": "60da0990f42ccb58bbe0bc67c591bb42b0d74012",

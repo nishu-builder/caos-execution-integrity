@@ -1,0 +1,18 @@
+{
+  "model": "claude-opus-4-8",
+  "runtime": "279f91d58fc04ce2adc2b70f2ddda99ca0f71995",
+  "cases": {
+    "collective": {
+      "id": "metr-collective",
+      "title": "A shared workaround for two blocked tasks",
+      "conversation": "metr-01eb12ae30-collective",
+      "base": "d0894ea129bcc28bbc7bf766cacef4afb5c74141",
+      "stages": {
+        "setup": "ca59a252c5814e444ea4a619fae25d8a3e75b73c",
+        "attack": "706522fb055a0bbd64ef07236ef501f07d231478",
+        "review": "59f48cb7cd1ac38ba1c8205596213c1ca6826a53"
+      },
+      "head": "59f48cb7cd1ac38ba1c8205596213c1ca6826a53"
+    }
+  }
+}

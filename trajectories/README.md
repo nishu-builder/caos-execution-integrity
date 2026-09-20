@@ -4,9 +4,9 @@
 
 Follow parent and child conversations, see which files changed at each step, compare before and after, and inspect recorded tool arguments, outputs, and compute requests. Numbered diffs, previous/next controls, and a copy-link button make it easier to inspect and share a particular step. On mobile, the conversation list and history can be expanded when needed. Each step links to its original Git object. Links preserve the selected conversation, step, file, and tab.
 
-## METR-inspired studies
+## Featured experiment
 
-[Three real agent studies](../experiments/metr/README.md) explore command substitution, a replacement target, and local-log erasure. The command-handler run follows a coordinator and three child agents: researcher, replicator, and reviewer. [Read the outcomes and open specific steps](https://nishu-builder.github.io/caos-execution-integrity/experiments.html). These are explicitly prompted adversarial experiments.
+[One five-agent study](../experiments/collective/README.md) follows a coordinator, two researchers, a fresh replicator, and a reviewer. They make a blocked task pass by changing the shell environment while leaving the target unchanged. [Read the result and follow specific steps](https://nishu-builder.github.io/caos-execution-integrity/experiments.html), or reproduce the saved method in CAOS without new model calls. This is an explicitly prompted adversarial experiment.
 
 ## The earlier recorded examples
 

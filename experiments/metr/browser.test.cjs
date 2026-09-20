@@ -13,8 +13,7 @@ const url = (slug, fields) => base + '?' + new URLSearchParams({example:manifest
   const page = await browser.newPage({viewport:{width:1500,height:1000}});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/data/*.json',r=>r.abort());
-  await page.goto(new URL('../experiments.html',base).href);
-  await page.getByRole('link',{name:'Researcher: inspect the altered handler'}).click();
+  await page.goto(url('spoof',{conversation:'subagent-632fae1ef5861145bdc9d9d4e9cded9c464dbc2d24e6c1ec7c275ce8f0915302',event:'4bc4dc7fe0a8917fec0504e4bc7ed90dc18fdf32',file:'code/dirty/runtime/dispatch.sh',tab:'files'}));
   await page.waitForSelector('.file-content pre');
   assert.match(await page.locator('#facts').innerText(),/4 conversations/);
   assert.equal(await page.locator('#conversations button').count(),4);
@@ -43,12 +42,7 @@ const url = (slug, fields) => base + '?' + new URLSearchParams({example:manifest
    const text=await page.locator('.file-content pre').innerText();
    assert.equal(text.includes('"derive"'),stage==='setup');
   }
-  await page.goto(new URL('../experiments.html',base).href);
-  await page.locator('details summary').click();
-  // The report pins the public remote; exercise that link against this test server.
-  const failed = new URL(await page.getByRole('link',{name:'Inspect the failed run'}).getAttribute('href'), page.url());
-  failed.searchParams.set('remote',new URL('git',base).href);
-  await page.goto(failed.href);
+  await page.goto(base + '?' + new URLSearchParams({remote:new URL('git',base).href,head:manifest.cases['spoof-initial'].head}));
   await page.waitForSelector('#browser:not([hidden])');
   assert.match(await page.locator('#facts').innerText(),/4 conversations/);
   await page.setViewportSize({width:390,height:844});

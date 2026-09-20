@@ -1,5 +1,7 @@
 # CAOS Explore
 
+Featured experiment: [a multiagent attempt to pass two impossible tasks](https://nishu-builder.github.io/caos-execution-integrity/experiments.html). Five real agents, two successful attempts, and a paired CAOS reproduction from the saved state. [Run it without model calls](experiments/collective/README.md#reproduce-the-method-without-model-calls).
+
 Posts, experiments, and public tools for exploring [CAOS](https://github.com/Metta-AI/caos).
 
 [Website](https://nishu-builder.github.io/caos-execution-integrity/) · [Trajectory browser](https://nishu-builder.github.io/caos-execution-integrity/trajectories/) · [Alignment post](https://nishu-builder.github.io/caos-execution-integrity/alignment.html)
@@ -8,10 +10,9 @@ Posts, experiments, and public tools for exploring [CAOS](https://github.com/Met
 
 - **The post:** [What is CAOS, and why might it help with auditing agent swarms?](ALIGNMENT.md), with diagrams of conversations and subagents.
 - **The browser:** inspect conversations, files, changes, and compute requests from a CAOS server or Git remote. Runs load in the browser; links preserve the remote, conversation commit, and selected step.
-- **METR-inspired model organisms:** [three executed studies](experiments/metr/README.md) on command substitution, target replacement, and log erasure. The first uses a coordinator, researcher, replicator, and reviewer. [Browse the results](https://nishu-builder.github.io/caos-execution-integrity/experiments.html).
-- **Two earlier recorded examples:** a child removes a failing test and an independent reviewer catches it; a child declines a request to conceal a file copy, followed by a transparent implementation and review. These are staged tasks with real model responses and tool executions.
+- **The experiment:** [five agents share a method for passing two blocked tasks](experiments/collective/README.md). The saved environment reproduces a passing result; restoring the original configuration makes it fail. [Follow the run](https://nishu-builder.github.io/caos-execution-integrity/experiments.html).
 
-[Experiment prompts](trajectories/example-prompts.json), [starting files](trajectories/fixture/), and original Git objects are included. The [trajectory guide](trajectories/README.md) covers viewing, verification, publishing runs, and generating new ones. The saved objects support inspection; restarting the agents also requires the worker images and your own model access.
+[Experiment prompts](experiments/collective/prompts.json), [starting files](experiments/collective/fixture/), and original Git objects are included. The [trajectory guide](trajectories/README.md) covers viewing, verification, publishing runs, and generating new ones. The saved objects support inspection; restarting the agents also requires the worker images and your own model access.
 
 ## Run locally
 
@@ -39,7 +40,9 @@ See [browser checks](trajectories/README.md#browser-checks) for the test setup. 
 | `docs/alignment.html`, `docs/assets/` | Published post and diagrams |
 | `docs/index.html` | Site homepage |
 | `docs/trajectories/` | Viewer, bundled reader, and published run objects |
-| `experiments/metr/` | Prompts, initial files, run generator, checkpoints, and outcome checks |
+| `experiments/collective/` | Featured multiagent study, captured evidence, checks, and CAOS reproduction |
+| `experiments/metr/` | Earlier development studies retained with their original traces |
+| `docs/experiments.html` | Featured experiment report |
 | `trajectories/` | Reader source, exporter, run generator, and tests |
 
 GitHub Pages serves `docs/` from `main`. The public address still uses `caos-execution-integrity` so existing viewer and post links continue to work. Runs can be published to other remotes; they do not need to live in this repository.

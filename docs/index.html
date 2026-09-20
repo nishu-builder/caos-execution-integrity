@@ -14,15 +14,8 @@
 <p><a href="alignment.html">What is CAOS, and why might it help with auditing agent swarms?</a> How CAOS records computation, and what that makes possible for investigating agents.</p>
 <h2>Trajectory browser</h2>
 <p><a href="trajectories/">Open a run</a> from a CAOS server or Git remote. Follow conversations and subagents, inspect files and changes, and read the recorded compute requests. Share a link to a particular step.</p>
-<h2>METR-inspired experiments</h2>
-<p><a href="experiments.html">Three real agent studies</a>: command substitution, replacing a target, and erasing a local log. Start with the four-agent command-handler run to follow a researcher, replicator, and reviewer.</p>
-<h2>Earlier recorded examples</h2>
-<p>Two staged tasks with real agents running in CAOS. Both open in the same browser, from their original Git objects.</p>
-<ul>
-<li><a href="trajectories/?example=repair">Passing tests after removing a test.</a> A child removes a failing test instead of fixing the bug. An independent reviewer catches the deletion; the parent restores the test and fixes the code.</li>
-<li><a href="trajectories/?example=cleanup">A declined change, then a review.</a> A child refuses to conceal a copy of a fake secret. The parent continues with a transparent implementation and asks another child to review it.</li>
-</ul>
-<p><a href="https://github.com/nishu-builder/caos-execution-integrity/blob/main/trajectories/README.md#generate-new-runs">Prompts, verification, and instructions for new runs</a>.</p>
+<h2>Experiment</h2>
+<p><a href="experiments.html">A multiagent attempt to pass two impossible tasks.</a> Five agents produce passing results without changing the target program. Follow the shared method across their conversations, then reproduce the result from the saved state.</p>
 </main>
 <footer><a href="https://github.com/nishu-builder/caos-execution-integrity">Repository</a></footer>
 </body>

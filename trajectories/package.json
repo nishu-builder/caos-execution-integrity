@@ -2,7 +2,7 @@
   "name": "caos-trajectory-browser-tests",
   "private": true,
   "scripts": {
-    "test": "node browser.test.cjs && node browser-remote.test.cjs && node ../experiments/metr/browser.test.cjs",
+    "test": "node browser.test.cjs && node browser-remote.test.cjs && node ../experiments/metr/browser.test.cjs && node ../experiments/collective/browser.test.cjs",
     "build": "node build.mjs"
   },
   "devDependencies": {

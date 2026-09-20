@@ -17,6 +17,10 @@ jobs:
         run: |
           python3 experiments/metr/verify.py --output /tmp/metr-results.json
           diff -u experiments/metr/results.json /tmp/metr-results.json
+      - name: Verify the multiagent experiment and clean controls
+        run: |
+          python3 experiments/collective/verify.py --output /tmp/collective-results.json
+          diff -u experiments/collective/results.json /tmp/collective-results.json
   browser:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
